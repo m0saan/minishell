@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:16:23 by ehakam            #+#    #+#             */
-/*   Updated: 2021/03/31 18:05:16 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/01 15:19:33 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef enum e_types
 {
 	tstdin = 0,
 	tstdout = 1
-} t_type;
+}			t_type;
 
 typedef struct s_redirect
 {
