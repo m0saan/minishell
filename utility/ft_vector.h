@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 18:05:53 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/01 18:47:30 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/01 19:00:32 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_vector *new_vector_from(t_vector *vector);
 void	 copy(t_vector *from, t_vector *to);
 void insert(t_vector *vector, void *item);
 
-void remove(t_vector *vector, void *item);
+void remove_item(t_vector *vector, void *item);
 void remove_at(t_vector *vector, t_size pos);
 void clear(t_vector *vector);
 void delete(t_vector **vector);

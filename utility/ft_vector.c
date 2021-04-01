@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:30:30 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/01 18:53:14 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/01 19:14:20 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void copy(t_vector *from, t_vector *to)
 		ft_exit("Error\nVector doesn't have enough Capacity for COPYING!", 1);
 	i = -1;
 	while (++i < from->size)
-		insert(to, at(from, i));
+		insert(to, from->data[i]);
 }
 
 void *at(t_vector *vector, size_t pos)
@@ -88,12 +88,12 @@ void insert(t_vector *vector, void *item)
 	{
 		temp = vector;
 		vector = new_vector_from(vector);
-		delete (temp);
+		delete (&temp);
 	}
 	vector->data[vector->size++] = item;
 }
 
-void remove(t_vector *vector, void *item)
+void remove_item(t_vector *vector, void *item)
 {
 	int i;
 
@@ -169,6 +169,7 @@ void *last(t_vector *vector)
 		ft_exit("Error\nNull Vector!", 1);
 	if (!is_empty(vector))
 		return (vector->data[vector->size - 1]);
+	return (NULL);
 }
 
 void *first(t_vector *vector)
@@ -177,6 +178,7 @@ void *first(t_vector *vector)
 		ft_exit("Error\nNull Vector!", 1);
 	if (!is_empty(vector))
 		return (vector->data[0]);
+	return (NULL);
 }
 
 int contains(t_vector *vector, void *item)
@@ -267,8 +269,8 @@ void display_vector(t_vector *vector, void (*print)(void *item))
 
 	if (vector == NULL)
 		ft_exit("Error\nNull Vector!", 1);
-	printf("CAPACIITY:\t\t%uz\n", vector->length);
-	printf("SIZE:\t\t%uz\n", vector->size);
+	printf("CAPACIITY: %lu\n", vector->length);
+	printf("SIZE:      %lu\n", vector->size);
 	printf("ITEMS:\n");
 	i = -1;
 	while (++i < vector->size)
@@ -277,4 +279,5 @@ void display_vector(t_vector *vector, void (*print)(void *item))
 		if (i < vector->size - 1)
 			printf(", ");
 	}
+	printf("\n\n");
 }
