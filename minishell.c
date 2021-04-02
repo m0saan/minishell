@@ -9,31 +9,13 @@ t_command *fill_commands()
 	cmd.argv[0] = strdup("ls");
 	cmd.argv[1] = strdup("-la");
 	cmd.argv[2] = NULL;
-	// t_vector redirs = new_vector();
-	// t_redir red;
-	// red.type = right;
-	// red.arg = "newfile";
-	// insert(&redirs, &red);
-	// cmd.redirs = redirs;
-
 	cmds[0] = cmd;
 	
-	cmd = cmds[0];
-
-	int i = 0;
-	while (cmd.argv[i] != NULL)
-	{
-		printf("=========== |%s|\n", cmd.argv[i++]);
-	}
-	// t_command cmd2;
-	// cmd2.argv[0] = "cat";
-	// cmd2.argv[1] = NULL;
-	// insert(&cmds, &cmd2);
-
-	// t_command cmd3;
-	// cmd3.argv[0] = "cat";
-	// cmd3.argv[1] = NULL;
-	// insert(&cmds, &cmd3);
+	t_command cmd2;
+	cmd2.argv[0] = strdup("grep");
+	cmd2.argv[1] = strdup("drw");
+	cmd2.argv[2] = NULL;
+	cmds[1] = cmd2;
 
 	return (cmds);
 }
@@ -47,31 +29,30 @@ int main(int ac, char **av, char **env)
 
 	t_command *cmds = fill_commands();
 	pipe(fd);
-	while (++i < 1)
+	while (++i < 2)
 	{
 		printf("PARENT:loop num: %d\n", i);
-		pid_t pid = 0;//fork();
+		pid_t pid = fork();
 		printf("FORK: PID: %d\n", pid);
 		if (pid < 0)
 			ft_exit("Error\nFork Failed!", 1);
 		if (pid != 0) {
-			printf("PARENT: WAITING PID: %d\n", pids[j]);
+			printf("PARENT: WAITING PID: %d\n", pid);
 			waitpid(pid, NULL, 0);
 		}
 		if (pid == 0)
 		{
 			printf("CHILD: PID: %d\n", pid);
-			t_command cmd = cmds[0];
-			printf("CHILD: EXECV(%s)\n", cmd.argv[0]);
-			if (i == 0 && i != 1 - 1) {
+			t_command cmd = cmds[i];
+			if (i == 0 && i != 2 - 1) {
 				dup2(fd[1], 1);
 				printf("CHILD: DUP (1): INDEX %d\n", i);
 			}
-			else if (i == 1 - 1 && i != 0) {
+			else if (i == 2 - 1 && i != 0) {
 				dup2(fd[0], 0);
 				printf("CHILD: DUP (0): INDEX %d\n", i);
 			}
-			else if (i > 0 && i < 1 - 1)
+			else if (i > 0 && i < 2 - 1)
 			{
 				dup2(fd[1], 1);
 				dup2(fd[0], 0);
@@ -81,8 +62,8 @@ int main(int ac, char **av, char **env)
 				close(fd[0]);
 				close(fd[1]);
 			
-			//printf("CHILD: EXECV(%s)\n", cmd.argv[0]);
-			//execvp(cmd.argv[0], cmd.argv);
+			printf("CHILD: EXECV(%s)\n", cmd.argv[0]);
+			execvp(cmd.argv[0], cmd.argv);
 			printf("CHILD: EXECV FAILED\n");
 		} else {
 			// printf("PARENT: STORING PID: %d\n", pid);
