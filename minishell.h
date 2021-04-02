@@ -6,35 +6,44 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:16:23 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/01 15:19:33 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/02 18:01:29 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINISHELL_H
 #define MINISHELL_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <unistd.h>
-#include <sys/wait.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 #include <errno.h>
+#include <string.h>
+#include "utility/ft_vector.h"
 
-typedef enum e_types
+// typedef enum e_bool
+// {
+// 	false = 0,
+// 	true = 1
+// } t_bool;
+typedef char *t_string;
+typedef enum e_redirtype
 {
-	tstdin = 0,
-	tstdout = 1
-}			t_type;
-
-typedef struct s_redirect
+	left = 0,
+	right = 1
+} t_redirtype;
+typedef struct s_redir
 {
-	t_type type;
-	char *fname;
-} s_redirect;
+	t_redirtype type;
+	char *arg;
+} t_redir;
 
-typedef struct s_cmd {
-	char *cmd;
-	char *argv[512];
-}	t_cmd;
+typedef struct s_command
+{
+	char *argv[256];
+	t_vector redirs;
+} t_command;
+
+void ft_exit(char *msg, int code);
 
 #endif

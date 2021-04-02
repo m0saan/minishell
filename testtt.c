@@ -77,6 +77,8 @@ int main()
 		return -1;
 	}
 
+
+
 	close(fd[0]);
 	close(fd[1]);
 	/* Wait for the children to finish, then exit. */
