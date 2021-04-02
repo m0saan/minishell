@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:30:30 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/01 19:14:20 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/02 14:56:24 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,47 +19,47 @@ void ft_exit(char *msg, int code)
 	exit(code);
 }
 
-t_vector *new_vector_s(t_size init_len)
+t_vector new_vector_s(t_size init_len)
 {
-	t_vector *new_vector;
+	t_vector new_vector;
 
-	if (!(new_vector = (t_vector *)malloc(sizeof(t_vector))))
+	// if (!(new_vector = (t_vector *)malloc(sizeof(t_vector))))
+	// 	ft_exit(ERR_MALLOC, 1);
+	if (!(new_vector.data = (void **)malloc(sizeof(void *) * init_len)))
 		ft_exit(ERR_MALLOC, 1);
-	if (!(new_vector->data = (void **)malloc(sizeof(void *) * init_len)))
-		ft_exit(ERR_MALLOC, 1);
-	new_vector->length = init_len;
-	new_vector->size = 0;
-	new_vector->current = 0;
+	new_vector.capacity = init_len;
+	new_vector.size = 0;
+	new_vector.current = 0;
 	return (new_vector);
 }
 
-t_vector *new_vector()
+t_vector new_vector()
 {
 	return new_vector_s(10);
 }
 
-t_vector *new_vector_from(t_vector *vector)
+t_vector new_vector_from(t_vector *vector)
 {
 	t_size length;
-	t_vector *new_vector;
+	t_vector new_vector;
 
 	if (vector == NULL || is_empty(vector))
 		ft_exit("Error\nvector shouldn't be null or empty!", 1);
 	length = vector->size + vector->size / 2;
 	new_vector = new_vector_s(length);
-	copy(vector, new_vector);
+	copy(&new_vector, vector);
 	return (new_vector);
 }
 
-void copy(t_vector *from, t_vector *to)
+void copy(t_vector *to, t_vector *from)
 {
 	int i;
 
-	if (from->size > (to->length - to->size))
+	if (from->size > (to->capacity - to->size))
 		ft_exit("Error\nVector doesn't have enough Capacity for COPYING!", 1);
 	i = -1;
 	while (++i < from->size)
-		insert(to, from->data[i]);
+		to->data[to->size++] = from->data[i];
 }
 
 void *at(t_vector *vector, size_t pos)
@@ -80,15 +80,22 @@ int is_empty(t_vector *vector)
 
 void insert(t_vector *vector, void *item)
 {
-	t_vector *temp;
+	void		**old_data;
+	size_t		new_capacity;
+	int			i;
 
 	if (vector == NULL)
 		ft_exit("Error\nInserting in a NULL Vector!", 1);
-	if (vector->size == vector->length)
+	if (vector->size == vector->capacity)
 	{
-		temp = vector;
-		vector = new_vector_from(vector);
-		delete (&temp);
+		i = -1;
+		new_capacity = vector->size + vector->size / 2;
+		old_data = (void **)malloc(sizeof(void *) * new_capacity);
+		while (++i < vector->size)
+			old_data[i] = vector->data[i];
+		free(vector->data);
+		vector->data = old_data;
+		vector->capacity = new_capacity;
 	}
 	vector->data[vector->size++] = item;
 }
@@ -134,15 +141,14 @@ void clear(t_vector *vector)
 	vector->size = 0;
 }
 
-void delete (t_vector **vector)
+void delete(t_vector *vector)
 {
 	int i;
 
 	i = -1;
-	if (vector == NULL || (*vector)->data == NULL)
+	if (vector == NULL || vector->data == NULL)
 		ft_exit("Error\nNull Vector!", 1);
-	free((*vector)->data);
-	free(*vector);
+	free(vector->data);
 }
 
 void *next(t_vector *vector)
@@ -151,6 +157,8 @@ void *next(t_vector *vector)
 		ft_exit("Error\nNull Vector!", 1);
 	if (++vector->current < vector->size)
 		return (vector->data[vector->current]);
+	else
+		vector->current = 0;
 	return (NULL);
 }
 
@@ -215,7 +223,7 @@ t_size capacity(t_vector *vector)
 {
 	if (vector == NULL)
 		ft_exit("Error\nNull Vector!", 1);
-	return (vector->length);
+	return (vector->capacity);
 }
 
 void swap(t_vector *vector, t_size pos1, t_size pos2)
@@ -259,23 +267,23 @@ void move_to_first(t_vector *vector, t_size pos)
 	while (i - 1 >= 0)
 	{
 		swap(vector, i, i - 1);
-		++i;
+		--i;
 	}
 }
 
-void display_vector(t_vector *vector, void (*print)(void *item))
+void display_vector(t_vector *vector, char *(*to_string)(void *item))
 {
 	int i;
 
 	if (vector == NULL)
 		ft_exit("Error\nNull Vector!", 1);
-	printf("CAPACIITY: %lu\n", vector->length);
+	printf("CAPACIITY: %lu\n", vector->capacity);
 	printf("SIZE:      %lu\n", vector->size);
 	printf("ITEMS:\n");
 	i = -1;
 	while (++i < vector->size)
 	{
-		print(vector->data[i]);
+		printf("%s", to_string(vector->data[i]));
 		if (i < vector->size - 1)
 			printf(", ");
 	}
