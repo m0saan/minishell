@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:30:30 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/02 14:56:24 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/03 15:21:21 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,47 +19,39 @@ void ft_exit(char *msg, int code)
 	exit(code);
 }
 
-t_vector new_vector_s(t_size init_len)
-{
-	t_vector new_vector;
-
-	// if (!(new_vector = (t_vector *)malloc(sizeof(t_vector))))
-	// 	ft_exit(ERR_MALLOC, 1);
-	if (!(new_vector.data = (void **)malloc(sizeof(void *) * init_len)))
-		ft_exit(ERR_MALLOC, 1);
-	new_vector.capacity = init_len;
-	new_vector.size = 0;
-	new_vector.current = 0;
-	return (new_vector);
-}
-
-t_vector new_vector()
+t_vector *new_vector()
 {
 	return new_vector_s(10);
 }
 
-t_vector new_vector_from(t_vector *vector)
+t_vector *new_vector_s(t_size init_len)
 {
-	t_size length;
-	t_vector new_vector;
+	t_vector *new_vector;
 
-	if (vector == NULL || is_empty(vector))
-		ft_exit("Error\nvector shouldn't be null or empty!", 1);
-	length = vector->size + vector->size / 2;
-	new_vector = new_vector_s(length);
-	copy(&new_vector, vector);
+	if (!(new_vector = (t_vector *)malloc(sizeof(t_vector))))
+		ft_exit(ERR_MALLOC, 1);
+	if (!(new_vector->data = (void **)malloc(sizeof(void *) * init_len)))
+		ft_exit(ERR_MALLOC, 1);
+	new_vector->capacity = init_len;
+	new_vector->size = 0;
+	new_vector->current = 0;
 	return (new_vector);
 }
 
-void copy(t_vector *to, t_vector *from)
+t_vector *new_vector_from(t_vector *vector)
 {
 	int i;
+	t_size length;
+	t_vector *new_vector;
 
-	if (from->size > (to->capacity - to->size))
-		ft_exit("Error\nVector doesn't have enough Capacity for COPYING!", 1);
+	if (vector == NULL || is_empty(vector))
+		ft_exit("Error\nVector is NULL/Empty", 1);
+	length = vector->size + vector->size / 2;
+	new_vector = new_vector_s(length);
 	i = -1;
-	while (++i < from->size)
-		to->data[to->size++] = from->data[i];
+	while (++i < vector->size)
+		new_vector->data[new_vector->size++] = vector->data[i];
+	return (new_vector);
 }
 
 void *at(t_vector *vector, size_t pos)
@@ -80,9 +72,9 @@ int is_empty(t_vector *vector)
 
 void insert(t_vector *vector, void *item)
 {
-	void		**old_data;
-	size_t		new_capacity;
-	int			i;
+	void **old_data;
+	size_t new_capacity;
+	int i;
 
 	if (vector == NULL)
 		ft_exit("Error\nInserting in a NULL Vector!", 1);
@@ -141,7 +133,7 @@ void clear(t_vector *vector)
 	vector->size = 0;
 }
 
-void delete(t_vector *vector)
+void delete (t_vector *vector)
 {
 	int i;
 
@@ -149,6 +141,7 @@ void delete(t_vector *vector)
 	if (vector == NULL || vector->data == NULL)
 		ft_exit("Error\nNull Vector!", 1);
 	free(vector->data);
+	free(vector);
 }
 
 void *next(t_vector *vector)
@@ -289,3 +282,13 @@ void display_vector(t_vector *vector, char *(*to_string)(void *item))
 	}
 	printf("\n\n");
 }
+
+// void copy(t_vector *to, t_vector *from)
+// {
+// 	int i;
+// 	if (from->size > (to->capacity - to->size))
+// 		ft_exit("Error\nVector doesn't have enough Capacity for COPYING!", 1);
+// 	i = -1;
+// 	while (++i < from->size)
+// 		to->data[to->size++] = from->data[i];
+// }

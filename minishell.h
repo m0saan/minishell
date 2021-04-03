@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:16:23 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/02 18:01:29 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/03 15:02:40 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,6 @@
 #include <string.h>
 #include "utility/ft_vector.h"
 
-// typedef enum e_bool
-// {
-// 	false = 0,
-// 	true = 1
-// } t_bool;
 typedef char *t_string;
 typedef enum e_redirtype
 {
@@ -36,12 +31,11 @@ typedef struct s_redir
 {
 	t_redirtype type;
 	char *arg;
-} t_redir;
-
+}			t_redir;
 typedef struct s_command
 {
 	char *argv[256];
-	t_vector redirs;
+	t_vector *redirs;
 } t_command;
 
 void ft_exit(char *msg, int code);

@@ -1,4 +1,5 @@
 #include "ft_vector.h"
+#include "../minishell.h"
 
 int stringlen(char *s)
 {
@@ -61,10 +62,8 @@ void numbr_tostr(char **snum, long num)
 
 char *to_string(void *item)
 {
-	int *it = (int *)item;
-	char *num = NULL;
-	numbr_tostr(&num, *it);
-	return (num);
+	t_command *it = (t_command *)item;
+	return (it->argv[1]);
 }
 
 int *copy_int(int value)
@@ -74,30 +73,40 @@ int *copy_int(int value)
 	return (new_value);
 }
 
-int main()
+t_command create_command(char *arg1, char *arg2)
 {
-	t_vector v = new_vector_s(15);
+	// t_command *cmd;
+
+	// cmd = (t_command *)malloc(sizeof(t_command));
+	// cmd->argv[0] = strdup(arg1);
+	// cmd->argv[1] = strdup(arg2);
+	// cmd->redirs = NULL;
+
+	t_command cmd;
+
+	//cmd = (t_command *)malloc(sizeof(t_command));
+	cmd.argv[0] = strdup(arg1);
+	cmd.argv[1] = strdup(arg2);
+	cmd.redirs = NULL;
+	return (cmd);
+}
+
+t_vector *create_vector() {
+	t_vector *v = new_vector_s(10);
 	int i = 0;
 
-	while (i < 11)
-	{
-		int *xx = copy_int(i);
-		insert(&v, xx);
-		i += 1;
-	}
+	t_command cmd = create_command("ls", "-la");
+	insert(v, &cmd);
+	t_command cmd2 = create_command("grep", "-i");
+	insert(v, &cmd2);
+	t_command cmd3 = create_command("cat", "-e");
+	insert(v, &cmd3);
+	return (v);
+}
 
-	int *zz = v.data[11];
-
-	move_to_last(&v, 0);
-	move_to_last(&v, 6);
-	//move_to_last(&v, 0);
-	
-	// printf("value: %d\n", *(int *)at(&v, 0));
-	// t_vector v2 = new_vector_from(&v);
-	// int *xx = copy_int(55);
-	// insert(&v2, xx);
-	display_vector(&v, to_string);
-	// display_vector(&v2, to_string);
-	delete (&v);
+int main()
+{
+	t_vector *v = create_vector();
+	display_vector(v, to_string);
 	return (0);
 }
