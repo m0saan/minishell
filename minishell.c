@@ -29,7 +29,7 @@ t_vector *fill_commands()
 
 	t_command *cmd = create_command("ls", "-l");
 	t_command *cmd2 = create_command("grep", "drw");
-	// t_command *cmd3 = create_command("echo", "hakam 3");
+	t_command *cmd3 = create_command("grep", "t");
 
 	insert(v, cmd);
 	insert(v, cmd2);
@@ -97,28 +97,27 @@ int main(int ac, char **av, char **env)
 	int fd[2];
 	pid_t pids[64];
 
+
 	t_vector *cmds = fill_commands();
 	display_vector(cmds, to_string);
 
 	pipe(fd);
-	// while (++i < cmds->size)
-	// {
-	// 	printf("PARENT:LOOP INDX: %d\n", i);
-	// 	t_command *cmd = (t_command *)at(cmds, i);
-	// 	run_command(cmd, fd, cmds->size, i);
-	// }
-	t_command *cmd1 = (t_command *)at(cmds, 0);
-	pid_t p1 = run_command(cmd1, fd, cmds->size, 0);
-	t_command *cmd2 = (t_command *)at(cmds, 1);
-	pid_t p2 = run_command(cmd2, fd, cmds->size, 1);
+	while (++i < cmds->size)
+	{
+		printf("PARENT:LOOP INDX: %d\n", i);
+		t_command *cmd = (t_command *)at(cmds, i);
+		pids[i] = run_command(cmd, fd, cmds->size, i);
+	}
 
-	if (p1 != 0)
-		waitpid(p1, NULL, 0);
-	if (p2 != 0)
-		waitpid(p2, NULL, 0);
 
 	close(fd[0]);
 	close(fd[1]);
+
+	i = -1;
+	while (++i < cmds->size)
+		if (pids[i] > 0)
+			// waitpid(pids[i], NULL, 0);
+			wait(&pids[i]);
 
 	return (0);
 }

@@ -19,16 +19,10 @@ Compilation: gcc pipe-redirection.c -o pipe-redirection -Wall
 #include <sys/wait.h>
 #include <errno.h>
 
-int main()
+pid_t run_cmd(int fd[2], int fddup, char *arg1, char *arg2)
 {
-	int fd[2];
-	pid_t pid1, pid2;
 	char *argv[5];
-
-	pipe(fd);
-
-	/* Create the first child and run the first command. */
-	pid1 = fork();
+	pid_t pid1 = fork();
 	if (pid1 < 0)
 	{
 		perror("First fork() failed!");
@@ -37,53 +31,92 @@ int main()
 	if (pid1 == 0)
 	{
 		/* Set the process output to the input of the pipe. */
-		close(1);
-		dup(fd[1]);
+		close(fddup);
+		dup(fd[fddup]);
 		close(fd[0]);
 		close(fd[1]);
 		argv[0] = (char *)malloc(5 * sizeof(char));
 		argv[1] = (char *)malloc(5 * sizeof(char));
-		strcpy(argv[0], "ls");
-		strcpy(argv[1], "-l");
+		strcpy(argv[0], arg1);
+		strcpy(argv[1], arg2);
 		argv[2] = NULL;
-		fprintf(stderr, "************* Running ls -l *************\n");
+		fprintf(stderr, "************* Running %s %s \n", arg1, arg2);
 		execvp(argv[0], argv);
-		perror("First execvp() failed");
+		perror("execvp() failed");
 		return -1;
 	}
+	return pid1;
+}
 
+int main()
+{
+	int fd[2];
+	pid_t pid1, pid2;
+	char *argv[5];
+
+	pipe(fd);
+
+	pid1 = run_cmd(fd, 1, "ls", "-la");
+	/* Create the first child and run the first command. */
+	// pid1 = fork();
+	// if (pid1 < 0)
+	// {
+	// 	perror("First fork() failed!");
+	// 	return -1;
+	// }
+	// if (pid1 == 0)
+	// {
+	// 	/* Set the process output to the input of the pipe. */
+	// 	close(1);
+	// 	dup(fd[1]);
+	// 	close(fd[0]);
+	// 	close(fd[1]);
+	// 	argv[0] = (char *)malloc(5 * sizeof(char));
+	// 	argv[1] = (char *)malloc(5 * sizeof(char));
+	// 	strcpy(argv[0], "ls");
+	// 	strcpy(argv[1], "-l");
+	// 	argv[2] = NULL;
+	// 	fprintf(stderr, "************* Running ls -l *************\n");
+	// 	execvp(argv[0], argv);
+	// 	perror("First execvp() failed");
+	// 	return -1;
+	// }
+
+	pid2 = run_cmd(fd, 0, "grep", "drw");
 	/* Create the second child and run the second command. */
-	pid2 = fork();
-	if (pid2 < 0)
-	{
-		perror("Second fork() failed!");
-		return -1;
-	}
-	if (pid2 == 0)
-	{
-		/* Set the process input to the output of the pipe. */
-		close(0);
-		dup(fd[0]);
-		close(fd[0]);
-		close(fd[1]);
-		argv[0] = (char *)malloc(5 * sizeof(char));
-		argv[1] = (char *)malloc(5 * sizeof(char));
-		strcpy(argv[0], "grep");
-		strcpy(argv[1], "");
-		argv[2] = NULL;
-		fprintf(stderr, "************* Running grep pipe *************\n");
-		execvp(argv[0], argv);
-		perror("Second execvp() failed");
-		return -1;
-	}
+	// pid2 = fork();
+	// if (pid2 < 0)
+	// {
+	// 	perror("Second fork() failed!");
+	// 	return -1;
+	// }
+	// if (pid2 == 0)
+	// {
+	// 	/* Set the process input to the output of the pipe. */
+	// 	close(0);
+	// 	dup(fd[0]);
+	// 	close(fd[0]);
+	// 	close(fd[1]);
+	// 	argv[0] = (char *)malloc(5 * sizeof(char));
+	// 	argv[1] = (char *)malloc(5 * sizeof(char));
+	// 	strcpy(argv[0], "grep");
+	// 	strcpy(argv[1], "");
+	// 	argv[2] = NULL;
+	// 	fprintf(stderr, "************* Running grep pipe *************\n");
+	// 	execvp(argv[0], argv);
+	// 	perror("Second execvp() failed");
+	// 	return -1;
+	// }
 
 
 
 	close(fd[0]);
 	close(fd[1]);
 	/* Wait for the children to finish, then exit. */
-	waitpid(pid1, NULL, 0);
-	waitpid(pid2, NULL, 0);
+	if (pid1 > 0)
+		waitpid(pid1, NULL, 0);
+	if (pid1 > 0)
+		waitpid(pid2, NULL, 0);
 	printf("************* Father exitting... *************\n");
 	return 0;
 }
