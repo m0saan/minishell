@@ -69,7 +69,7 @@ int main()
 		argv[0] = (char *)malloc(5 * sizeof(char));
 		argv[1] = (char *)malloc(5 * sizeof(char));
 		strcpy(argv[0], "grep");
-		strcpy(argv[1], "cd");
+		strcpy(argv[1], "");
 		argv[2] = NULL;
 		fprintf(stderr, "************* Running grep pipe *************\n");
 		execvp(argv[0], argv);

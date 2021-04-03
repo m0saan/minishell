@@ -104,9 +104,27 @@ t_vector *create_vector() {
 	return (v);
 }
 
+void ddd(int fd[2]) {
+	fd[0] = 1;
+	fd[1] = 2;
+}
+
 int main()
 {
-	t_vector *v = create_vector();
-	display_vector(v, to_string);
+	// t_vector *v = create_vector();
+	// display_vector(v, to_string);
+
+	int fd[2];
+
+	fd[0] = 100;
+	fd[1] = 200;
+
+	printf("===0: %d ===\n", fd[0]);
+	printf("===1: %d ===\n", fd[1]);
+	ddd(fd);
+
+	printf("===0: %d ===\n", fd[0]);
+	printf("===1: %d ===\n", fd[1]);
+
 	return (0);
 }
