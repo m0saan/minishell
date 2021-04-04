@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 18:05:53 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/03 15:21:07 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/04 14:57:08 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,24 @@
 
 typedef unsigned long t_size;
 
-typedef enum e_bool
+typedef enum	e_bool
 {
 	false = 0,
 	true = 1
-} t_bool;
+}				t_bool;
 
-typedef struct s_vector
+typedef struct	s_vector
 {
 	void **data;
 	t_size capacity;
 	t_size size;
 	t_size current;
-} t_vector;
+}				t_vector;
+
+typedef struct	s_pair
+{
+	void	*get[2];
+}				t_pair;
 
 t_vector *new_vector();
 t_vector *new_vector_s(t_size init_len);
@@ -58,5 +63,6 @@ void swap(t_vector *vector, t_size pos1, t_size pos2);
 void move_to_last(t_vector *vector, t_size pos);
 void move_to_first(t_vector *vector, t_size pos);
 void display_vector(t_vector *vector, char *(*to_string)(void *item));
+t_pair *next_pair(t_vector *this);
 
 #endif

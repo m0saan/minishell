@@ -62,8 +62,9 @@ void numbr_tostr(char **snum, long num)
 
 char *to_string(void *item)
 {
-	t_command *it = (t_command *)item;
-	return (it->argv[1]);
+	char *num = NULL;
+	numbr_tostr(&num, *(int *)item);
+	return (num);
 }
 
 int *copy_int(int value)
@@ -104,27 +105,28 @@ t_vector *create_vector() {
 	return (v);
 }
 
-void ddd(int fd[2]) {
-	fd[0] = 1;
-	fd[1] = 2;
-}
-
 int main()
 {
-	// t_vector *v = create_vector();
-	// display_vector(v, to_string);
+	t_vector *v = new_vector();
+	int i = 0;
+	while (i < 6)
+	{
+		insert(v, copy_int(i++));
+	}
 
-	int fd[2];
+	t_pair *pair;
+	
+	while ((pair = next_pair(v)) != NULL)
+	{
+		if (pair->get[0])
+			printf("[%d ", *(int *)pair->get[0]);
+		if (pair->get[1])
+			printf("%d]", *(int *)pair->get[1]);
+	}
+	printf("\n");
 
-	fd[0] = 100;
-	fd[1] = 200;
-
-	printf("===0: %d ===\n", fd[0]);
-	printf("===1: %d ===\n", fd[1]);
-	ddd(fd);
-
-	printf("===0: %d ===\n", fd[0]);
-	printf("===1: %d ===\n", fd[1]);
+	//display_vector(v, to_string);
+	
 
 	return (0);
 }
