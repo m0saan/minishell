@@ -178,7 +178,7 @@ t_vector *fill_commands()
 	cm2->redirs->insert(cm2->redirs, create_redir(right, "e"));
 	cm2->redirs->insert(cm2->redirs, create_redir(right, "f"));
 
-	// t_cmd *cm3 = create_cmd("cat", "f", NULL, NULL, NULL);
+	t_cmd *cm3 = create_cmd("cat", "f", NULL, NULL, NULL);
 
 	// t_cmd *cm4 = create_cmd("BC", NULL, NULL, NULL, NULL);
 
@@ -194,7 +194,7 @@ t_vector *fill_commands()
 	///////////
 	cmds->insert(cmds, cm1);
 	cmds->insert(cmds, cm2);
-	// cmds->insert(cmds, cm3);
+	cmds->insert(cmds, cm3);
 	// cmds->insert(cmds, cm4);
 	// cmds->insert(cmds, cm5);
 	// cmds->insert(cmds, cm6);
