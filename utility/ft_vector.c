@@ -6,25 +6,34 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:30:30 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/04 15:47:34 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/05 18:05:37 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_vector.h"
 
-void ft_exit(char *msg, int code)
+/*
+** EXIT
+*/
+void		ft_exit(char *msg, int code)
 {
 	if (msg)
 		perror(msg);
 	exit(code);
 }
 
-t_vector *new_vector()
+/*
+** NEW()
+*/
+t_vector	*new_vector()
 {
 	return new_vector_s(10);
 }
 
-t_vector *new_vector_s(t_size init_len)
+/*
+** NEW(LEN)
+*/
+t_vector	*new_vector_s(t_size init_len)
 {
 	t_vector *new_vector;
 
@@ -35,10 +44,24 @@ t_vector *new_vector_s(t_size init_len)
 	new_vector->capacity = init_len;
 	new_vector->size = 0;
 	new_vector->current = 0;
+	new_vector->insert = insert;
+	new_vector->at = at;
+	new_vector->remove_at = remove_at;
+	new_vector->clear_free = clear_free;
+	new_vector->clear = clear;
+	new_vector->contains = contains;
+	new_vector->index_of = index_of;
+	new_vector->swap = swap;
+	new_vector->move_to_first = move_to_first;
+	new_vector->move_to_last = move_to_last;
+	new_vector->display = display_vector;
 	return (new_vector);
 }
 
-t_vector *new_vector_from(t_vector *other)
+/*
+** NEW(OTHER)
+*/
+t_vector	*new_vector_from(t_vector *other)
 {
 	int i;
 	t_size length;
@@ -54,7 +77,10 @@ t_vector *new_vector_from(t_vector *other)
 	return (new_vector);
 }
 
-void *at(t_vector *this, size_t pos)
+/*
+** AT(POS)
+*/
+void		*at(t_vector *this, size_t pos)
 {
 	if (this == NULL)
 		ft_exit("Error\nAccessing items of a NULL Vector!", 1);
@@ -63,14 +89,20 @@ void *at(t_vector *this, size_t pos)
 	return (this->data[pos]);
 }
 
-int is_empty(t_vector *this)
+/*
+** IS_EMPTY()
+*/
+int			is_empty(t_vector *this)
 {
 	if (this == NULL)
 		ft_exit("Error\nNULL Vector!", 1);
 	return (this->size == 0);
 }
 
-void insert(t_vector *this, void *item)
+/*
+** INSERT(ITEM)
+*/
+void		insert(t_vector *this, void *item)
 {
 	void **old_data;
 	size_t new_capacity;
@@ -92,31 +124,22 @@ void insert(t_vector *this, void *item)
 	this->data[this->size++] = item;
 }
 
-void remove_item(t_vector *this, void *item)
+/*
+** REMOVE(POS)
+*/
+void		*remove_at(t_vector *this, t_size pos)
 {
 	int i;
-
-	if (this == NULL)
-		ft_exit("Error\nNull Vector!", 1);
-	i = -1;
-	while (++i < this->size)
-	{
-		if (this->data[i] == item)
-			remove_at(this, i);
-	}
-}
-
-void remove_at(t_vector *this, t_size pos)
-{
-	int i;
+	void *item;
 
 	if (this == NULL)
 		ft_exit("Error\nNull Vector!", 1);
 	if (is_empty(this))
-		return;
+		return NULL;
 	if (pos >= this->size)
-		return;
+		return NULL;
 	i = pos;
+	item = at(this, pos);
 	while (i < this->size)
 	{
 		if (i + 1 < this->size)
@@ -124,60 +147,64 @@ void remove_at(t_vector *this, t_size pos)
 		i++;
 	}
 	this->size--;
+	return (item);
 }
 
-void clear(t_vector *this)
+/*
+** CLEAR()
+*/
+void		clear(t_vector *this)
 {
 	if (this == NULL)
 		ft_exit("Error\nNull Vector!", 1);
 	this->size = 0;
 }
 
-void delete (t_vector *this)
+/*
+** CLEAR_FRE()
+*/
+void		clear_free(t_vector *this)
 {
-	int i;
+	int  i;
 
-	i = -1;
+
+	if (this == NULL)
+		ft_exit("Error\nNull Vector!", 1);
+	i = this->size;
+	while (--i >= 0)
+		free(remove_at(this, i));
+}
+
+/*
+** DELETE()
+*/
+void		delete(t_vector *this)
+{
 	if (this == NULL || this->data == NULL)
 		ft_exit("Error\nNull Vector!", 1);
 	free(this->data);
 	free(this);
 }
 
-void *next(t_vector *this)
+/*
+** DELETE_FRE()
+*/
+void		delete_free(t_vector *this)
 {
-	if (this == NULL)
+	int i;
+
+	i = -1;
+	if (this == NULL || this->data == NULL)
 		ft_exit("Error\nNull Vector!", 1);
-	if (this->current < this->size)
-		return (this->data[(this->current)++]);
-	return (NULL);
+	while (++i < this->size)
+		free(at(this, i));
+	delete(this);
 }
 
-t_pair *next_pair(t_vector *this)
-{
-	t_pair	*pair;
-	void	*value1;
-	void	*value2;
-
-	if ((value1 = next(this)) == NULL)
-		return (NULL);
-	value2 = next(this);
-	pair = (t_pair *)malloc(sizeof(t_pair));
-	pair->get[0] = value1;
-	pair->get[1] = value2;
-	return (pair);
-}
-
-void *previous(t_vector *this)
-{
-	if (this == NULL)
-		ft_exit("Error\nNull Vector!", 1);
-	if (--this->current >= 0)
-		return (this->data[this->current]);
-	return (NULL);
-}
-
-void *last(t_vector *this)
+/*
+** LAST()
+*/
+void		*last(t_vector *this)
 {
 	if (this == NULL)
 		ft_exit("Error\nNull Vector!", 1);
@@ -186,7 +213,10 @@ void *last(t_vector *this)
 	return (NULL);
 }
 
-void *first(t_vector *this)
+/*
+** FIRST()
+*/
+void		*first(t_vector *this)
 {
 	if (this == NULL)
 		ft_exit("Error\nNull Vector!", 1);
@@ -195,7 +225,10 @@ void *first(t_vector *this)
 	return (NULL);
 }
 
-int contains(t_vector *this, void *item)
+/*
+** CONTAINS(ITEM)
+*/
+int			contains(t_vector *this, void *item)
 {
 	int i;
 
@@ -210,7 +243,10 @@ int contains(t_vector *this, void *item)
 	return (false);
 }
 
-int index_of(t_vector *this, void *item)
+/*
+** INDEX_OF(ITEM)
+*/
+int			index_of(t_vector *this, void *item)
 {
 	int i;
 
@@ -225,14 +261,20 @@ int index_of(t_vector *this, void *item)
 	return (-1);
 }
 
-t_size capacity(t_vector *this)
+/*
+** CAPACITY()
+*/
+t_size		capacity(t_vector *this)
 {
 	if (this == NULL)
 		ft_exit("Error\nNull Vector!", 1);
 	return (this->capacity);
 }
 
-void swap(t_vector *this, t_size pos1, t_size pos2)
+/*
+** SWAP(POS, POS)
+*/
+void		swap(t_vector *this, t_size pos1, t_size pos2)
 {
 	void *item;
 
@@ -245,7 +287,10 @@ void swap(t_vector *this, t_size pos1, t_size pos2)
 	this->data[pos2] = item;
 }
 
-void move_to_last(t_vector *this, t_size pos)
+/*
+** MOVE_TO_LAST(POS)
+*/
+void		move_to_last(t_vector *this, t_size pos)
 {
 	int i;
 
@@ -261,7 +306,10 @@ void move_to_last(t_vector *this, t_size pos)
 	}
 }
 
-void move_to_first(t_vector *this, t_size pos)
+/*
+** MOVE_TO_FIRST(POS)
+*/
+void		move_to_first(t_vector *this, t_size pos)
 {
 	int i;
 
@@ -277,7 +325,10 @@ void move_to_first(t_vector *this, t_size pos)
 	}
 }
 
-void display_vector(t_vector *this, char *(*to_string)(void *item))
+/*
+** DISPLAY_VECTOR(HOW)
+*/
+void		display_vector(t_vector *this, char *(*to_string)(void *item))
 {
 	int i;
 
@@ -296,12 +347,55 @@ void display_vector(t_vector *this, char *(*to_string)(void *item))
 	printf("\n\n");
 }
 
-// void copy(t_vector *to, t_vector *from)
-// {
-// 	int i;
-// 	if (from->size > (to->capacity - to->size))
-// 		ft_exit("Error\nVector doesn't have enough Capacity for COPYING!", 1);
-// 	i = -1;
-// 	while (++i < from->size)
-// 		to->data[to->size++] = from->data[i];
-// }
+/*
+** CONDIDATES FOR DELETE
+*/
+void		*remove_item(t_vector *this, void *item)
+{
+	int i;
+
+	if (this == NULL)
+		ft_exit("Error\nNull Vector!", 1);
+	i = -1;
+	while (++i < this->size)
+	{
+		if (this->data[i] == item)
+			return (remove_at(this, i));
+	}
+	return (NULL);
+}
+
+void		*previous(t_vector *this)
+{
+	if (this == NULL)
+		ft_exit("Error\nNull Vector!", 1);
+	if (--this->current >= 0)
+		return (this->data[this->current]);
+	return (NULL);
+}
+
+void		*next(t_vector *this)
+{
+	if (this == NULL)
+		ft_exit("Error\nNull Vector!", 1);
+	if (this->current < this->size)
+		return (this->data[(this->current)++]);
+	return (NULL);
+}
+
+t_pair		*next_pair(t_vector *this)
+{
+	t_pair	*pair;
+	void	*value1;
+	void	*value2;
+
+	if ((value1 = next(this)) == NULL)
+		return (NULL);
+	value2 = next(this);
+	pair = (t_pair *)malloc(sizeof(t_pair));
+	pair->get[0] = value1;
+	pair->get[1] = value2;
+	return (pair);
+}
+
+

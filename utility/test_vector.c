@@ -74,7 +74,7 @@ int *copy_int(int value)
 	return (new_value);
 }
 
-t_command create_command(char *arg1, char *arg2)
+t_cmd create_command(char *arg1, char *arg2)
 {
 	// t_command *cmd;
 
@@ -83,7 +83,7 @@ t_command create_command(char *arg1, char *arg2)
 	// cmd->argv[1] = strdup(arg2);
 	// cmd->redirs = NULL;
 
-	t_command cmd;
+	t_cmd cmd;
 
 	//cmd = (t_command *)malloc(sizeof(t_command));
 	cmd.argv[0] = strdup(arg1);
@@ -96,11 +96,11 @@ t_vector *create_vector() {
 	t_vector *v = new_vector_s(10);
 	int i = 0;
 
-	t_command cmd = create_command("ls", "-la");
+	t_cmd cmd = create_command("ls", "-la");
 	insert(v, &cmd);
-	t_command cmd2 = create_command("grep", "-i");
+	t_cmd cmd2 = create_command("grep", "-i");
 	insert(v, &cmd2);
-	t_command cmd3 = create_command("cat", "-e");
+	t_cmd cmd3 = create_command("cat", "-e");
 	insert(v, &cmd3);
 	return (v);
 }
