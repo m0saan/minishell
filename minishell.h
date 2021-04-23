@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:16:23 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/05 17:50:23 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/23 15:25:25 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ typedef struct	s_cmd
 	char		*argv[256];
 	t_vector	*redirs;
 }				t_cmd;
+
+t_vector	*g_envp;
 
 void ft_exit(char *msg, int code);
 

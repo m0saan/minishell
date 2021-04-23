@@ -5,10 +5,25 @@
 #define IS_MIDDLE 1
 #define IS_FIRSTLAST 3
 
+int	fill_envp(char **envp)
+{
+	int		i;
+
+	i = -1;
+	if (!envp)
+		return (1);
+	g_envp = new_vector();
+	while (envp[++i] != NULL)
+	{
+		g_envp->insert(g_envp, strdup(envp[i]));
+	}
+	return (0);
+}
+
 char *to_string(void *item)
 {
-	t_cmd *it = (t_cmd *)item;
-	return (it->argv[0]);
+	char *it = (char *)item;
+	return (strcat(it, "\n"));
 }
 
 int get_position(t_size size, int index)
@@ -209,6 +224,8 @@ int main(int ac, char **av, char **env)
 	int j = -1;
 	int fd[100][2];
 	pid_t pids[64];
+
+	fill_envp(env);
 
 	t_vector *cmds = fill_commands();
 
