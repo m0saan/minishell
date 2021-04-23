@@ -109,24 +109,14 @@ int main()
 {
 	t_vector *v = new_vector();
 	int i = 0;
-	while (i < 6)
+	while (i < 49)
 	{
 		insert(v, copy_int(i++));
 	}
 
-	t_pair *pair;
-	
-	while ((pair = next_pair(v)) != NULL)
-	{
-		if (pair->get[0])
-			printf("[%d ", *(int *)pair->get[0]);
-		if (pair->get[1])
-			printf("%d]", *(int *)pair->get[1]);
-	}
 	printf("\n");
 
-	//display_vector(v, to_string);
-	
+	display_vector(v, to_string);
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:30:30 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/05 18:05:37 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/23 14:52:33 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ t_vector	*new_vector_s(t_size init_len)
 	new_vector->move_to_first = move_to_first;
 	new_vector->move_to_last = move_to_last;
 	new_vector->display = display_vector;
+	new_vector->data[new_vector->size] = NULL;
 	return (new_vector);
 }
 
@@ -110,10 +111,10 @@ void		insert(t_vector *this, void *item)
 
 	if (this == NULL)
 		ft_exit("Error\nInserting in a NULL Vector!", 1);
-	if (this->size == this->capacity)
+	if (this->size == this->capacity - 1)
 	{
 		i = -1;
-		new_capacity = this->size + this->size / 2;
+		new_capacity = this->capacity + this->capacity / 2;
 		old_data = (void **)malloc(sizeof(void *) * new_capacity);
 		while (++i < this->size)
 			old_data[i] = this->data[i];
@@ -122,6 +123,8 @@ void		insert(t_vector *this, void *item)
 		this->capacity = new_capacity;
 	}
 	this->data[this->size++] = item;
+	this->data[this->size] = NULL;
+	
 }
 
 /*
@@ -147,6 +150,7 @@ void		*remove_at(t_vector *this, t_size pos)
 		i++;
 	}
 	this->size--;
+	this->data[this->size] = NULL;
 	return (item);
 }
 

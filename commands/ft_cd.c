@@ -1,4 +1,4 @@
-#include "ft_minishell.h"
+#include "../minishell.h"
 
 int		ft_cd(int ac, char **av)
 {
