@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 18:05:53 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/05 18:02:40 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/24 15:50:53 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void delete (t_vector *vector);
 void delete_free(t_vector *this);
 void *at(t_vector *vector, t_size pos);
 int contains(t_vector *vector, void *item);
+void sort(t_vector *this, int (*f)(void *, void *));
 int index_of(t_vector *vector, void *item);
 int is_empty(t_vector *vector);
 void swap(t_vector *vector, t_size pos1, t_size pos2);

@@ -227,6 +227,10 @@ int main(int ac, char **av, char **env)
 
 	fill_envp(env);
 
+	display_vector(g_envp, to_string);
+
+	exit(0);
+
 	t_vector *cmds = fill_commands();
 
 	while (++i < cmds->size)

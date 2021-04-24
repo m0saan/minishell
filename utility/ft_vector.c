@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:30:30 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/23 14:52:33 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/24 16:03:14 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -367,6 +367,27 @@ void		*remove_item(t_vector *this, void *item)
 			return (remove_at(this, i));
 	}
 	return (NULL);
+}
+
+void		sort(t_vector *this, int (*f)(void *, void *))
+{
+	int		i;
+	int		j;
+	int		size;
+
+	i = -1;
+	j = -1;
+	size = this->size;
+	while (++i < this->size)
+	{
+		while (++j < size - 1)
+		{
+			if (f(at(this, j), at(this, j + 1)) > 0)
+				swap(this, j, j + 1);
+		}
+		size--;
+		j = -1;
+	}
 }
 
 void		*previous(t_vector *this)
