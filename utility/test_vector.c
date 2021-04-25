@@ -143,10 +143,7 @@ int main()
 	insert(v, "564 _1udhwd jdw");
 	insert(v, "54 1udhwd jdw");
 
-	// sort(v, predicate);
-
-	printf("==> %d \n", v->contains(v, strdup("564 _1udhwd jdw"), eql));
-
+	printf("==> %d \n", v->contains(v, strdup("564 _1udhwd jdw "), eql));
 	// display_vector(v, to_string);
 
 	return (0);

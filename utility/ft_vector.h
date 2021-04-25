@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 18:05:53 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/25 16:07:20 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/25 17:10:05 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,11 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <stdio.h>
+#include "ft_types.h"
 
 #define ERR_MALLOC "Error\nCannot Allocate Memory!"
 
 typedef unsigned long t_size;
-
-typedef enum	e_bool
-{
-	false = 0,
-	true = 1
-}				t_bool;
 
 typedef struct	s_vector
 {

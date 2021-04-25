@@ -7,18 +7,6 @@ int  predicate(void *s1, void *s2)
 	return (strcmp(ss1, ss2));
 }
 
-int index_of(char *str, char c)
-{
-	int		i;
-	if (!str)
-		return (-1);
-	i = -1;
-	while (str[++i])
-	{
-		
-	}
-	
-}
 
 int	list_vars()
 {

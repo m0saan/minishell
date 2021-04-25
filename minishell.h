@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:16:23 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/23 15:25:25 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/25 17:11:01 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@
 #include <string.h>
 #include <fcntl.h>
 #include "utility/ft_vector.h"
+#include "utility/ft_types.h"
+#include "utility/ft_env.h"
 
-typedef char	*t_string;
 typedef enum	e_type
 {
 				left = 0,
@@ -39,6 +40,7 @@ typedef struct	s_cmd
 	char		*argv[256];
 	t_vector	*redirs;
 }				t_cmd;
+
 
 t_vector	*g_envp;
 
