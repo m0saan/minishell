@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:30:30 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/24 16:03:14 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/25 16:06:49 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -232,7 +232,7 @@ void		*first(t_vector *this)
 /*
 ** CONTAINS(ITEM)
 */
-int			contains(t_vector *this, void *item)
+t_bool		contains(t_vector *this, void *item, t_bool (*eql)(void *, void *))
 {
 	int i;
 
@@ -241,7 +241,7 @@ int			contains(t_vector *this, void *item)
 	i = -1;
 	while (++i < this->size)
 	{
-		if (this->data[i] == item)
+		if (eql(this->data[i], item))
 			return (true);
 	}
 	return (false);

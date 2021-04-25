@@ -119,6 +119,13 @@ int  predicate(void *s1, void *s2)
 	return (strcmp(ss1, ss2));
 }
 
+t_bool eql(void *s1, void *s2)
+{
+	const char *ss1 = (const char *)s1;
+	const char *ss2 = (const char *)s2;
+	return (strcmp(ss1, ss2) == 0);
+}
+
 int main()
 {
 	t_vector *v = new_vector();
@@ -136,9 +143,11 @@ int main()
 	insert(v, "564 _1udhwd jdw");
 	insert(v, "54 1udhwd jdw");
 
-	sort(v, predicate);
+	// sort(v, predicate);
 
-	display_vector(v, to_string);
+	printf("==> %d \n", v->contains(v, strdup("564 _1udhwd jdw"), eql));
+
+	// display_vector(v, to_string);
 
 	return (0);
 }
