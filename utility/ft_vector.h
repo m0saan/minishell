@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 18:05:53 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/25 17:10:05 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/25 17:54:11 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 #define ERR_MALLOC "Error\nCannot Allocate Memory!"
 
-typedef unsigned long t_size;
+
 
 typedef struct	s_vector
 {

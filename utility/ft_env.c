@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 17:13:38 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/25 17:49:39 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/25 17:52:18 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,15 @@ t_var	*split_key_value_v(struct s_var *var, char *var_str)
 	return (new_var_v(ft_substr(var_str, 0, index_of_eq),
 			ft_substr(var_str, index_of_eq + 1, strlen(var_str))));
 }
+
+t_bool	equals(void *item1, void *item2)
+{
+	t_var *var1 = (t_var *)item1;
+	t_var *var2 = (t_var *)item2;
+	return (strcmp(var1->key, var2->key) == 0);
+}
+
+
 
 // int main(void)
 // {
