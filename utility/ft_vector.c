@@ -51,6 +51,7 @@ t_vector	*new_vector_s(t_size init_len)
 	new_vector->clear = clear;
 	new_vector->contains = contains;
 	new_vector->index_of = index_of;
+	new_vector->search = search;
 	new_vector->swap = swap;
 	new_vector->move_to_first = move_to_first;
 	new_vector->move_to_last = move_to_last;
@@ -250,7 +251,7 @@ t_bool		contains(t_vector *this, void *item, t_bool (*eql)(void *, void *))
 /*
 ** INDEX_OF(ITEM)
 */
-int			index_of(t_vector *this, void *item)
+int			index_of(t_vector *this, void *item, t_bool (*eql)(void *, void *))
 {
 	int i;
 
@@ -259,10 +260,28 @@ int			index_of(t_vector *this, void *item)
 	i = -1;
 	while (++i < this->size)
 	{
-		if (this->data[i] == item)
+		if (eql(this->data[i], item))
 			return (i);
 	}
 	return (-1);
+}
+
+/*
+** INDEX_OF(ITEM)
+*/
+void		*search(t_vector *this, void *item, t_bool (*eql)(void *, void *))
+{
+	int i;
+
+	if (this == NULL)
+		ft_exit("Error\nNull Vector!", 1);
+	i = -1;
+	while (++i < this->size)
+	{
+		if (eql(this->data[i], item))
+			return (this->data[i]);
+	}
+	return (NULL);
 }
 
 /*

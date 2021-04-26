@@ -21,12 +21,13 @@
 
 typedef struct	s_var
 {
+	char	*raw;
 	char	*key;
 	char	*value;
 }				t_var;
 
 t_var	*new_var();
-t_var	*new_var_v(char *key, char *value);
+t_var	*new_var_v(char *key, char *value, char *raw);
 t_var	*split_key_value(struct s_var *var, char *var_str);
 t_var	*split_key_value_v(char *var_str);
 t_bool	equals(void *item1, void *item2);
