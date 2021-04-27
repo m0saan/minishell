@@ -18,6 +18,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include "ft_types.h"
+#include "ft_vector.h"
 
 typedef struct	s_var
 {
@@ -31,6 +32,9 @@ t_var	*new_var_v(char *key, char *value, char *raw);
 t_var	*split_key_value(struct s_var *var, char *var_str);
 t_var	*split_key_value_v(char *var_str);
 t_bool	equals(void *item1, void *item2);
-
+t_bool	equals_key(void *item1, void *item2);
+int		set_var(t_vector *env, char *var_str);
+char	*get_var(t_vector *env, char *key);
+t_var	*get_var_2(t_vector *env, char *key);
 
 #endif

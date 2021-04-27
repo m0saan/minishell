@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_vector.h"
 #include "ft_env.h"
 
 static char *ft_substr(char *str, int from, int to)
@@ -32,7 +31,7 @@ static char *ft_substr(char *str, int from, int to)
 	return (sub);
 }
 
-static int index_of(char *str, char c)
+static int index_of_c(char *str, char c)
 {
 	int		i;
 	if (!str)
@@ -66,7 +65,7 @@ t_var	*split_key_value(struct s_var *var, char *var_str)
 {
 	int		index_of_eq;
 
-	if ((index_of_eq = index_of(var_str, '=')) == -1)
+	if ((index_of_eq = index_of_c(var_str, '=')) == -1)
 	{
 		var->key = strdup(var_str);
 		var->value = NULL;
@@ -75,6 +74,8 @@ t_var	*split_key_value(struct s_var *var, char *var_str)
 	}
 	var->key = ft_substr(var_str, 0, index_of_eq);
 	var->value = ft_substr(var_str, index_of_eq + 1, strlen(var_str));
+	if (!var->value)
+		var->value = strdup("");
 	var->raw = strdup(var_str);
 	return (var);
 }
@@ -82,11 +83,15 @@ t_var	*split_key_value(struct s_var *var, char *var_str)
 t_var	*split_key_value_v(char *var_str)
 {
 	int		index_of_eq;
-	if ((index_of_eq = index_of(var_str, '=')) == -1)
-		return (new_var_v(strdup(var_str), NULL, var_str));
-	return (new_var_v(ft_substr(var_str, 0, index_of_eq),
-			ft_substr(var_str, index_of_eq + 1, strlen(var_str)),
-			var_str));
+	char	*value;
+
+	if ((index_of_eq = index_of_c(var_str, '=')) == -1)
+		return (new_var_v(strdup(var_str), NULL, strdup(var_str)));
+	value = ft_substr(var_str, index_of_eq + 1, strlen(var_str));
+	if (!value)
+		value = strdup("");
+	return (new_var_v(ft_substr(var_str, 0, index_of_eq), value,
+			strdup(var_str)));
 }
 
 t_bool	equals(void *item1, void *item2)
@@ -99,7 +104,7 @@ t_bool	equals(void *item1, void *item2)
 t_bool	equals_key(void *item1, void *item2)
 {
 	t_var *var1 = (t_var *)item1;
-	char *var2_key = (t_var *)item2;
+	char *var2_key = (char *)item2;
 	return (strcmp(var1->key, var2_key) == 0);
 }
 
@@ -114,7 +119,8 @@ int		set_var(t_vector *env, char *var_str)
 		env->insert(env, var);
 	else if (var->value)
 	{
-		free(existing_var->value);
+		if (existing_var->value != NULL)
+			free(existing_var->value);
 		free(existing_var->key);
 		free(existing_var->raw);
 		existing_var->value = var->value;
@@ -138,6 +144,7 @@ char	*get_var(t_vector *env, char *key)
 	var = env->search(env, key, equals_key);
 	if (!var)
 		return (NULL);
+	
 	return (var->value);
 }
 
@@ -149,12 +156,3 @@ t_var	*get_var_2(t_vector *env, char *key)
 	return (var);
 }
 
-// int main(void)
-// {
-// 	char *str = "ha==kam";
-	
-// 	t_var *var = split_key_value_v(str);
-	
-// 	printf("RAW: |%s|\nKEY: |%s| VALUE: |%s|\n",str, var->key, var->value);
-// 	return (0);
-// }

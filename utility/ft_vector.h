@@ -35,7 +35,7 @@ typedef struct	s_vector
 	void (*clear)(struct s_vector *this);
 	t_bool (*contains)(struct s_vector *this, void *item, t_bool (*eql)(void *, void *));
 	int (*index_of)(struct s_vector *this, void *item, t_bool (*eql)(void *, void *));
-	int (*search)(t_vector *vector, void *item, t_bool (*eql)(void *, void *));
+	void *(*search)(struct s_vector *this, void *item, t_bool (*eql)(void *, void *));
 	void (*swap)(struct s_vector *this, t_size pos1, t_size pos2);
 	void (*move_to_last)(struct s_vector *this, t_size pos);
 	void (*move_to_first)(struct s_vector *this, t_size pos);
@@ -60,7 +60,7 @@ void *at(t_vector *vector, t_size pos);
 t_bool contains(t_vector *this, void *item, t_bool (*eql)(void *, void *));
 void sort(t_vector *this, int (*f)(void *, void *));
 int index_of(t_vector *vector, void *item, t_bool (*eql)(void *, void *));
-int search(t_vector *vector, void *item, t_bool (*eql)(void *, void *));
+void *search(t_vector *vector, void *item, t_bool (*eql)(void *, void *));
 int is_empty(t_vector *vector);
 void swap(t_vector *vector, t_size pos1, t_size pos2);
 void move_to_last(t_vector *vector, t_size pos);
