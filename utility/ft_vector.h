@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 18:05:53 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/25 17:54:11 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/27 17:21:39 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct	s_vector
 	t_bool (*contains)(struct s_vector *this, void *item, t_bool (*eql)(void *, void *));
 	int (*index_of)(struct s_vector *this, void *item, t_bool (*eql)(void *, void *));
 	void *(*search)(struct s_vector *this, void *item, t_bool (*eql)(void *, void *));
+	void (*sort)(struct s_vector *this, int (*f)(void *, void *));
 	void (*swap)(struct s_vector *this, t_size pos1, t_size pos2);
 	void (*move_to_last)(struct s_vector *this, t_size pos);
 	void (*move_to_first)(struct s_vector *this, t_size pos);

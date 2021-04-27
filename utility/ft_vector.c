@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:30:30 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/25 16:06:49 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/27 17:22:02 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ t_vector	*new_vector_s(t_size init_len)
 	new_vector->contains = contains;
 	new_vector->index_of = index_of;
 	new_vector->search = search;
+	new_vector->sort = sort;
 	new_vector->swap = swap;
 	new_vector->move_to_first = move_to_first;
 	new_vector->move_to_last = move_to_last;
