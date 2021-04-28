@@ -160,7 +160,7 @@ int set_var(t_vector *env, char *var_str)
 	existing_var = env->search(env, var->key, equals_key);
 	if (!existing_var)
 		env->insert(env, var);
-	else if (var->value)
+	else if (var->value) 
 		update_var(env, existing_var, var);
 	else
 	{
@@ -182,10 +182,10 @@ char *get_var(t_vector *env, char *key)
 	return (var->value);
 }
 
-t_var *get_var_2(t_vector *env, char *key)
-{
-	t_var *var;
+// t_var *get_var_2(t_vector *env, char *key)
+// {
+// 	t_var *var;
+// 	var = env->search(env, key, equals_key);
+// 	return (var);
+// }
 
-	var = env->search(env, key, equals_key);
-	return (var);
-}

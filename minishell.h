@@ -20,6 +20,7 @@
 #include <errno.h>
 #include <string.h>
 #include <fcntl.h>
+#include <wait.h>
 #include "utility/ft_vector.h"
 #include "utility/ft_types.h"
 #include "utility/ft_env.h"
@@ -40,7 +41,6 @@ typedef struct	s_cmd
 	char		*argv[256];
 	t_vector	*redirs;
 }				t_cmd;
-
 
 t_vector	*g_envp;
 
