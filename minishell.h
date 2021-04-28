@@ -11,19 +11,19 @@
 /* ************************************************************************** */
 
 #ifndef MINISHELL_H
-#define MINISHELL_H
+# define MINISHELL_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <errno.h>
-#include <string.h>
-#include <fcntl.h>
-#include <wait.h>
-#include "utility/ft_vector.h"
-#include "utility/ft_types.h"
-#include "utility/ft_env.h"
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <string.h>
+# include <errno.h>
+# include <string.h>
+# include <fcntl.h>
+# include <wait.h>
+# include "utility/ft_vector.h"
+# include "utility/ft_types.h"
+# include "utility/ft_env.h"
 
 typedef enum	e_type
 {
