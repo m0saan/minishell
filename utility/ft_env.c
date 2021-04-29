@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 17:13:38 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/27 16:52:09 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/29 17:26:21 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,20 @@ t_var *new_var_v(char *key, char *value, char *raw)
 	var->key = key;
 	var->value = value;
 	var->raw = raw;
+	return (var);
+}
+
+t_var *new_var_kv(char *key, char *value)
+{
+	t_var	*var;
+
+	var = (t_var *)malloc(sizeof(t_var));
+	var->raw = (char *)malloc((strlen(key) + strlen(value) + 2) * sizeof(char));
+	var->key = key;
+	var->value = value;
+	strcat(var->raw, key);
+	strcat(var->raw, "=");
+	strcat(var->raw, value);
 	return (var);
 }
 
@@ -147,6 +161,36 @@ int set_var(t_vector *env, char *var_str)
 	t_var *existing_var;
 
 	var = split_key_value_v(var_str);
+	if (!check_key(var))
+	{
+		// Replace with EXIT
+		write(2, "Error: Key Name is not Valid!", 30);
+		free(var->key);
+		free(var->raw);
+		if (var->value)
+			free(var->value);
+		return (1);
+	}
+	existing_var = env->search(env, var->key, equals_key);
+	if (!existing_var)
+		env->insert(env, var);
+	else if (var->value) 
+		update_var(env, existing_var, var);
+	else
+	{
+		free(var->key);
+		free(var->raw);
+		free(var);
+	}
+	return (0);
+}
+
+int set_var2(t_vector *env, char *key, char *value)
+{
+	t_var *var;
+	t_var *existing_var;
+
+	var = new_var_kv(key, value);
 	if (!check_key(var))
 	{
 		// Replace with EXIT

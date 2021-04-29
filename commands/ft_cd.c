@@ -2,20 +2,19 @@
 
 int		ft_cd(int ac, char **av)
 {
-	if (ac == 2)
-	{
-		int ret = chdir(av[1]);
-		char buff[2000];
-		getcwd(buff, 2000);
-		// printf("$>%s\n", buff);
-		if (ret == -1)
+	int		ret;
+
+	if (ac == 1)
+		ret = chdir(get_var(g_envp, "HOME"));
+	else if (ac >= 2)
+		ret = chdir(av[1]);
+	if (ret == -1)
 		{
-			printf("ERRNO: %d\n", errno);
-			// printf("ERROR: |%s|\n", strerror(errno));
 			char *err = strerror(errno);
 			write(1, err, strlen(err));
 			write(1, "\n", 1);
 		}
-	}
-	return (0);
+	set_var2(g_envp, "PWD", getenv("PWD"));
+	set_var2(g_envp, "OLDPWD", getenv("OLDPWD"));
+	return (ret);
 }

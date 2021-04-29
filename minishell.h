@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:16:23 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/25 17:11:01 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/04/29 15:20:02 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <errno.h>
 # include <string.h>
 # include <fcntl.h>
-# include <wait.h>
 # include "utility/ft_vector.h"
 # include "utility/ft_types.h"
 # include "utility/ft_env.h"

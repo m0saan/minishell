@@ -74,6 +74,7 @@ int		list_vars()
 	sort(g_envp, predicate);
 	while (++i < g_envp->size)
 		print_var((t_var *)g_envp->at(g_envp, i));
+	return (0);
 }
 
 int		add_vars(int ac, char **av)
@@ -83,6 +84,7 @@ int		add_vars(int ac, char **av)
 	i = 0;
 	while (++i < ac)
 		set_var(g_envp, av[i]);
+	list_vars();
 	return (0);
 }
 
@@ -106,9 +108,23 @@ int		main(int ac, char **av, char **env)
 		list_vars();
 	else if (ac > 1) {
 		add_vars(ac, av);
-		list_vars();
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
