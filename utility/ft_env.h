@@ -35,8 +35,10 @@ t_var	*split_key_value_v(char *var_str);
 t_bool	equals(void *item1, void *item2);
 t_bool	equals_key(void *item1, void *item2);
 t_bool	check_key(t_var *var);
+t_bool	check_key2(char *key);
 int		set_var(t_vector *env, char *var_str);
 int		set_var2(t_vector *env, char *key, char *value);
+int		unset_var(t_vector *env, char *key);
 char	*get_var(t_vector *env, char *key);
 t_var	*get_var_2(t_vector *env, char *key);
 

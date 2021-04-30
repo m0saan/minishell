@@ -142,6 +142,26 @@ t_bool check_key(t_var *var)
 	return (true);
 }
 
+t_bool check_key2(char *key)
+{
+	int i;
+	char c;
+
+	if (!key)
+		return (false);
+	i = 0;
+	c = key[i];
+	if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c == '_')))
+		return (false);
+	while (key[++i])
+	{
+		c = key[i];
+		if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9') || (c == '_')))
+			return (false);
+	}
+	return (true);
+}
+
 int update_var(t_vector *env, t_var *existing_var, t_var *new_var)
 {
 	if (existing_var->value != NULL)
@@ -212,6 +232,30 @@ int set_var2(t_vector *env, char *key, char *value)
 		free(var->raw);
 		free(var);
 	}
+	return (0);
+}
+
+int unset_var(t_vector *env, char *key)
+{
+	int		index;
+	t_var	*deleted_var;
+
+	if (!key)
+		return (1);
+	if (!check_key2(key))
+	{
+		write(1, "ERROR\n", 6);
+		return (1);
+	}
+	index = env->index_of(env, key, equals_key);
+	if (index == -1)
+		return (0);
+	deleted_var = (t_var *)env->remove_at(env, index);
+	free(deleted_var->key);
+	free(deleted_var->raw);
+	if (deleted_var->value)
+		free(deleted_var->value);
+	free(deleted_var);
 	return (0);
 }
 

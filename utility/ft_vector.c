@@ -372,23 +372,8 @@ void		display_vector(t_vector *this, char *(*to_string)(void *item))
 }
 
 /*
-** CONDIDATES FOR DELETE
+** SORT(HOW)
 */
-void		*remove_item(t_vector *this, void *item)
-{
-	int i;
-
-	if (this == NULL)
-		ft_exit("Error\nNull Vector!", 1);
-	i = -1;
-	while (++i < this->size)
-	{
-		if (this->data[i] == item)
-			return (remove_at(this, i));
-	}
-	return (NULL);
-}
-
 void		sort(t_vector *this, int (*f)(void *, void *))
 {
 	int		i;
@@ -409,6 +394,26 @@ void		sort(t_vector *this, int (*f)(void *, void *))
 		j = -1;
 	}
 }
+
+
+/*
+** CONDIDATES FOR DELETE
+*/
+void		*remove_item(t_vector *this, void *item)
+{
+	int i;
+
+	if (this == NULL)
+		ft_exit("Error\nNull Vector!", 1);
+	i = -1;
+	while (++i < this->size)
+	{
+		if (this->data[i] == item)
+			return (remove_at(this, i));
+	}
+	return (NULL);
+}
+
 
 void		*previous(t_vector *this)
 {
