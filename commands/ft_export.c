@@ -7,40 +7,6 @@ int		predicate(void *s1, void *s2)
 	return (strcmp(ss1->key, ss2->key));
 }
 
-// char	*create_displayable_var(t_var *var)
-// {
-// 	char *output;
-// 	const char *prefix = "declare -x ";
-// 	output = (char *)malloc((strlen(var->raw) + strlen(prefix) + 10) * sizeof(char));
-// 	strcat(output, prefix);
-// 	strcat(output, var->key);
-// 	if (var->value)
-// 	{
-// 		strcat(output, "=");
-// 		strcat(output, "\"");
-// 		strcat(output, var->value);
-// 		strcat(output, "\"");
-// 	}
-// 	return (output);
-// }
-
-// int		print_var(t_var *var)
-// {
-// 	int		i;
-// 	i = -1;
-// 	const char *out = create_displayable_var(var);
-// 	write(1, "<", 1);
-// 	while (out[++i])
-// 	{
-// 		if (out[i] == '$')
-// 			write(1, "\\", 1);
-// 		write(1, &out[i], 1);
-// 	}
-// 	write(1, ">", 1);
-// 	write(1, "\n", 1);
-// 	return (0);
-// }
-
 int		print_var(t_var *var)
 {
 	int		i;

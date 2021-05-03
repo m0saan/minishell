@@ -6,13 +6,13 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 17:13:38 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/29 17:26:21 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/03 11:36:48 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_env.h"
 
-static char *ft_substr(char *str, int from, int to)
+char *ft_substr(char *str, int from, int to)
 {
 	int i;
 	int len;
@@ -31,7 +31,7 @@ static char *ft_substr(char *str, int from, int to)
 	return (sub);
 }
 
-static int index_of_c(char *str, char c)
+int index_of_c(char *str, char c)
 {
 	int i;
 	if (!str)
@@ -269,11 +269,4 @@ char *get_var(t_vector *env, char *key)
 
 	return (var->value);
 }
-
-// t_var *get_var_2(t_vector *env, char *key)
-// {
-// 	t_var *var;
-// 	var = env->search(env, key, equals_key);
-// 	return (var);
-// }
 
