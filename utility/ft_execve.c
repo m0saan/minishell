@@ -88,8 +88,8 @@ int		ft_exec_builtin(char *cmd, int ac, char **av)
 int main()
 {
 	char *pp = "/Users/ehakam/.brew/bin:/Users/ehakam/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Users/ehakam/.brew/bin:/goinfre/ehakam/Android/flutter_sdk/flutter/bin:/goinfre/ehakam/Android/flutter_sdk/flutter/bin";
-	char *pp2 = "DODO";
-	t_vector *p = get_paths(pp, "ls");
+	char *pp2 = "DODO/////";
+	t_vector *p = get_paths(pp2, "cat");
 
 	p->display(p, to_str);
 	return (0);
