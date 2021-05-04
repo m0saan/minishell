@@ -75,7 +75,8 @@ t_vector *get_paths(char *path_str, char *cmd)
 
 int		ft_exec_builtin(char *cmd, int ac, char **av)
 {
-	if (strcmp(cmd, "cd") == 0);
+	if (strcmp(cmd, "cd") == 0)
+		
 	else if (strcmp(cmd, "echo") == 0);
 	else if (strcmp(cmd, "export") == 0);
 	else if (strcmp(cmd, "env") == 0);

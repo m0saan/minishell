@@ -1,6 +1,6 @@
-#include "../minishell.h"
+#include "ft_buildin.h"
 
-int		main(int ac, char **av)
+int		ft_echo(int ac, char **av)
 {
 	int		i;
 	int		j;

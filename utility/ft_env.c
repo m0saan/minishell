@@ -12,6 +12,13 @@
 
 #include "ft_env.h"
 
+int		predicate(void *s1, void *s2)
+{
+	const t_var *ss1 = (const t_var *)s1;
+	const t_var *ss2 = (const t_var *)s2;
+	return (strcmp(ss1->key, ss2->key));
+}
+
 char *ft_substr(char *str, int from, int to)
 {
 	int i;
@@ -268,5 +275,22 @@ char *get_var(t_vector *env, char *key)
 		return (NULL);
 
 	return (var->value);
+}
+
+int		list_vars(t_vector *env, t_bool sort_, int(*print)(t_var*))
+{
+	t_vector *temp_env;
+	char *var_name;
+	char *var_value;
+	int  i;
+
+	i = -1;
+	temp_env = new_vector_from(env);
+	if (sort_)
+		sort(temp_env, predicate);
+	while (++i < temp_env->size)
+		print((t_var *)temp_env->at(env, i));
+	delete(temp_env);
+	return (0);
 }
 

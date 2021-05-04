@@ -1,11 +1,5 @@
-#include "../minishell.h"
+#include "ft_buildin.h"
 
-int		predicate(void *s1, void *s2)
-{
-	const t_var *ss1 = (const t_var *)s1;
-	const t_var *ss2 = (const t_var *)s2;
-	return (strcmp(ss1->key, ss2->key));
-}
 
 int		print_var(t_var *var)
 {
@@ -30,19 +24,6 @@ int		print_var(t_var *var)
 	return (0);
 }
 
-int		list_vars()
-{
-	char *var_name;
-	char *var_value;
-	int  i;
-
-	i = -1;
-	sort(g_envp, predicate);
-	while (++i < g_envp->size)
-		print_var((t_var *)g_envp->at(g_envp, i));
-	return (0);
-}
-
 int		add_vars(int ac, char **av)
 {
 	int		i;
@@ -50,7 +31,6 @@ int		add_vars(int ac, char **av)
 	i = 0;
 	while (++i < ac)
 		set_var(g_envp, av[i]);
-	list_vars();
 	return (0);
 }
 
@@ -67,30 +47,30 @@ int		fill_envp(char **envp)
 	return (0);
 }
 
-int		main(int ac, char **av, char **env)
+char	**extract_envp(t_vector *env)
 {
-	fill_envp(env);
+	int			i;
+	char		**envp;
+	t_vector	*extracted_v;
+
+	i = -1;
+	extracted_v = new_vector_s(env->size + 1);
+	while (++i < env->size)
+		extracted_v->insert(extracted_v, ((t_var *)env->at(env, i))->raw);
+	envp = extracted_v->data;
+	free(extracted_v);
+	return (envp);
+}
+
+int		ft_export(int ac, char **av)
+{
 	if (ac == 1)
-		list_vars();
-	else if (ac > 1) {
+		list_vars(g_envp, true, print_var);
+	else if (ac > 1)
+	{
 		add_vars(ac, av);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

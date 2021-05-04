@@ -41,6 +41,7 @@ int		set_var2(t_vector *env, char *key, char *value);
 int		unset_var(t_vector *env, char *key);
 char	*get_var(t_vector *env, char *key);
 t_var	*get_var_2(t_vector *env, char *key);
+int		list_vars(t_vector *env, t_bool sort_, int(*print)(t_var*));
 
 char *ft_substr(char *str, int from, int to);
 
