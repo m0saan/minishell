@@ -1,6 +1,5 @@
 #include "ft_buildin.h"
 
-
 int		print_var(t_var *var)
 {
 	int		i;
@@ -47,20 +46,19 @@ int		fill_envp(char **envp)
 	return (0);
 }
 
-char	**extract_envp(t_vector *env)
-{
-	int			i;
-	char		**envp;
-	t_vector	*extracted_v;
-
-	i = -1;
-	extracted_v = new_vector_s(env->size + 1);
-	while (++i < env->size)
-		extracted_v->insert(extracted_v, ((t_var *)env->at(env, i))->raw);
-	envp = extracted_v->data;
-	free(extracted_v);
-	return (envp);
-}
+// char	**extract_envp(t_vector *env)
+// {
+// 	int			i;
+// 	char		**envp;
+// 	t_vector	*extracted_v;
+// 	i = -1;
+// 	extracted_v = new_vector_s(env->size + 1);
+// 	while (++i < env->size)
+// 		extracted_v->insert(extracted_v, ((t_var *)env->at(env, i))->raw);
+// 	envp = extracted_v->data;
+// 	free(extracted_v);
+// 	return (envp);
+// }
 
 int		ft_export(int ac, char **av)
 {
@@ -70,6 +68,7 @@ int		ft_export(int ac, char **av)
 	{
 		add_vars(ac, av);
 	}
+	return 0;
 }
 
 

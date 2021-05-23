@@ -6,14 +6,14 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 11:14:12 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/23 19:38:26 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/23 21:26:06 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 #include "../commands/ft_buildin.h"
 
-char *to_str(void *item)
+char	*to_str(void *item)
 {
 	printf("\n");
 	return ((char *)item);
@@ -48,7 +48,7 @@ char	*append_cmd_to_path(char *path, char *cmd)
 	return (out);
 }
 
-t_vector *get_paths(char *path_str, char *cmd)
+t_vector*get_paths(char *path_str, char *cmd)
 {
 	t_vector *pv;
 	char *path;
@@ -141,32 +141,39 @@ int		exec_cmd(t_cmd *cmd) {
 int		fill_envp2(char **envp)
 {
 	int		i;
+	int		shlvlv;
+	t_var	*shlvl_var;
 
 	i = -1;
 	if (!envp)
 		return (1);
 	g_envp = new_vector();
 	while (envp[++i] != NULL)
-	{
 		g_envp->insert(g_envp, split_key_value_v(envp[i]));
+	shlvl_var = get_var_2(g_envp, "SHLVL");
+	if (shlvl_var != NULL && shlvl_var->value != NULL) {
+		shlvlv = atoi(shlvl_var->value);
+		shlvlv++;
+		// covert back to string and insert in shlvl_var
 	}
 	return (0);
 }
 
-t_cmd *create_cmd(char *arg1, char *arg2, int count)
+t_cmd	*create_cmd(char *arg1, char *arg2, char *arg3, int count)
 {
 	t_cmd *cmd;
 
 	cmd = (t_cmd *)malloc(sizeof(t_cmd));
 	cmd->argv[0] = arg1;
 	cmd->argv[1] = arg2;
-	cmd->argv[2] = NULL;
+	cmd->argv[2] = arg3;
+	cmd->argv[3] = NULL;
 	cmd->count = count;
 	cmd->redirs = new_vector();
 	return (cmd);
 }
 
-char *to_string(void *item)
+char	*to_string(void *item)
 {
 	t_var *var = (t_var *)item;
 	char *str = malloc(200 * sizeof(char));
@@ -180,13 +187,13 @@ char *to_string(void *item)
 	return (str);
 }
 
-int main(int ac, char **av, char **env)
+int		main(int ac, char **av, char **env)
 {
 	fill_envp2(env);
 
 	pid_t pid = fork();
 
-	t_cmd *cmd = create_cmd("echo", "hakam", 2);
+	t_cmd *cmd = create_cmd("export", NULL, NULL, 1);
 
 	if (pid == 0) {
 		exec_cmd(cmd);

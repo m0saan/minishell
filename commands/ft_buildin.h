@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_buildin.h                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/23 20:23:55 by ehakam            #+#    #+#             */
+/*   Updated: 2021/05/23 20:25:08 by ehakam           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_BUILTIN_H
 # define FT_BUILTIN_H
 
-# include "../minishell.h"
+#include "../minishell.h"
 
 int		ft_cd(int ac, char **av);
 int		ft_echo(int ac, char **av);

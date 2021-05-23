@@ -1,6 +1,6 @@
 #include "ft_buildin.h"
 
-int		print_var(t_var *var)
+int		print_var2(t_var *var)
 {
 	if (var->value)
 	{
@@ -19,6 +19,6 @@ int		print_var(t_var *var)
 
 int		ft_env(int ac, char **av)
 {
-	list_vars(g_envp, false, print_var);
+	list_vars(g_envp, false, print_var2);
 	return (0);
 }
