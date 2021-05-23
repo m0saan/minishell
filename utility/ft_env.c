@@ -6,11 +6,31 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 17:13:38 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/03 11:36:48 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/23 16:28:39 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_env.h"
+
+char	**extract_envp(t_vector *g_env)
+{
+	char	**envp;
+	t_var	*var;
+	int		i;
+	int		j;
+
+	i = -1;
+	j = 0;
+	envp = (char **)malloc((g_env->size + 1) * sizeof(char *));
+	while (++i < g_env->size)
+	{
+		var = (t_var *)g_env->at(g_env, i);
+		if (var->value != NULL)
+			envp[j++] = var->raw;
+	}
+	envp[j] = NULL;
+	return (envp);
+}
 
 int		predicate(void *s1, void *s2)
 {
@@ -277,7 +297,7 @@ char *get_var(t_vector *env, char *key)
 	return (var->value);
 }
 
-int		list_vars(t_vector *env, t_bool sort_, int(*print)(t_var*))
+int list_vars(t_vector *env, t_bool sort_, int(*print)(t_var*))
 {
 	t_vector *temp_env;
 	char *var_name;

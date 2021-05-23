@@ -173,6 +173,7 @@ t_cmd *create_cmd(char *arg1, char *arg2, char *arg3, char *arg4, char *arg5)
 	cmd->argv[3] = arg4;
 	cmd->argv[4] = arg5;
 	cmd->argv[5] = NULL;
+	cmd->count = 5;
 	cmd->redirs = new_vector();
 	return (cmd);
 }

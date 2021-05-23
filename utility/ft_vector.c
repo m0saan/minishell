@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:30:30 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/27 17:22:02 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/23 16:12:37 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -395,7 +395,6 @@ void		sort(t_vector *this, int (*f)(void *, void *))
 	}
 }
 
-
 /*
 ** CONDIDATES FOR DELETE
 */
@@ -413,7 +412,6 @@ void		*remove_item(t_vector *this, void *item)
 	}
 	return (NULL);
 }
-
 
 void		*previous(t_vector *this)
 {
