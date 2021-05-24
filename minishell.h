@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:16:23 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/23 16:34:50 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/24 15:40:04 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,7 @@ typedef struct	s_cmd
 t_vector	*g_envp;
 
 void ft_exit(char *msg, int code);
+int		exec_cmd(t_cmd *cmd);
+t_bool	is_builtin(char *cmd);
 
 #endif

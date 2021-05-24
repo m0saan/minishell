@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 11:14:12 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/23 21:26:06 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/24 15:43:24 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,83 +123,61 @@ int		exec_cmd(t_cmd *cmd) {
 
 	if (is_builtin(cmd->argv[0]))
 	{
-		ft_exec_builtin(cmd, env);
+		return (ft_exec_builtin(cmd, env));
 	}
 	else if (is_path(cmd->argv[0]))
 	{
-		dprintf(2, "INFO: Exec Path '%s'\n", cmd->argv[0]);
-		execve(cmd->argv[0], cmd->argv, env);
-		dprintf(2, "ERROR: Cmd '%s' Doesn't exist!\n", cmd->argv[0]);
+		return (execve(cmd->argv[0], cmd->argv, env));
 	}
 	else
 	{
-		ft_find_and_exec(cmd, env);
+		return (ft_find_and_exec(cmd, env));
 	}
-	return (0);
 }
 
-int		fill_envp2(char **envp)
-{
-	int		i;
-	int		shlvlv;
-	t_var	*shlvl_var;
+// int		fill_envp2(char **envp)
+// {
+// 	int		i;
+// 	int		shlvlv;
+// 	t_var	*shlvl_var;
+// 	i = -1;
+// 	if (!envp)
+// 		return (1);
+// 	g_envp = new_vector();
+// 	while (envp[++i] != NULL)
+// 		g_envp->insert(g_envp, split_key_value_v(envp[i]));
+// 	shlvl_var = get_var_2(g_envp, "SHLVL");
+// 	if (shlvl_var != NULL && shlvl_var->value != NULL) {
+// 		shlvlv = atoi(shlvl_var->value);
+// 		shlvlv++;
+// 		// covert back to string and insert in shlvl_var
+// 	}
+// 	return (0);
+// }
 
-	i = -1;
-	if (!envp)
-		return (1);
-	g_envp = new_vector();
-	while (envp[++i] != NULL)
-		g_envp->insert(g_envp, split_key_value_v(envp[i]));
-	shlvl_var = get_var_2(g_envp, "SHLVL");
-	if (shlvl_var != NULL && shlvl_var->value != NULL) {
-		shlvlv = atoi(shlvl_var->value);
-		shlvlv++;
-		// covert back to string and insert in shlvl_var
-	}
-	return (0);
-}
+// t_cmd	*create_cmd(char *arg1, char *arg2, char *arg3, int count)
+// {
+// 	t_cmd *cmd;
+// 	cmd = (t_cmd *)malloc(sizeof(t_cmd));
+// 	cmd->argv[0] = arg1;
+// 	cmd->argv[1] = arg2;
+// 	cmd->argv[2] = arg3;
+// 	cmd->argv[3] = NULL;
+// 	cmd->count = count;
+// 	cmd->redirs = new_vector();
+// 	return (cmd);
+// }
 
-t_cmd	*create_cmd(char *arg1, char *arg2, char *arg3, int count)
-{
-	t_cmd *cmd;
+// char	*to_string(void *item)
+// {
+// 	t_var *var = (t_var *)item;
+// 	char *str = malloc(200 * sizeof(char));
+// 	strcat(str, "\n");
+// 	strcat(str, "KEY: ");
+// 	strcat(str, var->key);
+// 	strcat(str, " ##\t\t\t\t\t VALUE: ");
+// 	strcat(str, var->value != NULL ? var->value : "<NULL>");
+// 	// char *str3 = strdup(var->value != NULL ? var->value : "none");
+// 	return (str);
+// }
 
-	cmd = (t_cmd *)malloc(sizeof(t_cmd));
-	cmd->argv[0] = arg1;
-	cmd->argv[1] = arg2;
-	cmd->argv[2] = arg3;
-	cmd->argv[3] = NULL;
-	cmd->count = count;
-	cmd->redirs = new_vector();
-	return (cmd);
-}
-
-char	*to_string(void *item)
-{
-	t_var *var = (t_var *)item;
-	char *str = malloc(200 * sizeof(char));
-	
-	strcat(str, "\n");
-	strcat(str, "KEY: ");
-	strcat(str, var->key);
-	strcat(str, " ##\t\t\t\t\t VALUE: ");
-	strcat(str, var->value != NULL ? var->value : "<NULL>");
-	// char *str3 = strdup(var->value != NULL ? var->value : "none");
-	return (str);
-}
-
-int		main(int ac, char **av, char **env)
-{
-	fill_envp2(env);
-
-	pid_t pid = fork();
-
-	t_cmd *cmd = create_cmd("export", NULL, NULL, 1);
-
-	if (pid == 0) {
-		exec_cmd(cmd);
-	}
-
-	wait(&pid);
-	
-	return (0);
-}

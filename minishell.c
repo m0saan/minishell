@@ -37,42 +37,48 @@ int get_position(t_size size, int index)
 	return (IS_MIDDLE);
 }
 
-void setup_redirection(t_type type, char *arg)
+void setup_redirection(t_type type, char *arg, int *sout, int *sin)
 {
 	int flags;
 	int fd;
 
 	if (type == right)
-	{
-		fd = open(arg, O_CREAT | O_TRUNC | O_WRONLY, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-		dprintf(2, "OPEN: FNAME(%s) AS [WRITE] FD(%d)\n", arg, fd);
-	}
+		fd = open(arg, O_CREAT | O_TRUNC | O_WRONLY,
+				S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 	else if (type == right_append)
-	{
-		fd = open(arg, O_CREAT | O_APPEND | O_RDWR, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-		dprintf(2, "OPEN: FNAME(%s) AS [WRITE/APPEND] FD(%d)\n", arg, fd);
-	}
+		fd = open(arg, O_CREAT | O_APPEND | O_RDWR,
+				S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 	else if (type == left)
-	{
 		fd = open(arg, O_RDONLY);
-		dprintf(2, "OPEN: FNAME(%s) AS [READ] FD(%d)\n", arg, fd);
-	}
 	if (fd < 0)
-	{
-		perror(arg);
 		exit(1);
-	}
 	if (type == right || type == right_append)
+	{
+		*sout = dup(1);
 		dup2(fd, 1);
+	}
 	else if (type == left)
+	{
+		*sin = dup(0);
 		dup2(fd, 0);
+	}
 }
 
-void close_redirs()
+void restore_redirs(int sout, int sin)
 {
+	if (sout != -1)
+	{
+		dup2(sout, 1);
+		close(sout);
+	}
+	if (sin != -1)
+	{
+		dup2(sin, 0);
+		close(sin);
+	}
 }
 
-void setup_all_redirs(t_vector *redirs)
+void setup_all_redirs(t_vector *redirs, int *sout, int *sin)
 {
 	int i;
 	t_redir *redir;
@@ -80,8 +86,9 @@ void setup_all_redirs(t_vector *redirs)
 	i = -1;
 	while (++i < redirs->size)
 	{
+		restore_redirs(*sout, *sin);
 		redir = (t_redir *)redirs->at(redirs, i);
-		setup_redirection(redir->type, redir->arg);
+		setup_redirection(redir->type, redir->arg, sout, sin);
 		free(redir->arg);
 	}
 }
@@ -130,10 +137,28 @@ void close_pipes(int fd[][2], int pos, int index)
 		close(fd[index - 1][0]);
 }
 
-pid_t run_command(t_cmd *cmd, int fd[][2], t_size size, int index)
+pid_t run_cmd_parent(t_cmd *cmd, int fd[][2])
+{
+	pid_t pid;
+	int	sout;
+	int sin;
+
+	sout = -1;
+	sin = -1;
+	if (cmd->redirs != NULL && !is_empty(cmd->redirs))
+		setup_all_redirs(cmd->redirs, &sout, &sin);
+	exec_cmd(cmd);
+	// Set $? Accordingly
+	restore_redirs(sout, sin);
+	return pid;
+}
+
+pid_t run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
 {
 	pid_t pid;
 	int pos;
+	int sout;
+	int sin;
 
 	if ((pid = fork()) < 0)
 		ft_exit("Error\nFORK FAILED!", -1);
@@ -142,13 +167,43 @@ pid_t run_command(t_cmd *cmd, int fd[][2], t_size size, int index)
 	{
 		setup_pipes(fd, pos, index);
 		if (cmd->redirs != NULL && !is_empty(cmd->redirs))
-			setup_all_redirs(cmd->redirs);
-		dprintf(2, "CHILD: EXEC(%s)\n", cmd->argv[0]);
+			setup_all_redirs(cmd->redirs, &sout, &sin);
+		// dprintf(2, "CHILD: EXEC(%s)\n", cmd->argv[0]);
 		execvp(cmd->argv[0], cmd->argv);
 		ft_exit("Error\nEXECVE FAILED!", -1);
 	}
 	close_pipes(fd, pos, index);
 	return pid;
+}
+
+void  run_cmds(t_vector *cmds)
+{
+	int i = -1;
+	int fd[100][2];
+	pid_t pids[64];
+	t_cmd	*cmd;
+	t_vector *cmds = fill_commands();
+
+	if (cmds->size == 1)
+	{
+		cmd = (t_cmd *)cmds->at(cmds, i);
+		if (is_builtin(cmd->argv[0]))
+			run_cmd_parent(cmd, fd);
+		else 
+			run_cmd_child(cmd, fd, cmds->size, 0);
+	} else {
+		while (++i < cmds->size)
+		{
+			pipe(fd[i]);
+			printf("PARENT:LOOP INDX: %d\n", i);
+			t_cmd *cmd = (t_cmd *)cmds->at(cmds, i);
+			pids[i] = run_command(cmd, fd, cmds->size, i);
+		}
+	}
+	i = -1;
+	while (++i < cmds->size)
+		if (pids[i] > 0)
+			wait(&pids[i]);
 }
 
 /*
@@ -221,30 +276,11 @@ t_vector *fill_commands()
 
 int main(int ac, char **av, char **env)
 {
-	int i = -1;
-	int j = -1;
-	int fd[100][2];
-	pid_t pids[64];
+
 
 	fill_envp(env);
 
-	display_vector(g_envp, to_string);
 
-	exit(0);
-
-	t_vector *cmds = fill_commands();
-
-	while (++i < cmds->size)
-	{
-		pipe(fd[i]);
-		printf("PARENT:LOOP INDX: %d\n", i);
-		t_cmd *cmd = (t_cmd *)cmds->at(cmds, i);
-		pids[i] = run_command(cmd, fd, cmds->size, i);
-	}
-	i = -1;
-	while (++i < cmds->size)
-		if (pids[i] > 0)
-			wait(&pids[i]);
 
 	return (0);
 }
