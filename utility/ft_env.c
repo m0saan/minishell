@@ -6,13 +6,13 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 17:13:38 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/23 20:34:25 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/24 18:31:46 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_env.h"
 
-char	**extract_envp(t_vector *g_env)
+char **extract_envp(t_vector *g_env)
 {
 	char	**envp;
 	t_var	*var;
@@ -32,7 +32,7 @@ char	**extract_envp(t_vector *g_env)
 	return (envp);
 }
 
-int		predicate(void *s1, void *s2)
+int predicate(void *s1, void *s2)
 {
 	const t_var *ss1 = (const t_var *)s1;
 	const t_var *ss2 = (const t_var *)s2;
@@ -297,9 +297,21 @@ char *get_var(t_vector *env, char *key)
 	return (var->value);
 }
 
+t_var *get_var_2(t_vector *env, char *key)
+{
+	t_var *var;
+
+	var = env->search(env, key, equals_key);
+	if (!var)
+		return (NULL);
+
+	return (var);
+}
+
 int list_vars(t_vector *env, t_bool sort_, int(*print)(t_var*))
 {
 	t_vector *temp_env;
+	t_var	*var;
 	char *var_name;
 	char *var_value;
 	int  i;
@@ -309,7 +321,11 @@ int list_vars(t_vector *env, t_bool sort_, int(*print)(t_var*))
 	if (sort_)
 		sort(temp_env, predicate);
 	while (++i < temp_env->size)
-		print((t_var *)temp_env->at(env, i));
+	{
+		var = (t_var *)temp_env->at(env, i);
+		if (strcmp(var->key, "?") != 0)
+			print(var);
+	}
 	delete(temp_env);
 	return (0);
 }

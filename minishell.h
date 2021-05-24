@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:16:23 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/24 15:40:04 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/24 18:27:20 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@
 # include "utility/ft_vector.h"
 # include "utility/ft_types.h"
 # include "utility/ft_env.h"
+# include "commands/ft_buildin.h"
+
+# define IS_LAST 2
+# define IS_FIRST 0
+# define IS_MIDDLE 1
+# define IS_FIRSTLAST 3
 
 typedef enum	e_type
 {

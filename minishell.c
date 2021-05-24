@@ -1,21 +1,35 @@
-#include "minishell.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minishell.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/24 18:21:54 by ehakam            #+#    #+#             */
+/*   Updated: 2021/05/24 19:01:04 by ehakam           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#define IS_FIRST 0
-#define IS_LAST 2
-#define IS_MIDDLE 1
-#define IS_FIRSTLAST 3
+#include "minishell.h"
 
 int	fill_envp(char **envp)
 {
 	int		i;
+	int		shlvlv;
+	t_var	*shlvl_var;
 
 	i = -1;
 	if (!envp)
 		return (1);
 	g_envp = new_vector();
 	while (envp[++i] != NULL)
-	{
-		g_envp->insert(g_envp, strdup(envp[i]));
+		g_envp->insert(g_envp, split_key_value_v(envp[i]));
+	g_envp->insert(g_envp, new_var_kv("?", "0"));
+	shlvl_var = get_var_2(g_envp, "SHLVL");
+	if (shlvl_var != NULL && shlvl_var->value != NULL) {
+		shlvlv = atoi(shlvl_var->value);
+		shlvlv++;
+		// covert back to string and insert in shlvl_var
 	}
 	return (0);
 }
@@ -99,20 +113,17 @@ void setup_pipes(int fd[][2], int position, int index)
 
 	if (position == IS_FIRST)
 	{
-		dprintf(2, "CHILD: DUP(1) INDEX(%d)\n", index);
 		dup2(fd[index][1], 1);
 		close(fd[index][0]);
 	}
 	else if (position == IS_MIDDLE)
 	{
-		dprintf(2, "CHILD: DUP(ALL) INDEX(%d, %d)\n", prev_idx, index);
 		dup2(fd[prev_idx][0], 0);
 		dup2(fd[index][1], 1);
 		close(fd[prev_idx][1]);
 	}
 	else if (position == IS_LAST)
 	{
-		dprintf(2, "CHILD: DUP(0) INDEX(%d)\n", prev_idx);
 		dup2(fd[prev_idx][0], 0);
 		close(fd[index][1]);
 		close(fd[index][0]);
@@ -137,9 +148,8 @@ void close_pipes(int fd[][2], int pos, int index)
 		close(fd[index - 1][0]);
 }
 
-pid_t run_cmd_parent(t_cmd *cmd, int fd[][2])
+pid_t run_cmd_parent(t_cmd *cmd)
 {
-	pid_t pid;
 	int	sout;
 	int sin;
 
@@ -150,7 +160,7 @@ pid_t run_cmd_parent(t_cmd *cmd, int fd[][2])
 	exec_cmd(cmd);
 	// Set $? Accordingly
 	restore_redirs(sout, sin);
-	return pid;
+	return -1;
 }
 
 pid_t run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
@@ -160,6 +170,8 @@ pid_t run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
 	int sout;
 	int sin;
 
+	sin = -1;
+	sout = -1;
 	if ((pid = fork()) < 0)
 		ft_exit("Error\nFORK FAILED!", -1);
 	pos = get_position(size, index);
@@ -168,9 +180,7 @@ pid_t run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
 		setup_pipes(fd, pos, index);
 		if (cmd->redirs != NULL && !is_empty(cmd->redirs))
 			setup_all_redirs(cmd->redirs, &sout, &sin);
-		// dprintf(2, "CHILD: EXEC(%s)\n", cmd->argv[0]);
-		execvp(cmd->argv[0], cmd->argv);
-		ft_exit("Error\nEXECVE FAILED!", -1);
+		exit(exec_cmd(cmd));
 	}
 	close_pipes(fd, pos, index);
 	return pid;
@@ -178,26 +188,26 @@ pid_t run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
 
 void  run_cmds(t_vector *cmds)
 {
-	int i = -1;
-	int fd[100][2];
-	pid_t pids[64];
+	int i;
+	int fd[1024][2];
+	pid_t pids[1024];
 	t_cmd	*cmd;
-	t_vector *cmds = fill_commands();
 
-	if (cmds->size == 1)
+	i = -1;
+	cmd = (t_cmd *)cmds->at(cmds, 0);
+	if (cmds->size == 1 && is_builtin(cmd->argv[0]))
 	{
-		cmd = (t_cmd *)cmds->at(cmds, i);
-		if (is_builtin(cmd->argv[0]))
-			run_cmd_parent(cmd, fd);
-		else 
-			run_cmd_child(cmd, fd, cmds->size, 0);
-	} else {
+		dprintf(2, "INFO: Exec BuiltIn in Parent\n");
+		pids[0] = run_cmd_parent(cmd);
+	}
+	else
+	{
 		while (++i < cmds->size)
 		{
 			pipe(fd[i]);
-			printf("PARENT:LOOP INDX: %d\n", i);
 			t_cmd *cmd = (t_cmd *)cmds->at(cmds, i);
-			pids[i] = run_command(cmd, fd, cmds->size, i);
+			dprintf(2, "INFO: Exec %s in Child\n", is_builtin(cmd->argv[0]) ? "BuiltIn" : "Cmd");
+			pids[i] = run_cmd_child(cmd, fd, cmds->size, i);
 		}
 	}
 	i = -1;
@@ -217,7 +227,7 @@ t_redir *create_redir(t_type type, char *arg)
 	return (r);
 }
 
-t_cmd *create_cmd(char *arg1, char *arg2, char *arg3, char *arg4, char *arg5)
+t_cmd *create_cmd(char *arg1, char *arg2, char *arg3, char *arg4, char *arg5, int count)
 {
 	t_cmd *cmd;
 
@@ -228,7 +238,7 @@ t_cmd *create_cmd(char *arg1, char *arg2, char *arg3, char *arg4, char *arg5)
 	cmd->argv[3] = arg4;
 	cmd->argv[4] = arg5;
 	cmd->argv[5] = NULL;
-	cmd->count = 5;
+	cmd->count = count;
 	cmd->redirs = new_vector();
 	return (cmd);
 }
@@ -237,19 +247,19 @@ t_vector *fill_commands()
 {
 	t_vector *cmds = new_vector();
 
-	t_cmd *cm1 = create_cmd("echo", "14 + 19", NULL, NULL, NULL);
-	cm1->redirs->insert(cm1->redirs, create_redir(right, "a"));
-	cm1->redirs->insert(cm1->redirs, create_redir(right, "b"));
-	cm1->redirs->insert(cm1->redirs, create_redir(right, "c"));
+	t_cmd *cm1 = create_cmd("/bin/ls", "-la", NULL, NULL, NULL, 2);
+	// cm1->redirs->insert(cm1->redirs, create_redir(right, "file"));
+	// cm1->redirs->insert(cm1->redirs, create_redir(right, "b"));
+	// cm1->redirs->insert(cm1->redirs, create_redir(right, "c"));
 
-	t_cmd *cm2 = create_cmd("bc", NULL, NULL, NULL, NULL);
-	cm2->redirs->insert(cm2->redirs, create_redir(left, "a"));
-	cm2->redirs->insert(cm2->redirs, create_redir(left, "b"));
-	cm2->redirs->insert(cm2->redirs, create_redir(left, "c"));
+	t_cmd *cm2 = create_cmd("wc", "-l", NULL, NULL, NULL, 2);
+	// cm2->redirs->insert(cm2->redirs, create_redir(left, "a"));
+	// cm2->redirs->insert(cm2->redirs, create_redir(left, "b"));
+	// cm2->redirs->insert(cm2->redirs, create_redir(left, "c"));
 	cm2->redirs->insert(cm2->redirs, create_redir(right, "e"));
-	cm2->redirs->insert(cm2->redirs, create_redir(right, "f"));
+	// cm2->redirs->insert(cm2->redirs, create_redir(right, "f"));
 
-	t_cmd *cm3 = create_cmd("cat", "f", NULL, NULL, NULL);
+	// t_cmd *cm3 = create_cmd("cat", "f", NULL, NULL, NULL);
 
 	// t_cmd *cm4 = create_cmd("BC", NULL, NULL, NULL, NULL);
 
@@ -265,7 +275,7 @@ t_vector *fill_commands()
 	///////////
 	cmds->insert(cmds, cm1);
 	cmds->insert(cmds, cm2);
-	cmds->insert(cmds, cm3);
+	// cmds->insert(cmds, cm3);
 	// cmds->insert(cmds, cm4);
 	// cmds->insert(cmds, cm5);
 	// cmds->insert(cmds, cm6);
@@ -276,11 +286,8 @@ t_vector *fill_commands()
 
 int main(int ac, char **av, char **env)
 {
-
-
 	fill_envp(env);
-
-
-
+	t_vector *cmds = fill_commands();
+	run_cmds(cmds);
 	return (0);
 }
