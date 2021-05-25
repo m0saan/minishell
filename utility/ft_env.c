@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 17:13:38 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/25 19:07:34 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/25 21:33:53 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -249,7 +249,7 @@ int set_var2(t_vector *env, char *key, char *value)
 	t_var *var;
 	t_var *existing_var;
 
-	var = new_var_kv(key, value);
+	var = new_var_kv(strdup(key), strdup(value));
 	if (!check_key(var))
 	{
 		// Replace with EXIT

@@ -2,6 +2,9 @@
 
 int		ft_pwd(int ac, char **av)
 {
-	printf("%s\n", get_var(g_envp, "PWD"));
+	char pwd[1025];
+
+	getcwd(pwd, 1024);
+	printf("%s\n", pwd);
 	return (0);
 }

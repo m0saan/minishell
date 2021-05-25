@@ -36,7 +36,7 @@ int		add_vars(int ac, char **av)
 int		ft_export(int ac, char **av)
 {
 	if (ac == 1)
-		list_vars(g_envp, true, print_var);
+		list_vars(g_envp, false, print_var);
 	else if (ac > 1)
 	{
 		add_vars(ac, av);

@@ -31,7 +31,7 @@ t_error *catch_errors(t_parser *p, t_error *error) {
 
 void replace_token(t_parser *p) {
     if (p->cur_token->Type == tilde)
-        p->cur_token->literal = getenv("HOME");
+        p->cur_token->literal = get_var(g_envp,"HOME");
 }
 
 t_node *parse_command(t_node *ast_node, t_parser *p) {

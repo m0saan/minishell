@@ -209,7 +209,7 @@ char *get_env_value(t_lexer *l) {
     ft_bzero(env_name, 100);
     size_t start = get_env_var_last_index(l);
     slice_str(l->input, env_name, start, l->position);
-    char *env_value = getenv(env_name);
+    char *env_value = get_var(g_envp,env_name);
     if (env_value == NULL)
         return NULL;
     return env_value;
@@ -325,7 +325,7 @@ char *handle_env_variables(t_string str) {
             i++;
             size_t end = get_env_var_end(&str[i]) + i;
             slice_str(str, env_name, i, end);
-            char *env_value = getenv(env_name);
+            char *env_value = get_var(g_envp,env_name);
             if (env_value == NULL) {
                 i += (int) ft_strlen(env_name);
                 ft_memset(env_name, 0, 100);

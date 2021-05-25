@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:25:17 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/25 19:01:00 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/25 21:42:54 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,10 +130,6 @@ void setup_pipes(int fd[][2], int position, int index)
 		close(fd[index][0]);
 		close(fd[prev_idx][1]);
 	}
-	else
-	{
-		dprintf(2, "CHILD: DUP(NONE)\n");
-	}
 }
 
 void close_pipes(int fd[][2], int pos, int index)
@@ -198,7 +194,7 @@ void  run_cmds(t_vector *cmds)
 	cmd = (t_cmd *)cmds->at(cmds, 0);
 	if (cmds->size == 1 && is_builtin(cmd->argv[0]))
 	{
-		dprintf(2, "INFO: Exec BuiltIn in Parent\n");
+		dprintf(2, "\033[0;32mINFO: Exec BuiltIn in Parent\033[0m\n");
 		pids[0] = run_cmd_parent(cmd);
 	}
 	else
@@ -207,7 +203,7 @@ void  run_cmds(t_vector *cmds)
 		{
 			pipe(fd[i]);
 			t_cmd *cmd = (t_cmd *)cmds->at(cmds, i);
-			dprintf(2, "INFO: Exec %s in Child\n", is_builtin(cmd->argv[0]) ? "BuiltIn" : "Cmd");
+			dprintf(2, "\033[0;32mINFO: Exec %s in Child\033[0m\n", is_builtin(cmd->argv[0]) ? "BuiltIn" : "Cmd");
 			pids[i] = run_cmd_child(cmd, fd, cmds->size, i);
 		}
 	}
@@ -252,27 +248,20 @@ t_redir *create_redir(t_type type, char *arg)
 // 	// cm1->redirs->insert(cm1->redirs, create_redir(right, "file"));
 // 	// cm1->redirs->insert(cm1->redirs, create_redir(right, "b"));
 // 	// cm1->redirs->insert(cm1->redirs, create_redir(right, "c"));
-
 // 	// t_cmd *cm2 = create_cmd("wc", "-l", NULL, NULL, NULL, 2);
 // 	// cm2->redirs->insert(cm2->redirs, create_redir(left, "a"));
 // 	// cm2->redirs->insert(cm2->redirs, create_redir(left, "b"));
 // 	// cm2->redirs->insert(cm2->redirs, create_redir(left, "c"));
 // 	// cm2->redirs->insert(cm2->redirs, create_redir(right, "e"));
 // 	// cm2->redirs->insert(cm2->redirs, create_redir(right, "f"));
-
 // 	// t_cmd *cm3 = create_cmd("cat", "f", NULL, NULL, NULL);
-
 // 	// t_cmd *cm4 = create_cmd("BC", NULL, NULL, NULL, NULL);
-
 // 	// t_cmd *cm5 = create_cmd("echo", "a", "+", "b", NULL);
-
 // 	// t_cmd *cm6 = create_cmd("cat", NULL, NULL, NULL, NULL);
 // 	// cm6->redirs->insert(cm6->redirs, create_redir(right, "file"));
-
 // 	// t_cmd *cm7 = create_cmd("cat", NULL, NULL, NULL, NULL);
 // 	// cm7->redirs->insert(cm7->redirs, create_redir(left, "file"));
 // 	// cm7->redirs->insert(cm7->redirs, create_redir(right, "file"));
-
 // 	///////////
 // 	cmds->insert(cmds, cm1);
 // 	// cmds->insert(cmds, cm2);
@@ -281,7 +270,6 @@ t_redir *create_redir(t_type type, char *arg)
 // 	// cmds->insert(cmds, cm5);
 // 	// cmds->insert(cmds, cm6);
 // 	// cmds->insert(cmds, cm7);
-
 // 	return (cmds);
 // }
 
