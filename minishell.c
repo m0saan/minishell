@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 18:21:54 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/24 19:01:04 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/25 14:37:35 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -247,7 +247,7 @@ t_vector *fill_commands()
 {
 	t_vector *cmds = new_vector();
 
-	t_cmd *cm1 = create_cmd("/bin/ls", "-la", NULL, NULL, NULL, 2);
+	t_cmd *cm1 = create_cmd("/a.out", NULL, NULL, NULL, NULL, 1);
 	// cm1->redirs->insert(cm1->redirs, create_redir(right, "file"));
 	// cm1->redirs->insert(cm1->redirs, create_redir(right, "b"));
 	// cm1->redirs->insert(cm1->redirs, create_redir(right, "c"));
@@ -256,7 +256,7 @@ t_vector *fill_commands()
 	// cm2->redirs->insert(cm2->redirs, create_redir(left, "a"));
 	// cm2->redirs->insert(cm2->redirs, create_redir(left, "b"));
 	// cm2->redirs->insert(cm2->redirs, create_redir(left, "c"));
-	cm2->redirs->insert(cm2->redirs, create_redir(right, "e"));
+	// cm2->redirs->insert(cm2->redirs, create_redir(right, "e"));
 	// cm2->redirs->insert(cm2->redirs, create_redir(right, "f"));
 
 	// t_cmd *cm3 = create_cmd("cat", "f", NULL, NULL, NULL);
@@ -274,7 +274,7 @@ t_vector *fill_commands()
 
 	///////////
 	cmds->insert(cmds, cm1);
-	cmds->insert(cmds, cm2);
+	// cmds->insert(cmds, cm2);
 	// cmds->insert(cmds, cm3);
 	// cmds->insert(cmds, cm4);
 	// cmds->insert(cmds, cm5);
