@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 16:58:44 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/23 16:28:56 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/25 18:38:49 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ char	*get_var(t_vector *env, char *key);
 t_var	*get_var_2(t_vector *env, char *key);
 int		list_vars(t_vector *env, t_bool sort_, int(*print)(t_var*));
 
-char	*ft_substr(char *str, int from, int to);
+char	*ft_substr2(char *str, int from, int to);
 char	**extract_envp(t_vector *g_env);
 #endif

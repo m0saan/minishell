@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 17:13:38 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/24 18:31:46 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/25 18:38:17 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int predicate(void *s1, void *s2)
 	return (strcmp(ss1->key, ss2->key));
 }
 
-char *ft_substr(char *str, int from, int to)
+char *ft_substr2(char *str, int from, int to)
 {
 	int i;
 	int len;
@@ -113,8 +113,8 @@ t_var *split_key_value(struct s_var *var, char *var_str)
 		var->raw = strdup(var_str);
 		return (var);
 	}
-	var->key = ft_substr(var_str, 0, index_of_eq);
-	var->value = ft_substr(var_str, index_of_eq + 1, strlen(var_str));
+	var->key = ft_substr2(var_str, 0, index_of_eq);
+	var->value = ft_substr2(var_str, index_of_eq + 1, strlen(var_str));
 	if (!var->value)
 		var->value = strdup("");
 	var->raw = strdup(var_str);
@@ -128,10 +128,10 @@ t_var *split_key_value_v(char *var_str)
 
 	if ((index_of_eq = index_of_c(var_str, '=')) == -1)
 		return (new_var_v(strdup(var_str), NULL, strdup(var_str)));
-	value = ft_substr(var_str, index_of_eq + 1, strlen(var_str));
+	value = ft_substr2(var_str, index_of_eq + 1, strlen(var_str));
 	if (!value)
 		value = strdup("");
-	return (new_var_v(ft_substr(var_str, 0, index_of_eq), value,
+	return (new_var_v(ft_substr2(var_str, 0, index_of_eq), value,
 					  strdup(var_str)));
 }
 

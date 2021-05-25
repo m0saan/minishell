@@ -6,288 +6,203 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 18:21:54 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/25 14:37:35 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/25 18:42:25 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	fill_envp(char **envp)
-{
-	int		i;
-	int		shlvlv;
-	t_var	*shlvl_var;
-
-	i = -1;
-	if (!envp)
-		return (1);
-	g_envp = new_vector();
-	while (envp[++i] != NULL)
-		g_envp->insert(g_envp, split_key_value_v(envp[i]));
-	g_envp->insert(g_envp, new_var_kv("?", "0"));
-	shlvl_var = get_var_2(g_envp, "SHLVL");
-	if (shlvl_var != NULL && shlvl_var->value != NULL) {
-		shlvlv = atoi(shlvl_var->value);
-		shlvlv++;
-		// covert back to string and insert in shlvl_var
-	}
-	return (0);
-}
-
-char *to_string(void *item)
-{
-	char *it = (char *)item;
-	return (strcat(it, "\n"));
-}
-
-int get_position(t_size size, int index)
-{
-	if (size == 1)
-		return (IS_FIRSTLAST);
-	if (index == 0)
-		return (IS_FIRST);
-	if (index == size - 1)
-		return (IS_LAST);
-	return (IS_MIDDLE);
-}
-
-void setup_redirection(t_type type, char *arg, int *sout, int *sin)
-{
-	int flags;
-	int fd;
-
-	if (type == right)
-		fd = open(arg, O_CREAT | O_TRUNC | O_WRONLY,
-				S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-	else if (type == right_append)
-		fd = open(arg, O_CREAT | O_APPEND | O_RDWR,
-				S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-	else if (type == left)
-		fd = open(arg, O_RDONLY);
-	if (fd < 0)
-		exit(1);
-	if (type == right || type == right_append)
-	{
-		*sout = dup(1);
-		dup2(fd, 1);
-	}
-	else if (type == left)
-	{
-		*sin = dup(0);
-		dup2(fd, 0);
-	}
-}
-
-void restore_redirs(int sout, int sin)
-{
-	if (sout != -1)
-	{
-		dup2(sout, 1);
-		close(sout);
-	}
-	if (sin != -1)
-	{
-		dup2(sin, 0);
-		close(sin);
-	}
-}
-
-void setup_all_redirs(t_vector *redirs, int *sout, int *sin)
-{
-	int i;
-	t_redir *redir;
-
-	i = -1;
-	while (++i < redirs->size)
-	{
-		restore_redirs(*sout, *sin);
-		redir = (t_redir *)redirs->at(redirs, i);
-		setup_redirection(redir->type, redir->arg, sout, sin);
-		free(redir->arg);
-	}
-}
-
-void setup_pipes(int fd[][2], int position, int index)
-{
-	const int prev_idx = index - 1;
-
-	if (position == IS_FIRST)
-	{
-		dup2(fd[index][1], 1);
-		close(fd[index][0]);
-	}
-	else if (position == IS_MIDDLE)
-	{
-		dup2(fd[prev_idx][0], 0);
-		dup2(fd[index][1], 1);
-		close(fd[prev_idx][1]);
-	}
-	else if (position == IS_LAST)
-	{
-		dup2(fd[prev_idx][0], 0);
-		close(fd[index][1]);
-		close(fd[index][0]);
-		close(fd[prev_idx][1]);
-	}
-	else
-	{
-		dprintf(2, "CHILD: DUP(NONE)\n");
-	}
-}
-
-void close_pipes(int fd[][2], int pos, int index)
-{
-	if (pos == IS_FIRST)
-		close(fd[index][1]);
-	if (pos == IS_MIDDLE)
-	{
-		close(fd[index - 1][0]);
-		close(fd[index][1]);
-	}
-	if (pos == IS_LAST)
-		close(fd[index - 1][0]);
-}
-
-pid_t run_cmd_parent(t_cmd *cmd)
-{
-	int	sout;
-	int sin;
-
-	sout = -1;
-	sin = -1;
-	if (cmd->redirs != NULL && !is_empty(cmd->redirs))
-		setup_all_redirs(cmd->redirs, &sout, &sin);
-	exec_cmd(cmd);
-	// Set $? Accordingly
-	restore_redirs(sout, sin);
-	return -1;
-}
-
-pid_t run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
-{
-	pid_t pid;
-	int pos;
-	int sout;
-	int sin;
-
-	sin = -1;
-	sout = -1;
-	if ((pid = fork()) < 0)
-		ft_exit("Error\nFORK FAILED!", -1);
-	pos = get_position(size, index);
-	if (pid == 0)
-	{
-		setup_pipes(fd, pos, index);
-		if (cmd->redirs != NULL && !is_empty(cmd->redirs))
-			setup_all_redirs(cmd->redirs, &sout, &sin);
-		exit(exec_cmd(cmd));
-	}
-	close_pipes(fd, pos, index);
-	return pid;
-}
-
-void  run_cmds(t_vector *cmds)
-{
-	int i;
-	int fd[1024][2];
-	pid_t pids[1024];
-	t_cmd	*cmd;
-
-	i = -1;
-	cmd = (t_cmd *)cmds->at(cmds, 0);
-	if (cmds->size == 1 && is_builtin(cmd->argv[0]))
-	{
-		dprintf(2, "INFO: Exec BuiltIn in Parent\n");
-		pids[0] = run_cmd_parent(cmd);
-	}
-	else
-	{
-		while (++i < cmds->size)
-		{
-			pipe(fd[i]);
-			t_cmd *cmd = (t_cmd *)cmds->at(cmds, i);
-			dprintf(2, "INFO: Exec %s in Child\n", is_builtin(cmd->argv[0]) ? "BuiltIn" : "Cmd");
-			pids[i] = run_cmd_child(cmd, fd, cmds->size, i);
-		}
-	}
-	i = -1;
-	while (++i < cmds->size)
-		if (pids[i] > 0)
-			wait(&pids[i]);
-}
+const char *prompt = "minishell-0.1$ ";
 
 /*
-** HELPER FUNC
-*/
-t_redir *create_redir(t_type type, char *arg)
-{
-	t_redir *r = malloc(sizeof(t_redir));
-	r->arg = strdup(arg);
-	r->type = type;
-	return (r);
+ * Here the shell runs in a loop,
+ * which we know as the Read-Eval-Print-Loop, or REPL.
+ */
+
+size_t readline(char *line) {
+    size_t n = read(0, line, 1024);
+    line[n - 1] = 0;
+    return n;
 }
 
-t_cmd *create_cmd(char *arg1, char *arg2, char *arg3, char *arg4, char *arg5, int count)
-{
-	t_cmd *cmd;
-
-	cmd = (t_cmd *)malloc(sizeof(t_cmd));
-	cmd->argv[0] = arg1;
-	cmd->argv[1] = arg2;
-	cmd->argv[2] = arg3;
-	cmd->argv[3] = arg4;
-	cmd->argv[4] = arg5;
-	cmd->argv[5] = NULL;
-	cmd->count = count;
-	cmd->redirs = new_vector();
-	return (cmd);
+void str__(t_token *tok) {
+    printf("TokenType: [%s], Literal: [%s]\n", getTypeName(tok->Type), tok->literal);
 }
 
-t_vector *fill_commands()
-{
-	t_vector *cmds = new_vector();
-
-	t_cmd *cm1 = create_cmd("/a.out", NULL, NULL, NULL, NULL, 1);
-	// cm1->redirs->insert(cm1->redirs, create_redir(right, "file"));
-	// cm1->redirs->insert(cm1->redirs, create_redir(right, "b"));
-	// cm1->redirs->insert(cm1->redirs, create_redir(right, "c"));
-
-	t_cmd *cm2 = create_cmd("wc", "-l", NULL, NULL, NULL, 2);
-	// cm2->redirs->insert(cm2->redirs, create_redir(left, "a"));
-	// cm2->redirs->insert(cm2->redirs, create_redir(left, "b"));
-	// cm2->redirs->insert(cm2->redirs, create_redir(left, "c"));
-	// cm2->redirs->insert(cm2->redirs, create_redir(right, "e"));
-	// cm2->redirs->insert(cm2->redirs, create_redir(right, "f"));
-
-	// t_cmd *cm3 = create_cmd("cat", "f", NULL, NULL, NULL);
-
-	// t_cmd *cm4 = create_cmd("BC", NULL, NULL, NULL, NULL);
-
-	// t_cmd *cm5 = create_cmd("echo", "a", "+", "b", NULL);
-
-	// t_cmd *cm6 = create_cmd("cat", NULL, NULL, NULL, NULL);
-	// cm6->redirs->insert(cm6->redirs, create_redir(right, "file"));
-
-	// t_cmd *cm7 = create_cmd("cat", NULL, NULL, NULL, NULL);
-	// cm7->redirs->insert(cm7->redirs, create_redir(left, "file"));
-	// cm7->redirs->insert(cm7->redirs, create_redir(right, "file"));
-
-	///////////
-	cmds->insert(cmds, cm1);
-	// cmds->insert(cmds, cm2);
-	// cmds->insert(cmds, cm3);
-	// cmds->insert(cmds, cm4);
-	// cmds->insert(cmds, cm5);
-	// cmds->insert(cmds, cm6);
-	// cmds->insert(cmds, cm7);
-
-	return (cmds);
+const char *getTypeName(enum e_val_type type) {
+    switch (type) {
+        case left:
+            return "Left Redirection";
+        case right:
+            return "Right Redirection";
+        case right_append:
+            return "Right Append";
+        case _pipe:
+            return "PIPE";
+        case env_var:
+            return "Environment Variable";
+        case none:
+            return "None";
+        case VAL_STR:
+            return "Value String";
+        default:
+            return "No such type";
+    }
 }
+
+char * Print(struct s_cmd *this) {
+
+    if (this == NULL)
+        ft_exit("Error\nNull CMD!", 1);
+
+    //printf("REDIRECT:\n");
+    //for (size_t i = 0; i < this->redirs->size; ++i) {
+    //    t_redir *tRedir = this->redirs->at(this->redirs, i);
+    //    printf("{ type: %s -- arg: %s}\n", getTypeName(tRedir->type), tRedir->arg);
+    //}
+
+    //printf("--------------------------------------------\n");
+    char *line = malloc(1024);
+    bzero(line, 1024);
+    //printf("ARGS:\n");
+    for (int i = 0; this->argv[i] != 0; i++) {
+        strcat(line, this->argv[i]);
+        if (this->argv[i+1] != 0)
+            strcat(line, " ");
+       // printf("ARGS%d |%s|\n", i+1, this->argv[i]);
+    }
+    return line;
+}
+
+t_cmd *create_cmd() {
+    t_cmd *command = malloc(sizeof(t_cmd));
+    ft_memset(command, 0, sizeof(t_cmd));
+    command->redirs = new_vector();
+    return command;
+}
+
+t_vector *fill_out_vector_with_commands(t_node *ast_node) {
+    t_node *child;
+    t_vector *vector = new_vector();
+    t_vector *tmp_vector = NULL;
+    t_cmd *tmp_cmd = NULL;
+
+
+    while (ast_node) {
+        child = ast_node->first_child;
+        tmp_vector = new_vector();
+        tmp_cmd = create_cmd();
+        while (child) {
+            if (child->val_type == right) {
+                struct s_redir *tmp = create_redir(right, child->next_sibling->val.str);
+                child = child->next_sibling;
+                insert(tmp_cmd->redirs, tmp);
+            } else if (child->val_type == left) {
+                insert(tmp_cmd->redirs, create_redir(left, child->next_sibling->val.str));
+                child = child->next_sibling;
+            } else if (child->val_type == right_append) {
+                insert(tmp_cmd->redirs, create_redir(right_append, child->next_sibling->val.str));
+                child = child->next_sibling;
+            } else if (child->val.str[0] == '$' && child->val_type == env_var) {
+                if (child->val.str != NULL) {
+                    char *tmp =  handle_env_variables(child->val.str);
+                    if (tmp != NULL)
+                        tmp_cmd->argv[tmp_cmd->count++] = tmp;
+                }
+                else
+                    tmp_cmd->argv[tmp_cmd->count++] = child->val.str;
+            } else if (child->val_type == _pipe) {
+                insert(tmp_vector, tmp_cmd);
+                tmp_cmd = create_cmd();
+            } else
+                tmp_cmd->argv[tmp_cmd->count++] = child->val.str;
+            child = child->next_sibling;
+        }
+        insert(tmp_vector, tmp_cmd);
+        insert(vector, tmp_vector);
+        ast_node = ast_node->next_sibling;
+    }
+    return vector;
+}
+
+t_error *check_first_token(t_parser *p) {
+    t_error *error = malloc(sizeof(t_error));
+    ft_memset(error, 0, sizeof (t_error));
+    enum e_val_type types[] = {illegal, end_of, semicolon, _pipe, right, left, right_append};
+    for (int i = 0; i < 7; ++i) {
+        if ((p->cur_token->Type == types[i] && p->peek_token->Type == end_of) || p->peek_token->Type == end_of)
+            set_error(error, ERR1);
+    }
+    return error;
+}
+
+void parse_and_execute(t_lexer *lexer) {
+    t_cmd *cmd;
+    t_node *ast_node = NULL; //  = malloc(sizeof (t_node));
+    t_parser *p = new_parser(lexer);
+    cmd = malloc(sizeof(t_cmd));
+    ft_memset(cmd, 0, sizeof(t_cmd));
+    cmd->redirs = new_vector();
+
+    // t_error *err = check_first_token(p);
+
+    // if (err->is_error) {
+    //     printf("%s '%s'\n", err->error_msg, p->peek_token->literal);
+    //     return;
+    // }
+
+    ast_node = parse_command(ast_node, p);
+    if (ast_node == NULL)
+        return;
+    t_vector *vector = fill_out_vector_with_commands(ast_node);
+    // stream = Print(at(at(vector, 0), 0));
+    //printf("%s\n", stream);
+	run_cmds((t_vector *)at(vector, 0));
+    // Print(at(at(vector, 0), 1));
+    // Print(at(at(vector, 0), 2));
+    // Print(at(at(vector, 1), 0));
+    // delete_free(vector);
+    // printf("%s type", pSNode->val.str);
+    // t_vector *v = at(vector, 0);
+    // display_vector(v, to_string);
+    // display_vector(v, 1, to_string);
+    // execute(v);
+    // free(pSNode)
+}
+
+#if (1)
 
 int main(int ac, char **av, char **env)
 {
 	fill_envp(env);
-	t_vector *cmds = fill_commands();
-	run_cmds(cmds);
-	return (0);
+    while (true) {
+        write(1, prompt, ft_strlen(prompt));
+        char *line = malloc(1024 * sizeof(char));
+        size_t n = readline(line);
+        if (!n || line[0] == '\0' || strcmp(line, "\n") == 0) {
+            free(line);
+            continue;
+        }
+
+        if (strcmp(line, "exit") == 0) {
+            printf("shell is exiting...");
+            free(line);
+            break;
+        }
+
+        t_lexer *lexer = new_lexer(line, (int) n);
+        // if (check_entered_command(line)) {
+        //     printf("%s\n", "syntax error in quotes.");
+        //     free(line);
+        //     continue;
+        // }
+        parse_and_execute(lexer);
+        if (errno == ENODATA)
+            ft_exit("TTTT", errno);
+
+        free(line);
+    }
+    return (EXIT_SUCCESS);
 }
+
+#endif 

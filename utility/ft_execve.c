@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 11:14:12 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/25 14:37:25 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/25 18:39:12 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,13 @@ t_vector*get_paths(char *path_str, char *cmd)
 	{
 		if (path_str[end] == ':')
 		{
-			path = ft_substr(path_str, start, end);
+			path = ft_substr2(path_str, start, end);
 			if (path != NULL)
 				pv->insert(pv, append_cmd_to_path(path, cmd));
 			start = end + 1;
 		}
 	}
-	path = ft_substr(path_str, start, end);
+	path = ft_substr2(path_str, start, end);
 	if (path != NULL)
 		pv->insert(pv, append_cmd_to_path(path, cmd));
 	return (pv);

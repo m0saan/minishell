@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utility.h                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/23 16:04:02 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/23 16:05:28 by ehakam           ###   ########.fr       */
+/*   Created: 2019/10/15 23:22:38 by moboustt          #+#    #+#             */
+/*   Updated: 2019/10/15 23:23:44 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UTILITY_H
-# define FT_UTILITY_H
+#include "libft.h"
 
-# include "./ft_env.h"
-# include "./ft_types.h"
-# include "./ft_vector.h"
-
-
-
-#endif
+int		ft_isprint(int c)
+{
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
+}
