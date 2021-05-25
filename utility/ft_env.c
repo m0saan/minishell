@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 17:13:38 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/25 18:38:17 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/25 19:07:34 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -232,6 +232,18 @@ int set_var(t_vector *env, char *var_str)
 	return (0);
 }
 
+// int set_var2(t_vector *env, char *key, char *value)
+// {
+// 	t_var *var;
+// 	t_var *existing_var;
+// 	if (!check_key2(key))
+// 		return 1;
+// 	existing_var = env->search(env, var->key, equals_key);
+// 	if (existing_var)
+// 	{
+// 	}
+// }
+
 int set_var2(t_vector *env, char *key, char *value)
 {
 	t_var *var;
@@ -251,7 +263,7 @@ int set_var2(t_vector *env, char *key, char *value)
 	existing_var = env->search(env, var->key, equals_key);
 	if (!existing_var)
 		env->insert(env, var);
-	else if (var->value) 
+	else if (var->value)
 		update_var(env, existing_var, var);
 	else
 	{

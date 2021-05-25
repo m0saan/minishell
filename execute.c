@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:25:17 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/25 18:44:19 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/25 19:01:00 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	fill_envp(char **envp)
 		shlvlv = atoi(shlvl_var->value);
 		shlvlv++;
 		// covert back to string and insert in shlvl_var
+		set_var2(g_envp, "SHLVL", ft_itoa(shlvlv));
 	}
 	return (0);
 }
