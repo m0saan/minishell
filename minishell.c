@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 18:21:54 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/25 18:42:25 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/27 18:36:54 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,7 +185,7 @@ int main(int ac, char **av, char **env)
         }
 
         if (strcmp(line, "exit") == 0) {
-            printf("shell is exiting...");
+            printf("shell is exiting...\n");
             free(line);
             break;
         }

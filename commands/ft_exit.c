@@ -2,5 +2,5 @@
 
 int		ft_exits(int ac, char **av)
  {
-	 return 0;
+	 exit(0);
  }

@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:25:17 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/25 21:42:54 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/27 18:34:53 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -194,7 +194,7 @@ void  run_cmds(t_vector *cmds)
 	cmd = (t_cmd *)cmds->at(cmds, 0);
 	if (cmds->size == 1 && is_builtin(cmd->argv[0]))
 	{
-		dprintf(2, "\033[0;32mINFO: Exec BuiltIn in Parent\033[0m\n");
+		//dprintf(2, "\033[0;32mINFO: Exec BuiltIn in Parent\033[0m\n");
 		pids[0] = run_cmd_parent(cmd);
 	}
 	else
@@ -203,7 +203,7 @@ void  run_cmds(t_vector *cmds)
 		{
 			pipe(fd[i]);
 			t_cmd *cmd = (t_cmd *)cmds->at(cmds, i);
-			dprintf(2, "\033[0;32mINFO: Exec %s in Child\033[0m\n", is_builtin(cmd->argv[0]) ? "BuiltIn" : "Cmd");
+			//dprintf(2, "\033[0;32mINFO: Exec %s in Child\033[0m\n", is_builtin(cmd->argv[0]) ? "BuiltIn" : "Cmd");
 			pids[i] = run_cmd_child(cmd, fd, cmds->size, i);
 		}
 	}

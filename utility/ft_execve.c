@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 11:14:12 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/25 21:40:28 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/27 18:35:17 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ t_vector*get_paths(char *path_str, char *cmd)
 
 int		ft_exec_builtin(t_cmd *cmd, char **envp)
 {
-	dprintf(2, "\033[0;32mINFO: Exec builtin!\033[0m\n");
+	//dprintf(2, "\033[0;32mINFO: Exec builtin!\033[0m\n");
 	if (strcmp(cmd->argv[0], "cd") == 0)
 		ft_cd(cmd->count, cmd->argv);
 	else if (strcmp(cmd->argv[0], "echo") == 0)
@@ -101,9 +101,9 @@ int		ft_find_and_exec(t_cmd *cmd, char **envp) {
 	while (++i < paths->size)
 	{
 		execve((char *)paths->at(paths, i), cmd->argv, envp);
-		dprintf(2, "\033[0;32mINFO: TESTING PATH(%s) FAILED!\033[0m\n", paths->at(paths, i));
+		//dprintf(2, "\033[0;32mINFO: TESTING PATH(%s) FAILED!\033[0m\n", paths->at(paths, i));
 	}
-	dprintf(2, "\033[0;31mERROR: Command Not Found!\033[0m\n");
+	//dprintf(2, "\033[0;31mERROR: Command Not Found!\033[0m\n");
 	return 1;
 }
 
