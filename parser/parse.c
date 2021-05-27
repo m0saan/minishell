@@ -52,7 +52,6 @@ t_node *parse_command(t_node *ast_node, t_parser *p) {
             return NULL;
         }
         if (p->cur_token->Type == semicolon) {
-            // p->cur_token = next_token(p->lexer);
             next_token_p(p);
             ast_node->next_sibling = parse_command(ast_node->next_sibling, p);
             return ast_node;
@@ -89,7 +88,6 @@ void next_token_p(t_parser *p) {
 t_parser *new_parser(t_lexer *l) {
     t_parser *p = malloc(sizeof(t_parser));
     p->lexer = l;
-    /* Read two tokens, so curToken and peekToken are both set*/
     next_token_p(p);
     next_token_p(p);
     return p;

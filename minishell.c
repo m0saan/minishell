@@ -55,21 +55,13 @@ char * Print(struct s_cmd *this) {
     if (this == NULL)
         ft_exit("Error\nNull CMD!", 1);
 
-    //printf("REDIRECT:\n");
-    //for (size_t i = 0; i < this->redirs->size; ++i) {
-    //    t_redir *tRedir = this->redirs->at(this->redirs, i);
-    //    printf("{ type: %s -- arg: %s}\n", getTypeName(tRedir->type), tRedir->arg);
-    //}
 
-    //printf("--------------------------------------------\n");
     char *line = malloc(1024);
     bzero(line, 1024);
-    //printf("ARGS:\n");
     for (int i = 0; this->argv[i] != 0; i++) {
         strcat(line, this->argv[i]);
         if (this->argv[i+1] != 0)
             strcat(line, " ");
-       // printf("ARGS%d |%s|\n", i+1, this->argv[i]);
     }
     return line;
 }
@@ -138,7 +130,7 @@ t_error *check_first_token(t_parser *p) {
 
 void parse_and_execute(t_lexer *lexer) {
     t_cmd *cmd;
-    t_node *ast_node = NULL; //  = malloc(sizeof (t_node));
+    t_node *ast_node = NULL;
     t_parser *p = new_parser(lexer);
     cmd = malloc(sizeof(t_cmd));
     ft_memset(cmd, 0, sizeof(t_cmd));
@@ -155,19 +147,12 @@ void parse_and_execute(t_lexer *lexer) {
     if (ast_node == NULL)
         return;
     t_vector *vector = fill_out_vector_with_commands(ast_node);
-    // stream = Print(at(at(vector, 0), 0));
-    //printf("%s\n", stream);
-	run_cmds((t_vector *)at(vector, 0));
-    // Print(at(at(vector, 0), 1));
-    // Print(at(at(vector, 0), 2));
-    // Print(at(at(vector, 1), 0));
-    // delete_free(vector);
-    // printf("%s type", pSNode->val.str);
-    // t_vector *v = at(vector, 0);
-    // display_vector(v, to_string);
-    // display_vector(v, 1, to_string);
-    // execute(v);
-    // free(pSNode)
+    int i = 0;
+    while (i < vector->size)
+    {
+        run_cmds((t_vector *)at(vector, i));
+        ++i;
+    }
 }
 
 #if (1)
@@ -190,12 +175,9 @@ int main(int ac, char **av, char **env)
             break;
         }
 
+        
+
         t_lexer *lexer = new_lexer(line, (int) n);
-        // if (check_entered_command(line)) {
-        //     printf("%s\n", "syntax error in quotes.");
-        //     free(line);
-        //     continue;
-        // }
         parse_and_execute(lexer);
         if (errno == ENODATA)
             ft_exit("TTTT", errno);
