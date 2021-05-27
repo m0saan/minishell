@@ -175,7 +175,8 @@ int main(int ac, char **av, char **env)
             break;
         }
 
-        
+        char **splited_line = ft_split(line, ';');
+        int  i = 0;
 
         t_lexer *lexer = new_lexer(line, (int) n);
         parse_and_execute(lexer);
