@@ -90,15 +90,25 @@ t_var *new_var_v(char *key, char *value, char *raw)
 
 t_var *new_var_kv(char *key, char *value)
 {
+    int     i;
+    int     j;
 	t_var	*var;
 
 	var = (t_var *)malloc(sizeof(t_var));
 	var->raw = (char *)malloc((strlen(key) + strlen(value) + 2) * sizeof(char));
+    bzero(var->raw, (strlen(key) + strlen(value) + 2));
 	var->key = key;
 	var->value = value;
-	strcat(var->raw, key);
-	strcat(var->raw, "=");
-	strcat(var->raw, value);
+
+	i = -1;
+	j = 0;
+    while (key[++i])
+        var->raw[j++] = key[i];
+    var->raw[j++] = '=';
+    i = -1;
+    while (value[++i])
+        var->raw[j++] = value[i];
+    var->raw[j] = '\0';
 	return (var);
 }
 
