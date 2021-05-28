@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/24 18:21:54 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/27 18:36:54 by ehakam           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "minishell.h"
 
 const char *prompt = "minishell-0.1$ ";
@@ -143,13 +131,15 @@ void parse_and_execute(t_lexer *lexer) {
 }
 
 t_bool check_semicolon_errors(const char *line) {
-    // parse_and_execute(new_lexer(line, ft_strlen(line)));
-    t_parser *p = new_parser(new_lexer(line, ft_strlen(line)));
+    t_parser *p = new_parser(new_lexer(line, (int) ft_strlen(line)));
     while (p->cur_token->Type != end_of){
         next_token_p(p);
-        if (p->cur_token->Type == semicolon && p->peek_token->Type == semicolon)
+        if (p->cur_token->Type == semicolon && p->peek_token->Type == semicolon) {
+            free(p);
             return true;
+        }
     }
+    free(p);
     return false;
 }
 
@@ -187,8 +177,6 @@ int main(int ac, char **av, char **env) {
             i++;
             free(lexer);
         }
-        if (errno == ENODATA)
-            ft_exit("TTTT", errno);
 
         free(line);
     }
