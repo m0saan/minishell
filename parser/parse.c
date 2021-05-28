@@ -51,11 +51,6 @@ t_node *parse_command(t_node *ast_node, t_parser *p) {
             printf("%s \n", error->error_msg);
             return NULL;
         }
-        if (p->cur_token->Type == semicolon) {
-            next_token_p(p);
-            ast_node->next_sibling = parse_command(ast_node->next_sibling, p);
-            return ast_node;
-        }
         t_node *arg = new_node(NODE_ARG);
         if (!arg) {
             // free node tree -> ast_node;
