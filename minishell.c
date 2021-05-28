@@ -115,7 +115,7 @@ t_error *check_first_token(t_parser *p) {
     ft_memset(error, 0, sizeof(t_error));
     enum e_val_type types[] = {illegal, end_of, semicolon, _pipe, right, left, right_append};
     for (int i = 0; i < 7; ++i) {
-        if ((p->cur_token->Type == types[i] && p->peek_token->Type == end_of) || p->peek_token->Type == end_of)
+        if ((p->cur_token->Type == types[i] && p->peek_token->Type == end_of) || p->cur_token->Type == end_of)
             set_error(error, ERR1);
     }
     return error;
@@ -129,18 +129,28 @@ void parse_and_execute(t_lexer *lexer) {
     ft_memset(cmd, 0, sizeof(t_cmd));
     cmd->redirs = new_vector();
 
-    // t_error *err = check_first_token(p);
-
-    // if (err->is_error) {
-    //     printf("%s '%s'\n", err->error_msg, p->peek_token->literal);
-    //     return;
-    // }
+    t_error *err = check_first_token(p);
+    if (err->is_error) {
+        printf("%s '%s'\n", err->error_msg, p->peek_token->literal);
+        return;
+    }
 
     ast_node = parse_command(ast_node, p);
     if (ast_node == NULL)
         return;
     t_vector *vector = fill_out_vector_with_commands(ast_node);
     run_cmds((t_vector *) vector);
+}
+
+t_bool check_semicolon_errors(const char *line) {
+    // parse_and_execute(new_lexer(line, ft_strlen(line)));
+    t_parser *p = new_parser(new_lexer(line, ft_strlen(line)));
+    while (p->cur_token->Type != end_of){
+        next_token_p(p);
+        if (p->cur_token->Type == semicolon && p->peek_token->Type == semicolon)
+            return true;
+    }
+    return false;
 }
 
 #if (1)
@@ -160,6 +170,13 @@ int main(int ac, char **av, char **env) {
             dprintf(2, "shell is exiting...\n");
             free(line);
             break;
+        }
+
+        t_bool has_error = check_semicolon_errors(line);
+        if (has_error){
+            printf("minishell: syntax error near unexpected token `;;'\n");
+            free(line);
+            return 1;
         }
 
         char **splited_line = ft_split(line, ';');
