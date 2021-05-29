@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:25:17 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/27 18:34:53 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/29 17:18:27 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,6 +174,8 @@ pid_t run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
 	pos = get_position(size, index);
 	if (pid == 0)
 	{
+		signal(SIGQUIT, signal_handler);
+		signal(SIGINT, signal_handler);
 		setup_pipes(fd, pos, index);
 		if (cmd->redirs != NULL && !is_empty(cmd->redirs))
 			setup_all_redirs(cmd->redirs, &sout, &sin);
@@ -223,54 +225,4 @@ t_redir *create_redir(t_type type, char *arg)
 	r->type = type;
 	return (r);
 }
-
-// t_cmd *create_cmd(char *arg1, char *arg2, char *arg3, char *arg4, char *arg5, int count)
-// {
-// 	t_cmd *cmd;
-
-// 	cmd = (t_cmd *)malloc(sizeof(t_cmd));
-// 	cmd->argv[0] = arg1;
-// 	cmd->argv[1] = arg2;
-// 	cmd->argv[2] = arg3;
-// 	cmd->argv[3] = arg4;
-// 	cmd->argv[4] = arg5;
-// 	cmd->argv[5] = NULL;
-// 	cmd->count = count;
-// 	cmd->redirs = new_vector();
-// 	return (cmd);
-// }
-
-// t_vector *fill_commands(char *line)
-// {
-// 	t_vector *cmds = new_vector();
-
-// 	t_cmd *cm1 = create_cmd(line, NULL, NULL, NULL, NULL, 1);
-// 	// cm1->redirs->insert(cm1->redirs, create_redir(right, "file"));
-// 	// cm1->redirs->insert(cm1->redirs, create_redir(right, "b"));
-// 	// cm1->redirs->insert(cm1->redirs, create_redir(right, "c"));
-// 	// t_cmd *cm2 = create_cmd("wc", "-l", NULL, NULL, NULL, 2);
-// 	// cm2->redirs->insert(cm2->redirs, create_redir(left, "a"));
-// 	// cm2->redirs->insert(cm2->redirs, create_redir(left, "b"));
-// 	// cm2->redirs->insert(cm2->redirs, create_redir(left, "c"));
-// 	// cm2->redirs->insert(cm2->redirs, create_redir(right, "e"));
-// 	// cm2->redirs->insert(cm2->redirs, create_redir(right, "f"));
-// 	// t_cmd *cm3 = create_cmd("cat", "f", NULL, NULL, NULL);
-// 	// t_cmd *cm4 = create_cmd("BC", NULL, NULL, NULL, NULL);
-// 	// t_cmd *cm5 = create_cmd("echo", "a", "+", "b", NULL);
-// 	// t_cmd *cm6 = create_cmd("cat", NULL, NULL, NULL, NULL);
-// 	// cm6->redirs->insert(cm6->redirs, create_redir(right, "file"));
-// 	// t_cmd *cm7 = create_cmd("cat", NULL, NULL, NULL, NULL);
-// 	// cm7->redirs->insert(cm7->redirs, create_redir(left, "file"));
-// 	// cm7->redirs->insert(cm7->redirs, create_redir(right, "file"));
-// 	///////////
-// 	cmds->insert(cmds, cm1);
-// 	// cmds->insert(cmds, cm2);
-// 	// cmds->insert(cmds, cm3);
-// 	// cmds->insert(cmds, cm4);
-// 	// cmds->insert(cmds, cm5);
-// 	// cmds->insert(cmds, cm6);
-// 	// cmds->insert(cmds, cm7);
-// 	return (cmds);
-// }
-
 

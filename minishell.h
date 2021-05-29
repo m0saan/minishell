@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:16:23 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/25 18:37:00 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/05/29 16:42:33 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,7 @@ void    read_single_quoted(t_lexer *l, char quote, char *s, int *index, t_error 
 char *handle_env_variables(t_string str);
 pid_t run_command(t_cmd *cmd, int fd[][2], t_size size, int index);
 char *to_string(void *item);
+
+void signal_handler(int sig);
 
 #endif

@@ -152,10 +152,24 @@ t_bool check_semicolon_errors(const char *line) {
     return false;
 }
 
+void signal_handler_parent(int sig) {
+	if (sig == SIGINT)
+		dprintf(2, "\n%s", prompt);
+}
+
+void signal_handler(int sig) {
+	// if (sig == SIGQUIT)
+	// 	dprintf(2, "^\\\n");
+	// else if (sig == SIGINT)
+	// 	dprintf(2, "^C\n");
+}
+
 #if (1)
 
 int main(int ac, char **av, char **env) {
     fill_envp(env);
+	signal(SIGQUIT, signal_handler_parent);
+	signal(SIGINT, signal_handler_parent);
     while (true) {
         write(1, prompt, ft_strlen(prompt));
         char *line = malloc(1024 * sizeof(char));
