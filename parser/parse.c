@@ -17,13 +17,13 @@ t_error *catch_errors(t_parser *p, t_error *error) {
     if (p->cur_token->Type  == illegal || p->peek_token->Type  == illegal)
         set_error(error, "Illegal Syntax!");
     if (p->cur_token->Type == right || p->cur_token->Type == left || p->cur_token->Type == right_append) {
-        if (!expect_peek(p, p->lexer, arg))
+        if (!expect_peek(p, *p->lexer, arg))
             set_error(error, ERR1);
     } else if (p->cur_token->Type == _pipe) {
-        if (expect_peek(p, p->lexer, _pipe))
+        if (expect_peek(p, *p->lexer, _pipe))
             set_error(error, ERR1);
     } else if (p->cur_token->Type == semicolon) {
-        if (expect_peek(p, p->lexer, semicolon))
+        if (expect_peek(p, *p->lexer, semicolon))
             set_error(error, ERR1);
     }
     return error;
@@ -61,9 +61,6 @@ t_node *parse_command(t_node *ast_node, t_parser *p) {
         add_child_node(ast_node, arg);
         //tok->str__(tok);
         //free_token(tok);
-
-        if (p->peek_token->Type == end_of)
-            return ast_node;
         next_token_p(p);
     }
     return ast_node;
@@ -97,9 +94,9 @@ t_bool peek_token_is(t_parser *p, TokenType t) {
 }
 
 
-t_bool expect_peek(t_parser *p, t_lexer *l, TokenType t) {
+t_bool expect_peek(t_parser *p, t_lexer l, TokenType t) {
     if (peek_token_is(p, t)) {
-        next_token(l);
+        next_token(&l);
         return true;
     } else
         return false;
