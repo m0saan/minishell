@@ -2,6 +2,8 @@
 
 const char *prompt = "minishell-0.1$ ";
 
+void fill_out_env_command(t_cmd *tmp_cmd, const char *tmp);
+
 /*
  * Here the shell runs in a loop,
  * which we know as the Read-Eval-Print-Loop, or REPL.
@@ -84,7 +86,7 @@ t_vector *fill_out_vector_with_commands(t_node *ast_node) {
             if (child->val.str != NULL) {
                 char *tmp = handle_env_variables(child->val.str);
                 if (tmp != NULL)
-                    tmp_cmd->argv[tmp_cmd->count++] = tmp;
+                    fill_out_env_command(tmp_cmd, tmp);
             } else
                 tmp_cmd->argv[tmp_cmd->count++] = child->val.str;
         } else if (child->val_type == _pipe) {
@@ -96,6 +98,13 @@ t_vector *fill_out_vector_with_commands(t_node *ast_node) {
     }
     insert(vector, tmp_cmd);
     return vector;
+}
+
+void fill_out_env_command(t_cmd *tmp_cmd, const char *tmp) {
+    char **splited_env_value = ft_split(tmp, ' ');
+    int i = -1;
+    while (splited_env_value[++i] != 0)
+        tmp_cmd->argv[tmp_cmd->count++] = splited_env_value[i];
 }
 
 t_error *check_first_token(t_parser *p) {
