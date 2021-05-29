@@ -141,7 +141,7 @@ void parse_and_execute(t_lexer *lexer) {
 
 t_bool check_semicolon_errors(const char *line) {
     t_parser *p = new_parser(new_lexer(line, (int) ft_strlen(line)));
-    while (p->cur_token->Type != end_of){
+    while (p->cur_token->Type != end_of) {
         next_token_p(p);
         if (p->cur_token->Type == semicolon && p->peek_token->Type == semicolon) {
             free(p);
@@ -153,23 +153,25 @@ t_bool check_semicolon_errors(const char *line) {
 }
 
 void signal_handler_parent(int sig) {
-	if (sig == SIGINT)
-		dprintf(2, "\n%s", prompt);
+    if (sig == SIGINT)
+        dprintf(2, "\n%s", prompt);
 }
 
 void signal_handler(int sig) {
-	// if (sig == SIGQUIT)
-	// 	dprintf(2, "^\\\n");
-	// else if (sig == SIGINT)
-	// 	dprintf(2, "^C\n");
+    // if (sig == SIGQUIT)
+    // 	dprintf(2, "^\\\n");
+    // else if (sig == SIGINT)
+    // 	dprintf(2, "^C\n");
 }
 
+
+// cat -e < file.txt > file.txt
 #if (1)
 
 int main(int ac, char **av, char **env) {
     fill_envp(env);
-	signal(SIGQUIT, signal_handler_parent);
-	signal(SIGINT, signal_handler_parent);
+    signal(SIGQUIT, signal_handler_parent);
+    signal(SIGINT, signal_handler_parent);
     while (true) {
         write(1, prompt, ft_strlen(prompt));
         char *line = malloc(1024 * sizeof(char));
@@ -186,7 +188,7 @@ int main(int ac, char **av, char **env) {
         }
 
         t_bool has_error = check_semicolon_errors(line);
-        if (has_error){
+        if (has_error) {
             printf("minishell: syntax error near unexpected token `;;'\n");
             free(line);
             return 1;
