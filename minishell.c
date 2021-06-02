@@ -10,8 +10,10 @@ void fill_out_env_command(t_cmd *tmp_cmd, const char *tmp);
  */
 
 size_t readline(char *line) {
+    ft_memset(line, 0, 1024);
     size_t n = read(0, line, 1024);
-    line[n - 1] = 0;
+    if (n)
+        line[n - 1] = 0;
     return n;
 }
 
