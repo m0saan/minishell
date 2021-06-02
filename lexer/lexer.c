@@ -46,7 +46,7 @@ void next_char(t_lexer *lexer) {
 }
 
 enum e_bool has_char(char c) {
-    char *buff = "?=._-/\\$";
+    char *buff = ":?=._-/\\$";
     for (int i = 0; buff[i] != 0; ++i)
         if (buff[i] == c) return true;
     return false;
@@ -162,12 +162,25 @@ void slice_str(const char *str, char *buffer, size_t start, size_t end) {
 
 
 char *read_identifier(t_lexer *l) {
-    char *s = malloc(100);
-    ft_bzero(s, 100);
+    char *s = malloc(1024);
+    ft_bzero(s, 1024);
     int i = 0;
     while (is_letter(l->ch)) {
         if (l->ch == '\\')
             next_char(l);
+        if (l->ch == '$' && ft_isalnum(l->input[l->readPosition])) {
+            next_char(l);
+            if (ft_isdigit(l->ch)) {
+                next_char(l);
+                continue;
+            }
+            char *env_name = get_env_value(l);
+            if (env_name == NULL)
+                continue;
+            s = strcat(s, env_name);
+            i += (int) ft_strlen(env_name);
+            continue;
+        }
         s[i++] = l->ch;
         next_char(l);
     }

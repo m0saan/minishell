@@ -55,6 +55,6 @@ typedef struct  s_token  {
 }               t_token;
 
 t_bool has_closing_quote(const char *line, int i, char quote);
-
+char *get_env_value(t_lexer *l);
 
 #endif //MINISHELL_LEXER_H
