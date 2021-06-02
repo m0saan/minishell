@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:25:17 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/29 17:18:27 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/06/02 16:43:08 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,11 +171,10 @@ pid_t run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
 	sout = -1;
 	if ((pid = fork()) < 0)
 		ft_exit("Error\nFORK FAILED!", -1);
+	g_is_forked = true;
 	pos = get_position(size, index);
 	if (pid == 0)
 	{
-		signal(SIGQUIT, signal_handler);
-		signal(SIGINT, signal_handler);
 		setup_pipes(fd, pos, index);
 		if (cmd->redirs != NULL && !is_empty(cmd->redirs))
 			setup_all_redirs(cmd->redirs, &sout, &sin);
@@ -196,7 +195,6 @@ void  run_cmds(t_vector *cmds)
 	cmd = (t_cmd *)cmds->at(cmds, 0);
 	if (cmds->size == 1 && is_builtin(cmd->argv[0]))
 	{
-		//dprintf(2, "\033[0;32mINFO: Exec BuiltIn in Parent\033[0m\n");
 		pids[0] = run_cmd_parent(cmd);
 	}
 	else
@@ -205,7 +203,6 @@ void  run_cmds(t_vector *cmds)
 		{
 			pipe(fd[i]);
 			t_cmd *cmd = (t_cmd *)cmds->at(cmds, i);
-			//dprintf(2, "\033[0;32mINFO: Exec %s in Child\033[0m\n", is_builtin(cmd->argv[0]) ? "BuiltIn" : "Cmd");
 			pids[i] = run_cmd_child(cmd, fd, cmds->size, i);
 		}
 	}
@@ -213,6 +210,7 @@ void  run_cmds(t_vector *cmds)
 	while (++i < cmds->size)
 		if (pids[i] > 0)
 			wait(&pids[i]);
+	g_is_forked = false;
 }
 
 /*

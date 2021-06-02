@@ -152,9 +152,14 @@ t_bool check_semicolon_errors(const char *line) {
     return false;
 }
 
-void signal_handler_parent(int sig) {
-    if (sig == SIGINT)
-        dprintf(2, "\n%s", prompt);
+void signal_handler_parent(int sig)
+{
+	if (sig == SIGQUIT && g_is_forked)
+		dprintf(1, "Quit: 3");
+	if (!(sig == SIGQUIT && !g_is_forked))
+		dprintf(1, "\n");
+    if (sig == SIGINT && !g_is_forked)
+        dprintf(1, "%s", prompt);
 }
 
 void signal_handler(int sig) {
@@ -164,11 +169,10 @@ void signal_handler(int sig) {
     // 	dprintf(2, "^C\n");
 }
 
-
-// cat -e < file.txt > file.txt
 #if (1)
 
 int main(int ac, char **av, char **env) {
+	g_is_forked = false;
     fill_envp(env);
     signal(SIGQUIT, signal_handler_parent);
     signal(SIGINT, signal_handler_parent);

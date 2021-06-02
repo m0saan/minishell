@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:16:23 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/29 16:42:33 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/06/02 16:15:53 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef struct	s_cmd
 }				t_cmd;
 
 t_vector	*g_envp;
+t_bool		g_is_forked;
 
 void ft_exit(char *msg, int code);
 int		exec_cmd(t_cmd *cmd);

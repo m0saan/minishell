@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 11:14:12 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/27 18:35:17 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/06/02 18:06:32 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,19 +57,30 @@ t_vector*get_paths(char *path_str, char *cmd)
 	end = -1;
 	start = 0;
 	pv = new_vector_s(20);
-	while (path_str[++end])
+	if (path_str != NULL && path_str[0] != '\0')
 	{
-		if (path_str[end] == ':')
+		if (path_str[0] == ':')
+			pv->insert(pv, append_cmd_to_path(strdup("."), cmd));
+		while (path_str[++end])
 		{
-			path = ft_substr2(path_str, start, end);
-			if (path != NULL)
-				pv->insert(pv, append_cmd_to_path(path, cmd));
-			start = end + 1;
+			if (path_str[end] == ':')
+			{
+				path = ft_substr2(path_str, start, end);
+				if (path != NULL)
+					pv->insert(pv, append_cmd_to_path(path, cmd));
+				else
+					pv->insert(pv, append_cmd_to_path(strdup("."), cmd));
+				start = end + 1;
+			}
 		}
+		path = ft_substr2(path_str, start, end);
+		if (path != NULL)
+			pv->insert(pv, append_cmd_to_path(path, cmd));
+		else
+			pv->insert(pv, append_cmd_to_path(strdup("."), cmd));
 	}
-	path = ft_substr2(path_str, start, end);
-	if (path != NULL)
-		pv->insert(pv, append_cmd_to_path(path, cmd));
+	else
+		pv->insert(pv, append_cmd_to_path(strdup("."), cmd));
 	return (pv);
 }
 
@@ -98,12 +109,17 @@ int		ft_find_and_exec(t_cmd *cmd, char **envp) {
 	int		i;
 
 	i = -1;
+	if (paths == NULL)
+	{
+		dprintf(2, "\033[0;31mERROR: No such file!\033[0m\n");
+		return 1;
+	}
 	while (++i < paths->size)
 	{
 		execve((char *)paths->at(paths, i), cmd->argv, envp);
-		//dprintf(2, "\033[0;32mINFO: TESTING PATH(%s) FAILED!\033[0m\n", paths->at(paths, i));
+		// dprintf(2, "\033[0;32mINFO: TESTING PATH(%s) FAILED!\033[0m\n", paths->at(paths, i));
 	}
-	//dprintf(2, "\033[0;31mERROR: Command Not Found!\033[0m\n");
+	dprintf(2, "\033[0;31mERROR: Command Not Found!\033[0m\n");
 	return 1;
 }
 
