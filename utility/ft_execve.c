@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 11:14:12 by ehakam            #+#    #+#             */
-/*   Updated: 2021/06/02 18:06:32 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/06/05 19:38:57 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ int		ft_find_and_exec(t_cmd *cmd, char **envp) {
 	while (++i < paths->size)
 	{
 		execve((char *)paths->at(paths, i), cmd->argv, envp);
-		// dprintf(2, "\033[0;32mINFO: TESTING PATH(%s) FAILED!\033[0m\n", paths->at(paths, i));
+		dprintf(2, "\033[0;32mINFO: TESTING PATH(%s) FAILED!\033[0m\n", paths->at(paths, i));
 	}
 	dprintf(2, "\033[0;31mERROR: Command Not Found!\033[0m\n");
 	return 1;

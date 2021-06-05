@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:25:17 by ehakam            #+#    #+#             */
-/*   Updated: 2021/06/02 16:43:08 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/06/05 19:52:43 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int get_position(t_size size, int index)
 
 void setup_redirection(t_type type, char *arg, int *sout, int *sin)
 {
-	int flags;
+	// int flags;
 	int fd;
 
 	if (type == right)
@@ -121,15 +121,18 @@ void setup_pipes(int fd[][2], int position, int index)
 	{
 		dup2(fd[prev_idx][0], 0);
 		dup2(fd[index][1], 1);
+		close(fd[index][0]);
 		close(fd[prev_idx][1]);
 	}
 	else if (position == IS_LAST)
 	{
 		dup2(fd[prev_idx][0], 0);
+		close(fd[prev_idx][1]);
 		close(fd[index][1]);
 		close(fd[index][0]);
-		close(fd[prev_idx][1]);
 	}
+	close(fd[index][1]);
+	close(fd[index][0]);
 }
 
 void close_pipes(int fd[][2], int pos, int index)
@@ -202,7 +205,7 @@ void  run_cmds(t_vector *cmds)
 		while (++i < cmds->size)
 		{
 			pipe(fd[i]);
-			t_cmd *cmd = (t_cmd *)cmds->at(cmds, i);
+			t_cmd *cmd = (t_cmd *)at(cmds, i);
 			pids[i] = run_cmd_child(cmd, fd, cmds->size, i);
 		}
 	}
