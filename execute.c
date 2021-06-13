@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:25:17 by ehakam            #+#    #+#             */
-/*   Updated: 2021/06/05 19:52:43 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/06/13 21:31:16 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,13 @@ void setup_redirection(t_type type, char *arg, int *sout, int *sin)
 	{
 		*sout = dup(1);
 		dup2(fd, 1);
+		close(fd);
 	}
 	else if (type == left)
 	{
 		*sin = dup(0);
 		dup2(fd, 0);
+		close(fd);
 	}
 }
 

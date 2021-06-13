@@ -173,6 +173,44 @@ void signal_handler(int sig) {
 
 #if (1)
 
+int	_read(char **line)
+{
+	char	*buffer;
+	int		rd;
+
+	while (true)
+	{
+		write(1, prompt, ft_strlen(prompt));
+        char *buffer = malloc(1024 * sizeof(char));
+		rd = readline(buffer);
+		if (!rd || buffer[0] == '\0' || strcmp(buffer, "\n") == 0) {
+            free(buffer);
+            continue;
+        }
+		line = ft_strjoin(line, buffer);
+		t_bool has_error = check_semicolon_errors(line);
+        if (has_error) {
+            printf("minishell: syntax error near unexpected token `;;'\n");
+            free(line);
+            return 1;
+        }
+
+        char **splited_line = ft_split(line, ';');
+        int i = 0;
+        while (splited_line[i] != 0) {
+            t_lexer *lexer = new_lexer(splited_line[i], (int) ft_strlen(splited_line[i]));
+            parse_and_execute(lexer);
+            i++;
+            free(lexer);
+        }
+
+        free(line);
+	}
+	if (strlen(line) > 0)
+		_read(line);
+	exit(0);
+}
+
 int main(int ac, char **av, char **env) {
 	g_is_forked = false;
     fill_envp(env);
