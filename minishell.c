@@ -18,7 +18,7 @@ size_t readline(char *line) {
 }
 
 void str__(t_token *tok) {
-    printf("TokenType: [%s], Literal: [%s]\n", getTypeName(tok->Type), tok->literal);
+    printf("t_token_type: [%s], Literal: [%s]\n", getTypeName(tok->type), tok->literal);
 }
 
 const char *getTypeName(enum e_val_type type) {
@@ -114,7 +114,7 @@ t_error *check_first_token(t_parser *p) {
     ft_memset(error, 0, sizeof(t_error));
     enum e_val_type types[] = {illegal, end_of, semicolon, _pipe, right, left, right_append};
     for (int i = 0; i < 7; ++i) {
-        if ((p->cur_token->Type == types[i] && p->peek_token->Type == end_of) || p->cur_token->Type == end_of)
+        if ((p->cur_token->type == types[i] && p->peek_token->type == end_of) || p->cur_token->type == end_of)
             set_error(error, ERR1);
     }
     return error;
@@ -143,9 +143,9 @@ void parse_and_execute(t_lexer *lexer) {
 
 t_bool check_semicolon_errors(const char *line) {
     t_parser *p = new_parser(new_lexer(line, (int) ft_strlen(line)));
-    while (p->cur_token->Type != end_of) {
+    while (p->cur_token->type != end_of) {
         next_token_p(p);
-        if (p->cur_token->Type == semicolon && p->peek_token->Type == semicolon) {
+        if (p->cur_token->type == semicolon && p->peek_token->type == semicolon) {
             free(p);
             return true;
         }
