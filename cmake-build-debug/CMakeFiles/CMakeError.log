@@ -1,175 +1,22 @@
 Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: /usr/bin/cc 
+Compiler: /Library/Developer/CommandLineTools/usr/bin/cc 
 Build flags: 
 Id flags:  
 
 The output was:
-69
+1
+ld: library not found for -lSystem
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
 
 
-Agreeing to the Xcode/iOS license requires admin privileges, please run “sudo xcodebuild -license” and then retry this command.
-
-
-
-
-Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: /usr/bin/cc 
-Build flags: 
-Id flags: -c 
-
-The output was:
-69
-
-
-Agreeing to the Xcode/iOS license requires admin privileges, please run “sudo xcodebuild -license” and then retry this command.
-
-
-
-
-Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: /usr/bin/cc 
-Build flags: 
-Id flags: -Aa 
-
-The output was:
-69
-
-
-Agreeing to the Xcode/iOS license requires admin privileges, please run “sudo xcodebuild -license” and then retry this command.
-
-
-
-
-Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: /usr/bin/cc 
-Build flags: 
-Id flags: -D__CLASSIC_C__ 
-
-The output was:
-69
-
-
-Agreeing to the Xcode/iOS license requires admin privileges, please run “sudo xcodebuild -license” and then retry this command.
-
-
-
-
-Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: /usr/bin/cc 
-Build flags: 
-Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
-
-The output was:
-69
-
-
-Agreeing to the Xcode/iOS license requires admin privileges, please run “sudo xcodebuild -license” and then retry this command.
-
-
-
-
-Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: /usr/bin/cc 
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /Library/Developer/CommandLineTools/usr/bin/c++ 
 Build flags: 
 Id flags:  
 
 The output was:
-69
-
-
-Agreeing to the Xcode/iOS license requires admin privileges, please run “sudo xcodebuild -license” and then retry this command.
-
-
-
-
-Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: /usr/bin/cc 
-Build flags: 
-Id flags: -c 
-
-The output was:
-69
-
-
-Agreeing to the Xcode/iOS license requires admin privileges, please run “sudo xcodebuild -license” and then retry this command.
-
-
-
-
-Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: /usr/bin/cc 
-Build flags: 
-Id flags: -Aa 
-
-The output was:
-69
-
-
-Agreeing to the Xcode/iOS license requires admin privileges, please run “sudo xcodebuild -license” and then retry this command.
-
-
-
-
-Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: /usr/bin/cc 
-Build flags: 
-Id flags: -D__CLASSIC_C__ 
-
-The output was:
-69
-
-
-Agreeing to the Xcode/iOS license requires admin privileges, please run “sudo xcodebuild -license” and then retry this command.
-
-
-
-
-Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: /usr/bin/cc 
-Build flags: 
-Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
-
-The output was:
-69
-
-
-Agreeing to the Xcode/iOS license requires admin privileges, please run “sudo xcodebuild -license” and then retry this command.
-
-
-
-
-Checking whether the C compiler is IAR using "" did not match "IAR .+ Compiler":
-
-
-Agreeing to the Xcode/iOS license requires admin privileges, please run “sudo xcodebuild -license” and then retry this command.
-
-
-Checking whether the C compiler is IAR using "" did not match "IAR .+ Compiler":
-
-
-Agreeing to the Xcode/iOS license requires admin privileges, please run “sudo xcodebuild -license” and then retry this command.
-
-
-Detecting C compiler ABI info failed to compile with the following output:
-Change Dir: /Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_0014e/fast && 
-
-Agreeing to the Xcode/iOS license requires admin privileges, please run “sudo xcodebuild -license” and then retry this command.
-
-
-
-
-
-
-Determining if the C compiler works failed with the following output:
-Change Dir: /Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_37699/fast && 
-
-Agreeing to the Xcode/iOS license requires admin privileges, please run “sudo xcodebuild -license” and then retry this command.
-
-
-
+1
+ld: library not found for -lc++
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
 
 

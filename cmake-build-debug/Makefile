@@ -58,19 +58,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/moboustt/CLionProjects/minishell
+CMAKE_SOURCE_DIR = /Users/moboustt/Desktop/1337/minishell
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/moboustt/CLionProjects/minishell/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/moboustt/Desktop/1337/minishell/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,7 +78,7 @@ CMAKE_BINARY_DIR = /Users/moboustt/CLionProjects/minishell/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -89,7 +89,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles /Users/moboustt/CLionProjects/minishell/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles /Users/moboustt/Desktop/1337/minishell/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -130,17 +130,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named minishell
+# Target rules for targets named MINISHELL
 
 # Build rule for target.
-minishell: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 minishell
-.PHONY : minishell
+MINISHELL: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MINISHELL
+.PHONY : MINISHELL
 
 # fast build rule for target.
-minishell/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/build
-.PHONY : minishell/fast
+MINISHELL/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/build
+.PHONY : MINISHELL/fast
 
 ast/node.o: ast/node.c.o
 
@@ -148,7 +148,7 @@ ast/node.o: ast/node.c.o
 
 # target to build an object file
 ast/node.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/ast/node.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/ast/node.c.o
 .PHONY : ast/node.c.o
 
 ast/node.i: ast/node.c.i
@@ -157,7 +157,7 @@ ast/node.i: ast/node.c.i
 
 # target to preprocess a source file
 ast/node.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/ast/node.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/ast/node.c.i
 .PHONY : ast/node.c.i
 
 ast/node.s: ast/node.c.s
@@ -166,7 +166,7 @@ ast/node.s: ast/node.c.s
 
 # target to generate assembly for a file
 ast/node.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/ast/node.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/ast/node.c.s
 .PHONY : ast/node.c.s
 
 commands/ft_cd.o: commands/ft_cd.c.o
@@ -175,7 +175,7 @@ commands/ft_cd.o: commands/ft_cd.c.o
 
 # target to build an object file
 commands/ft_cd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_cd.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_cd.c.o
 .PHONY : commands/ft_cd.c.o
 
 commands/ft_cd.i: commands/ft_cd.c.i
@@ -184,7 +184,7 @@ commands/ft_cd.i: commands/ft_cd.c.i
 
 # target to preprocess a source file
 commands/ft_cd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_cd.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_cd.c.i
 .PHONY : commands/ft_cd.c.i
 
 commands/ft_cd.s: commands/ft_cd.c.s
@@ -193,7 +193,7 @@ commands/ft_cd.s: commands/ft_cd.c.s
 
 # target to generate assembly for a file
 commands/ft_cd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_cd.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_cd.c.s
 .PHONY : commands/ft_cd.c.s
 
 commands/ft_echo.o: commands/ft_echo.c.o
@@ -202,7 +202,7 @@ commands/ft_echo.o: commands/ft_echo.c.o
 
 # target to build an object file
 commands/ft_echo.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_echo.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o
 .PHONY : commands/ft_echo.c.o
 
 commands/ft_echo.i: commands/ft_echo.c.i
@@ -211,7 +211,7 @@ commands/ft_echo.i: commands/ft_echo.c.i
 
 # target to preprocess a source file
 commands/ft_echo.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_echo.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_echo.c.i
 .PHONY : commands/ft_echo.c.i
 
 commands/ft_echo.s: commands/ft_echo.c.s
@@ -220,7 +220,7 @@ commands/ft_echo.s: commands/ft_echo.c.s
 
 # target to generate assembly for a file
 commands/ft_echo.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_echo.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_echo.c.s
 .PHONY : commands/ft_echo.c.s
 
 commands/ft_env.o: commands/ft_env.c.o
@@ -229,7 +229,7 @@ commands/ft_env.o: commands/ft_env.c.o
 
 # target to build an object file
 commands/ft_env.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_env.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_env.c.o
 .PHONY : commands/ft_env.c.o
 
 commands/ft_env.i: commands/ft_env.c.i
@@ -238,7 +238,7 @@ commands/ft_env.i: commands/ft_env.c.i
 
 # target to preprocess a source file
 commands/ft_env.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_env.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_env.c.i
 .PHONY : commands/ft_env.c.i
 
 commands/ft_env.s: commands/ft_env.c.s
@@ -247,7 +247,7 @@ commands/ft_env.s: commands/ft_env.c.s
 
 # target to generate assembly for a file
 commands/ft_env.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_env.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_env.c.s
 .PHONY : commands/ft_env.c.s
 
 commands/ft_exit.o: commands/ft_exit.c.o
@@ -256,7 +256,7 @@ commands/ft_exit.o: commands/ft_exit.c.o
 
 # target to build an object file
 commands/ft_exit.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_exit.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o
 .PHONY : commands/ft_exit.c.o
 
 commands/ft_exit.i: commands/ft_exit.c.i
@@ -265,7 +265,7 @@ commands/ft_exit.i: commands/ft_exit.c.i
 
 # target to preprocess a source file
 commands/ft_exit.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_exit.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_exit.c.i
 .PHONY : commands/ft_exit.c.i
 
 commands/ft_exit.s: commands/ft_exit.c.s
@@ -274,7 +274,7 @@ commands/ft_exit.s: commands/ft_exit.c.s
 
 # target to generate assembly for a file
 commands/ft_exit.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_exit.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_exit.c.s
 .PHONY : commands/ft_exit.c.s
 
 commands/ft_export.o: commands/ft_export.c.o
@@ -283,7 +283,7 @@ commands/ft_export.o: commands/ft_export.c.o
 
 # target to build an object file
 commands/ft_export.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_export.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_export.c.o
 .PHONY : commands/ft_export.c.o
 
 commands/ft_export.i: commands/ft_export.c.i
@@ -292,7 +292,7 @@ commands/ft_export.i: commands/ft_export.c.i
 
 # target to preprocess a source file
 commands/ft_export.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_export.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_export.c.i
 .PHONY : commands/ft_export.c.i
 
 commands/ft_export.s: commands/ft_export.c.s
@@ -301,7 +301,7 @@ commands/ft_export.s: commands/ft_export.c.s
 
 # target to generate assembly for a file
 commands/ft_export.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_export.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_export.c.s
 .PHONY : commands/ft_export.c.s
 
 commands/ft_pwd.o: commands/ft_pwd.c.o
@@ -310,7 +310,7 @@ commands/ft_pwd.o: commands/ft_pwd.c.o
 
 # target to build an object file
 commands/ft_pwd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_pwd.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o
 .PHONY : commands/ft_pwd.c.o
 
 commands/ft_pwd.i: commands/ft_pwd.c.i
@@ -319,7 +319,7 @@ commands/ft_pwd.i: commands/ft_pwd.c.i
 
 # target to preprocess a source file
 commands/ft_pwd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_pwd.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.i
 .PHONY : commands/ft_pwd.c.i
 
 commands/ft_pwd.s: commands/ft_pwd.c.s
@@ -328,7 +328,7 @@ commands/ft_pwd.s: commands/ft_pwd.c.s
 
 # target to generate assembly for a file
 commands/ft_pwd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_pwd.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.s
 .PHONY : commands/ft_pwd.c.s
 
 commands/ft_unset.o: commands/ft_unset.c.o
@@ -337,7 +337,7 @@ commands/ft_unset.o: commands/ft_unset.c.o
 
 # target to build an object file
 commands/ft_unset.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_unset.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o
 .PHONY : commands/ft_unset.c.o
 
 commands/ft_unset.i: commands/ft_unset.c.i
@@ -346,7 +346,7 @@ commands/ft_unset.i: commands/ft_unset.c.i
 
 # target to preprocess a source file
 commands/ft_unset.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_unset.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_unset.c.i
 .PHONY : commands/ft_unset.c.i
 
 commands/ft_unset.s: commands/ft_unset.c.s
@@ -355,7 +355,7 @@ commands/ft_unset.s: commands/ft_unset.c.s
 
 # target to generate assembly for a file
 commands/ft_unset.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/commands/ft_unset.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/commands/ft_unset.c.s
 .PHONY : commands/ft_unset.c.s
 
 errors/error.o: errors/error.c.o
@@ -364,7 +364,7 @@ errors/error.o: errors/error.c.o
 
 # target to build an object file
 errors/error.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/errors/error.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/errors/error.c.o
 .PHONY : errors/error.c.o
 
 errors/error.i: errors/error.c.i
@@ -373,7 +373,7 @@ errors/error.i: errors/error.c.i
 
 # target to preprocess a source file
 errors/error.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/errors/error.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/errors/error.c.i
 .PHONY : errors/error.c.i
 
 errors/error.s: errors/error.c.s
@@ -382,7 +382,7 @@ errors/error.s: errors/error.c.s
 
 # target to generate assembly for a file
 errors/error.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/errors/error.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/errors/error.c.s
 .PHONY : errors/error.c.s
 
 execute.o: execute.c.o
@@ -391,7 +391,7 @@ execute.o: execute.c.o
 
 # target to build an object file
 execute.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/execute.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/execute.c.o
 .PHONY : execute.c.o
 
 execute.i: execute.c.i
@@ -400,7 +400,7 @@ execute.i: execute.c.i
 
 # target to preprocess a source file
 execute.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/execute.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/execute.c.i
 .PHONY : execute.c.i
 
 execute.s: execute.c.s
@@ -409,8 +409,62 @@ execute.s: execute.c.s
 
 # target to generate assembly for a file
 execute.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/execute.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/execute.c.s
 .PHONY : execute.c.s
+
+lexer/env_vars_helper_funcs.o: lexer/env_vars_helper_funcs.c.o
+
+.PHONY : lexer/env_vars_helper_funcs.o
+
+# target to build an object file
+lexer/env_vars_helper_funcs.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o
+.PHONY : lexer/env_vars_helper_funcs.c.o
+
+lexer/env_vars_helper_funcs.i: lexer/env_vars_helper_funcs.c.i
+
+.PHONY : lexer/env_vars_helper_funcs.i
+
+# target to preprocess a source file
+lexer/env_vars_helper_funcs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.i
+.PHONY : lexer/env_vars_helper_funcs.c.i
+
+lexer/env_vars_helper_funcs.s: lexer/env_vars_helper_funcs.c.s
+
+.PHONY : lexer/env_vars_helper_funcs.s
+
+# target to generate assembly for a file
+lexer/env_vars_helper_funcs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.s
+.PHONY : lexer/env_vars_helper_funcs.c.s
+
+lexer/envirement_vars_utils.o: lexer/envirement_vars_utils.c.o
+
+.PHONY : lexer/envirement_vars_utils.o
+
+# target to build an object file
+lexer/envirement_vars_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o
+.PHONY : lexer/envirement_vars_utils.c.o
+
+lexer/envirement_vars_utils.i: lexer/envirement_vars_utils.c.i
+
+.PHONY : lexer/envirement_vars_utils.i
+
+# target to preprocess a source file
+lexer/envirement_vars_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.i
+.PHONY : lexer/envirement_vars_utils.c.i
+
+lexer/envirement_vars_utils.s: lexer/envirement_vars_utils.c.s
+
+.PHONY : lexer/envirement_vars_utils.s
+
+# target to generate assembly for a file
+lexer/envirement_vars_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.s
+.PHONY : lexer/envirement_vars_utils.c.s
 
 lexer/lexer.o: lexer/lexer.c.o
 
@@ -418,7 +472,7 @@ lexer/lexer.o: lexer/lexer.c.o
 
 # target to build an object file
 lexer/lexer.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lexer/lexer.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer.c.o
 .PHONY : lexer/lexer.c.o
 
 lexer/lexer.i: lexer/lexer.c.i
@@ -427,7 +481,7 @@ lexer/lexer.i: lexer/lexer.c.i
 
 # target to preprocess a source file
 lexer/lexer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lexer/lexer.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer.c.i
 .PHONY : lexer/lexer.c.i
 
 lexer/lexer.s: lexer/lexer.c.s
@@ -436,8 +490,143 @@ lexer/lexer.s: lexer/lexer.c.s
 
 # target to generate assembly for a file
 lexer/lexer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lexer/lexer.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer.c.s
 .PHONY : lexer/lexer.c.s
+
+lexer/lexer_helper_functions.o: lexer/lexer_helper_functions.c.o
+
+.PHONY : lexer/lexer_helper_functions.o
+
+# target to build an object file
+lexer/lexer_helper_functions.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.o
+.PHONY : lexer/lexer_helper_functions.c.o
+
+lexer/lexer_helper_functions.i: lexer/lexer_helper_functions.c.i
+
+.PHONY : lexer/lexer_helper_functions.i
+
+# target to preprocess a source file
+lexer/lexer_helper_functions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.i
+.PHONY : lexer/lexer_helper_functions.c.i
+
+lexer/lexer_helper_functions.s: lexer/lexer_helper_functions.c.s
+
+.PHONY : lexer/lexer_helper_functions.s
+
+# target to generate assembly for a file
+lexer/lexer_helper_functions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.s
+.PHONY : lexer/lexer_helper_functions.c.s
+
+lexer/lexer_helper_functions2.o: lexer/lexer_helper_functions2.c.o
+
+.PHONY : lexer/lexer_helper_functions2.o
+
+# target to build an object file
+lexer/lexer_helper_functions2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.o
+.PHONY : lexer/lexer_helper_functions2.c.o
+
+lexer/lexer_helper_functions2.i: lexer/lexer_helper_functions2.c.i
+
+.PHONY : lexer/lexer_helper_functions2.i
+
+# target to preprocess a source file
+lexer/lexer_helper_functions2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.i
+.PHONY : lexer/lexer_helper_functions2.c.i
+
+lexer/lexer_helper_functions2.s: lexer/lexer_helper_functions2.c.s
+
+.PHONY : lexer/lexer_helper_functions2.s
+
+# target to generate assembly for a file
+lexer/lexer_helper_functions2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.s
+.PHONY : lexer/lexer_helper_functions2.c.s
+
+lexer/lexer_parsing_helper_funcs.o: lexer/lexer_parsing_helper_funcs.c.o
+
+.PHONY : lexer/lexer_parsing_helper_funcs.o
+
+# target to build an object file
+lexer/lexer_parsing_helper_funcs.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.o
+.PHONY : lexer/lexer_parsing_helper_funcs.c.o
+
+lexer/lexer_parsing_helper_funcs.i: lexer/lexer_parsing_helper_funcs.c.i
+
+.PHONY : lexer/lexer_parsing_helper_funcs.i
+
+# target to preprocess a source file
+lexer/lexer_parsing_helper_funcs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.i
+.PHONY : lexer/lexer_parsing_helper_funcs.c.i
+
+lexer/lexer_parsing_helper_funcs.s: lexer/lexer_parsing_helper_funcs.c.s
+
+.PHONY : lexer/lexer_parsing_helper_funcs.s
+
+# target to generate assembly for a file
+lexer/lexer_parsing_helper_funcs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.s
+.PHONY : lexer/lexer_parsing_helper_funcs.c.s
+
+lexer/lexer_utils.o: lexer/lexer_utils.c.o
+
+.PHONY : lexer/lexer_utils.o
+
+# target to build an object file
+lexer/lexer_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.o
+.PHONY : lexer/lexer_utils.c.o
+
+lexer/lexer_utils.i: lexer/lexer_utils.c.i
+
+.PHONY : lexer/lexer_utils.i
+
+# target to preprocess a source file
+lexer/lexer_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.i
+.PHONY : lexer/lexer_utils.c.i
+
+lexer/lexer_utils.s: lexer/lexer_utils.c.s
+
+.PHONY : lexer/lexer_utils.s
+
+# target to generate assembly for a file
+lexer/lexer_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.s
+.PHONY : lexer/lexer_utils.c.s
+
+lexer/quotes_parsing_helper_funcs.o: lexer/quotes_parsing_helper_funcs.c.o
+
+.PHONY : lexer/quotes_parsing_helper_funcs.o
+
+# target to build an object file
+lexer/quotes_parsing_helper_funcs.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.o
+.PHONY : lexer/quotes_parsing_helper_funcs.c.o
+
+lexer/quotes_parsing_helper_funcs.i: lexer/quotes_parsing_helper_funcs.c.i
+
+.PHONY : lexer/quotes_parsing_helper_funcs.i
+
+# target to preprocess a source file
+lexer/quotes_parsing_helper_funcs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.i
+.PHONY : lexer/quotes_parsing_helper_funcs.c.i
+
+lexer/quotes_parsing_helper_funcs.s: lexer/quotes_parsing_helper_funcs.c.s
+
+.PHONY : lexer/quotes_parsing_helper_funcs.s
+
+# target to generate assembly for a file
+lexer/quotes_parsing_helper_funcs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.s
+.PHONY : lexer/quotes_parsing_helper_funcs.c.s
 
 minishell.o: minishell.c.o
 
@@ -445,7 +634,7 @@ minishell.o: minishell.c.o
 
 # target to build an object file
 minishell.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/minishell.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/minishell.c.o
 .PHONY : minishell.c.o
 
 minishell.i: minishell.c.i
@@ -454,7 +643,7 @@ minishell.i: minishell.c.i
 
 # target to preprocess a source file
 minishell.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/minishell.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/minishell.c.i
 .PHONY : minishell.c.i
 
 minishell.s: minishell.c.s
@@ -463,7 +652,7 @@ minishell.s: minishell.c.s
 
 # target to generate assembly for a file
 minishell.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/minishell.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/minishell.c.s
 .PHONY : minishell.c.s
 
 parser/parse.o: parser/parse.c.o
@@ -472,7 +661,7 @@ parser/parse.o: parser/parse.c.o
 
 # target to build an object file
 parser/parse.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/parser/parse.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/parser/parse.c.o
 .PHONY : parser/parse.c.o
 
 parser/parse.i: parser/parse.c.i
@@ -481,7 +670,7 @@ parser/parse.i: parser/parse.c.i
 
 # target to preprocess a source file
 parser/parse.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/parser/parse.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/parser/parse.c.i
 .PHONY : parser/parse.c.i
 
 parser/parse.s: parser/parse.c.s
@@ -490,7 +679,7 @@ parser/parse.s: parser/parse.c.s
 
 # target to generate assembly for a file
 parser/parse.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/parser/parse.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/parser/parse.c.s
 .PHONY : parser/parse.c.s
 
 parser/parser_utils.o: parser/parser_utils.c.o
@@ -499,7 +688,7 @@ parser/parser_utils.o: parser/parser_utils.c.o
 
 # target to build an object file
 parser/parser_utils.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/parser/parser_utils.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o
 .PHONY : parser/parser_utils.c.o
 
 parser/parser_utils.i: parser/parser_utils.c.i
@@ -508,7 +697,7 @@ parser/parser_utils.i: parser/parser_utils.c.i
 
 # target to preprocess a source file
 parser/parser_utils.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/parser/parser_utils.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/parser/parser_utils.c.i
 .PHONY : parser/parser_utils.c.i
 
 parser/parser_utils.s: parser/parser_utils.c.s
@@ -517,7 +706,7 @@ parser/parser_utils.s: parser/parser_utils.c.s
 
 # target to generate assembly for a file
 parser/parser_utils.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/parser/parser_utils.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/parser/parser_utils.c.s
 .PHONY : parser/parser_utils.c.s
 
 tokenizer/token.o: tokenizer/token.c.o
@@ -526,7 +715,7 @@ tokenizer/token.o: tokenizer/token.c.o
 
 # target to build an object file
 tokenizer/token.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/tokenizer/token.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/tokenizer/token.c.o
 .PHONY : tokenizer/token.c.o
 
 tokenizer/token.i: tokenizer/token.c.i
@@ -535,7 +724,7 @@ tokenizer/token.i: tokenizer/token.c.i
 
 # target to preprocess a source file
 tokenizer/token.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/tokenizer/token.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/tokenizer/token.c.i
 .PHONY : tokenizer/token.c.i
 
 tokenizer/token.s: tokenizer/token.c.s
@@ -544,7 +733,7 @@ tokenizer/token.s: tokenizer/token.c.s
 
 # target to generate assembly for a file
 tokenizer/token.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/tokenizer/token.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/tokenizer/token.c.s
 .PHONY : tokenizer/token.c.s
 
 utility/ft_env.o: utility/ft_env.c.o
@@ -553,7 +742,7 @@ utility/ft_env.o: utility/ft_env.c.o
 
 # target to build an object file
 utility/ft_env.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/utility/ft_env.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_env.c.o
 .PHONY : utility/ft_env.c.o
 
 utility/ft_env.i: utility/ft_env.c.i
@@ -562,7 +751,7 @@ utility/ft_env.i: utility/ft_env.c.i
 
 # target to preprocess a source file
 utility/ft_env.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/utility/ft_env.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_env.c.i
 .PHONY : utility/ft_env.c.i
 
 utility/ft_env.s: utility/ft_env.c.s
@@ -571,7 +760,7 @@ utility/ft_env.s: utility/ft_env.c.s
 
 # target to generate assembly for a file
 utility/ft_env.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/utility/ft_env.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_env.c.s
 .PHONY : utility/ft_env.c.s
 
 utility/ft_execve.o: utility/ft_execve.c.o
@@ -580,7 +769,7 @@ utility/ft_execve.o: utility/ft_execve.c.o
 
 # target to build an object file
 utility/ft_execve.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/utility/ft_execve.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o
 .PHONY : utility/ft_execve.c.o
 
 utility/ft_execve.i: utility/ft_execve.c.i
@@ -589,7 +778,7 @@ utility/ft_execve.i: utility/ft_execve.c.i
 
 # target to preprocess a source file
 utility/ft_execve.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/utility/ft_execve.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_execve.c.i
 .PHONY : utility/ft_execve.c.i
 
 utility/ft_execve.s: utility/ft_execve.c.s
@@ -598,7 +787,7 @@ utility/ft_execve.s: utility/ft_execve.c.s
 
 # target to generate assembly for a file
 utility/ft_execve.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/utility/ft_execve.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_execve.c.s
 .PHONY : utility/ft_execve.c.s
 
 utility/ft_vector.o: utility/ft_vector.c.o
@@ -607,7 +796,7 @@ utility/ft_vector.o: utility/ft_vector.c.o
 
 # target to build an object file
 utility/ft_vector.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/utility/ft_vector.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o
 .PHONY : utility/ft_vector.c.o
 
 utility/ft_vector.i: utility/ft_vector.c.i
@@ -616,7 +805,7 @@ utility/ft_vector.i: utility/ft_vector.c.i
 
 # target to preprocess a source file
 utility/ft_vector.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/utility/ft_vector.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_vector.c.i
 .PHONY : utility/ft_vector.c.i
 
 utility/ft_vector.s: utility/ft_vector.c.s
@@ -625,7 +814,7 @@ utility/ft_vector.s: utility/ft_vector.c.s
 
 # target to generate assembly for a file
 utility/ft_vector.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/utility/ft_vector.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_vector.c.s
 .PHONY : utility/ft_vector.c.s
 
 # Help Target
@@ -636,7 +825,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... minishell"
+	@echo "... MINISHELL"
 	@echo "... ast/node.o"
 	@echo "... ast/node.i"
 	@echo "... ast/node.s"
@@ -667,9 +856,30 @@ help:
 	@echo "... execute.o"
 	@echo "... execute.i"
 	@echo "... execute.s"
+	@echo "... lexer/env_vars_helper_funcs.o"
+	@echo "... lexer/env_vars_helper_funcs.i"
+	@echo "... lexer/env_vars_helper_funcs.s"
+	@echo "... lexer/envirement_vars_utils.o"
+	@echo "... lexer/envirement_vars_utils.i"
+	@echo "... lexer/envirement_vars_utils.s"
 	@echo "... lexer/lexer.o"
 	@echo "... lexer/lexer.i"
 	@echo "... lexer/lexer.s"
+	@echo "... lexer/lexer_helper_functions.o"
+	@echo "... lexer/lexer_helper_functions.i"
+	@echo "... lexer/lexer_helper_functions.s"
+	@echo "... lexer/lexer_helper_functions2.o"
+	@echo "... lexer/lexer_helper_functions2.i"
+	@echo "... lexer/lexer_helper_functions2.s"
+	@echo "... lexer/lexer_parsing_helper_funcs.o"
+	@echo "... lexer/lexer_parsing_helper_funcs.i"
+	@echo "... lexer/lexer_parsing_helper_funcs.s"
+	@echo "... lexer/lexer_utils.o"
+	@echo "... lexer/lexer_utils.i"
+	@echo "... lexer/lexer_utils.s"
+	@echo "... lexer/quotes_parsing_helper_funcs.o"
+	@echo "... lexer/quotes_parsing_helper_funcs.i"
+	@echo "... lexer/quotes_parsing_helper_funcs.s"
 	@echo "... minishell.o"
 	@echo "... minishell.i"
 	@echo "... minishell.s"

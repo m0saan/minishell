@@ -53,321 +53,426 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/moboustt/CLionProjects/minishell
+CMAKE_SOURCE_DIR = /Users/moboustt/Desktop/1337/minishell
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/moboustt/CLionProjects/minishell/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/moboustt/Desktop/1337/minishell/cmake-build-debug
 
 # Include any dependencies generated for this target.
-include CMakeFiles/minishell.dir/depend.make
+include CMakeFiles/MINISHELL.dir/depend.make
 
 # Include the progress variables for this target.
-include CMakeFiles/minishell.dir/progress.make
+include CMakeFiles/MINISHELL.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include CMakeFiles/minishell.dir/flags.make
+include CMakeFiles/MINISHELL.dir/flags.make
 
-CMakeFiles/minishell.dir/minishell.c.o: CMakeFiles/minishell.dir/flags.make
-CMakeFiles/minishell.dir/minishell.c.o: ../minishell.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/minishell.dir/minishell.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/minishell.c.o -c /Users/moboustt/CLionProjects/minishell/minishell.c
+CMakeFiles/MINISHELL.dir/lexer/lexer.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/lexer/lexer.c.o: ../lexer/lexer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/MINISHELL.dir/lexer/lexer.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer.c
 
-CMakeFiles/minishell.dir/minishell.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/minishell.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/CLionProjects/minishell/minishell.c > CMakeFiles/minishell.dir/minishell.c.i
+CMakeFiles/MINISHELL.dir/lexer/lexer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/lexer/lexer.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer.c > CMakeFiles/MINISHELL.dir/lexer/lexer.c.i
 
-CMakeFiles/minishell.dir/minishell.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/minishell.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/CLionProjects/minishell/minishell.c -o CMakeFiles/minishell.dir/minishell.c.s
+CMakeFiles/MINISHELL.dir/lexer/lexer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/lexer.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer.c -o CMakeFiles/MINISHELL.dir/lexer/lexer.c.s
 
-CMakeFiles/minishell.dir/lexer/lexer.c.o: CMakeFiles/minishell.dir/flags.make
-CMakeFiles/minishell.dir/lexer/lexer.c.o: ../lexer/lexer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/minishell.dir/lexer/lexer.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/lexer/lexer.c.o -c /Users/moboustt/CLionProjects/minishell/lexer/lexer.c
+CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.o: ../lexer/lexer_helper_functions2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions2.c
 
-CMakeFiles/minishell.dir/lexer/lexer.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/lexer/lexer.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/CLionProjects/minishell/lexer/lexer.c > CMakeFiles/minishell.dir/lexer/lexer.c.i
+CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions2.c > CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.i
 
-CMakeFiles/minishell.dir/lexer/lexer.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/lexer/lexer.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/CLionProjects/minishell/lexer/lexer.c -o CMakeFiles/minishell.dir/lexer/lexer.c.s
+CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions2.c -o CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.s
 
-CMakeFiles/minishell.dir/parser/parse.c.o: CMakeFiles/minishell.dir/flags.make
-CMakeFiles/minishell.dir/parser/parse.c.o: ../parser/parse.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/minishell.dir/parser/parse.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/parser/parse.c.o -c /Users/moboustt/CLionProjects/minishell/parser/parse.c
+CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.o: ../lexer/lexer_helper_functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions.c
 
-CMakeFiles/minishell.dir/parser/parse.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/parser/parse.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/CLionProjects/minishell/parser/parse.c > CMakeFiles/minishell.dir/parser/parse.c.i
+CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions.c > CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.i
 
-CMakeFiles/minishell.dir/parser/parse.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/parser/parse.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/CLionProjects/minishell/parser/parse.c -o CMakeFiles/minishell.dir/parser/parse.c.s
+CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions.c -o CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.s
 
-CMakeFiles/minishell.dir/parser/parser_utils.c.o: CMakeFiles/minishell.dir/flags.make
-CMakeFiles/minishell.dir/parser/parser_utils.c.o: ../parser/parser_utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/minishell.dir/parser/parser_utils.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/parser/parser_utils.c.o -c /Users/moboustt/CLionProjects/minishell/parser/parser_utils.c
+CMakeFiles/MINISHELL.dir/execute.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/execute.c.o: ../execute.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/MINISHELL.dir/execute.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/execute.c.o -c /Users/moboustt/Desktop/1337/minishell/execute.c
 
-CMakeFiles/minishell.dir/parser/parser_utils.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/parser/parser_utils.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/CLionProjects/minishell/parser/parser_utils.c > CMakeFiles/minishell.dir/parser/parser_utils.c.i
+CMakeFiles/MINISHELL.dir/execute.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/execute.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/execute.c > CMakeFiles/MINISHELL.dir/execute.c.i
 
-CMakeFiles/minishell.dir/parser/parser_utils.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/parser/parser_utils.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/CLionProjects/minishell/parser/parser_utils.c -o CMakeFiles/minishell.dir/parser/parser_utils.c.s
+CMakeFiles/MINISHELL.dir/execute.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/execute.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/execute.c -o CMakeFiles/MINISHELL.dir/execute.c.s
 
-CMakeFiles/minishell.dir/tokenizer/token.c.o: CMakeFiles/minishell.dir/flags.make
-CMakeFiles/minishell.dir/tokenizer/token.c.o: ../tokenizer/token.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/minishell.dir/tokenizer/token.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/tokenizer/token.c.o -c /Users/moboustt/CLionProjects/minishell/tokenizer/token.c
+CMakeFiles/MINISHELL.dir/tokenizer/token.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/tokenizer/token.c.o: ../tokenizer/token.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/MINISHELL.dir/tokenizer/token.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/tokenizer/token.c.o -c /Users/moboustt/Desktop/1337/minishell/tokenizer/token.c
 
-CMakeFiles/minishell.dir/tokenizer/token.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/tokenizer/token.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/CLionProjects/minishell/tokenizer/token.c > CMakeFiles/minishell.dir/tokenizer/token.c.i
+CMakeFiles/MINISHELL.dir/tokenizer/token.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/tokenizer/token.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/tokenizer/token.c > CMakeFiles/MINISHELL.dir/tokenizer/token.c.i
 
-CMakeFiles/minishell.dir/tokenizer/token.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/tokenizer/token.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/CLionProjects/minishell/tokenizer/token.c -o CMakeFiles/minishell.dir/tokenizer/token.c.s
+CMakeFiles/MINISHELL.dir/tokenizer/token.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/tokenizer/token.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/tokenizer/token.c -o CMakeFiles/MINISHELL.dir/tokenizer/token.c.s
 
-CMakeFiles/minishell.dir/ast/node.c.o: CMakeFiles/minishell.dir/flags.make
-CMakeFiles/minishell.dir/ast/node.c.o: ../ast/node.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/minishell.dir/ast/node.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/ast/node.c.o -c /Users/moboustt/CLionProjects/minishell/ast/node.c
+CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o: ../parser/parser_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o -c /Users/moboustt/Desktop/1337/minishell/parser/parser_utils.c
 
-CMakeFiles/minishell.dir/ast/node.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/ast/node.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/CLionProjects/minishell/ast/node.c > CMakeFiles/minishell.dir/ast/node.c.i
+CMakeFiles/MINISHELL.dir/parser/parser_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/parser/parser_utils.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/parser/parser_utils.c > CMakeFiles/MINISHELL.dir/parser/parser_utils.c.i
 
-CMakeFiles/minishell.dir/ast/node.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/ast/node.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/CLionProjects/minishell/ast/node.c -o CMakeFiles/minishell.dir/ast/node.c.s
+CMakeFiles/MINISHELL.dir/parser/parser_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/parser/parser_utils.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/parser/parser_utils.c -o CMakeFiles/MINISHELL.dir/parser/parser_utils.c.s
 
-CMakeFiles/minishell.dir/utility/ft_vector.c.o: CMakeFiles/minishell.dir/flags.make
-CMakeFiles/minishell.dir/utility/ft_vector.c.o: ../utility/ft_vector.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/minishell.dir/utility/ft_vector.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/utility/ft_vector.c.o -c /Users/moboustt/CLionProjects/minishell/utility/ft_vector.c
+CMakeFiles/MINISHELL.dir/parser/parse.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/parser/parse.c.o: ../parser/parse.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/MINISHELL.dir/parser/parse.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/parser/parse.c.o -c /Users/moboustt/Desktop/1337/minishell/parser/parse.c
 
-CMakeFiles/minishell.dir/utility/ft_vector.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/utility/ft_vector.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/CLionProjects/minishell/utility/ft_vector.c > CMakeFiles/minishell.dir/utility/ft_vector.c.i
+CMakeFiles/MINISHELL.dir/parser/parse.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/parser/parse.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/parser/parse.c > CMakeFiles/MINISHELL.dir/parser/parse.c.i
 
-CMakeFiles/minishell.dir/utility/ft_vector.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/utility/ft_vector.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/CLionProjects/minishell/utility/ft_vector.c -o CMakeFiles/minishell.dir/utility/ft_vector.c.s
+CMakeFiles/MINISHELL.dir/parser/parse.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/parser/parse.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/parser/parse.c -o CMakeFiles/MINISHELL.dir/parser/parse.c.s
 
-CMakeFiles/minishell.dir/execute.c.o: CMakeFiles/minishell.dir/flags.make
-CMakeFiles/minishell.dir/execute.c.o: ../execute.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/minishell.dir/execute.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/execute.c.o -c /Users/moboustt/CLionProjects/minishell/execute.c
+CMakeFiles/MINISHELL.dir/ast/node.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/ast/node.c.o: ../ast/node.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/MINISHELL.dir/ast/node.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/ast/node.c.o -c /Users/moboustt/Desktop/1337/minishell/ast/node.c
 
-CMakeFiles/minishell.dir/execute.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/execute.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/CLionProjects/minishell/execute.c > CMakeFiles/minishell.dir/execute.c.i
+CMakeFiles/MINISHELL.dir/ast/node.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/ast/node.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/ast/node.c > CMakeFiles/MINISHELL.dir/ast/node.c.i
 
-CMakeFiles/minishell.dir/execute.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/execute.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/CLionProjects/minishell/execute.c -o CMakeFiles/minishell.dir/execute.c.s
+CMakeFiles/MINISHELL.dir/ast/node.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/ast/node.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/ast/node.c -o CMakeFiles/MINISHELL.dir/ast/node.c.s
 
-CMakeFiles/minishell.dir/errors/error.c.o: CMakeFiles/minishell.dir/flags.make
-CMakeFiles/minishell.dir/errors/error.c.o: ../errors/error.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/minishell.dir/errors/error.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/errors/error.c.o -c /Users/moboustt/CLionProjects/minishell/errors/error.c
+CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o: ../commands/ft_echo.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_echo.c
 
-CMakeFiles/minishell.dir/errors/error.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/errors/error.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/CLionProjects/minishell/errors/error.c > CMakeFiles/minishell.dir/errors/error.c.i
+CMakeFiles/MINISHELL.dir/commands/ft_echo.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/commands/ft_echo.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_echo.c > CMakeFiles/MINISHELL.dir/commands/ft_echo.c.i
 
-CMakeFiles/minishell.dir/errors/error.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/errors/error.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/CLionProjects/minishell/errors/error.c -o CMakeFiles/minishell.dir/errors/error.c.s
+CMakeFiles/MINISHELL.dir/commands/ft_echo.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/commands/ft_echo.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_echo.c -o CMakeFiles/MINISHELL.dir/commands/ft_echo.c.s
 
-CMakeFiles/minishell.dir/commands/ft_cd.c.o: CMakeFiles/minishell.dir/flags.make
-CMakeFiles/minishell.dir/commands/ft_cd.c.o: ../commands/ft_cd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/minishell.dir/commands/ft_cd.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/commands/ft_cd.c.o -c /Users/moboustt/CLionProjects/minishell/commands/ft_cd.c
+CMakeFiles/MINISHELL.dir/commands/ft_cd.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/commands/ft_cd.c.o: ../commands/ft_cd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/MINISHELL.dir/commands/ft_cd.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_cd.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_cd.c
 
-CMakeFiles/minishell.dir/commands/ft_cd.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/commands/ft_cd.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/CLionProjects/minishell/commands/ft_cd.c > CMakeFiles/minishell.dir/commands/ft_cd.c.i
+CMakeFiles/MINISHELL.dir/commands/ft_cd.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/commands/ft_cd.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_cd.c > CMakeFiles/MINISHELL.dir/commands/ft_cd.c.i
 
-CMakeFiles/minishell.dir/commands/ft_cd.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/commands/ft_cd.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/CLionProjects/minishell/commands/ft_cd.c -o CMakeFiles/minishell.dir/commands/ft_cd.c.s
+CMakeFiles/MINISHELL.dir/commands/ft_cd.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/commands/ft_cd.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_cd.c -o CMakeFiles/MINISHELL.dir/commands/ft_cd.c.s
 
-CMakeFiles/minishell.dir/commands/ft_echo.c.o: CMakeFiles/minishell.dir/flags.make
-CMakeFiles/minishell.dir/commands/ft_echo.c.o: ../commands/ft_echo.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/minishell.dir/commands/ft_echo.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/commands/ft_echo.c.o -c /Users/moboustt/CLionProjects/minishell/commands/ft_echo.c
+CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o: ../commands/ft_unset.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_unset.c
 
-CMakeFiles/minishell.dir/commands/ft_echo.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/commands/ft_echo.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/CLionProjects/minishell/commands/ft_echo.c > CMakeFiles/minishell.dir/commands/ft_echo.c.i
+CMakeFiles/MINISHELL.dir/commands/ft_unset.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/commands/ft_unset.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_unset.c > CMakeFiles/MINISHELL.dir/commands/ft_unset.c.i
 
-CMakeFiles/minishell.dir/commands/ft_echo.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/commands/ft_echo.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/CLionProjects/minishell/commands/ft_echo.c -o CMakeFiles/minishell.dir/commands/ft_echo.c.s
+CMakeFiles/MINISHELL.dir/commands/ft_unset.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/commands/ft_unset.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_unset.c -o CMakeFiles/MINISHELL.dir/commands/ft_unset.c.s
 
-CMakeFiles/minishell.dir/commands/ft_env.c.o: CMakeFiles/minishell.dir/flags.make
-CMakeFiles/minishell.dir/commands/ft_env.c.o: ../commands/ft_env.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/minishell.dir/commands/ft_env.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/commands/ft_env.c.o -c /Users/moboustt/CLionProjects/minishell/commands/ft_env.c
+CMakeFiles/MINISHELL.dir/commands/ft_env.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/commands/ft_env.c.o: ../commands/ft_env.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/MINISHELL.dir/commands/ft_env.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_env.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_env.c
 
-CMakeFiles/minishell.dir/commands/ft_env.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/commands/ft_env.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/CLionProjects/minishell/commands/ft_env.c > CMakeFiles/minishell.dir/commands/ft_env.c.i
+CMakeFiles/MINISHELL.dir/commands/ft_env.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/commands/ft_env.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_env.c > CMakeFiles/MINISHELL.dir/commands/ft_env.c.i
 
-CMakeFiles/minishell.dir/commands/ft_env.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/commands/ft_env.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/CLionProjects/minishell/commands/ft_env.c -o CMakeFiles/minishell.dir/commands/ft_env.c.s
+CMakeFiles/MINISHELL.dir/commands/ft_env.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/commands/ft_env.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_env.c -o CMakeFiles/MINISHELL.dir/commands/ft_env.c.s
 
-CMakeFiles/minishell.dir/commands/ft_exit.c.o: CMakeFiles/minishell.dir/flags.make
-CMakeFiles/minishell.dir/commands/ft_exit.c.o: ../commands/ft_exit.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/minishell.dir/commands/ft_exit.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/commands/ft_exit.c.o -c /Users/moboustt/CLionProjects/minishell/commands/ft_exit.c
+CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o: ../commands/ft_pwd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_pwd.c
 
-CMakeFiles/minishell.dir/commands/ft_exit.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/commands/ft_exit.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/CLionProjects/minishell/commands/ft_exit.c > CMakeFiles/minishell.dir/commands/ft_exit.c.i
+CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_pwd.c > CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.i
 
-CMakeFiles/minishell.dir/commands/ft_exit.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/commands/ft_exit.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/CLionProjects/minishell/commands/ft_exit.c -o CMakeFiles/minishell.dir/commands/ft_exit.c.s
+CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_pwd.c -o CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.s
 
-CMakeFiles/minishell.dir/commands/ft_pwd.c.o: CMakeFiles/minishell.dir/flags.make
-CMakeFiles/minishell.dir/commands/ft_pwd.c.o: ../commands/ft_pwd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/minishell.dir/commands/ft_pwd.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/commands/ft_pwd.c.o -c /Users/moboustt/CLionProjects/minishell/commands/ft_pwd.c
+CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o: ../commands/ft_exit.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_exit.c
 
-CMakeFiles/minishell.dir/commands/ft_pwd.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/commands/ft_pwd.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/CLionProjects/minishell/commands/ft_pwd.c > CMakeFiles/minishell.dir/commands/ft_pwd.c.i
+CMakeFiles/MINISHELL.dir/commands/ft_exit.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/commands/ft_exit.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_exit.c > CMakeFiles/MINISHELL.dir/commands/ft_exit.c.i
 
-CMakeFiles/minishell.dir/commands/ft_pwd.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/commands/ft_pwd.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/CLionProjects/minishell/commands/ft_pwd.c -o CMakeFiles/minishell.dir/commands/ft_pwd.c.s
+CMakeFiles/MINISHELL.dir/commands/ft_exit.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/commands/ft_exit.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_exit.c -o CMakeFiles/MINISHELL.dir/commands/ft_exit.c.s
 
-CMakeFiles/minishell.dir/commands/ft_unset.c.o: CMakeFiles/minishell.dir/flags.make
-CMakeFiles/minishell.dir/commands/ft_unset.c.o: ../commands/ft_unset.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/minishell.dir/commands/ft_unset.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/commands/ft_unset.c.o -c /Users/moboustt/CLionProjects/minishell/commands/ft_unset.c
+CMakeFiles/MINISHELL.dir/commands/ft_export.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/commands/ft_export.c.o: ../commands/ft_export.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/MINISHELL.dir/commands/ft_export.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_export.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_export.c
 
-CMakeFiles/minishell.dir/commands/ft_unset.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/commands/ft_unset.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/CLionProjects/minishell/commands/ft_unset.c > CMakeFiles/minishell.dir/commands/ft_unset.c.i
+CMakeFiles/MINISHELL.dir/commands/ft_export.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/commands/ft_export.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_export.c > CMakeFiles/MINISHELL.dir/commands/ft_export.c.i
 
-CMakeFiles/minishell.dir/commands/ft_unset.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/commands/ft_unset.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/CLionProjects/minishell/commands/ft_unset.c -o CMakeFiles/minishell.dir/commands/ft_unset.c.s
+CMakeFiles/MINISHELL.dir/commands/ft_export.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/commands/ft_export.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_export.c -o CMakeFiles/MINISHELL.dir/commands/ft_export.c.s
 
-CMakeFiles/minishell.dir/commands/ft_export.c.o: CMakeFiles/minishell.dir/flags.make
-CMakeFiles/minishell.dir/commands/ft_export.c.o: ../commands/ft_export.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/minishell.dir/commands/ft_export.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/commands/ft_export.c.o -c /Users/moboustt/CLionProjects/minishell/commands/ft_export.c
+CMakeFiles/MINISHELL.dir/errors/error.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/errors/error.c.o: ../errors/error.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/MINISHELL.dir/errors/error.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/errors/error.c.o -c /Users/moboustt/Desktop/1337/minishell/errors/error.c
 
-CMakeFiles/minishell.dir/commands/ft_export.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/commands/ft_export.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/CLionProjects/minishell/commands/ft_export.c > CMakeFiles/minishell.dir/commands/ft_export.c.i
+CMakeFiles/MINISHELL.dir/errors/error.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/errors/error.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/errors/error.c > CMakeFiles/MINISHELL.dir/errors/error.c.i
 
-CMakeFiles/minishell.dir/commands/ft_export.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/commands/ft_export.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/CLionProjects/minishell/commands/ft_export.c -o CMakeFiles/minishell.dir/commands/ft_export.c.s
+CMakeFiles/MINISHELL.dir/errors/error.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/errors/error.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/errors/error.c -o CMakeFiles/MINISHELL.dir/errors/error.c.s
 
-CMakeFiles/minishell.dir/utility/ft_env.c.o: CMakeFiles/minishell.dir/flags.make
-CMakeFiles/minishell.dir/utility/ft_env.c.o: ../utility/ft_env.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/minishell.dir/utility/ft_env.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/utility/ft_env.c.o -c /Users/moboustt/CLionProjects/minishell/utility/ft_env.c
+CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o: ../utility/ft_vector.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o -c /Users/moboustt/Desktop/1337/minishell/utility/ft_vector.c
 
-CMakeFiles/minishell.dir/utility/ft_env.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/utility/ft_env.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/CLionProjects/minishell/utility/ft_env.c > CMakeFiles/minishell.dir/utility/ft_env.c.i
+CMakeFiles/MINISHELL.dir/utility/ft_vector.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/utility/ft_vector.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/utility/ft_vector.c > CMakeFiles/MINISHELL.dir/utility/ft_vector.c.i
 
-CMakeFiles/minishell.dir/utility/ft_env.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/utility/ft_env.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/CLionProjects/minishell/utility/ft_env.c -o CMakeFiles/minishell.dir/utility/ft_env.c.s
+CMakeFiles/MINISHELL.dir/utility/ft_vector.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/utility/ft_vector.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/utility/ft_vector.c -o CMakeFiles/MINISHELL.dir/utility/ft_vector.c.s
 
-CMakeFiles/minishell.dir/utility/ft_execve.c.o: CMakeFiles/minishell.dir/flags.make
-CMakeFiles/minishell.dir/utility/ft_execve.c.o: ../utility/ft_execve.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/minishell.dir/utility/ft_execve.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/utility/ft_execve.c.o -c /Users/moboustt/CLionProjects/minishell/utility/ft_execve.c
+CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../utility/ft_execve.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o -c /Users/moboustt/Desktop/1337/minishell/utility/ft_execve.c
 
-CMakeFiles/minishell.dir/utility/ft_execve.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/utility/ft_execve.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/CLionProjects/minishell/utility/ft_execve.c > CMakeFiles/minishell.dir/utility/ft_execve.c.i
+CMakeFiles/MINISHELL.dir/utility/ft_execve.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/utility/ft_execve.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/utility/ft_execve.c > CMakeFiles/MINISHELL.dir/utility/ft_execve.c.i
 
-CMakeFiles/minishell.dir/utility/ft_execve.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/utility/ft_execve.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/CLionProjects/minishell/utility/ft_execve.c -o CMakeFiles/minishell.dir/utility/ft_execve.c.s
+CMakeFiles/MINISHELL.dir/utility/ft_execve.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/utility/ft_execve.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/utility/ft_execve.c -o CMakeFiles/MINISHELL.dir/utility/ft_execve.c.s
 
-# Object files for target minishell
-minishell_OBJECTS = \
-"CMakeFiles/minishell.dir/minishell.c.o" \
-"CMakeFiles/minishell.dir/lexer/lexer.c.o" \
-"CMakeFiles/minishell.dir/parser/parse.c.o" \
-"CMakeFiles/minishell.dir/parser/parser_utils.c.o" \
-"CMakeFiles/minishell.dir/tokenizer/token.c.o" \
-"CMakeFiles/minishell.dir/ast/node.c.o" \
-"CMakeFiles/minishell.dir/utility/ft_vector.c.o" \
-"CMakeFiles/minishell.dir/execute.c.o" \
-"CMakeFiles/minishell.dir/errors/error.c.o" \
-"CMakeFiles/minishell.dir/commands/ft_cd.c.o" \
-"CMakeFiles/minishell.dir/commands/ft_echo.c.o" \
-"CMakeFiles/minishell.dir/commands/ft_env.c.o" \
-"CMakeFiles/minishell.dir/commands/ft_exit.c.o" \
-"CMakeFiles/minishell.dir/commands/ft_pwd.c.o" \
-"CMakeFiles/minishell.dir/commands/ft_unset.c.o" \
-"CMakeFiles/minishell.dir/commands/ft_export.c.o" \
-"CMakeFiles/minishell.dir/utility/ft_env.c.o" \
-"CMakeFiles/minishell.dir/utility/ft_execve.c.o"
+CMakeFiles/MINISHELL.dir/utility/ft_env.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/utility/ft_env.c.o: ../utility/ft_env.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/MINISHELL.dir/utility/ft_env.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/utility/ft_env.c.o -c /Users/moboustt/Desktop/1337/minishell/utility/ft_env.c
 
-# External object files for target minishell
-minishell_EXTERNAL_OBJECTS =
+CMakeFiles/MINISHELL.dir/utility/ft_env.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/utility/ft_env.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/utility/ft_env.c > CMakeFiles/MINISHELL.dir/utility/ft_env.c.i
 
-minishell: CMakeFiles/minishell.dir/minishell.c.o
-minishell: CMakeFiles/minishell.dir/lexer/lexer.c.o
-minishell: CMakeFiles/minishell.dir/parser/parse.c.o
-minishell: CMakeFiles/minishell.dir/parser/parser_utils.c.o
-minishell: CMakeFiles/minishell.dir/tokenizer/token.c.o
-minishell: CMakeFiles/minishell.dir/ast/node.c.o
-minishell: CMakeFiles/minishell.dir/utility/ft_vector.c.o
-minishell: CMakeFiles/minishell.dir/execute.c.o
-minishell: CMakeFiles/minishell.dir/errors/error.c.o
-minishell: CMakeFiles/minishell.dir/commands/ft_cd.c.o
-minishell: CMakeFiles/minishell.dir/commands/ft_echo.c.o
-minishell: CMakeFiles/minishell.dir/commands/ft_env.c.o
-minishell: CMakeFiles/minishell.dir/commands/ft_exit.c.o
-minishell: CMakeFiles/minishell.dir/commands/ft_pwd.c.o
-minishell: CMakeFiles/minishell.dir/commands/ft_unset.c.o
-minishell: CMakeFiles/minishell.dir/commands/ft_export.c.o
-minishell: CMakeFiles/minishell.dir/utility/ft_env.c.o
-minishell: CMakeFiles/minishell.dir/utility/ft_execve.c.o
-minishell: CMakeFiles/minishell.dir/build.make
-minishell: ../libft/libft.a
-minishell: CMakeFiles/minishell.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking C executable minishell"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/minishell.dir/link.txt --verbose=$(VERBOSE)
+CMakeFiles/MINISHELL.dir/utility/ft_env.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/utility/ft_env.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/utility/ft_env.c -o CMakeFiles/MINISHELL.dir/utility/ft_env.c.s
+
+CMakeFiles/MINISHELL.dir/minishell.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/minishell.c.o: ../minishell.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/MINISHELL.dir/minishell.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/minishell.c.o -c /Users/moboustt/Desktop/1337/minishell/minishell.c
+
+CMakeFiles/MINISHELL.dir/minishell.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/minishell.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/minishell.c > CMakeFiles/MINISHELL.dir/minishell.c.i
+
+CMakeFiles/MINISHELL.dir/minishell.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/minishell.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/minishell.c -o CMakeFiles/MINISHELL.dir/minishell.c.s
+
+CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.o: ../lexer/lexer_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer_utils.c
+
+CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer_utils.c > CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.i
+
+CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer_utils.c -o CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.s
+
+CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.o: ../lexer/lexer_parsing_helper_funcs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer_parsing_helper_funcs.c
+
+CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer_parsing_helper_funcs.c > CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.i
+
+CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer_parsing_helper_funcs.c -o CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.s
+
+CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.o: ../lexer/quotes_parsing_helper_funcs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/quotes_parsing_helper_funcs.c
+
+CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/quotes_parsing_helper_funcs.c > CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.i
+
+CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/quotes_parsing_helper_funcs.c -o CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.s
+
+CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o: ../lexer/envirement_vars_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/envirement_vars_utils.c
+
+CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/envirement_vars_utils.c > CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.i
+
+CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/envirement_vars_utils.c -o CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.s
+
+CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o: ../lexer/env_vars_helper_funcs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/env_vars_helper_funcs.c
+
+CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/env_vars_helper_funcs.c > CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.i
+
+CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/env_vars_helper_funcs.c -o CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.s
+
+# Object files for target MINISHELL
+MINISHELL_OBJECTS = \
+"CMakeFiles/MINISHELL.dir/lexer/lexer.c.o" \
+"CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.o" \
+"CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.o" \
+"CMakeFiles/MINISHELL.dir/execute.c.o" \
+"CMakeFiles/MINISHELL.dir/tokenizer/token.c.o" \
+"CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o" \
+"CMakeFiles/MINISHELL.dir/parser/parse.c.o" \
+"CMakeFiles/MINISHELL.dir/ast/node.c.o" \
+"CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o" \
+"CMakeFiles/MINISHELL.dir/commands/ft_cd.c.o" \
+"CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o" \
+"CMakeFiles/MINISHELL.dir/commands/ft_env.c.o" \
+"CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o" \
+"CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o" \
+"CMakeFiles/MINISHELL.dir/commands/ft_export.c.o" \
+"CMakeFiles/MINISHELL.dir/errors/error.c.o" \
+"CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o" \
+"CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o" \
+"CMakeFiles/MINISHELL.dir/utility/ft_env.c.o" \
+"CMakeFiles/MINISHELL.dir/minishell.c.o" \
+"CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.o" \
+"CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.o" \
+"CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.o" \
+"CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o" \
+"CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o"
+
+# External object files for target MINISHELL
+MINISHELL_EXTERNAL_OBJECTS =
+
+MINISHELL: CMakeFiles/MINISHELL.dir/lexer/lexer.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/execute.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/tokenizer/token.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/parser/parse.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/ast/node.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/commands/ft_cd.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/commands/ft_env.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/commands/ft_export.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/errors/error.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/utility/ft_env.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/minishell.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/build.make
+MINISHELL: ../libft/libft.a
+MINISHELL: CMakeFiles/MINISHELL.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking C executable MINISHELL"
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MINISHELL.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/minishell.dir/build: minishell
+CMakeFiles/MINISHELL.dir/build: MINISHELL
 
-.PHONY : CMakeFiles/minishell.dir/build
+.PHONY : CMakeFiles/MINISHELL.dir/build
 
-CMakeFiles/minishell.dir/clean:
-	$(CMAKE_COMMAND) -P CMakeFiles/minishell.dir/cmake_clean.cmake
-.PHONY : CMakeFiles/minishell.dir/clean
+CMakeFiles/MINISHELL.dir/clean:
+	$(CMAKE_COMMAND) -P CMakeFiles/MINISHELL.dir/cmake_clean.cmake
+.PHONY : CMakeFiles/MINISHELL.dir/clean
 
-CMakeFiles/minishell.dir/depend:
-	cd /Users/moboustt/CLionProjects/minishell/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/moboustt/CLionProjects/minishell /Users/moboustt/CLionProjects/minishell /Users/moboustt/CLionProjects/minishell/cmake-build-debug /Users/moboustt/CLionProjects/minishell/cmake-build-debug /Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles/minishell.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : CMakeFiles/minishell.dir/depend
+CMakeFiles/MINISHELL.dir/depend:
+	cd /Users/moboustt/Desktop/1337/minishell/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/moboustt/Desktop/1337/minishell /Users/moboustt/Desktop/1337/minishell /Users/moboustt/Desktop/1337/minishell/cmake-build-debug /Users/moboustt/Desktop/1337/minishell/cmake-build-debug /Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : CMakeFiles/MINISHELL.dir/depend
 

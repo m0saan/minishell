@@ -54,25 +54,25 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/moboustt/CLionProjects/minishell
+CMAKE_SOURCE_DIR = /Users/moboustt/Desktop/1337/minishell
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/moboustt/CLionProjects/minishell/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/moboustt/Desktop/1337/minishell/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/minishell.dir/all
+all: CMakeFiles/MINISHELL.dir/all
 
 .PHONY : all
 
@@ -82,36 +82,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/minishell.dir/clean
+clean: CMakeFiles/MINISHELL.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/minishell.dir
+# Target rules for target CMakeFiles/MINISHELL.dir
 
 # All Build rule for target.
-CMakeFiles/minishell.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19 "Built target minishell"
-.PHONY : CMakeFiles/minishell.dir/all
+CMakeFiles/MINISHELL.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26 "Built target MINISHELL"
+.PHONY : CMakeFiles/MINISHELL.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/minishell.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles 19
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/minishell.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/moboustt/CLionProjects/minishell/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/minishell.dir/rule
+CMakeFiles/MINISHELL.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/MINISHELL.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/MINISHELL.dir/rule
 
 # Convenience name for target.
-minishell: CMakeFiles/minishell.dir/rule
+MINISHELL: CMakeFiles/MINISHELL.dir/rule
 
-.PHONY : minishell
+.PHONY : MINISHELL
 
 # clean rule for target.
-CMakeFiles/minishell.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/clean
-.PHONY : CMakeFiles/minishell.dir/clean
+CMakeFiles/MINISHELL.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/clean
+.PHONY : CMakeFiles/MINISHELL.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
