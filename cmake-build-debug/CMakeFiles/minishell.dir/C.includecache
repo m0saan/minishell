@@ -116,6 +116,18 @@ lexer.h
 lexer.h
 /Users/moboustt/Desktop/1337/minishell/lexer/lexer.h
 
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs.c
+lexer.h
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer.h
+../minishell.h
+/Users/moboustt/Desktop/1337/minishell/minishell.h
+
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs2.c
+lexer.h
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer.h
+../minishell.h
+/Users/moboustt/Desktop/1337/minishell/minishell.h
+
 /Users/moboustt/Desktop/1337/minishell/lexer/lexer_utils.c
 lexer.h
 /Users/moboustt/Desktop/1337/minishell/lexer/lexer.h
@@ -197,6 +209,12 @@ stdio.h
 /Users/moboustt/Desktop/1337/minishell/errors/error.h
 ../lexer/lexer.h
 /Users/moboustt/Desktop/1337/minishell/lexer/lexer.h
+
+/Users/moboustt/Desktop/1337/minishell/parser/parser_helper_functions.c
+parser.h
+/Users/moboustt/Desktop/1337/minishell/parser/parser.h
+../minishell.h
+/Users/moboustt/Desktop/1337/minishell/minishell.h
 
 /Users/moboustt/Desktop/1337/minishell/parser/parser_utils.c
 ../minishell.h

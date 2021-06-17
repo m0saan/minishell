@@ -574,6 +574,60 @@ lexer/lexer_parsing_helper_funcs.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.s
 .PHONY : lexer/lexer_parsing_helper_funcs.c.s
 
+lexer/lexer_tokens_helper_funcs.o: lexer/lexer_tokens_helper_funcs.c.o
+
+.PHONY : lexer/lexer_tokens_helper_funcs.o
+
+# target to build an object file
+lexer/lexer_tokens_helper_funcs.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o
+.PHONY : lexer/lexer_tokens_helper_funcs.c.o
+
+lexer/lexer_tokens_helper_funcs.i: lexer/lexer_tokens_helper_funcs.c.i
+
+.PHONY : lexer/lexer_tokens_helper_funcs.i
+
+# target to preprocess a source file
+lexer/lexer_tokens_helper_funcs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.i
+.PHONY : lexer/lexer_tokens_helper_funcs.c.i
+
+lexer/lexer_tokens_helper_funcs.s: lexer/lexer_tokens_helper_funcs.c.s
+
+.PHONY : lexer/lexer_tokens_helper_funcs.s
+
+# target to generate assembly for a file
+lexer/lexer_tokens_helper_funcs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.s
+.PHONY : lexer/lexer_tokens_helper_funcs.c.s
+
+lexer/lexer_tokens_helper_funcs2.o: lexer/lexer_tokens_helper_funcs2.c.o
+
+.PHONY : lexer/lexer_tokens_helper_funcs2.o
+
+# target to build an object file
+lexer/lexer_tokens_helper_funcs2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o
+.PHONY : lexer/lexer_tokens_helper_funcs2.c.o
+
+lexer/lexer_tokens_helper_funcs2.i: lexer/lexer_tokens_helper_funcs2.c.i
+
+.PHONY : lexer/lexer_tokens_helper_funcs2.i
+
+# target to preprocess a source file
+lexer/lexer_tokens_helper_funcs2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.i
+.PHONY : lexer/lexer_tokens_helper_funcs2.c.i
+
+lexer/lexer_tokens_helper_funcs2.s: lexer/lexer_tokens_helper_funcs2.c.s
+
+.PHONY : lexer/lexer_tokens_helper_funcs2.s
+
+# target to generate assembly for a file
+lexer/lexer_tokens_helper_funcs2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.s
+.PHONY : lexer/lexer_tokens_helper_funcs2.c.s
+
 lexer/lexer_utils.o: lexer/lexer_utils.c.o
 
 .PHONY : lexer/lexer_utils.o
@@ -681,6 +735,33 @@ parser/parse.s: parser/parse.c.s
 parser/parse.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/parser/parse.c.s
 .PHONY : parser/parse.c.s
+
+parser/parser_helper_functions.o: parser/parser_helper_functions.c.o
+
+.PHONY : parser/parser_helper_functions.o
+
+# target to build an object file
+parser/parser_helper_functions.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o
+.PHONY : parser/parser_helper_functions.c.o
+
+parser/parser_helper_functions.i: parser/parser_helper_functions.c.i
+
+.PHONY : parser/parser_helper_functions.i
+
+# target to preprocess a source file
+parser/parser_helper_functions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.i
+.PHONY : parser/parser_helper_functions.c.i
+
+parser/parser_helper_functions.s: parser/parser_helper_functions.c.s
+
+.PHONY : parser/parser_helper_functions.s
+
+# target to generate assembly for a file
+parser/parser_helper_functions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.s
+.PHONY : parser/parser_helper_functions.c.s
 
 parser/parser_utils.o: parser/parser_utils.c.o
 
@@ -874,6 +955,12 @@ help:
 	@echo "... lexer/lexer_parsing_helper_funcs.o"
 	@echo "... lexer/lexer_parsing_helper_funcs.i"
 	@echo "... lexer/lexer_parsing_helper_funcs.s"
+	@echo "... lexer/lexer_tokens_helper_funcs.o"
+	@echo "... lexer/lexer_tokens_helper_funcs.i"
+	@echo "... lexer/lexer_tokens_helper_funcs.s"
+	@echo "... lexer/lexer_tokens_helper_funcs2.o"
+	@echo "... lexer/lexer_tokens_helper_funcs2.i"
+	@echo "... lexer/lexer_tokens_helper_funcs2.s"
 	@echo "... lexer/lexer_utils.o"
 	@echo "... lexer/lexer_utils.i"
 	@echo "... lexer/lexer_utils.s"
@@ -886,6 +973,9 @@ help:
 	@echo "... parser/parse.o"
 	@echo "... parser/parse.i"
 	@echo "... parser/parse.s"
+	@echo "... parser/parser_helper_functions.o"
+	@echo "... parser/parser_helper_functions.i"
+	@echo "... parser/parser_helper_functions.s"
 	@echo "... parser/parser_utils.o"
 	@echo "... parser/parser_utils.i"
 	@echo "... parser/parser_utils.s"

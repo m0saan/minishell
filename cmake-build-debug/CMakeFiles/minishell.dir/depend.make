@@ -163,6 +163,30 @@ CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.o: ../lexer/lexer_pa
 CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.o: ../libft/libft.h
 CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.o: ../utility/ft_types.h
 
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../ast/node.h
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../commands/ft_buildin.h
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../errors/error.h
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../lexer/lexer.h
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../lexer/lexer_tokens_helper_funcs.c
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../libft/libft.h
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../minishell.h
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../parser/parser.h
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../utility/ft_env.h
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../utility/ft_vector.h
+
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../ast/node.h
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../commands/ft_buildin.h
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../errors/error.h
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../lexer/lexer.h
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../lexer/lexer_tokens_helper_funcs2.c
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../libft/libft.h
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../minishell.h
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../parser/parser.h
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../utility/ft_env.h
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../utility/ft_vector.h
+
 CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.o: ../errors/error.h
 CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.o: ../lexer/lexer_utils.c
@@ -198,6 +222,18 @@ CMakeFiles/MINISHELL.dir/parser/parse.c.o: ../parser/parser.h
 CMakeFiles/MINISHELL.dir/parser/parse.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/parser/parse.c.o: ../utility/ft_types.h
 CMakeFiles/MINISHELL.dir/parser/parse.c.o: ../utility/ft_vector.h
+
+CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../ast/node.h
+CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../commands/ft_buildin.h
+CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../errors/error.h
+CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../lexer/lexer.h
+CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../libft/libft.h
+CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../minishell.h
+CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../parser/parser.h
+CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../parser/parser_helper_functions.c
+CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../utility/ft_env.h
+CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o: ../ast/node.h
 CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o: ../commands/ft_buildin.h

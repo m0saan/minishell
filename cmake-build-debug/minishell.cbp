@@ -137,6 +137,12 @@
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/lexer/lexer_parsing_helper_funcs.c">
 			<Option target="MINISHELL"/>
 		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs2.c">
+			<Option target="MINISHELL"/>
+		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/lexer/lexer_utils.c">
 			<Option target="MINISHELL"/>
 		</Unit>
@@ -150,6 +156,9 @@
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/parser/parse.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/parser/parser_helper_functions.c">
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/parser/parser_utils.c">

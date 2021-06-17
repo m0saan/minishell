@@ -401,6 +401,45 @@ CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.s"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/env_vars_helper_funcs.c -o CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.s
 
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../lexer/lexer_tokens_helper_funcs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs.c
+
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs.c > CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.i
+
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs.c -o CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.s
+
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../lexer/lexer_tokens_helper_funcs2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs2.c
+
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs2.c > CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.i
+
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs2.c -o CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.s
+
+CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../parser/parser_helper_functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o -c /Users/moboustt/Desktop/1337/minishell/parser/parser_helper_functions.c
+
+CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/parser/parser_helper_functions.c > CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.i
+
+CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/parser/parser_helper_functions.c -o CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.s
+
 # Object files for target MINISHELL
 MINISHELL_OBJECTS = \
 "CMakeFiles/MINISHELL.dir/lexer/lexer.c.o" \
@@ -427,7 +466,10 @@ MINISHELL_OBJECTS = \
 "CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.o" \
 "CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.o" \
 "CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o" \
-"CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o"
+"CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o" \
+"CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o" \
+"CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o" \
+"CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o"
 
 # External object files for target MINISHELL
 MINISHELL_EXTERNAL_OBJECTS =
@@ -457,10 +499,13 @@ MINISHELL: CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.o
 MINISHELL: CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.o
 MINISHELL: CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o
 MINISHELL: CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o
 MINISHELL: CMakeFiles/MINISHELL.dir/build.make
 MINISHELL: ../libft/libft.a
 MINISHELL: CMakeFiles/MINISHELL.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking C executable MINISHELL"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Linking C executable MINISHELL"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MINISHELL.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
