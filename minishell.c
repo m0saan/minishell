@@ -18,7 +18,7 @@ size_t readline(char *line) {
 }
 
 void str__(t_token *tok) {
-    printf("t_token_type: [%s], Literal: [%s]\n", getTypeName(tok->type), tok->literal);
+    printf("TokenType: [%s], Literal: [%s]\n", getTypeName(tok->type), tok->literal);
 }
 
 const char *getTypeName(enum e_val_type type) {
@@ -86,7 +86,7 @@ t_vector *fill_out_vector_with_commands(t_node *ast_node) {
             child = child->next_sibling;
         } else if (child->val.str[0] == '$' && child->val_type == env_var) {
             if (child->val.str != NULL) {
-                char *tmp = handle_env_variables(child->val.str);
+                char *tmp = handle_env_variables(child->val.str, 0, 0);
                 if (tmp != NULL)
                     fill_out_env_command(tmp_cmd, tmp);
             } else
@@ -141,7 +141,8 @@ void parse_and_execute(t_lexer *lexer) {
     run_cmds((t_vector *) vector);
 }
 
-t_bool check_semicolon_errors(const char *line) {
+t_bool check_semicolon_errors(const char *line)
+{
     t_parser *p = new_parser(new_lexer(line, (int) ft_strlen(line)));
     while (p->cur_token->type != end_of) {
         next_token_p(p);
@@ -172,6 +173,44 @@ void signal_handler(int sig) {
 }
 
 #if (1)
+
+int	_read(char **line)
+{
+	char	*buffer;
+	int		rd;
+
+	while (true)
+	{
+		write(1, prompt, ft_strlen(prompt));
+        char *buffer = malloc(1024 * sizeof(char));
+		rd = readline(buffer);
+		if (!rd || buffer[0] == '\0' || strcmp(buffer, "\n") == 0) {
+            free(buffer);
+            continue;
+        }
+		line = ft_strjoin(line, buffer);
+		t_bool has_error = check_semicolon_errors(line);
+        if (has_error) {
+            printf("minishell: syntax error near unexpected token `;;'\n");
+            free(line);
+            return 1;
+        }
+
+        char **splited_line = ft_split(line, ';');
+        int i = 0;
+        while (splited_line[i] != 0) {
+            t_lexer *lexer = new_lexer(splited_line[i], (int) ft_strlen(splited_line[i]));
+            parse_and_execute(lexer);
+            i++;
+            free(lexer);
+        }
+
+        free(line);
+	}
+	if (strlen(line) > 0)
+		_read(line);
+	exit(0);
+}
 
 int main(int ac, char **av, char **env) {
 	g_is_forked = false;

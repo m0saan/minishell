@@ -14,7 +14,7 @@
 
 
 t_error *catch_errors(t_parser *p, t_error *error) {
-    if (p->cur_token->type == illegal || p->peek_token->type == illegal)
+    if (p->cur_token->type  == illegal || p->peek_token->type  == illegal)
         set_error(error, "Illegal Syntax!");
     if (p->cur_token->type == right || p->cur_token->type == left || p->cur_token->type == right_append) {
         if (!expect_peek(p, *p->lexer, arg))

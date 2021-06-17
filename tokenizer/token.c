@@ -1,7 +1,3 @@
-//
-// Created by moboustt on 4/4/2021.
-//
-
 #include "../minishell.h"
 
 const char* commands[7] = {"echo", "cd", "pwd", "export", "unset", "env", "exit"};

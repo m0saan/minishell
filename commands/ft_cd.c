@@ -12,9 +12,10 @@ int ft_cd(int ac, char **av)
 		ret = chdir(av[1]);
 	if (ret == -1)
 	{
-		char *err = strerror(errno);
-		write(1, err, strlen(err));
-		write(1, "\n", 1);
+		// char *err = strerror(errno);
+		// write(1, err, strlen(err));
+		// write(1, "\n", 1);
+		perror("Error Message");
 		return (ret);
 	}
 	set_var2(g_envp, "OLDPWD", get_var(g_envp, "PWD"));

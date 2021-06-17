@@ -81,7 +81,6 @@ t_token *next_token(t_lexer *l);
 t_lexer *new_lexer(const char *line, int cmd_length);
 t_token *new_token(t_token_type token_type, char ch, t_token *token);
 t_token *new_token_from_char(t_token_type token_type, char *ch, t_token *token);
-char *read_identifier(t_lexer *l);
 t_token_type lookup_type(char *ident);
 void str__(t_token *tok);
 
@@ -92,8 +91,7 @@ t_redir *create_redir(enum e_val_type type, char *arg);
 void slice_str(const char *str, char *buffer, size_t start, size_t end);
 char * Print(struct s_cmd *this);
 const char* getTypeName(enum e_val_type type);
-void    read_single_quoted(t_lexer *l, char quote, char *s, int *index, t_error *err);
-char *handle_env_variables(t_string str);
+void    read_single_quoted(t_lexer *l, char quote, char *s, int *index);
 pid_t run_command(t_cmd *cmd, int fd[][2], t_size size, int index);
 char *to_string(void *item);
 
