@@ -21,8 +21,6 @@ t_token *next_token(t_lexer *l)
 	skip_white_spaces(l);
 	if(l->ch == '~')
 		tok = new_token(tilde, l->ch, tok);
-	else if(l->ch == ';')
-		tok = new_token(semicolon, l->ch, tok);
 	else if(l->ch == '<')
 		tok = new_token(left, l->ch, tok);
 	else if(l->ch == '>')
@@ -31,10 +29,8 @@ t_token *next_token(t_lexer *l)
 		tok = new_token(_pipe, l->ch, tok);
 	else if(l->ch == '\'')
 		handle_single_quote_identifier(l, tok);
-	else if(l->ch == '\"')
+	else if(l->ch == '"')
 		handle_double_quotes_identifier(l, tok);
-	else if(l->ch == '\\')
-		return handle_escape_token(l, tok);
 	else if(l->ch == '$')
 		return handle_dollar_token(l, tok);
 	else if(l->ch == 0)
@@ -52,14 +48,13 @@ void read_and_parse_double_quoted(t_lexer *l, char *s, int *index)
 	char const to_be_escaped[] = {'$', '"', '\\'};
 	char *env_name;
 	next_char(l);
-	while(l->ch != '"') {
-		if(l->ch == '\\' && ft_strchr(to_be_escaped, peek_char(l))) {
-			handle_escape_in_double_quotes(l, s, index);
-			continue;
-		}
-		if(l->ch == '$' && ft_isalnum(l->input[l->read_position])) {
+	while(l->ch != '"')
+	{
+		if(l->ch == '$' && ft_isalnum(l->input[l->read_position]))
+		{
 			next_char(l);
-			if(ft_isdigit(l->ch)) {
+			if(ft_isdigit(l->ch))
+			{
 				next_char(l);
 				continue;
 			}

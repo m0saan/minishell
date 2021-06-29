@@ -72,11 +72,6 @@ char *parse_quoted(t_lexer *l, char quote, 	int	i, int s_index)
 	init_parse_quoted_vars(l, quote, &s, &infos);
 	while (i++ < infos[1] && l->ch != 0)
 	{
-		if(l->ch == '\\')
-		{
-			handle_escape(l, s, &i, &s_index);
-			continue ;
-		}
 		if(l->ch == '"')
 			handle_double_quotes(l, s, &i, &s_index, &pos);
 		else if(l->ch == '\'')

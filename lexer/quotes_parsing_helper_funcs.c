@@ -9,6 +9,7 @@ void handle_double_quotes(t_lexer *l, char *s, int *i, int *s_index, int *pos)
 
 void handle_single_quote(t_lexer *l, char *s, int *i, int *s_index, int *pos)
 {
+	check_quotes_errors(l, l->ch);
 	(*pos) = l->position;
 	read_single_quoted(l, l->ch, s, s_index);
 	(*i) += (l->position - (*pos));

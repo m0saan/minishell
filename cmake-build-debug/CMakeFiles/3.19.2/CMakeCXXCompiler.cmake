@@ -1,4 +1,4 @@
-set(CMAKE_CXX_COMPILER "/Library/Developer/CommandLineTools/usr/bin/c++")
+set(CMAKE_CXX_COMPILER "/usr/bin/g++")
 set(CMAKE_CXX_COMPILER_ARG1 "")
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 set(CMAKE_CXX_COMPILER_VERSION "12.0.5.12050022")
