@@ -2,7 +2,7 @@
 
 const char *prompt = "minishell-0.1$ ";
 
-size_t readline(char *line) {
+size_t read_line(char *line) {
 	ft_memset(line, 0, 1024);
 	size_t n = read(0, line, 1024);
 	if(n)
@@ -139,10 +139,32 @@ void signal_handler(int sig) {
 
 #if (1)
 
+/* A static variable for holding the line. */
+static char *line_read = (char *)NULL;
+
+/* Read a string, and return a pointer to it.  Returns NULL on EOF. */
+char * rl_gets ()
+{
+	/* If the buffer has already been allocated, return the memory
+	   to the free pool. */
+	if (line_read)
+	{
+		free (line_read);
+		line_read = (char *)NULL;
+	}
+
+	/* Get a line from the user. */
+	line_read = readline (prompt);
+
+	/* If the line has any text in it, save it on the history. */
+	if (line_read && *line_read)
+		add_history (line_read);
+	rl_redisplay();
+	return (line_read);
+}
+
 int main(int ac, char **av, char **env) {
-	char **splited_line;
 	char *line;
-	int i;
 
 	g_is_forked = false;
 	fill_envp(env);
@@ -150,13 +172,14 @@ int main(int ac, char **av, char **env) {
 	signal(SIGINT, signal_handler_parent);
 	while(true)
 	{
-		write(1, prompt, ft_strlen(prompt));
-		line = malloc(1024 * sizeof(char));
-		size_t n = readline(line);
-		if(!n || line[0] == '\0' || strcmp(line, "\n") == 0) {
-			free(line);
-			continue;
-		}
+		// write(1, prompt, ft_strlen(prompt));
+		//line = malloc(1024 * sizeof(char));
+		//size_t n = read_line(line);
+//		if(!n || line[0] == '\0' || strcmp(line, "\n") == 0) {
+//			free(line);
+//			continue;
+//		}
+		line = rl_gets();
 		if(strcmp(line, "exit") == 0) {
 			dprintf(2, "shell is exiting...\n");
 			free(line);
@@ -164,7 +187,6 @@ int main(int ac, char **av, char **env) {
 		}
 		t_lexer *lexer = new_lexer(line, (int) ft_strlen(line));
 		parse_and_execute(lexer);
-		free(line);
 	}
 	return (EXIT_SUCCESS);
 }

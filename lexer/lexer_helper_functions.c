@@ -43,7 +43,7 @@ void	next_char(t_lexer *lexer)
 
 enum e_bool	has_char(char c)
 {
-	const char	*buff = "+:?=._-/\\$";
+	const char	*buff = "+:?=._-/$";
 	for (int i = 0; buff[i] != 0; ++i)
 		if (buff[i] == c)
 			return (true);

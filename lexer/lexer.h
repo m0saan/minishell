@@ -100,6 +100,6 @@ t_token		*handle_dollar_token(t_lexer *l, t_token *tok);
 t_token		*handle_eof_token(t_token *tok);
 t_token		*handle_illegal_token(const t_lexer *l, t_token *tok);
 t_token		*handle_escape_token(t_lexer *l, t_token *tok);
-void		check_quotes_errors(const t_lexer *l, char ch);
+t_bool check_quotes_errors(const t_lexer *l, char ch);
 
 #endif

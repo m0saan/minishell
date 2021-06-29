@@ -21,9 +21,7 @@ t_token *next_token(t_lexer *l)
 	skip_white_spaces(l);
 	if(l->ch == '~')
 		tok = new_token(tilde, l->ch, tok);
-	else if(l->ch == '<')
-		tok = new_token(left, l->ch, tok);
-	else if(l->ch == '>')
+	else if(l->ch == '<' || l->ch == '>')
 		tok = handle_right_redir(l, tok);
 	else if(l->ch == '|')
 		tok = new_token(_pipe, l->ch, tok);
