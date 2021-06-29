@@ -8,5 +8,5 @@ add_executable(MINISHELL ./lexer/lexer.c lexer/lexer_helper_functions2.c lexer/l
 
 target_link_libraries(MINISHELL ${CMAKE_SOURCE_DIR}/libft/libft.a)
 
-set(GCC_COVERAGE_COMPILE_FLAGS "-Wall -Wextra -O0 -fsanitize=address -g3")
+set(GCC_COVERAGE_COMPILE_FLAGS "-Wall -Wextra -O0 -fsanitize=address -g3 -l readline -L /Users/moboustt/.brew/opt/readline/lib/ -I /Users/moboustt/.brew/opt/readline/include/")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}")

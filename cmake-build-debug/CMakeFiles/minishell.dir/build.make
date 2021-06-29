@@ -53,10 +53,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -79,366 +79,366 @@ include CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/lexer/lexer.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/lexer/lexer.c.o: ../lexer/lexer.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/MINISHELL.dir/lexer/lexer.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer.c
 
 CMakeFiles/MINISHELL.dir/lexer/lexer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/lexer/lexer.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer.c > CMakeFiles/MINISHELL.dir/lexer/lexer.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer.c > CMakeFiles/MINISHELL.dir/lexer/lexer.c.i
 
 CMakeFiles/MINISHELL.dir/lexer/lexer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/lexer.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer.c -o CMakeFiles/MINISHELL.dir/lexer/lexer.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer.c -o CMakeFiles/MINISHELL.dir/lexer/lexer.c.s
 
 CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.o: ../lexer/lexer_helper_functions2.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions2.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions2.c
 
 CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions2.c > CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions2.c > CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.i
 
 CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions2.c -o CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions2.c -o CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.s
 
 CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.o: ../lexer/lexer_helper_functions.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions.c
 
 CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions.c > CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions.c > CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.i
 
 CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions.c -o CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions.c -o CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.s
 
 CMakeFiles/MINISHELL.dir/execute.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/execute.c.o: ../execute.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/MINISHELL.dir/execute.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/execute.c.o -c /Users/moboustt/Desktop/1337/minishell/execute.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/execute.c.o -c /Users/moboustt/Desktop/1337/minishell/execute.c
 
 CMakeFiles/MINISHELL.dir/execute.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/execute.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/execute.c > CMakeFiles/MINISHELL.dir/execute.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/execute.c > CMakeFiles/MINISHELL.dir/execute.c.i
 
 CMakeFiles/MINISHELL.dir/execute.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/execute.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/execute.c -o CMakeFiles/MINISHELL.dir/execute.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/execute.c -o CMakeFiles/MINISHELL.dir/execute.c.s
 
 CMakeFiles/MINISHELL.dir/tokenizer/token.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/tokenizer/token.c.o: ../tokenizer/token.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/MINISHELL.dir/tokenizer/token.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/tokenizer/token.c.o -c /Users/moboustt/Desktop/1337/minishell/tokenizer/token.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/tokenizer/token.c.o -c /Users/moboustt/Desktop/1337/minishell/tokenizer/token.c
 
 CMakeFiles/MINISHELL.dir/tokenizer/token.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/tokenizer/token.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/tokenizer/token.c > CMakeFiles/MINISHELL.dir/tokenizer/token.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/tokenizer/token.c > CMakeFiles/MINISHELL.dir/tokenizer/token.c.i
 
 CMakeFiles/MINISHELL.dir/tokenizer/token.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/tokenizer/token.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/tokenizer/token.c -o CMakeFiles/MINISHELL.dir/tokenizer/token.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/tokenizer/token.c -o CMakeFiles/MINISHELL.dir/tokenizer/token.c.s
 
 CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o: ../parser/parser_utils.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o -c /Users/moboustt/Desktop/1337/minishell/parser/parser_utils.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o -c /Users/moboustt/Desktop/1337/minishell/parser/parser_utils.c
 
 CMakeFiles/MINISHELL.dir/parser/parser_utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/parser/parser_utils.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/parser/parser_utils.c > CMakeFiles/MINISHELL.dir/parser/parser_utils.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/parser/parser_utils.c > CMakeFiles/MINISHELL.dir/parser/parser_utils.c.i
 
 CMakeFiles/MINISHELL.dir/parser/parser_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/parser/parser_utils.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/parser/parser_utils.c -o CMakeFiles/MINISHELL.dir/parser/parser_utils.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/parser/parser_utils.c -o CMakeFiles/MINISHELL.dir/parser/parser_utils.c.s
 
 CMakeFiles/MINISHELL.dir/parser/parse.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/parser/parse.c.o: ../parser/parse.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/MINISHELL.dir/parser/parse.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/parser/parse.c.o -c /Users/moboustt/Desktop/1337/minishell/parser/parse.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/parser/parse.c.o -c /Users/moboustt/Desktop/1337/minishell/parser/parse.c
 
 CMakeFiles/MINISHELL.dir/parser/parse.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/parser/parse.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/parser/parse.c > CMakeFiles/MINISHELL.dir/parser/parse.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/parser/parse.c > CMakeFiles/MINISHELL.dir/parser/parse.c.i
 
 CMakeFiles/MINISHELL.dir/parser/parse.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/parser/parse.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/parser/parse.c -o CMakeFiles/MINISHELL.dir/parser/parse.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/parser/parse.c -o CMakeFiles/MINISHELL.dir/parser/parse.c.s
 
 CMakeFiles/MINISHELL.dir/ast/node.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/ast/node.c.o: ../ast/node.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/MINISHELL.dir/ast/node.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/ast/node.c.o -c /Users/moboustt/Desktop/1337/minishell/ast/node.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/ast/node.c.o -c /Users/moboustt/Desktop/1337/minishell/ast/node.c
 
 CMakeFiles/MINISHELL.dir/ast/node.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/ast/node.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/ast/node.c > CMakeFiles/MINISHELL.dir/ast/node.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/ast/node.c > CMakeFiles/MINISHELL.dir/ast/node.c.i
 
 CMakeFiles/MINISHELL.dir/ast/node.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/ast/node.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/ast/node.c -o CMakeFiles/MINISHELL.dir/ast/node.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/ast/node.c -o CMakeFiles/MINISHELL.dir/ast/node.c.s
 
 CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o: ../commands/ft_echo.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_echo.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_echo.c
 
 CMakeFiles/MINISHELL.dir/commands/ft_echo.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/commands/ft_echo.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_echo.c > CMakeFiles/MINISHELL.dir/commands/ft_echo.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_echo.c > CMakeFiles/MINISHELL.dir/commands/ft_echo.c.i
 
 CMakeFiles/MINISHELL.dir/commands/ft_echo.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/commands/ft_echo.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_echo.c -o CMakeFiles/MINISHELL.dir/commands/ft_echo.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_echo.c -o CMakeFiles/MINISHELL.dir/commands/ft_echo.c.s
 
 CMakeFiles/MINISHELL.dir/commands/ft_cd.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/commands/ft_cd.c.o: ../commands/ft_cd.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/MINISHELL.dir/commands/ft_cd.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_cd.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_cd.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_cd.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_cd.c
 
 CMakeFiles/MINISHELL.dir/commands/ft_cd.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/commands/ft_cd.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_cd.c > CMakeFiles/MINISHELL.dir/commands/ft_cd.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_cd.c > CMakeFiles/MINISHELL.dir/commands/ft_cd.c.i
 
 CMakeFiles/MINISHELL.dir/commands/ft_cd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/commands/ft_cd.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_cd.c -o CMakeFiles/MINISHELL.dir/commands/ft_cd.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_cd.c -o CMakeFiles/MINISHELL.dir/commands/ft_cd.c.s
 
 CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o: ../commands/ft_unset.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_unset.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_unset.c
 
 CMakeFiles/MINISHELL.dir/commands/ft_unset.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/commands/ft_unset.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_unset.c > CMakeFiles/MINISHELL.dir/commands/ft_unset.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_unset.c > CMakeFiles/MINISHELL.dir/commands/ft_unset.c.i
 
 CMakeFiles/MINISHELL.dir/commands/ft_unset.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/commands/ft_unset.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_unset.c -o CMakeFiles/MINISHELL.dir/commands/ft_unset.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_unset.c -o CMakeFiles/MINISHELL.dir/commands/ft_unset.c.s
 
 CMakeFiles/MINISHELL.dir/commands/ft_env.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/commands/ft_env.c.o: ../commands/ft_env.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/MINISHELL.dir/commands/ft_env.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_env.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_env.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_env.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_env.c
 
 CMakeFiles/MINISHELL.dir/commands/ft_env.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/commands/ft_env.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_env.c > CMakeFiles/MINISHELL.dir/commands/ft_env.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_env.c > CMakeFiles/MINISHELL.dir/commands/ft_env.c.i
 
 CMakeFiles/MINISHELL.dir/commands/ft_env.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/commands/ft_env.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_env.c -o CMakeFiles/MINISHELL.dir/commands/ft_env.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_env.c -o CMakeFiles/MINISHELL.dir/commands/ft_env.c.s
 
 CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o: ../commands/ft_pwd.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_pwd.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_pwd.c
 
 CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_pwd.c > CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_pwd.c > CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.i
 
 CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_pwd.c -o CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_pwd.c -o CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.s
 
 CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o: ../commands/ft_exit.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_exit.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_exit.c
 
 CMakeFiles/MINISHELL.dir/commands/ft_exit.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/commands/ft_exit.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_exit.c > CMakeFiles/MINISHELL.dir/commands/ft_exit.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_exit.c > CMakeFiles/MINISHELL.dir/commands/ft_exit.c.i
 
 CMakeFiles/MINISHELL.dir/commands/ft_exit.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/commands/ft_exit.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_exit.c -o CMakeFiles/MINISHELL.dir/commands/ft_exit.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_exit.c -o CMakeFiles/MINISHELL.dir/commands/ft_exit.c.s
 
 CMakeFiles/MINISHELL.dir/commands/ft_export.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/commands/ft_export.c.o: ../commands/ft_export.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/MINISHELL.dir/commands/ft_export.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_export.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_export.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/commands/ft_export.c.o -c /Users/moboustt/Desktop/1337/minishell/commands/ft_export.c
 
 CMakeFiles/MINISHELL.dir/commands/ft_export.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/commands/ft_export.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_export.c > CMakeFiles/MINISHELL.dir/commands/ft_export.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/commands/ft_export.c > CMakeFiles/MINISHELL.dir/commands/ft_export.c.i
 
 CMakeFiles/MINISHELL.dir/commands/ft_export.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/commands/ft_export.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_export.c -o CMakeFiles/MINISHELL.dir/commands/ft_export.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/commands/ft_export.c -o CMakeFiles/MINISHELL.dir/commands/ft_export.c.s
 
 CMakeFiles/MINISHELL.dir/errors/error.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/errors/error.c.o: ../errors/error.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/MINISHELL.dir/errors/error.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/errors/error.c.o -c /Users/moboustt/Desktop/1337/minishell/errors/error.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/errors/error.c.o -c /Users/moboustt/Desktop/1337/minishell/errors/error.c
 
 CMakeFiles/MINISHELL.dir/errors/error.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/errors/error.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/errors/error.c > CMakeFiles/MINISHELL.dir/errors/error.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/errors/error.c > CMakeFiles/MINISHELL.dir/errors/error.c.i
 
 CMakeFiles/MINISHELL.dir/errors/error.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/errors/error.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/errors/error.c -o CMakeFiles/MINISHELL.dir/errors/error.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/errors/error.c -o CMakeFiles/MINISHELL.dir/errors/error.c.s
 
 CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o: ../utility/ft_vector.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o -c /Users/moboustt/Desktop/1337/minishell/utility/ft_vector.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o -c /Users/moboustt/Desktop/1337/minishell/utility/ft_vector.c
 
 CMakeFiles/MINISHELL.dir/utility/ft_vector.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/utility/ft_vector.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/utility/ft_vector.c > CMakeFiles/MINISHELL.dir/utility/ft_vector.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/utility/ft_vector.c > CMakeFiles/MINISHELL.dir/utility/ft_vector.c.i
 
 CMakeFiles/MINISHELL.dir/utility/ft_vector.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/utility/ft_vector.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/utility/ft_vector.c -o CMakeFiles/MINISHELL.dir/utility/ft_vector.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/utility/ft_vector.c -o CMakeFiles/MINISHELL.dir/utility/ft_vector.c.s
 
 CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../utility/ft_execve.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o -c /Users/moboustt/Desktop/1337/minishell/utility/ft_execve.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o -c /Users/moboustt/Desktop/1337/minishell/utility/ft_execve.c
 
 CMakeFiles/MINISHELL.dir/utility/ft_execve.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/utility/ft_execve.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/utility/ft_execve.c > CMakeFiles/MINISHELL.dir/utility/ft_execve.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/utility/ft_execve.c > CMakeFiles/MINISHELL.dir/utility/ft_execve.c.i
 
 CMakeFiles/MINISHELL.dir/utility/ft_execve.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/utility/ft_execve.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/utility/ft_execve.c -o CMakeFiles/MINISHELL.dir/utility/ft_execve.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/utility/ft_execve.c -o CMakeFiles/MINISHELL.dir/utility/ft_execve.c.s
 
 CMakeFiles/MINISHELL.dir/utility/ft_env.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/utility/ft_env.c.o: ../utility/ft_env.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/MINISHELL.dir/utility/ft_env.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/utility/ft_env.c.o -c /Users/moboustt/Desktop/1337/minishell/utility/ft_env.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/utility/ft_env.c.o -c /Users/moboustt/Desktop/1337/minishell/utility/ft_env.c
 
 CMakeFiles/MINISHELL.dir/utility/ft_env.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/utility/ft_env.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/utility/ft_env.c > CMakeFiles/MINISHELL.dir/utility/ft_env.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/utility/ft_env.c > CMakeFiles/MINISHELL.dir/utility/ft_env.c.i
 
 CMakeFiles/MINISHELL.dir/utility/ft_env.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/utility/ft_env.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/utility/ft_env.c -o CMakeFiles/MINISHELL.dir/utility/ft_env.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/utility/ft_env.c -o CMakeFiles/MINISHELL.dir/utility/ft_env.c.s
 
 CMakeFiles/MINISHELL.dir/minishell.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/minishell.c.o: ../minishell.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/MINISHELL.dir/minishell.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/minishell.c.o -c /Users/moboustt/Desktop/1337/minishell/minishell.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/minishell.c.o -c /Users/moboustt/Desktop/1337/minishell/minishell.c
 
 CMakeFiles/MINISHELL.dir/minishell.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/minishell.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/minishell.c > CMakeFiles/MINISHELL.dir/minishell.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/minishell.c > CMakeFiles/MINISHELL.dir/minishell.c.i
 
 CMakeFiles/MINISHELL.dir/minishell.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/minishell.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/minishell.c -o CMakeFiles/MINISHELL.dir/minishell.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/minishell.c -o CMakeFiles/MINISHELL.dir/minishell.c.s
 
 CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.o: ../lexer/lexer_utils.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer_utils.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer_utils.c
 
 CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer_utils.c > CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer_utils.c > CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.i
 
 CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer_utils.c -o CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer_utils.c -o CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.s
 
 CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.o: ../lexer/lexer_parsing_helper_funcs.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer_parsing_helper_funcs.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer_parsing_helper_funcs.c
 
 CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer_parsing_helper_funcs.c > CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer_parsing_helper_funcs.c > CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.i
 
 CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer_parsing_helper_funcs.c -o CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer_parsing_helper_funcs.c -o CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.s
 
 CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.o: ../lexer/quotes_parsing_helper_funcs.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/quotes_parsing_helper_funcs.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/quotes_parsing_helper_funcs.c
 
 CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/quotes_parsing_helper_funcs.c > CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/quotes_parsing_helper_funcs.c > CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.i
 
 CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/quotes_parsing_helper_funcs.c -o CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/quotes_parsing_helper_funcs.c -o CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.s
 
 CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o: ../lexer/envirement_vars_utils.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/envirement_vars_utils.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/envirement_vars_utils.c
 
 CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/envirement_vars_utils.c > CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/envirement_vars_utils.c > CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.i
 
 CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/envirement_vars_utils.c -o CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/envirement_vars_utils.c -o CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.s
 
 CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o: ../lexer/env_vars_helper_funcs.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/env_vars_helper_funcs.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/env_vars_helper_funcs.c
 
 CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/env_vars_helper_funcs.c > CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/env_vars_helper_funcs.c > CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.i
 
 CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/env_vars_helper_funcs.c -o CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/env_vars_helper_funcs.c -o CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.s
 
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../lexer/lexer_tokens_helper_funcs.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs.c
 
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs.c > CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs.c > CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.i
 
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs.c -o CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs.c -o CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.s
 
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../lexer/lexer_tokens_helper_funcs2.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs2.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o -c /Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs2.c
 
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs2.c > CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs2.c > CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.i
 
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs2.c -o CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs2.c -o CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.s
 
 CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: CMakeFiles/MINISHELL.dir/flags.make
 CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../parser/parser_helper_functions.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o -c /Users/moboustt/Desktop/1337/minishell/parser/parser_helper_functions.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o -c /Users/moboustt/Desktop/1337/minishell/parser/parser_helper_functions.c
 
 CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/parser/parser_helper_functions.c > CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/parser/parser_helper_functions.c > CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.i
 
 CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/parser/parser_helper_functions.c -o CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/parser/parser_helper_functions.c -o CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.s
 
 # Object files for target MINISHELL
 MINISHELL_OBJECTS = \
