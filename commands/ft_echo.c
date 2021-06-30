@@ -1,6 +1,6 @@
-#include "ft_buildin.h"
+#include "ft_builtin.h"
 
-int		ft_echo(int ac, char **av)
+int	ft_echo(int ac, char **av)
 {
 	int		i;
 	int		j;
@@ -20,7 +20,8 @@ int		ft_echo(int ac, char **av)
 	while (i < ac)
 	{
 		write(1, av[i], strlen(av[i]));
-		write(1, " ", (i < ac - 1) ? 1 : 0);
+		if (i < ac - 1)
+			write(1, " ", 1);
 		i++;
 	}
 	if (new_line)

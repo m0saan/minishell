@@ -14,7 +14,6 @@
 # define NODE_H
 
 # include <stdlib.h>
-# include "../libft/libft.h"
 # include "../lexer/lexer.h"
 
 enum e_node_type {

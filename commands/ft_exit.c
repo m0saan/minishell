@@ -1,6 +1,6 @@
-#include "ft_buildin.h"
+#include "ft_builtin.h"
 
-int		ft_exits(int ac, char **av)
- {
-	 exit(0);
- }
+int	ft_exits(int ac, char **av)
+{
+	exit(0);
+}

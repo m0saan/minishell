@@ -13,7 +13,7 @@
 #ifndef FT_BUILTIN_H
 # define FT_BUILTIN_H
 
-#include "../minishell.h"
+# include "../minishell.h"
 
 int		ft_cd(int ac, char **av);
 int		ft_echo(int ac, char **av);

@@ -1,6 +1,6 @@
-#include "ft_buildin.h"
+#include "ft_builtin.h"
 
-int		ft_unset(int ac, char **av)
+int	ft_unset(int ac, char **av)
 {
 	int		i;
 	int		code;

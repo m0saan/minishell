@@ -11,22 +11,23 @@
 /* ************************************************************************** */
 
 #ifndef FT_ENV_H
-#define FT_ENV_H
+# define FT_ENV_H
 
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
-#include "ft_types.h"
-#include "ft_vector.h"
-typedef struct	s_var
+# include <string.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdio.h>
+# include "ft_types.h"
+# include "../global_utils/global_utils.h"
+# include "ft_vector.h"
+
+typedef struct s_var
 {
 	char	*raw;
 	char	*key;
 	char	*value;
-}				t_var;
+}			t_var;
 
-t_var	*new_var();
 t_var	*new_var_v(char *key, char *value, char *raw);
 t_var	*new_var_kv(char *key, char *value);
 t_var	*split_key_value(struct s_var *var, char *var_str);
@@ -41,7 +42,7 @@ int		unset_var(t_vector *env, char *key);
 char	*get_var(t_vector *env, char *key);
 t_var	*get_var_2(t_vector *env, char *key);
 int		list_vars(t_vector *env, t_bool sort_, int(*print)(t_var*));
-
 char	*ft_substr2(char *str, int from, int to);
 char	**extract_envp(t_vector *g_env);
+
 #endif

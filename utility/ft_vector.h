@@ -10,71 +10,41 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VECTOR_H
-#define VECTOR_H
+#ifndef FT_VECTOR_H
+# define FT_VECTOR_H
 
-#include <stdlib.h>
-#include <errno.h>
-#include <stdio.h>
-#include "ft_types.h"
+# include <stdlib.h>
+# include <errno.h>
+# include <stdio.h>
+# include "ft_types.h"
+# include "../global_utils/global_utils.h"
 
-#define ERR_MALLOC "Error\nCannot Allocate Memory!"
+# define ERR_MALLOC "Error\nCannot Allocate Memory!"
 
-
-
-typedef struct	s_vector
+typedef struct s_vector
 {
-	void **data;
-	t_size capacity;
-	t_size size;
-	t_size current;
-	void (*insert)(struct s_vector *this, void *item);
-	void *(*at)(struct s_vector *this, t_size pos);
-	void *(*remove_at)(struct s_vector *this, t_size pos);
-	void (*clear_free)(struct s_vector *this);
-	void (*clear)(struct s_vector *this);
-	t_bool (*contains)(struct s_vector *this, void *item, t_bool (*eql)(void *, void *));
-	int (*index_of)(struct s_vector *this, void *item, t_bool (*eql)(void *, void *));
-	void *(*search)(struct s_vector *this, void *item, t_bool (*eql)(void *, void *));
-	void (*sort)(struct s_vector *this, int (*f)(void *, void *));
-	void (*swap)(struct s_vector *this, t_size pos1, t_size pos2);
-	void (*move_to_last)(struct s_vector *this, t_size pos);
-	void (*move_to_first)(struct s_vector *this, t_size pos);
-	void (*display)(struct s_vector *this, char *(*to_string)(void *item));
-}				t_vector;
+	void	**data;
+	t_size	capacity;
+	t_size	size;
+}			t_vector;
 
-typedef struct	s_pair
-{
-	void	*get[2];
-}				t_pair;
-
-t_vector *new_vector();
-t_vector *new_vector_s(t_size init_len);
-t_vector *new_vector_from(t_vector *vector);
-void insert(t_vector *vector, void *item);
-void *remove_at(t_vector *vector, t_size pos);
-void clear(t_vector *vector);
-void clear_free(t_vector *this);
-void delete (t_vector *vector);
-void delete_free(t_vector *this);
-void *at(t_vector *vector, t_size pos);
-t_bool contains(t_vector *this, void *item, t_bool (*eql)(void *, void *));
-void sort(t_vector *this, int (*f)(void *, void *));
-int index_of(t_vector *vector, void *item, t_bool (*eql)(void *, void *));
-void *search(t_vector *vector, void *item, t_bool (*eql)(void *, void *));
-int is_empty(t_vector *vector);
-void swap(t_vector *vector, t_size pos1, t_size pos2);
-void move_to_last(t_vector *vector, t_size pos);
-void move_to_first(t_vector *vector, t_size pos);
-void display_vector(t_vector *vector, char *(*to_string)(void *item));
-
-void *remove_item(t_vector *vector, void *item);
-void *next(t_vector *vector);
-void *previous(t_vector *vector);
-void *last(t_vector *vector);
-void *first(t_vector *vector);
-t_pair *next_pair(t_vector *this);
-t_size capacity(t_vector *vector);
-
+t_vector	*new_vector(void);
+t_vector	*new_vector_s(t_size init_len);
+t_vector	*new_vector_from(t_vector *vector);
+void		insert(t_vector *vector, void *item);
+void		*remove_at(t_vector *vector, t_size pos);
+void		clear(t_vector *vector);
+void		clear_free(t_vector *this);
+void		delete (t_vector *vector);
+void		*at(t_vector *vector, t_size pos);
+t_bool		contains(t_vector *this, void *item, t_bool (*eql)(void *, void *));
+void		sort(t_vector *this, int (*f)(void *, void *));
+int			index_of(t_vector *vector, void *item,
+				t_bool (*eql)(void *, void *));
+void		*search(t_vector *vector, void *item,
+				t_bool (*eql)(void *, void *));
+int			is_empty(t_vector *vector);
+void		swap(t_vector *vector, t_size pos1, t_size pos2);
+void		ft_exit(char *msg, int code);
 
 #endif

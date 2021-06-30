@@ -87,8 +87,8 @@ int		fill_envp(char **envp)
 		return (1);
 	g_envp = new_vector();
 	while (envp[++i] != NULL)
-		g_envp->insert(g_envp, split_key_value_v(envp[i]));
-	g_envp->insert(g_envp, new_var_kv("?", "0"));
+		insert(g_envp, split_key_value_v(envp[i]));
+	insert(g_envp, new_var_kv("?", "0"));
 	shlvl_var = get_var_2(g_envp, "SHLVL");
 	if (shlvl_var != NULL && shlvl_var->value != NULL) {
 		shlvlv = atoi(shlvl_var->value);
@@ -171,7 +171,7 @@ void setup_all_redirs(t_vector *redirs, int *sout, int *sin)
 	while (++i < redirs->size)
 	{
 		restore_redirs(*sout, *sin);
-		redir = (t_redir *)redirs->at(redirs, i);
+		redir = (t_redir *) at(redirs, i);
 		setup_redirection(redir->type, redir->arg, sout, sin);
 		free(redir->arg);
 	}
@@ -266,7 +266,7 @@ void  run_cmds(t_vector *cmds)
 	t_cmd	*cmd;
 
 	i = -1;
-	cmd = (t_cmd *)cmds->at(cmds, 0);
+	cmd = (t_cmd *) at(cmds, 0);
 	if (cmds->size == 1 && is_builtin(cmd->argv[0]))
 	{
 		pids[0] = run_cmd_parent(cmd);

@@ -11,14 +11,14 @@
 /* ************************************************************************** */
 
 #ifndef FT_TYPES_H
-#define FT_TYPES_H
+# define FT_TYPES_H
 
-typedef char	*t_string;
-typedef unsigned long t_size;
-typedef enum	e_bool
+typedef char			*t_string;
+typedef unsigned long	t_size;
+typedef enum e_bool
 {
 	false = 0,
 	true = 1
-}				t_bool;
+}	t_bool;
 
 #endif

@@ -1,11 +1,10 @@
-#include "ft_buildin.h"
+#include "ft_builtin.h"
 
-int		print_var(t_var *var)
+int	print_var(t_var *var)
 {
-	int		i;
+	int	i;
 
 	i = -1;
-
 	write(1, "declare -x ", 11);
 	write(1, var->key, strlen(var->key));
 	if (var->value)
@@ -23,9 +22,9 @@ int		print_var(t_var *var)
 	return (0);
 }
 
-int		add_vars(int ac, char **av)
+int	add_vars(int ac, char **av)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	while (++i < ac)
@@ -33,7 +32,7 @@ int		add_vars(int ac, char **av)
 	return (0);
 }
 
-int		ft_export(int ac, char **av)
+int	ft_export(int ac, char **av)
 {
 	if (ac == 1)
 		list_vars(g_envp, false, print_var);
@@ -41,6 +40,5 @@ int		ft_export(int ac, char **av)
 	{
 		add_vars(ac, av);
 	}
-	return 0;
+	return (0);
 }
-

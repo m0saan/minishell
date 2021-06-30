@@ -14,7 +14,6 @@
 # include <fcntl.h>
 #include <readline/readline.h>
 #include <readline/history.h>
-# include "libft/libft.h"
 # include "ast/node.h"
 # include "lexer/lexer.h"
 # include "parser/parser.h"
@@ -22,7 +21,7 @@
 # include "utility/ft_vector.h"
 # include "utility/ft_types.h"
 # include "utility/ft_env.h"
-# include "commands/ft_buildin.h"
+# include "commands/ft_builtin.h"
 
 # define IS_LAST 2
 # define IS_FIRST 0
