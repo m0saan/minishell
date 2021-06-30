@@ -57,6 +57,14 @@ void	parse_and_execute(t_lexer *lexer)
 	if (ast_node == NULL)
 		return ;
 	run_cmds((t_vector *) fill_out_vector_with_commands(ast_node));
+	t_node *head;
+
+	head = ast_node->first_child;
+	while(head)
+	{
+		free(head->val.str);
+		head = head->next_sibling;
+	}
 	free(p);
 }
 
@@ -65,11 +73,6 @@ char	*get_line(void)
 	static char	*line_read;
 	const char	*prompt = "minishell-0.1$ ";
 
-	if (line_read)
-	{
-		free (line_read);
-		line_read = (char *) NULL;
-	}
 	rl_on_new_line();
 	line_read = readline (prompt);
 	if (line_read && *line_read)
@@ -93,6 +96,8 @@ int	main(int ac, char **av, char **env)
 			continue ;
 		lexer = new_lexer(line, (int) ft_strlen(line));
 		parse_and_execute(lexer);
+		if (line)
+			free (line);
 		free(lexer);
 	}
 }

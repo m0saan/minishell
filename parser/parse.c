@@ -50,6 +50,7 @@ t_node	*parse_command(t_node *ast_node, t_parser *p)
 		arg = new_node(NODE_ARG);
 		set_node_val_str(arg, p->cur_token->literal, p->cur_token->type);
 		add_child_node(ast_node, arg);
+		free_token(p->cur_token);
 		next_token_p(p);
 	}
 	return (ast_node);
