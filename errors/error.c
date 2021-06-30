@@ -15,12 +15,18 @@ void	set_error(t_error *error, char *msg)
 	error->error_msg = msg;
 }
 
-int		p_error(char *arg, char *message, int code)
+int		p_error(const char *arg, 
+		const char *arg2, const char *message, int code)
 {
 	write(2, "minishell: ", 11);
 	if (arg)
 	{
 		write(2, arg, ft_strlen(arg));
+		write(2, ": ", 2);
+	}
+	if (arg2)
+	{
+		write(2, arg2, ft_strlen(arg2));
 		write(2, ": ", 2);
 	}
 	if (message)

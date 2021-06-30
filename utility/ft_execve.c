@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 11:14:12 by ehakam            #+#    #+#             */
-/*   Updated: 2021/06/30 20:49:32 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/06/30 21:49:22 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,13 +102,13 @@ int	ft_exec_builtin(t_cmd *cmd, char **envp)
 void	handle_errors(t_cmd *cmd, t_bool ispath, int _errno)
 {
 	if (_errno == 13)
-		exit(p_error(cmd->argv[0], NULL, 126));
+		exit(p_error(cmd->argv[0], NULL, NULL, 126));
 	else if (_errno == 8)
-		exit(p_error(cmd->argv[0], NULL, 1));
+		exit(p_error(cmd->argv[0], NULL, NULL, 1));
 	else if (ispath || get_var(g_envp, "PATH") == NULL)
-		exit(p_error(cmd->argv[0], NULL, 127));
+		exit(p_error(cmd->argv[0], NULL, NULL, 127));
 	else
-		exit(p_error(cmd->argv[0], "command not found", 127));
+		exit(p_error(cmd->argv[0], NULL, "command not found", 127));
 }
 
 int		ft_find_and_exec(t_cmd *cmd, char **envp)
