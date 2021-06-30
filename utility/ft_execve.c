@@ -6,10 +6,11 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 11:14:12 by ehakam            #+#    #+#             */
-/*   Updated: 2021/06/05 19:38:57 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/06/30 20:07:26 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_utility.h"
 #include "../minishell.h"
 #include "../global_utils/global_utils.h"
 
@@ -31,6 +32,8 @@ char	*append_cmd_to_path(char *path, char *cmd)
 	i = 0;
 	j = 0;
 	out = (char *)malloc(len * sizeof(char));
+	if (!out)
+		exit(1);
 	while (path[i])
 		out[j++] = path[i++];
 	out[j++] = '/';
@@ -42,42 +45,76 @@ char	*append_cmd_to_path(char *path, char *cmd)
 	return (out);
 }
 
+char	*get_path(char *path_str, char *cmd, int *start, int end)
+{
+	char	*path;
+
+	path = ft_substr2(path_str, *start, end);
+	if (path != NULL)
+		path = append_cmd_to_path(path, cmd);
+	else
+		path = append_cmd_to_path(ft_strdup("."), cmd);
+	*start = end + 1;
+	return (path);
+}
+
 t_vector	*get_paths(char *path_str, char *cmd)
 {
-	t_vector	*pv;
-	char		*path;
+	t_vector	*paths;
 	int			end;
 	int			start;
-
 	end = -1;
 	start = 0;
-	pv = new_vector_s(20);
+	paths = new_vector_s(30);
+	if (!paths)
+		exit(1);
 	if (path_str != NULL && path_str[0] != '\0')
 	{
-		if (path_str[0] == ':')
-			insert(pv, append_cmd_to_path(strdup("."), cmd));
 		while (path_str[++end])
-		{
 			if (path_str[end] == ':')
-			{
-				path = ft_substr2(path_str, start, end);
-				if (path != NULL)
-					insert(pv, append_cmd_to_path(path, cmd));
-				else
-					insert(pv, append_cmd_to_path(strdup("."), cmd));
-				start = end + 1;
-			}
-		}
-		path = ft_substr2(path_str, start, end);
-		if (path != NULL)
-			insert(pv, append_cmd_to_path(path, cmd));
-		else
-			insert(pv, append_cmd_to_path(strdup("."), cmd));
+				insert(paths, get_path(path_str, cmd, &start, end));
+		insert(paths, get_path(path_str, cmd, &start, end));
 	}
 	else
-		insert(pv, append_cmd_to_path(strdup("."), cmd));
-	return (pv);
+		insert(paths, append_cmd_to_path(ft_strdup("."), cmd));
+	return (paths);
 }
+
+// t_vector	*get_paths(char *path_str, char *cmd)
+// {
+// 	t_vector	*pv;
+// 	char		*path;
+// 	int			end;
+// 	int			start;
+// 	end = -1;
+// 	start = 0;
+// 	pv = new_vector_s(20);
+// 	if (path_str != NULL && path_str[0] != '\0')
+// 	{
+// 		if (path_str[0] == ':')
+// 			insert(pv, append_cmd_to_path(strdup("."), cmd));
+// 		while (path_str[++end])
+// 		{
+// 			if (path_str[end] == ':')
+// 			{
+// 				path = ft_substr2(path_str, start, end);
+// 				if (path != NULL)
+// 					insert(pv, append_cmd_to_path(path, cmd));
+// 				else
+// 					insert(pv, append_cmd_to_path(strdup("."), cmd));
+// 				start = end + 1;
+// 			}
+// 		}
+// 		path = ft_substr2(path_str, start, end);
+// 		if (path != NULL)
+// 			insert(pv, append_cmd_to_path(path, cmd));
+// 		else
+// 			insert(pv, append_cmd_to_path(strdup("."), cmd));
+// 	}
+// 	else
+// 		insert(pv, append_cmd_to_path(strdup("."), cmd));
+// 	return (pv);
+// }
 
 int	ft_exec_builtin(t_cmd *cmd, char **envp)
 {

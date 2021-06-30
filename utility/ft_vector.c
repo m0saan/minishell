@@ -6,10 +6,11 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:30:30 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/23 16:12:37 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/06/30 20:07:50 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_utility.h"
 #include "ft_vector.h"
 
 void	ft_exit(char *msg, int code)

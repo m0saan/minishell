@@ -6,10 +6,11 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:25:17 by ehakam            #+#    #+#             */
-/*   Updated: 2021/06/13 21:31:16 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/06/30 20:26:20 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "utility/ft_utility.h"
 #include "minishell.h"
 
 char	*strjoin(char *s, char c)
@@ -64,12 +65,12 @@ int 	open_heredoc(char *delim)
 	fd = open("/tmp/.HEREDOC", O_CREAT | O_TRUNC | O_RDWR,
 			  S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 	buffer = malloc(2 * sizeof(char));
-	write(1, "> ", 2);
+	write(2, "> ", 2);
 	while(get_next_line(&buffer) > 0 && strcmp(delim, buffer) != 0)
 	{
 		write(fd, buffer, strlen(buffer));
 		write(fd, "\n", 1);
-		write(1, "> ", 2);
+		write(2, "> ", 2);
 	}
 	close(fd);
 	fd = open("/tmp/.HEREDOC", O_RDONLY);

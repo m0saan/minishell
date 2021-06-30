@@ -6,11 +6,12 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 17:13:38 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/25 21:33:53 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/06/30 20:07:16 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_env.h"
+#include "ft_utility.h"
 
 char	**extract_envp(t_vector *g_env)
 {
