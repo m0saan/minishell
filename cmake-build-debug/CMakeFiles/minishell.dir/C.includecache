@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/Users/moboustt/Desktop/1337/minishell/ast/node.c
+node.h
+/Users/moboustt/Desktop/1337/minishell/ast/node.h
+
 /Users/moboustt/Desktop/1337/minishell/ast/node.h
 stdlib.h
 -
@@ -18,6 +22,38 @@ stdlib.h
 ../minishell.h
 /Users/moboustt/Desktop/1337/minishell/minishell.h
 
+/Users/moboustt/Desktop/1337/minishell/commands/ft_cd.c
+ft_buildin.h
+/Users/moboustt/Desktop/1337/minishell/commands/ft_buildin.h
+
+/Users/moboustt/Desktop/1337/minishell/commands/ft_echo.c
+ft_buildin.h
+/Users/moboustt/Desktop/1337/minishell/commands/ft_buildin.h
+
+/Users/moboustt/Desktop/1337/minishell/commands/ft_env.c
+ft_buildin.h
+/Users/moboustt/Desktop/1337/minishell/commands/ft_buildin.h
+
+/Users/moboustt/Desktop/1337/minishell/commands/ft_exit.c
+ft_buildin.h
+/Users/moboustt/Desktop/1337/minishell/commands/ft_buildin.h
+
+/Users/moboustt/Desktop/1337/minishell/commands/ft_export.c
+ft_buildin.h
+/Users/moboustt/Desktop/1337/minishell/commands/ft_buildin.h
+
+/Users/moboustt/Desktop/1337/minishell/commands/ft_pwd.c
+ft_buildin.h
+/Users/moboustt/Desktop/1337/minishell/commands/ft_buildin.h
+
+/Users/moboustt/Desktop/1337/minishell/commands/ft_unset.c
+ft_buildin.h
+/Users/moboustt/Desktop/1337/minishell/commands/ft_buildin.h
+
+/Users/moboustt/Desktop/1337/minishell/errors/error.c
+error.h
+/Users/moboustt/Desktop/1337/minishell/errors/error.h
+
 /Users/moboustt/Desktop/1337/minishell/errors/error.h
 stdlib.h
 -
@@ -25,6 +61,26 @@ stdlib.h
 /Users/moboustt/Desktop/1337/minishell/libft/libft.h
 ../utility/ft_types.h
 /Users/moboustt/Desktop/1337/minishell/utility/ft_types.h
+
+/Users/moboustt/Desktop/1337/minishell/execute.c
+minishell.h
+/Users/moboustt/Desktop/1337/minishell/minishell.h
+
+/Users/moboustt/Desktop/1337/minishell/lexer/env_vars_helper_funcs.c
+lexer.h
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer.h
+../minishell.h
+/Users/moboustt/Desktop/1337/minishell/minishell.h
+
+/Users/moboustt/Desktop/1337/minishell/lexer/envirement_vars_utils.c
+lexer.h
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer.h
+../minishell.h
+/Users/moboustt/Desktop/1337/minishell/minishell.h
+
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer.c
+../minishell.h
+/Users/moboustt/Desktop/1337/minishell/minishell.h
 
 /Users/moboustt/Desktop/1337/minishell/lexer/lexer.h
 stdio.h
@@ -51,6 +107,38 @@ string.h
 /Users/moboustt/Desktop/1337/minishell/utility/ft_types.h
 ../errors/error.h
 /Users/moboustt/Desktop/1337/minishell/errors/error.h
+
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions.c
+lexer.h
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer.h
+
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions2.c
+lexer.h
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer.h
+
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer_parsing_helper_funcs.c
+lexer.h
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer.h
+
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs.c
+lexer.h
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer.h
+../minishell.h
+/Users/moboustt/Desktop/1337/minishell/minishell.h
+
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs2.c
+lexer.h
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer.h
+../minishell.h
+/Users/moboustt/Desktop/1337/minishell/minishell.h
+
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer_utils.c
+lexer.h
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer.h
+
+/Users/moboustt/Desktop/1337/minishell/lexer/quotes_parsing_helper_funcs.c
+lexer.h
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer.h
 
 /Users/moboustt/Desktop/1337/minishell/libft/libft.h
 unistd.h
@@ -110,6 +198,12 @@ utility/ft_env.h
 commands/ft_buildin.h
 /Users/moboustt/Desktop/1337/minishell/commands/ft_buildin.h
 
+/Users/moboustt/Desktop/1337/minishell/parser/parse.c
+../minishell.h
+/Users/moboustt/Desktop/1337/minishell/minishell.h
+parser.h
+/Users/moboustt/Desktop/1337/minishell/parser/parser.h
+
 /Users/moboustt/Desktop/1337/minishell/parser/parser.h
 stdlib.h
 -
@@ -119,6 +213,20 @@ stdio.h
 /Users/moboustt/Desktop/1337/minishell/errors/error.h
 ../lexer/lexer.h
 /Users/moboustt/Desktop/1337/minishell/lexer/lexer.h
+
+/Users/moboustt/Desktop/1337/minishell/parser/parser_helper_functions.c
+parser.h
+/Users/moboustt/Desktop/1337/minishell/parser/parser.h
+../minishell.h
+/Users/moboustt/Desktop/1337/minishell/minishell.h
+
+/Users/moboustt/Desktop/1337/minishell/tokenizer/token.c
+../minishell.h
+/Users/moboustt/Desktop/1337/minishell/minishell.h
+
+/Users/moboustt/Desktop/1337/minishell/utility/ft_env.c
+ft_env.h
+/Users/moboustt/Desktop/1337/minishell/utility/ft_env.h
 
 /Users/moboustt/Desktop/1337/minishell/utility/ft_env.h
 string.h
@@ -134,7 +242,15 @@ ft_types.h
 ft_vector.h
 /Users/moboustt/Desktop/1337/minishell/utility/ft_vector.h
 
+/Users/moboustt/Desktop/1337/minishell/utility/ft_execve.c
+../minishell.h
+/Users/moboustt/Desktop/1337/minishell/minishell.h
+
 /Users/moboustt/Desktop/1337/minishell/utility/ft_types.h
+
+/Users/moboustt/Desktop/1337/minishell/utility/ft_vector.c
+ft_vector.h
+/Users/moboustt/Desktop/1337/minishell/utility/ft_vector.h
 
 /Users/moboustt/Desktop/1337/minishell/utility/ft_vector.h
 stdlib.h

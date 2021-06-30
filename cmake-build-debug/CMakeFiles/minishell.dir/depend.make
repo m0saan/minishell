@@ -235,18 +235,6 @@ CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../utility/ft_types.h
 CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../utility/ft_vector.h
 
-CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o: ../ast/node.h
-CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o: ../commands/ft_buildin.h
-CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o: ../errors/error.h
-CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o: ../lexer/lexer.h
-CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o: ../libft/libft.h
-CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o: ../minishell.h
-CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o: ../parser/parser.h
-CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o: ../parser/parser_utils.c
-CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o: ../utility/ft_env.h
-CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o: ../utility/ft_types.h
-CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o: ../utility/ft_vector.h
-
 CMakeFiles/MINISHELL.dir/tokenizer/token.c.o: ../ast/node.h
 CMakeFiles/MINISHELL.dir/tokenizer/token.c.o: ../commands/ft_buildin.h
 CMakeFiles/MINISHELL.dir/tokenizer/token.c.o: ../errors/error.h

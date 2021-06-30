@@ -58,10 +58,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -78,7 +78,7 @@ CMAKE_BINARY_DIR = /Users/moboustt/Desktop/1337/minishell/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -89,7 +89,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -628,33 +628,6 @@ lexer/lexer_tokens_helper_funcs2.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.s
 .PHONY : lexer/lexer_tokens_helper_funcs2.c.s
 
-lexer/lexer_utils.o: lexer/lexer_utils.c.o
-
-.PHONY : lexer/lexer_utils.o
-
-# target to build an object file
-lexer/lexer_utils.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.o
-.PHONY : lexer/lexer_utils.c.o
-
-lexer/lexer_utils.i: lexer/lexer_utils.c.i
-
-.PHONY : lexer/lexer_utils.i
-
-# target to preprocess a source file
-lexer/lexer_utils.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.i
-.PHONY : lexer/lexer_utils.c.i
-
-lexer/lexer_utils.s: lexer/lexer_utils.c.s
-
-.PHONY : lexer/lexer_utils.s
-
-# target to generate assembly for a file
-lexer/lexer_utils.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/lexer/lexer_utils.c.s
-.PHONY : lexer/lexer_utils.c.s
-
 lexer/quotes_parsing_helper_funcs.o: lexer/quotes_parsing_helper_funcs.c.o
 
 .PHONY : lexer/quotes_parsing_helper_funcs.o
@@ -762,33 +735,6 @@ parser/parser_helper_functions.s: parser/parser_helper_functions.c.s
 parser/parser_helper_functions.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.s
 .PHONY : parser/parser_helper_functions.c.s
-
-parser/parser_utils.o: parser/parser_utils.c.o
-
-.PHONY : parser/parser_utils.o
-
-# target to build an object file
-parser/parser_utils.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/parser/parser_utils.c.o
-.PHONY : parser/parser_utils.c.o
-
-parser/parser_utils.i: parser/parser_utils.c.i
-
-.PHONY : parser/parser_utils.i
-
-# target to preprocess a source file
-parser/parser_utils.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/parser/parser_utils.c.i
-.PHONY : parser/parser_utils.c.i
-
-parser/parser_utils.s: parser/parser_utils.c.s
-
-.PHONY : parser/parser_utils.s
-
-# target to generate assembly for a file
-parser/parser_utils.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/parser/parser_utils.c.s
-.PHONY : parser/parser_utils.c.s
 
 tokenizer/token.o: tokenizer/token.c.o
 
@@ -961,9 +907,6 @@ help:
 	@echo "... lexer/lexer_tokens_helper_funcs2.o"
 	@echo "... lexer/lexer_tokens_helper_funcs2.i"
 	@echo "... lexer/lexer_tokens_helper_funcs2.s"
-	@echo "... lexer/lexer_utils.o"
-	@echo "... lexer/lexer_utils.i"
-	@echo "... lexer/lexer_utils.s"
 	@echo "... lexer/quotes_parsing_helper_funcs.o"
 	@echo "... lexer/quotes_parsing_helper_funcs.i"
 	@echo "... lexer/quotes_parsing_helper_funcs.s"
@@ -976,9 +919,6 @@ help:
 	@echo "... parser/parser_helper_functions.o"
 	@echo "... parser/parser_helper_functions.i"
 	@echo "... parser/parser_helper_functions.s"
-	@echo "... parser/parser_utils.o"
-	@echo "... parser/parser_utils.i"
-	@echo "... parser/parser_utils.s"
 	@echo "... tokenizer/token.o"
 	@echo "... tokenizer/token.i"
 	@echo "... tokenizer/token.s"
