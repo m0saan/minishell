@@ -6,7 +6,7 @@ enum e_bool	is_letter(char ch)
 	('0' <= ch && ch <= '9') || has_char(ch));
 }
 
-int *has_next_quote(t_lexer *l, char quote)
+int	*has_next_quote(t_lexer *l, char quote)
 {
 	int	i;
 	int	las_quote_index;
@@ -19,7 +19,7 @@ int *has_next_quote(t_lexer *l, char quote)
 	i = l->position;
 	while (i < l->len)
 	{
-		if(l->input[i] == quote)
+		if (l->input[i] == quote)
 		{
 			n_of_quotes++;
 			las_quote_index = i;

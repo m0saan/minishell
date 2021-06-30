@@ -21,7 +21,7 @@ t_node	*new_node(enum e_node_type type)
 		return (NULL);
 	ft_memset(node, 0, sizeof(t_node));
 	if (type == NODE_COMMAND)
-		node->val_type = none;
+		node->val_type = NONE;
 	node->type = type;
 	return (node);
 }

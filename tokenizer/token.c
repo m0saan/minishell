@@ -9,9 +9,9 @@ t_token_type	lookup_type(char *ident)
 	while (++i < 7)
 	{
         if (strcmp(ident, commands[i]) == 0)
-            return (command);
+            return (COMMAND);
     }
-    return (arg);
+    return (ARG);
 }
 
 t_token	*new_token(t_token_type token_type, char ch, t_token *token)

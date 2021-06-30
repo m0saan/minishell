@@ -61,7 +61,7 @@ int 	open_heredoc(char *delim)
 	int 	fd;
 	char 	*buffer;
 
-	fd = open("/tmp/.heredoc", O_CREAT | O_TRUNC | O_RDWR,
+	fd = open("/tmp/.HEREDOC", O_CREAT | O_TRUNC | O_RDWR,
 			  S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 	buffer = malloc(2 * sizeof(char));
 	write(1, "> ", 2);
@@ -72,7 +72,7 @@ int 	open_heredoc(char *delim)
 		write(1, "> ", 2);
 	}
 	close(fd);
-	fd = open("/tmp/.heredoc", O_RDONLY);
+	fd = open("/tmp/.HEREDOC", O_RDONLY);
 	return (fd);
 }
 
@@ -121,26 +121,26 @@ void setup_redirection(t_type type, char *arg, int *sout, int *sin)
 	// int flags;
 	int fd;
 
-	if (type == right)
+	if (type == RIGHT)
 		fd = open(arg, O_CREAT | O_TRUNC | O_WRONLY,
 				S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-	else if (type == right_append)
+	else if (type == RIGHT_APPEND)
 		fd = open(arg, O_CREAT | O_APPEND | O_RDWR,
 				S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-	else if (type == heredoc) {
+	else if (type == HEREDOC) {
 		fd = open_heredoc(arg);
 	}
-	else if (type == left)
+	else if (type == LEFT)
 		fd = open(arg, O_RDONLY);
 	if (fd < 0)
 		exit(1);
-	if (type == right || type == right_append)
+	if (type == RIGHT || type == RIGHT_APPEND)
 	{
 		*sout = dup(1);
 		dup2(fd, 1);
 		close(fd);
 	}
-	else if (type == left || type == heredoc)
+	else if (type == LEFT || type == HEREDOC)
 	{
 		*sin = dup(0);
 		dup2(fd, 0);
@@ -229,7 +229,7 @@ pid_t run_cmd_parent(t_cmd *cmd)
 	exec_cmd(cmd);
 	// Set $? Accordingly
 	restore_redirs(sout, sin);
-	unlink("/tmp/.heredoc");
+	unlink("/tmp/.HEREDOC");
 	return -1;
 }
 
@@ -253,7 +253,7 @@ pid_t run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
 			setup_all_redirs(cmd->redirs, &sout, &sin);
 		exit(exec_cmd(cmd));
 	}
-	unlink("/tmp/.heredoc");
+	unlink("/tmp/.HEREDOC");
 	close_pipes(fd, pos, index);
 	return pid;
 }

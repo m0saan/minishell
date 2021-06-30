@@ -28,22 +28,19 @@
 
 typedef enum e_val_type
 {
-	none = -2,
-	VAL_STR = -1,
-	left = 0,
-	right = 1,
-	right_append = 2,
-	_pipe = 3,
-	env_var = 4,
-	command = 5,
-	arg = 6,
-	illegal = 7,
-	heredoc = 8,
-	end_of,
-	semicolon,
-	single_quote,
-	dollar_sign,
-	tilde,
+	NONE = -2,
+	LEFT = 0,
+	RIGHT,
+	RIGHT_APPEND,
+	PIPE,
+	ENV_VAR,
+	COMMAND,
+	ARG,
+	ILLEGAL,
+	HEREDOC,
+	END_O_F,
+	SEMICOLON,
+	TILDE,
 }			t_type;
 
 typedef enum e_val_type	t_token_type;
@@ -55,7 +52,6 @@ typedef struct s_lexer
 	int		read_position;
 	char	ch;
 	int		len;
-	t_bool	is_error;
 }				t_lexer;
 
 typedef struct s_token
@@ -65,7 +61,6 @@ typedef struct s_token
 	t_lexer			*lexer;
 }				t_token;
 
-t_bool		has_closing_quote(const char *line, int i, char quote);
 char		*get_env_value(t_lexer *l);
 void		read_and_parse_double_quoted(t_lexer *l, char *s, int *index);
 t_bool		is_quote(const t_lexer *l);
@@ -79,19 +74,20 @@ int			*has_next_quote(t_lexer *l, char quote);
 void		slice_str(const char *str, char *buffer, size_t start, size_t end);
 void		read_single_quoted(t_lexer *l, char quote, char *s, int *index);
 char		*parse_quoted(t_lexer *l, char quote, 	int	i, int s_index);
-void		handle_escape(t_lexer *l, char *s, int *i, int *s_index);
-void		handle_alphanum_identifier(t_lexer *l, int pos, char **s, int *i, int *s_index);
-void		init_parse_quoted_vars(t_lexer *l, char quote, char **s, int **infos);
+void		handle_alphanum_identifier(t_lexer *l, char **s, int *i,
+				int *s_index);
+void		init_parse_quoted_vars(t_lexer *l, char quote,
+				char **s, int **infos);
 char		*read_identifier(t_lexer *l, int i);
-void		handle_single_quote(t_lexer *l, char *s, int *i, int *s_index, int *pos);
-void		handle_double_quotes(t_lexer *l, char *s, int *i, int *s_index, int *pos);
+void		handle_single_quote(t_lexer *l, char *s, int *i, int *s_index);
+void		handle_double_quotes(t_lexer *l, char *s, int *i, int *s_index);
 t_bool		is_quote(const t_lexer *l);
 size_t		get_env_var_last_index(t_lexer *l);
 char		*get_env_value(t_lexer *l);
 int			get_env_var_end(t_string str);
 char		*handle_env_variables(t_string str, int i, int k);
-void		parse_and_get_env_value(char *str, char *env_name, int *i, char *env_value);
-void		handle_escape_in_double_quotes(t_lexer *l, char *s, int *index);
+void		parse_and_get_env_value(char *str, char *env_name,
+				int *i, char **env_value);
 t_token		*handle_right_redir(t_lexer *l, t_token *tok);
 void		handle_single_quote_identifier(t_lexer *l, t_token *tok);
 void		handle_double_quotes_identifier(t_lexer *l, t_token *tok);
@@ -99,7 +95,7 @@ t_token		*handle_identifier_with_no_quotes(t_lexer *l, t_token *tok);
 t_token		*handle_dollar_token(t_lexer *l, t_token *tok);
 t_token		*handle_eof_token(t_token *tok);
 t_token		*handle_illegal_token(const t_lexer *l, t_token *tok);
-t_token		*handle_escape_token(t_lexer *l, t_token *tok);
-t_bool check_quotes_errors(const t_lexer *l, char ch);
+t_bool		check_quotes_errors(const t_lexer *l, char ch);
+void		handle_evn_vars_with_no_quotes(t_lexer *l, char **s, int *i);
 
 #endif

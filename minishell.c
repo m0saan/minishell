@@ -1,15 +1,5 @@
 #include "minishell.h"
 
-const char *prompt = "minishell-0.1$ ";
-
-size_t read_line(char *line) {
-	ft_memset(line, 0, 1024);
-	size_t n = read(0, line, 1024);
-	if(n)
-		line[n - 1] = 0;
-	return (n);
-}
-
 t_cmd *create_cmd() {
 	t_cmd *command;
 	command = malloc(sizeof(t_cmd));
@@ -39,7 +29,7 @@ t_vector*	fill_out_vector_with_commands(t_node *ast_node)
 	{
 		if(is_redir(child))
 			child = handle_all_redirs(child, tmp_cmd);
-		else if(child->val_type == _pipe)
+		else if(child->val_type == PIPE)
 		{
 			insert(vector, tmp_cmd);
 			tmp_cmd = create_cmd();
@@ -54,23 +44,23 @@ t_vector*	fill_out_vector_with_commands(t_node *ast_node)
 
 t_node *handle_all_redirs(t_node *child, t_cmd *tmp_cmd)
 {
-	if (child->val_type == right)
-	child = init_and_fill_redirs(child, tmp_cmd, right);
-	else if(child->val_type == left)
-		child = init_and_fill_redirs(child, tmp_cmd, left);
-	else if(child->val_type == right_append)
-		child = init_and_fill_redirs(child, tmp_cmd, right_append);
-	else if(child->val_type == heredoc)
-		child = init_and_fill_redirs(child, tmp_cmd, heredoc);
-	else if(child->val.str[0] == '$' && child->val_type == env_var)
+	if (child->val_type == RIGHT)
+	child = init_and_fill_redirs(child, tmp_cmd, RIGHT);
+	else if(child->val_type == LEFT)
+		child = init_and_fill_redirs(child, tmp_cmd, LEFT);
+	else if(child->val_type == RIGHT_APPEND)
+		child = init_and_fill_redirs(child, tmp_cmd, RIGHT_APPEND);
+	else if(child->val_type == HEREDOC)
+		child = init_and_fill_redirs(child, tmp_cmd, HEREDOC);
+	else if(child->val.str[0] == '$' && child->val_type == ENV_VAR)
 		parse_env_vars_not_in_quotes(child, tmp_cmd);
 	return child;
 }
 
 t_bool is_redir(const t_node *child)
 {
-	return (child->val_type == right || child->val_type == left ||
-	child->val_type == right_append || child->val_type == heredoc);
+	return (child->val_type == RIGHT || child->val_type == LEFT ||
+			child->val_type == RIGHT_APPEND || child->val_type == HEREDOC);
 }
 
 t_node *init_and_fill_redirs(t_node *child, t_cmd *tmp_cmd, t_type type)
@@ -85,7 +75,7 @@ void parse_env_vars_not_in_quotes(t_node *child, t_cmd *tmp_cmd)
 {
 	if(child->val.str != NULL)
 	{
-		char *tmp = handle_env_variables(child->val.str, 0, 0);
+		char *tmp = handle_env_variables(child->val.str, -1, 0);
 		if(tmp != NULL)
 			fill_out_env_command(tmp_cmd, tmp);
 	}
@@ -106,15 +96,15 @@ void fill_out_env_command(t_cmd *tmp_cmd, const char *tmp)
 
 t_error *check_first_token(t_parser *p)
 {
-	const enum e_val_type types[] = {illegal, end_of, semicolon, _pipe, right, left, right_append};
+	const enum e_val_type types[] = {ILLEGAL, END_O_F, SEMICOLON, PIPE, RIGHT, LEFT, RIGHT_APPEND};
 	t_error *error;
 	int i;
 	error = malloc(sizeof(t_error));
 	ft_memset(error, 0, sizeof(t_error));
 	i = -1;
 	while(++i < 7) {
-		if((p->cur_token->type == types[i] && p->peek_token->type == end_of) || \
-        p->cur_token->type == end_of)
+		if((p->cur_token->type == types[i] && p->peek_token->type == END_O_F) || \
+        p->cur_token->type == END_O_F)
 			set_error(error, ERR1);
 	}
 	return (error);
@@ -131,7 +121,8 @@ void parse_and_execute(t_lexer *lexer) {
 	ft_memset(cmd, 0, sizeof(t_cmd));
 	cmd->redirs = new_vector();
 	err = check_first_token(p);
-	if(err->is_error) {
+	if(err->is_error)
+	{
 		printf("%s '%s'\n", err->error_msg, p->peek_token->literal);
 		return;
 	}
@@ -139,9 +130,11 @@ void parse_and_execute(t_lexer *lexer) {
 	if(ast_node == NULL)
 		return;
 	run_cmds((t_vector *) fill_out_vector_with_commands(ast_node));
+	free(p);
 }
 
 void signal_handler_parent(int sig) {
+	const char	*prompt = "minishell-0.1$ ";
 	if(sig == SIGQUIT && g_is_forked)
 		dprintf(1, "Quit: 3");
 	if(!(sig == SIGQUIT && !g_is_forked))
@@ -150,33 +143,26 @@ void signal_handler_parent(int sig) {
 		dprintf(1, "%s", prompt);
 }
 
-void signal_handler(int sig) {
-	// if (sig == SIGQUIT)
-	// 	dprintf(2, "^\\\n");
-	// else if (sig == SIGINT)
-	// 	dprintf(2, "^C\n");
-}
 
 #if (1)
 
-/* A static variable for holding the line. */
 static char *line_read = (char *)NULL;
 
-/* Read a string, and return a pointer to it.  Returns NULL on EOF. */
-char*	get_line ()
+char*	get_line()
 {
+	const char	*prompt = "minishell-0.1$ ";
+
 	if (line_read)
 	{
 		free (line_read);
 		line_read = (char *)NULL;
 	}
-
+	rl_on_new_line();
 	line_read = readline (prompt);
 
 	/* If the line has any text in it, save it on the history. */
 	if (line_read && *line_read)
 		add_history (line_read);
-	//rl_redisplay();
 	return (line_read);
 }
 
@@ -194,6 +180,7 @@ int main(int ac, char **av, char **env) {
 			continue;
 		t_lexer *lexer = new_lexer(line, (int) ft_strlen(line));
 		parse_and_execute(lexer);
+		free(lexer);
 	}
 }
 

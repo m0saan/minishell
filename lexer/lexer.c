@@ -12,60 +12,59 @@
 
 #include "../minishell.h"
 
-t_token *next_token(t_lexer *l)
+t_token	*next_token(t_lexer *l)
 {
-	t_token *tok;
+	t_token	*tok;
 
 	tok = malloc(sizeof(t_token));
 	tok->lexer = l;
 	skip_white_spaces(l);
-	if(l->ch == '~')
-		tok = new_token(tilde, l->ch, tok);
-	else if(l->ch == '<' || l->ch == '>')
+	if (l->ch == '~')
+		tok = new_token(TILDE, l->ch, tok);
+	else if (l->ch == '<' || l->ch == '>')
 		tok = handle_right_redir(l, tok);
-	else if(l->ch == '|')
-		tok = new_token(_pipe, l->ch, tok);
-	else if(l->ch == '\'')
+	else if (l->ch == '|')
+		tok = new_token(PIPE, l->ch, tok);
+	else if (l->ch == '\'')
 		handle_single_quote_identifier(l, tok);
-	else if(l->ch == '"')
+	else if (l->ch == '"')
 		handle_double_quotes_identifier(l, tok);
-	else if(l->ch == '$')
-		return handle_dollar_token(l, tok);
-	else if(l->ch == 0)
-		return handle_eof_token(tok);
-	else if(is_letter(l->ch))
-		return handle_identifier_with_no_quotes(l, tok);
+	else if (l->ch == '$')
+		return (handle_dollar_token(l, tok));
+	else if (l->ch == 0)
+		return (handle_eof_token(tok));
+	else if (is_letter(l->ch))
+		return (handle_identifier_with_no_quotes(l, tok));
 	else
-		return handle_illegal_token(l, tok);
+		return (handle_illegal_token(l, tok));
 	next_char(l);
-	return tok;
+	return (tok);
 }
 
-void read_and_parse_double_quoted(t_lexer *l, char *s, int *index)
+void	read_and_parse_double_quoted(t_lexer *l, char *s, int *index)
 {
-	char const to_be_escaped[] = {'$', '"', '\\'};
-	char *env_name;
+	char	*env_name;
+
 	next_char(l);
-	while(l->ch != '"')
+	while (l->ch != '"')
 	{
-		if(l->ch == '$' && ft_isalnum(l->input[l->read_position]))
+		if (l->ch == '$' && ft_isalnum(l->input[l->read_position]))
 		{
 			next_char(l);
-			if(ft_isdigit(l->ch))
+			if (ft_isdigit(l->ch))
 			{
 				next_char(l);
-				continue;
+				continue ;
 			}
 			env_name = get_env_value(l);
-			if(env_name == NULL)
-				continue;
+			if (env_name == NULL)
+				continue ;
 			s = strcat(s, env_name);
 			(*index) += (int) ft_strlen(env_name);
-			continue;
+			continue ;
 		}
 		s[(*index)++] = l->ch;
 		next_char(l);
 	}
 	next_char(l);
 }
-

@@ -1,27 +1,28 @@
 #include "lexer.h"
 #include "../minishell.h"
 
-void handle_double_quotes_identifier(t_lexer *l, t_token *tok)
+void	handle_double_quotes_identifier(t_lexer *l, t_token *tok)
 {
-	// tok = new_token(DOUBLE_QUOTE, l->ch, tok);
 	if (check_quotes_errors(l, l->ch))
-		tok->type = illegal;
+		tok->type = ILLEGAL;
 	else
 	{
 		tok->literal = parse_quoted(l, l->ch, 0, 0);
-		if(!tok->literal)
-			tok->type = illegal;
+		if (!tok->literal)
+			tok->type = ILLEGAL;
 		else
-			tok->type = arg;
+			tok->type = ARG;
 	}
 }
 
-t_bool check_quotes_errors(const t_lexer *l, char ch) {
-	int i;
+t_bool	check_quotes_errors(const t_lexer *l, char ch)
+{
+	int	i;
+	int	counter;
 
 	i = l->position;
-	int counter = 1;
-	while(++i < l->len)
+	counter = 1;
+	while (++i < l->len)
 	{
 		if (l->input[i] == '\\')
 			return (true);
@@ -29,47 +30,38 @@ t_bool check_quotes_errors(const t_lexer *l, char ch) {
 			++counter;
 	}
 	if (counter % 2 != 0)
-		ft_exit("ERROR: illegal syntax <quotes>\n", EXIT_FAILURE);
+		ft_exit("ERROR: ILLEGAL syntax <quotes>\n", EXIT_FAILURE);
 	return (false);
 }
 
-void handle_single_quote_identifier(t_lexer *l, t_token *tok)
+void	handle_single_quote_identifier(t_lexer *l, t_token *tok)
 {
-	// tok = new_token(single_quote, l->ch, tok);
 	check_quotes_errors(l, l->ch);
 	tok->literal = parse_quoted(l, l->ch, 0, 0);
-	if(!tok->literal)
-		tok->type = illegal;
+	if (!tok->literal)
+		tok->type = ILLEGAL;
 	else
-		tok->type = arg;
+		tok->type = ARG;
 }
 
-t_token *handle_right_redir(t_lexer *l, t_token *tok)
+t_token	*handle_right_redir(t_lexer *l, t_token *tok)
 {
 	if (peek_char(l) == '>')
 	{
 		next_char(l);
-		tok = new_token(right_append, 'r', tok);
+		tok = new_token(RIGHT_APPEND, 'r', tok);
 	}
 	else if (peek_char(l) == '<')
 	{
 		next_char(l);
-		tok = new_token(heredoc, 'h', tok);
+		tok = new_token(HEREDOC, 'h', tok);
 	}
 	else
 	{
 		if (l->ch == '>')
-			tok = new_token(right, l->ch, tok);
+			tok = new_token(RIGHT, l->ch, tok);
 		else
-			tok = new_token(left, l->ch, tok);
+			tok = new_token(LEFT, l->ch, tok);
 	}
-	return tok;
-}
-
-void handle_escape_in_double_quotes(t_lexer *l, char *s, int *index)
-{
-	next_char(l);
-	s[*index] = l->ch;
-	(*index) += 1;
-	next_char(l);
+	return (tok);
 }
