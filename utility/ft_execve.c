@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 11:14:12 by ehakam            #+#    #+#             */
-/*   Updated: 2021/06/30 20:07:26 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/06/30 20:48:28 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "../minishell.h"
 #include "../global_utils/global_utils.h"
 
-t_bool	is_builtin(char *cmd)
+t_bool		is_builtin(char *cmd)
 {
 	return (ft_strcmp(cmd, "echo") == 0 || ft_strcmp(cmd, "export") == 0
 		|| ft_strcmp(cmd, "env") == 0 || ft_strcmp(cmd, "exit") == 0
@@ -22,7 +22,7 @@ t_bool	is_builtin(char *cmd)
 		|| ft_strcmp(cmd, "cd") == 0);
 }
 
-char	*append_cmd_to_path(char *path, char *cmd)
+char		*append_cmd_to_path(char *path, char *cmd)
 {
 	int			i;
 	int			j;
@@ -45,7 +45,7 @@ char	*append_cmd_to_path(char *path, char *cmd)
 	return (out);
 }
 
-char	*get_path(char *path_str, char *cmd, int *start, int end)
+char		*get_path(char *path_str, char *cmd, int *start, int end)
 {
 	char	*path;
 
@@ -80,42 +80,6 @@ t_vector	*get_paths(char *path_str, char *cmd)
 	return (paths);
 }
 
-// t_vector	*get_paths(char *path_str, char *cmd)
-// {
-// 	t_vector	*pv;
-// 	char		*path;
-// 	int			end;
-// 	int			start;
-// 	end = -1;
-// 	start = 0;
-// 	pv = new_vector_s(20);
-// 	if (path_str != NULL && path_str[0] != '\0')
-// 	{
-// 		if (path_str[0] == ':')
-// 			insert(pv, append_cmd_to_path(strdup("."), cmd));
-// 		while (path_str[++end])
-// 		{
-// 			if (path_str[end] == ':')
-// 			{
-// 				path = ft_substr2(path_str, start, end);
-// 				if (path != NULL)
-// 					insert(pv, append_cmd_to_path(path, cmd));
-// 				else
-// 					insert(pv, append_cmd_to_path(strdup("."), cmd));
-// 				start = end + 1;
-// 			}
-// 		}
-// 		path = ft_substr2(path_str, start, end);
-// 		if (path != NULL)
-// 			insert(pv, append_cmd_to_path(path, cmd));
-// 		else
-// 			insert(pv, append_cmd_to_path(strdup("."), cmd));
-// 	}
-// 	else
-// 		insert(pv, append_cmd_to_path(strdup("."), cmd));
-// 	return (pv);
-// }
-
 int	ft_exec_builtin(t_cmd *cmd, char **envp)
 {
 	if (ft_strcmp(cmd->argv[0], "cd") == 0)
@@ -135,20 +99,37 @@ int	ft_exec_builtin(t_cmd *cmd, char **envp)
 	return (0);
 }
 
-int	ft_find_and_exec(t_cmd *cmd, char **envp)
+void	handle_errors(t_cmd *cmd, t_bool ispath, int _errno)
+{
+	if (_errno == 13)
+		exit(p_error(cmd->argv[0], NULL, 126));
+	else if (_errno == 8)
+		exit(p_error(cmd->argv[0], NULL, 1));
+	else if (ispath || get_var(g_envp, "PATH") == NULL)
+		exit(p_error(cmd->argv[0], NULL, 127));
+	else
+		exit(p_error(cmd->argv[0], "command not found", 127));
+}
+
+int		ft_find_and_exec(t_cmd *cmd, char **envp)
 {
 	t_vector	*paths;
 	int			i;
 
 	i = -1;
 	paths = get_paths(get_var(g_envp, "PATH"), cmd->argv[0]);
-	if (paths == NULL)
-	{
-		dprintf(2, "\033[0;31mERROR: No such file!\033[0m\n");
-		return (1);
-	}
+	// if (paths == NULL)
+	// {
+	// 	dprintf(2, "\033[0;31mERROR: No such file!\033[0m\n");
+	// 	return (1);
+	// }
 	while (++i < (int) paths->size)
+	{
 		execve((char *) at(paths, i), cmd->argv, envp);
+		if (errno != 2)
+			break ;
+	}
+	handle_errors(cmd, false, errno);
 	return (1);
 }
 
@@ -163,7 +144,7 @@ t_bool	is_path(char *cmd)
 	return (false);
 }
 
-int	exec_cmd(t_cmd *cmd)
+int		exec_cmd(t_cmd *cmd)
 {
 	char	**env;
 
@@ -173,8 +154,8 @@ int	exec_cmd(t_cmd *cmd)
 	else if (is_path(cmd->argv[0]))
 	{
 		execve(cmd->argv[0], cmd->argv, env);
-		ft_exit("NAAAAAH!", 33);
-		return (33);
+		handle_errors(cmd, false, errno);
+		return (1);
 	}
 	else
 		return (ft_find_and_exec(cmd, env));
