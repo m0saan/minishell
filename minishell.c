@@ -18,40 +18,33 @@ t_cmd *create_cmd() {
 	return (command);
 }
 
-t_vector *fill_out_vector_with_commands(t_node *ast_node) {
-	t_node *child;
-	t_vector *vector = new_vector();
-	t_cmd *tmp_cmd;
+void parse_env_vars_not_in_quotes(t_node *child, t_cmd *tmp_cmd);
 
+t_node *init_and_fill_redirs(t_node *child, t_cmd *tmp_cmd, t_type type);
+
+t_bool is_redir(const t_node *child);
+
+t_node *handle_all_redirs(t_node *child, t_cmd *tmp_cmd);
+
+t_vector*	fill_out_vector_with_commands(t_node *ast_node)
+{
+	t_node		*child;
+	t_vector	*vector;
+	t_cmd		*tmp_cmd;
+
+	vector = new_vector();
 	child = ast_node->first_child;
 	tmp_cmd = create_cmd();
-	while(child) {
-		if(child->val_type == right) {
-			struct s_redir *tmp = create_redir(right, child->next_sibling->val.str);
-			child = child->next_sibling;
-			insert(tmp_cmd->redirs, tmp);
-		} else if(child->val_type == left) {
-			insert(tmp_cmd->redirs, create_redir(left, child->next_sibling->val.str));
-			child = child->next_sibling;
-		} else if(child->val_type == right_append) {
-			insert(tmp_cmd->redirs, create_redir(right_append, child->next_sibling->val.str));
-			child = child->next_sibling;
-		}
-		else if(child->val_type == heredoc) {
-			insert(tmp_cmd->redirs, create_redir(heredoc, child->next_sibling->val.str));
-			child = child->next_sibling;
-		}
-		else if(child->val.str[0] == '$' && child->val_type == env_var) {
-			if(child->val.str != NULL) {
-				char *tmp = handle_env_variables(child->val.str, 0, 0);
-				if(tmp != NULL)
-					fill_out_env_command(tmp_cmd, tmp);
-			} else
-				tmp_cmd->argv[tmp_cmd->count++] = child->val.str;
-		} else if(child->val_type == _pipe) {
+	while(child)
+	{
+		if(is_redir(child))
+			child = handle_all_redirs(child, tmp_cmd);
+		else if(child->val_type == _pipe)
+		{
 			insert(vector, tmp_cmd);
 			tmp_cmd = create_cmd();
-		} else
+		}
+		else
 			tmp_cmd->argv[tmp_cmd->count++] = child->val.str;
 		child = child->next_sibling;
 	}
@@ -59,7 +52,49 @@ t_vector *fill_out_vector_with_commands(t_node *ast_node) {
 	return (vector);
 }
 
-void fill_out_env_command(t_cmd *tmp_cmd, const char *tmp) {
+t_node *handle_all_redirs(t_node *child, t_cmd *tmp_cmd)
+{
+	if (child->val_type == right)
+	child = init_and_fill_redirs(child, tmp_cmd, right);
+	else if(child->val_type == left)
+		child = init_and_fill_redirs(child, tmp_cmd, left);
+	else if(child->val_type == right_append)
+		child = init_and_fill_redirs(child, tmp_cmd, right_append);
+	else if(child->val_type == heredoc)
+		child = init_and_fill_redirs(child, tmp_cmd, heredoc);
+	else if(child->val.str[0] == '$' && child->val_type == env_var)
+		parse_env_vars_not_in_quotes(child, tmp_cmd);
+	return child;
+}
+
+t_bool is_redir(const t_node *child)
+{
+	return (child->val_type == right || child->val_type == left ||
+	child->val_type == right_append || child->val_type == heredoc);
+}
+
+t_node *init_and_fill_redirs(t_node *child, t_cmd *tmp_cmd, t_type type)
+{
+	struct s_redir *tmp = create_redir(type, child->next_sibling->val.str);
+	child = child->next_sibling;
+	insert(tmp_cmd->redirs, tmp);
+	return child;
+}
+
+void parse_env_vars_not_in_quotes(t_node *child, t_cmd *tmp_cmd)
+{
+	if(child->val.str != NULL)
+	{
+		char *tmp = handle_env_variables(child->val.str, 0, 0);
+		if(tmp != NULL)
+			fill_out_env_command(tmp_cmd, tmp);
+	}
+	else
+		tmp_cmd->argv[tmp_cmd->count++] = child->val.str;
+}
+
+void fill_out_env_command(t_cmd *tmp_cmd, const char *tmp)
+{
 	char **splited_env_value;
 	int i;
 
@@ -69,7 +104,8 @@ void fill_out_env_command(t_cmd *tmp_cmd, const char *tmp) {
 		tmp_cmd->argv[tmp_cmd->count++] = splited_env_value[i];
 }
 
-t_error *check_first_token(t_parser *p) {
+t_error *check_first_token(t_parser *p)
+{
 	const enum e_val_type types[] = {illegal, end_of, semicolon, _pipe, right, left, right_append};
 	t_error *error;
 	int i;
@@ -105,26 +141,6 @@ void parse_and_execute(t_lexer *lexer) {
 	run_cmds((t_vector *) fill_out_vector_with_commands(ast_node));
 }
 
-/*
-t_bool	check_semicolon_errors(const char *line)
-{
-	t_parser *p;
-
-	p = new_parser(new_lexer(line, (int) ft_strlen(line)));
-	while (p->cur_token->type != end_of)
-	{
-		next_token_p(p);
-		if (p->cur_token->type == semicolon && p->peek_token->type == semicolon)
-		{
-			free(p);
-			return (true);
-		}
-	}
-	free(p);
-	return (false);
-}
-*/
-
 void signal_handler_parent(int sig) {
 	if(sig == SIGQUIT && g_is_forked)
 		dprintf(1, "Quit: 3");
@@ -147,17 +163,14 @@ void signal_handler(int sig) {
 static char *line_read = (char *)NULL;
 
 /* Read a string, and return a pointer to it.  Returns NULL on EOF. */
-char * rl_gets ()
+char*	get_line ()
 {
-	/* If the buffer has already been allocated, return the memory
-	   to the free pool. */
 	if (line_read)
 	{
 		free (line_read);
 		line_read = (char *)NULL;
 	}
 
-	/* Get a line from the user. */
 	line_read = readline (prompt);
 
 	/* If the line has any text in it, save it on the history. */
@@ -176,21 +189,12 @@ int main(int ac, char **av, char **env) {
 	signal(SIGINT, signal_handler_parent);
 	while(true)
 	{
-		// write(1, prompt, ft_strlen(prompt));
-		//line = malloc(1024 * sizeof(char));
-		//size_t n = read_line(line);
-		line = rl_gets();
-//		if(strcmp(line, "exit") == 0) {
-//			dprintf(2, "shell is exiting...\n");
-//			free(line);
-//			break;
-//		}
+		line = get_line();
 		if (line && line[0] == '\0')
 			continue;
 		t_lexer *lexer = new_lexer(line, (int) ft_strlen(line));
 		parse_and_execute(lexer);
 	}
-	return (EXIT_SUCCESS);
 }
 
-#endif 
+#endif
