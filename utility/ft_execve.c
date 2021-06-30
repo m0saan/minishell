@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 11:14:12 by ehakam            #+#    #+#             */
-/*   Updated: 2021/06/30 20:48:28 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/06/30 20:49:32 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,7 +154,7 @@ int		exec_cmd(t_cmd *cmd)
 	else if (is_path(cmd->argv[0]))
 	{
 		execve(cmd->argv[0], cmd->argv, env);
-		handle_errors(cmd, false, errno);
+		handle_errors(cmd, true, errno);
 		return (1);
 	}
 	else
