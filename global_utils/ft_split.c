@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "global_utils.h"
 
 static int	get_words(char *s, char c)
 {

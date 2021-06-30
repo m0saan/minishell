@@ -25,6 +25,7 @@
 # include <string.h>
 # include "../utility/ft_types.h"
 # include "../errors/error.h"
+# include "../global_utils/global_utils.h"
 
 typedef enum e_val_type
 {

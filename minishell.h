@@ -66,4 +66,12 @@ void			read_single_quoted(t_lexer *l, char quote, char *s, int *index);
 char			*to_string(void *item);
 void			signal_handler(int sig);
 void			fill_out_env_command(t_cmd *tmp_cmd, const char *tmp);
+void			parse_env_vars_not_in_quotes(t_node *child, t_cmd *tmp_cmd);
+t_node			*init_and_fill_redirs(t_node *child, t_cmd *tmp_cmd, t_type type);
+t_bool			is_redir(const t_node *child);
+t_node			*handle_all_redirs(t_node *child, t_cmd *tmp_cmd);
+void	signal_handler_parent(int sig);
+t_error	*check_first_token(t_parser *p);
+void	fill_out_env_command(t_cmd *tmp_cmd, const char *tmp);
+void	parse_env_vars_not_in_quotes(t_node *child, t_cmd *tmp_cmd);
 #endif

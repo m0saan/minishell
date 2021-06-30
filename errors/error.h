@@ -2,8 +2,8 @@
 # define ERROR_H
 
 # include <stdlib.h>
-# include "../libft/libft.h"
 # include "../utility/ft_types.h"
+# include "../global_utils/global_utils.h"
 
 # define ERR1 "syntax error near unexpected token"
 

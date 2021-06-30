@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "global_utils.h"
 
 static	int	ft_intlen(long x)
 {
