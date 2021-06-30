@@ -12,7 +12,71 @@
 
 #include "minishell.h"
 
-int	fill_envp(char **envp)
+char	*strjoin(char *s, char c)
+{
+	int		i;
+	char	*str;
+
+	i = 0;
+	while (s[i])
+		i++;
+	str = (char *)malloc(i + 2);
+	i = 0;
+	while (s[i])
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = c;
+	str[i + 1] = '\0';
+	free(s);
+	return (str);
+}
+
+int	get_next_line(char **line)
+{
+	char	*buffer;
+	int		ret;
+
+	buffer = (char *)malloc(2);
+	*line = (char *)malloc(1);
+	*line[0] = '\0';
+	ret = 1;
+	while (ret)
+	{
+		ret = read(0, buffer, 1);
+		if (ret)
+		{
+			if (buffer[0] == '\n' || ret == EOF)
+				break ;
+			*line = strjoin(*line, buffer[0]);
+		}
+	}
+	free(buffer);
+	return (ret);
+}
+
+int 	open_heredoc(char *delim)
+{
+	int 	fd;
+	char 	*buffer;
+
+	fd = open("/tmp/.heredoc", O_CREAT | O_TRUNC | O_RDWR,
+			  S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+	buffer = malloc(2 * sizeof(char));
+	write(1, "> ", 2);
+	while(get_next_line(&buffer) > 0 && strcmp(delim, buffer) != 0)
+	{
+		write(fd, buffer, strlen(buffer));
+		write(fd, "\n", 1);
+		write(1, "> ", 2);
+	}
+	close(fd);
+	fd = open("/tmp/.heredoc", O_RDONLY);
+	return (fd);
+}
+
+int		fill_envp(char **envp)
 {
 	int		i;
 	int		shlvlv;
@@ -35,7 +99,7 @@ int	fill_envp(char **envp)
 	return (0);
 }
 
-char *to_string(void *item)
+char	*to_string(void *item)
 {
 	char *it = (char *)item;
 	return (strcat(it, "\n"));
@@ -63,6 +127,9 @@ void setup_redirection(t_type type, char *arg, int *sout, int *sin)
 	else if (type == right_append)
 		fd = open(arg, O_CREAT | O_APPEND | O_RDWR,
 				S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+	else if (type == heredoc) {
+		fd = open_heredoc(arg);
+	}
 	else if (type == left)
 		fd = open(arg, O_RDONLY);
 	if (fd < 0)
@@ -73,7 +140,7 @@ void setup_redirection(t_type type, char *arg, int *sout, int *sin)
 		dup2(fd, 1);
 		close(fd);
 	}
-	else if (type == left)
+	else if (type == left || type == heredoc)
 	{
 		*sin = dup(0);
 		dup2(fd, 0);
@@ -162,6 +229,7 @@ pid_t run_cmd_parent(t_cmd *cmd)
 	exec_cmd(cmd);
 	// Set $? Accordingly
 	restore_redirs(sout, sin);
+	unlink("/tmp/.heredoc");
 	return -1;
 }
 
@@ -185,6 +253,7 @@ pid_t run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
 			setup_all_redirs(cmd->redirs, &sout, &sin);
 		exit(exec_cmd(cmd));
 	}
+	unlink("/tmp/.heredoc");
 	close_pipes(fd, pos, index);
 	return pid;
 }

@@ -23,7 +23,6 @@ t_vector *fill_out_vector_with_commands(t_node *ast_node) {
 	t_vector *vector = new_vector();
 	t_cmd *tmp_cmd;
 
-
 	child = ast_node->first_child;
 	tmp_cmd = create_cmd();
 	while(child) {
@@ -37,7 +36,12 @@ t_vector *fill_out_vector_with_commands(t_node *ast_node) {
 		} else if(child->val_type == right_append) {
 			insert(tmp_cmd->redirs, create_redir(right_append, child->next_sibling->val.str));
 			child = child->next_sibling;
-		} else if(child->val.str[0] == '$' && child->val_type == env_var) {
+		}
+		else if(child->val_type == heredoc) {
+			insert(tmp_cmd->redirs, create_redir(heredoc, child->next_sibling->val.str));
+			child = child->next_sibling;
+		}
+		else if(child->val.str[0] == '$' && child->val_type == env_var) {
 			if(child->val.str != NULL) {
 				char *tmp = handle_env_variables(child->val.str, 0, 0);
 				if(tmp != NULL)
@@ -159,7 +163,7 @@ char * rl_gets ()
 	/* If the line has any text in it, save it on the history. */
 	if (line_read && *line_read)
 		add_history (line_read);
-	rl_redisplay();
+	//rl_redisplay();
 	return (line_read);
 }
 
@@ -175,16 +179,14 @@ int main(int ac, char **av, char **env) {
 		// write(1, prompt, ft_strlen(prompt));
 		//line = malloc(1024 * sizeof(char));
 		//size_t n = read_line(line);
-//		if(!n || line[0] == '\0' || strcmp(line, "\n") == 0) {
-//			free(line);
-//			continue;
-//		}
 		line = rl_gets();
-		if(strcmp(line, "exit") == 0) {
-			dprintf(2, "shell is exiting...\n");
-			free(line);
-			break;
-		}
+//		if(strcmp(line, "exit") == 0) {
+//			dprintf(2, "shell is exiting...\n");
+//			free(line);
+//			break;
+//		}
+		if (line && line[0] == '\0')
+			continue;
 		t_lexer *lexer = new_lexer(line, (int) ft_strlen(line));
 		parse_and_execute(lexer);
 	}

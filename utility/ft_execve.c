@@ -117,9 +117,9 @@ int		ft_find_and_exec(t_cmd *cmd, char **envp) {
 	while (++i < paths->size)
 	{
 		execve((char *)paths->at(paths, i), cmd->argv, envp);
-		dprintf(2, "\033[0;32mINFO: TESTING PATH(%s) FAILED!\033[0m\n", paths->at(paths, i));
+		//dprintf(2, "\033[0;32mINFO: TESTING PATH(%s) FAILED!\033[0m\n", (char *)paths->at(paths, i));
 	}
-	dprintf(2, "\033[0;31mERROR: Command Not Found!\033[0m\n");
+	//dprintf(2, "\033[0;31mERROR: Command Not Found!\033[0m\n");
 	return 1;
 }
 
