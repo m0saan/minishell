@@ -116,6 +116,12 @@
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/execute.c">
 			<Option target="MINISHELL"/>
 		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_itoa.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_split.c">
+			<Option target="MINISHELL"/>
+		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/global_utils.c">
 			<Option target="MINISHELL"/>
 		</Unit>
@@ -167,6 +173,9 @@
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/parser/parser_helper_functions.c">
 			<Option target="MINISHELL"/>
 		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/redirs.c">
+			<Option target="MINISHELL"/>
+		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/tokenizer/token.c">
 			<Option target="MINISHELL"/>
 		</Unit>
@@ -189,6 +198,9 @@
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/utility/vector_functions_implemt2.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/vector_fill_out_utils.c">
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/CMakeLists.txt">

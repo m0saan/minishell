@@ -14,6 +14,8 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/moboustt/Desktop/1337/minishell/commands/ft_unset.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o"
   "/Users/moboustt/Desktop/1337/minishell/errors/error.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/errors/error.c.o"
   "/Users/moboustt/Desktop/1337/minishell/execute.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/execute.c.o"
+  "/Users/moboustt/Desktop/1337/minishell/global_utils/ft_itoa.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.o"
+  "/Users/moboustt/Desktop/1337/minishell/global_utils/ft_split.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.o"
   "/Users/moboustt/Desktop/1337/minishell/global_utils/global_utils.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/global_utils/global_utils.c.o"
   "/Users/moboustt/Desktop/1337/minishell/global_utils/global_utils2.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/global_utils/global_utils2.c.o"
   "/Users/moboustt/Desktop/1337/minishell/lexer/env_vars_helper_funcs.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o"
@@ -28,12 +30,14 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/moboustt/Desktop/1337/minishell/minishell.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/minishell.c.o"
   "/Users/moboustt/Desktop/1337/minishell/parser/parse.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/parser/parse.c.o"
   "/Users/moboustt/Desktop/1337/minishell/parser/parser_helper_functions.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o"
+  "/Users/moboustt/Desktop/1337/minishell/redirs.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/redirs.c.o"
   "/Users/moboustt/Desktop/1337/minishell/tokenizer/token.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/tokenizer/token.c.o"
   "/Users/moboustt/Desktop/1337/minishell/utility/ft_env.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/utility/ft_env.c.o"
   "/Users/moboustt/Desktop/1337/minishell/utility/ft_execve.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o"
   "/Users/moboustt/Desktop/1337/minishell/utility/ft_vector.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o"
   "/Users/moboustt/Desktop/1337/minishell/utility/vector_functions_implemet.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.o"
   "/Users/moboustt/Desktop/1337/minishell/utility/vector_functions_implemt2.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.o"
+  "/Users/moboustt/Desktop/1337/minishell/vector_fill_out_utils.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

@@ -412,6 +412,60 @@ execute.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/execute.c.s
 .PHONY : execute.c.s
 
+global_utils/ft_itoa.o: global_utils/ft_itoa.c.o
+
+.PHONY : global_utils/ft_itoa.o
+
+# target to build an object file
+global_utils/ft_itoa.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.o
+.PHONY : global_utils/ft_itoa.c.o
+
+global_utils/ft_itoa.i: global_utils/ft_itoa.c.i
+
+.PHONY : global_utils/ft_itoa.i
+
+# target to preprocess a source file
+global_utils/ft_itoa.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.i
+.PHONY : global_utils/ft_itoa.c.i
+
+global_utils/ft_itoa.s: global_utils/ft_itoa.c.s
+
+.PHONY : global_utils/ft_itoa.s
+
+# target to generate assembly for a file
+global_utils/ft_itoa.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.s
+.PHONY : global_utils/ft_itoa.c.s
+
+global_utils/ft_split.o: global_utils/ft_split.c.o
+
+.PHONY : global_utils/ft_split.o
+
+# target to build an object file
+global_utils/ft_split.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.o
+.PHONY : global_utils/ft_split.c.o
+
+global_utils/ft_split.i: global_utils/ft_split.c.i
+
+.PHONY : global_utils/ft_split.i
+
+# target to preprocess a source file
+global_utils/ft_split.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.i
+.PHONY : global_utils/ft_split.c.i
+
+global_utils/ft_split.s: global_utils/ft_split.c.s
+
+.PHONY : global_utils/ft_split.s
+
+# target to generate assembly for a file
+global_utils/ft_split.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.s
+.PHONY : global_utils/ft_split.c.s
+
 global_utils/global_utils.o: global_utils/global_utils.c.o
 
 .PHONY : global_utils/global_utils.o
@@ -790,6 +844,33 @@ parser/parser_helper_functions.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.s
 .PHONY : parser/parser_helper_functions.c.s
 
+redirs.o: redirs.c.o
+
+.PHONY : redirs.o
+
+# target to build an object file
+redirs.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/redirs.c.o
+.PHONY : redirs.c.o
+
+redirs.i: redirs.c.i
+
+.PHONY : redirs.i
+
+# target to preprocess a source file
+redirs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/redirs.c.i
+.PHONY : redirs.c.i
+
+redirs.s: redirs.c.s
+
+.PHONY : redirs.s
+
+# target to generate assembly for a file
+redirs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/redirs.c.s
+.PHONY : redirs.c.s
+
 tokenizer/token.o: tokenizer/token.c.o
 
 .PHONY : tokenizer/token.o
@@ -952,6 +1033,33 @@ utility/vector_functions_implemt2.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.s
 .PHONY : utility/vector_functions_implemt2.c.s
 
+vector_fill_out_utils.o: vector_fill_out_utils.c.o
+
+.PHONY : vector_fill_out_utils.o
+
+# target to build an object file
+vector_fill_out_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.o
+.PHONY : vector_fill_out_utils.c.o
+
+vector_fill_out_utils.i: vector_fill_out_utils.c.i
+
+.PHONY : vector_fill_out_utils.i
+
+# target to preprocess a source file
+vector_fill_out_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.i
+.PHONY : vector_fill_out_utils.c.i
+
+vector_fill_out_utils.s: vector_fill_out_utils.c.s
+
+.PHONY : vector_fill_out_utils.s
+
+# target to generate assembly for a file
+vector_fill_out_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.s
+.PHONY : vector_fill_out_utils.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -991,6 +1099,12 @@ help:
 	@echo "... execute.o"
 	@echo "... execute.i"
 	@echo "... execute.s"
+	@echo "... global_utils/ft_itoa.o"
+	@echo "... global_utils/ft_itoa.i"
+	@echo "... global_utils/ft_itoa.s"
+	@echo "... global_utils/ft_split.o"
+	@echo "... global_utils/ft_split.i"
+	@echo "... global_utils/ft_split.s"
 	@echo "... global_utils/global_utils.o"
 	@echo "... global_utils/global_utils.i"
 	@echo "... global_utils/global_utils.s"
@@ -1033,6 +1147,9 @@ help:
 	@echo "... parser/parser_helper_functions.o"
 	@echo "... parser/parser_helper_functions.i"
 	@echo "... parser/parser_helper_functions.s"
+	@echo "... redirs.o"
+	@echo "... redirs.i"
+	@echo "... redirs.s"
 	@echo "... tokenizer/token.o"
 	@echo "... tokenizer/token.i"
 	@echo "... tokenizer/token.s"
@@ -1051,6 +1168,9 @@ help:
 	@echo "... utility/vector_functions_implemt2.o"
 	@echo "... utility/vector_functions_implemt2.i"
 	@echo "... utility/vector_functions_implemt2.s"
+	@echo "... vector_fill_out_utils.o"
+	@echo "... vector_fill_out_utils.i"
+	@echo "... vector_fill_out_utils.s"
 .PHONY : help
 
 

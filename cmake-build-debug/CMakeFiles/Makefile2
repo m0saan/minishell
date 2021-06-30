@@ -93,12 +93,12 @@ clean: CMakeFiles/MINISHELL.dir/clean
 CMakeFiles/MINISHELL.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31 "Built target MINISHELL"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35 "Built target MINISHELL"
 .PHONY : CMakeFiles/MINISHELL.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MINISHELL.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles 31
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles 35
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/MINISHELL.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/MINISHELL.dir/rule

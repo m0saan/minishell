@@ -466,6 +466,58 @@ CMakeFiles/MINISHELL.dir/global_utils/global_utils2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/global_utils/global_utils2.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/global_utils/global_utils2.c -o CMakeFiles/MINISHELL.dir/global_utils/global_utils2.c.s
 
+CMakeFiles/MINISHELL.dir/redirs.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/redirs.c.o: ../redirs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/MINISHELL.dir/redirs.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/redirs.c.o -c /Users/moboustt/Desktop/1337/minishell/redirs.c
+
+CMakeFiles/MINISHELL.dir/redirs.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/redirs.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/redirs.c > CMakeFiles/MINISHELL.dir/redirs.c.i
+
+CMakeFiles/MINISHELL.dir/redirs.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/redirs.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/redirs.c -o CMakeFiles/MINISHELL.dir/redirs.c.s
+
+CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.o: ../vector_fill_out_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.o -c /Users/moboustt/Desktop/1337/minishell/vector_fill_out_utils.c
+
+CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/vector_fill_out_utils.c > CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.i
+
+CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/vector_fill_out_utils.c -o CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.s
+
+CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.o: ../global_utils/ft_split.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.o -c /Users/moboustt/Desktop/1337/minishell/global_utils/ft_split.c
+
+CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/global_utils/ft_split.c > CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.i
+
+CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/global_utils/ft_split.c -o CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.s
+
+CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.o: ../global_utils/ft_itoa.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.o -c /Users/moboustt/Desktop/1337/minishell/global_utils/ft_itoa.c
+
+CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/global_utils/ft_itoa.c > CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.i
+
+CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/global_utils/ft_itoa.c -o CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.s
+
 # Object files for target MINISHELL
 MINISHELL_OBJECTS = \
 "CMakeFiles/MINISHELL.dir/lexer/lexer.c.o" \
@@ -497,7 +549,11 @@ MINISHELL_OBJECTS = \
 "CMakeFiles/MINISHELL.dir/global_utils/global_utils.c.o" \
 "CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.o" \
 "CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.o" \
-"CMakeFiles/MINISHELL.dir/global_utils/global_utils2.c.o"
+"CMakeFiles/MINISHELL.dir/global_utils/global_utils2.c.o" \
+"CMakeFiles/MINISHELL.dir/redirs.c.o" \
+"CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.o" \
+"CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.o" \
+"CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.o"
 
 # External object files for target MINISHELL
 MINISHELL_EXTERNAL_OBJECTS =
@@ -532,10 +588,13 @@ MINISHELL: CMakeFiles/MINISHELL.dir/global_utils/global_utils.c.o
 MINISHELL: CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.o
 MINISHELL: CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.o
 MINISHELL: CMakeFiles/MINISHELL.dir/global_utils/global_utils2.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/redirs.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.o
 MINISHELL: CMakeFiles/MINISHELL.dir/build.make
-MINISHELL: ../libft/libft.a
 MINISHELL: CMakeFiles/MINISHELL.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Linking C executable MINISHELL"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Linking C executable MINISHELL"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MINISHELL.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
