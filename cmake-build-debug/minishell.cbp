@@ -116,6 +116,15 @@
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/execute.c">
 			<Option target="MINISHELL"/>
 		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/global_utils.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/global_utils.h">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/global_utils2.c">
+			<Option target="MINISHELL"/>
+		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/lexer/env_vars_helper_funcs.c">
 			<Option target="MINISHELL"/>
 		</Unit>
@@ -174,6 +183,12 @@
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/utility/ft_vector.h">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/utility/vector_functions_implemet.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/utility/vector_functions_implemt2.c">
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/CMakeLists.txt">

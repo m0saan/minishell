@@ -412,6 +412,60 @@ execute.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/execute.c.s
 .PHONY : execute.c.s
 
+global_utils/global_utils.o: global_utils/global_utils.c.o
+
+.PHONY : global_utils/global_utils.o
+
+# target to build an object file
+global_utils/global_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/global_utils.c.o
+.PHONY : global_utils/global_utils.c.o
+
+global_utils/global_utils.i: global_utils/global_utils.c.i
+
+.PHONY : global_utils/global_utils.i
+
+# target to preprocess a source file
+global_utils/global_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/global_utils.c.i
+.PHONY : global_utils/global_utils.c.i
+
+global_utils/global_utils.s: global_utils/global_utils.c.s
+
+.PHONY : global_utils/global_utils.s
+
+# target to generate assembly for a file
+global_utils/global_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/global_utils.c.s
+.PHONY : global_utils/global_utils.c.s
+
+global_utils/global_utils2.o: global_utils/global_utils2.c.o
+
+.PHONY : global_utils/global_utils2.o
+
+# target to build an object file
+global_utils/global_utils2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/global_utils2.c.o
+.PHONY : global_utils/global_utils2.c.o
+
+global_utils/global_utils2.i: global_utils/global_utils2.c.i
+
+.PHONY : global_utils/global_utils2.i
+
+# target to preprocess a source file
+global_utils/global_utils2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/global_utils2.c.i
+.PHONY : global_utils/global_utils2.c.i
+
+global_utils/global_utils2.s: global_utils/global_utils2.c.s
+
+.PHONY : global_utils/global_utils2.s
+
+# target to generate assembly for a file
+global_utils/global_utils2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/global_utils2.c.s
+.PHONY : global_utils/global_utils2.c.s
+
 lexer/env_vars_helper_funcs.o: lexer/env_vars_helper_funcs.c.o
 
 .PHONY : lexer/env_vars_helper_funcs.o
@@ -844,6 +898,60 @@ utility/ft_vector.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_vector.c.s
 .PHONY : utility/ft_vector.c.s
 
+utility/vector_functions_implemet.o: utility/vector_functions_implemet.c.o
+
+.PHONY : utility/vector_functions_implemet.o
+
+# target to build an object file
+utility/vector_functions_implemet.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.o
+.PHONY : utility/vector_functions_implemet.c.o
+
+utility/vector_functions_implemet.i: utility/vector_functions_implemet.c.i
+
+.PHONY : utility/vector_functions_implemet.i
+
+# target to preprocess a source file
+utility/vector_functions_implemet.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.i
+.PHONY : utility/vector_functions_implemet.c.i
+
+utility/vector_functions_implemet.s: utility/vector_functions_implemet.c.s
+
+.PHONY : utility/vector_functions_implemet.s
+
+# target to generate assembly for a file
+utility/vector_functions_implemet.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.s
+.PHONY : utility/vector_functions_implemet.c.s
+
+utility/vector_functions_implemt2.o: utility/vector_functions_implemt2.c.o
+
+.PHONY : utility/vector_functions_implemt2.o
+
+# target to build an object file
+utility/vector_functions_implemt2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.o
+.PHONY : utility/vector_functions_implemt2.c.o
+
+utility/vector_functions_implemt2.i: utility/vector_functions_implemt2.c.i
+
+.PHONY : utility/vector_functions_implemt2.i
+
+# target to preprocess a source file
+utility/vector_functions_implemt2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.i
+.PHONY : utility/vector_functions_implemt2.c.i
+
+utility/vector_functions_implemt2.s: utility/vector_functions_implemt2.c.s
+
+.PHONY : utility/vector_functions_implemt2.s
+
+# target to generate assembly for a file
+utility/vector_functions_implemt2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.s
+.PHONY : utility/vector_functions_implemt2.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -883,6 +991,12 @@ help:
 	@echo "... execute.o"
 	@echo "... execute.i"
 	@echo "... execute.s"
+	@echo "... global_utils/global_utils.o"
+	@echo "... global_utils/global_utils.i"
+	@echo "... global_utils/global_utils.s"
+	@echo "... global_utils/global_utils2.o"
+	@echo "... global_utils/global_utils2.i"
+	@echo "... global_utils/global_utils2.s"
 	@echo "... lexer/env_vars_helper_funcs.o"
 	@echo "... lexer/env_vars_helper_funcs.i"
 	@echo "... lexer/env_vars_helper_funcs.s"
@@ -931,6 +1045,12 @@ help:
 	@echo "... utility/ft_vector.o"
 	@echo "... utility/ft_vector.i"
 	@echo "... utility/ft_vector.s"
+	@echo "... utility/vector_functions_implemet.o"
+	@echo "... utility/vector_functions_implemet.i"
+	@echo "... utility/vector_functions_implemet.s"
+	@echo "... utility/vector_functions_implemt2.o"
+	@echo "... utility/vector_functions_implemt2.i"
+	@echo "... utility/vector_functions_implemt2.s"
 .PHONY : help
 
 

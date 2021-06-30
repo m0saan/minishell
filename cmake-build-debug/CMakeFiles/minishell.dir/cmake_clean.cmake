@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o"
   "CMakeFiles/MINISHELL.dir/errors/error.c.o"
   "CMakeFiles/MINISHELL.dir/execute.c.o"
+  "CMakeFiles/MINISHELL.dir/global_utils/global_utils.c.o"
+  "CMakeFiles/MINISHELL.dir/global_utils/global_utils2.c.o"
   "CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o"
   "CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o"
   "CMakeFiles/MINISHELL.dir/lexer/lexer.c.o"
@@ -25,6 +27,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/MINISHELL.dir/utility/ft_env.c.o"
   "CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o"
   "CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o"
+  "CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.o"
+  "CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.o"
   "MINISHELL"
   "MINISHELL.pdb"
 )
