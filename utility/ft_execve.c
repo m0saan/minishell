@@ -103,7 +103,7 @@ void		handle_errors(t_cmd *cmd, t_bool ispath, int _errno)
 {
 	struct stat dir_stat;
 
-	if (ispath && stat(cmd->argv[0], &dir_stat) && S_ISDIR(dir_stat.st_mode))
+	if (ispath && stat(cmd->argv[0], &dir_stat) == 0 && S_ISDIR(dir_stat.st_mode))
 		exit(p_error(cmd->argv[0], NULL, "Is a directory", 126));
 	if (_errno == 13)
 		exit(p_error(cmd->argv[0], NULL, NULL, 126));
