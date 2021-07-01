@@ -80,7 +80,7 @@ t_vector	*get_paths(char *path_str, char *cmd)
 	return (paths);
 }
 
-int	ft_exec_builtin(t_cmd *cmd, char **envp)
+int			ft_exec_builtin(t_cmd *cmd, char **envp)
 {
 	if (ft_strcmp(cmd->argv[0], "cd") == 0)
 		ft_cd(cmd->count, cmd->argv);
@@ -99,8 +99,12 @@ int	ft_exec_builtin(t_cmd *cmd, char **envp)
 	return (0);
 }
 
-void	handle_errors(t_cmd *cmd, t_bool ispath, int _errno)
+void		handle_errors(t_cmd *cmd, t_bool ispath, int _errno)
 {
+	struct stat dir_stat;
+
+	if (ispath && stat(cmd->argv[0], &dir_stat) && S_ISDIR(dir_stat.st_mode))
+		exit(p_error(cmd->argv[0], NULL, "Is a directory", 126));
 	if (_errno == 13)
 		exit(p_error(cmd->argv[0], NULL, NULL, 126));
 	else if (_errno == 8)
@@ -133,6 +137,13 @@ int		ft_find_and_exec(t_cmd *cmd, char **envp)
 	return (1);
 }
 
+int		ft_exec_path(t_cmd *cmd, char **envp)
+{
+	execve(cmd->argv[0], cmd->argv, envp);
+	handle_errors(cmd, true, errno);
+	return (1);
+}
+
 t_bool	is_path(char *cmd)
 {
 	int	i;
@@ -153,9 +164,7 @@ int		exec_cmd(t_cmd *cmd)
 		return (ft_exec_builtin(cmd, env));
 	else if (is_path(cmd->argv[0]))
 	{
-		execve(cmd->argv[0], cmd->argv, env);
-		handle_errors(cmd, true, errno);
-		return (1);
+		return (ft_exec_path(cmd, env));
 	}
 	else
 		return (ft_find_and_exec(cmd, env));
