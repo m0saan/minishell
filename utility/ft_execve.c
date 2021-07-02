@@ -104,7 +104,7 @@ void		handle_errors(t_cmd *cmd, t_bool ispath, int _errno)
 	struct stat dir_stat;
 
 	if (ispath && stat(cmd->argv[0], &dir_stat) == 0 && S_ISDIR(dir_stat.st_mode))
-		exit(p_error(cmd->argv[0], NULL, "Is a directory", 126));
+		exit(p_error(cmd->argv[0], NULL, "is a directory", 126));
 	if (_errno == 13)
 		exit(p_error(cmd->argv[0], NULL, NULL, 126));
 	else if (_errno == 8)
@@ -115,18 +115,13 @@ void		handle_errors(t_cmd *cmd, t_bool ispath, int _errno)
 		exit(p_error(cmd->argv[0], NULL, "command not found", 127));
 }
 
-int		ft_find_and_exec(t_cmd *cmd, char **envp)
+int			ft_find_and_exec(t_cmd *cmd, char **envp)
 {
 	t_vector	*paths;
 	int			i;
 
 	i = -1;
 	paths = get_paths(get_var(g_envp, "PATH"), cmd->argv[0]);
-	// if (paths == NULL)
-	// {
-	// 	dprintf(2, "\033[0;31mERROR: No such file!\033[0m\n");
-	// 	return (1);
-	// }
 	while (++i < (int) paths->size)
 	{
 		execve((char *) at(paths, i), cmd->argv, envp);

@@ -57,22 +57,78 @@ int	get_next_line(char **line)
 	return (ret);
 }
 
+char	*replace_var(char *buffer)
+{
+	t_bool	is_var;
+	int		i;
+	int		start;
+	int		end;
+	char	*new_buff;
+	char	*key;
+
+	i = -1;
+	is_var = false;
+	while (buffer[++i])
+	{
+		if (buffer[i] == '$' && buffer[i + 1] != ' ')
+			is_var = true;
+		if (!is_var && buffer[i] != '\0')
+		{
+			new_buff = strjoin(new_buff, buffer[i]);
+			continue ;
+		}
+		start = ++i;
+
+		if (buffer[i] >= '0' && buffer[i] <= '9')
+		{
+			if (buffer[i] == '0')
+				new_buff = strjoin(new_buff, '@');
+			++i;
+		}
+		else if ((buffer[i] >= 'a' && buffer[i]) <= 'z' || (buffer[i] >= 'A' && buffer[i] <= 'Z'))
+		{
+			end = start;
+			while (buffer[end] && ((buffer[i] >= 'a' && buffer[i]) <= 'z' || (buffer[i] >= 'A' && buffer[i] <= 'Z') || (buffer[i] >= '0' && buffer[i] <= '9') || buffer[end] == '_'))
+				++end;
+			key = ft_substr2(&buffer[start], start, end);
+			if (key)
+				new_buff = strjoin(new_buff, '+');
+			i += end - start;
+		}
+	}
+	free(buffer);
+	return (new_buff);
+}
+
 int 	open_heredoc(char *delim)
 {
 	int 	fd;
 	char 	*buffer;
+	t_bool	exit_by_delim;
 
+	exit_by_delim = false;
 	fd = open("/tmp/.HEREDOC", O_CREAT | O_TRUNC | O_RDWR,
 			  S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-	buffer = malloc(2 * sizeof(char));
-	write(2, "> ", 2);
-	while(get_next_line(&buffer) > 0 && strcmp(delim, buffer) != 0)
+	//buffer = malloc(2 * sizeof(char));
+	// write(2, "> ", 2);
+	while(true)
 	{
+		buffer = readline(">");
+		if (!buffer)
+			break;
+		if (strcmp(delim, buffer) != 0)
+		{
+			exit_by_delim = true;
+			break ;
+		}
+		buffer = replace_var(buffer);
 		write(fd, buffer, strlen(buffer));
 		write(fd, "\n", 1);
-		write(2, "> ", 2);
+		// write(2, "> ", 2);
 	}
 	close(fd);
+	if (!exit_by_delim)
+		p_error("warning", "here-document delimited by end-of-file wanted", delim, 0);
 	fd = open("/tmp/.HEREDOC", O_RDONLY);
 	return (fd);
 }
