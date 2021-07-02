@@ -34,7 +34,7 @@ char	*strjoin(char *s, char c)
 	return (str);
 }
 
-int	get_next_line(char **line)
+int		get_next_line(char **line)
 {
 	char	*buffer;
 	int		ret;
@@ -70,7 +70,7 @@ char	*replace_var(char *buffer)
 	is_var = false;
 	while (buffer[++i])
 	{
-		if (buffer[i] == '$' && buffer[i + 1] != ' ')
+		if (buffer[i] == '$' && buffer[i + 1] != ' ' && buffer[i + 1])
 			is_var = true;
 		if (!is_var && buffer[i] != '\0')
 		{
@@ -85,10 +85,14 @@ char	*replace_var(char *buffer)
 				new_buff = strjoin(new_buff, '@');
 			++i;
 		}
-		else if ((buffer[i] >= 'a' && buffer[i]) <= 'z' || (buffer[i] >= 'A' && buffer[i] <= 'Z'))
+		else if ((buffer[i] >= 'a' && buffer[i] <= 'z')
+					|| (buffer[i] >= 'A' && buffer[i] <= 'Z'))
 		{
 			end = start;
-			while (buffer[end] && ((buffer[i] >= 'a' && buffer[i]) <= 'z' || (buffer[i] >= 'A' && buffer[i] <= 'Z') || (buffer[i] >= '0' && buffer[i] <= '9') || buffer[end] == '_'))
+			while (buffer[end] && ((buffer[i] >= 'a' && buffer[i] <= 'z')
+					|| (buffer[i] >= 'A' && buffer[i] <= 'Z')
+					|| (buffer[i] >= '0' && buffer[i] <= '9')
+					|| buffer[end] == '_'))
 				++end;
 			key = ft_substr2(&buffer[start], start, end);
 			if (key)
