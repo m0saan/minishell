@@ -11,66 +11,8 @@
 /* ************************************************************************** */
 
 #include "utility/ft_utility.h"
+#include "global_utils/global_utils.h"
 #include "minishell.h"
-
-t_bool	is_alpha(char c)
-{
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
-}
-
-t_bool	is_num(char c)
-{
-	return (c >= '0' && c <= '9');
-}
-
-char	*strjoin_s(char *s, char *s2, t_bool free_)
-{
-	int		i;
-	int		j;
-	char	*str;
-
-	i = 0;
-	if (s)
-		i += ft_strlen(s);
-	if (s2)
-		i += ft_strlen(s2);
-	str = (char *)malloc(i + 1);
-	i = 0;
-	j = 0;
-	while (s && s[i])
-	{
-		str[i] = s[i];
-		++i;
-	}
-	while (s2 && s2[j])
-		str[i++] = s2[j++];
-	str[i] = '\0';
-	if (free_)
-		free(s);
-	return (str);
-}
-
-char	*strjoin_c(char *s, char c, t_bool free_)
-{
-	int		i;
-	char	*str;
-
-	i = 0;
-	if (s)
-		i += ft_strlen(s);
-	str = (char *)malloc(i + 2);
-	i = 0;
-	while (s && s[i])
-	{
-		str[i] = s[i];
-		++i;
-	}
-	str[i] = c;
-	str[++i] = '\0';
-	if (free_)
-		free(s);
-	return (str);
-}
 
 int		get_next_line(char **line)
 {
@@ -99,16 +41,16 @@ int		handle_var(char **new_buf, char *buf, int idx, int start)
 {
 	char	*key;
 
-	if (is_num(buf[idx]))
+	if (ft_isdigit(buf[idx]))
 	{
 		if (buf[idx++] == '0')
 			*new_buf = strjoin_s(*new_buf, "minishell", true);
 		else
 			*new_buf = strjoin_s(*new_buf, "", true);
 	}
-	else if (is_alpha(buf[idx]) || buf[idx] == '_')
+	else if (ft_isalpha(buf[idx]) || buf[idx] == '_')
 	{
-		while (is_alpha(buf[idx]) || is_num(buf[idx]) || buf[idx] == '_')
+		while (ft_isalnum(buf[idx]) || buf[idx] == '_')
 			++idx;
 		key = ft_substr2(buf, start, idx);
 		if (key)
@@ -135,8 +77,7 @@ char	*replace_var(char *buffer)
 	is_var = false;
 	while (buffer[end])
 	{
-		if (buffer[end] == '$' && (is_alpha(buffer[end + 1])
-			|| is_num(buffer[end + 1]) || buffer[end + 1] == '_'))
+		if (buffer[end] == '$' && (ft_isalnum(buffer[end + 1]) || buffer[end + 1] == '_'))
 			is_var = true;
 		if (!is_var && buffer[end] != '\0')
 		{
@@ -218,7 +159,6 @@ int		get_position(t_size size, int index)
 
 void setup_redirection(t_type type, char *arg, int *sout, int *sin)
 {
-	// int flags;
 	int fd;
 
 	if (type == RIGHT)
@@ -233,7 +173,7 @@ void setup_redirection(t_type type, char *arg, int *sout, int *sin)
 	else if (type == LEFT)
 		fd = open(arg, O_RDONLY);
 	if (fd < 0)
-		exit(1);
+		exit(p_error(arg, NULL, NULL, 1));
 	if (type == RIGHT || type == RIGHT_APPEND)
 	{
 		*sout = dup(1);
@@ -268,7 +208,7 @@ void setup_all_redirs(t_vector *redirs, int *sout, int *sin)
 	t_redir *redir;
 
 	i = -1;
-	while (++i < redirs->size)
+	while (++i < (int)redirs->size)
 	{
 		restore_redirs(*sout, *sin);
 		redir = (t_redir *) at(redirs, i);
@@ -358,13 +298,17 @@ pid_t run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
 	return pid;
 }
 
+void update_status_code()
+{
+	set_var2(g_envp, "?", ft_itoa(WEXITSTATUS(g_status)), false);
+}
+
 void  run_cmds(t_vector *cmds)
 {
 	int i;
 	int fd[1024][2];
 	pid_t pids[1024];
 	t_cmd	*cmd;
-	t_var 	*var;
 
 	i = -1;
 	cmd = (t_cmd *) at(cmds, 0);
@@ -382,7 +326,7 @@ void  run_cmds(t_vector *cmds)
 		if (pids[i] > 0)
 			waitpid(pids[i], &g_status, 0);
 	g_is_forked = false;
-	set_var2(g_envp, "?", ft_itoa(WEXITSTATUS(g_status)), false);
+	update_status_code();
 }
 
 t_redir *create_redir(t_type type, char *arg)

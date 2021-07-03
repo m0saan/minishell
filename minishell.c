@@ -98,7 +98,6 @@ int	main(int ac, char **av, char **env)
 		{
 			write(2, "exit\n", 5);
 			break ;
-			// TODO: replace with value of $?
 		}
 		lexer = new_lexer(line, (int) ft_strlen(line));
 		parse_and_execute(lexer);

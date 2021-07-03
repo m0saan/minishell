@@ -77,4 +77,6 @@ t_error	*check_first_token(t_parser *p);
 void	fill_out_env_command(t_cmd *tmp_cmd, const char *tmp);
 void	parse_env_vars_not_in_quotes(t_node *child, t_cmd *tmp_cmd);
 
+void update_status_code();
+
 #endif
