@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:25:17 by ehakam            #+#    #+#             */
-/*   Updated: 2021/06/30 20:26:20 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/03 20:33:58 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -261,13 +261,15 @@ pid_t run_cmd_parent(t_cmd *cmd)
 {
 	int	sout;
 	int sin;
+	int	code;
 
 	sout = -1;
 	sin = -1;
 	if (cmd->redirs != NULL && !is_empty(cmd->redirs))
 		setup_all_redirs(cmd->redirs, &sout, &sin);
-	exec_cmd(cmd);
+	code = exec_cmd(cmd);
 	// Set $? Accordingly
+	update_status_code(code);
 	restore_redirs(sout, sin);
 	// unlink("/tmp/.HEREDOC");
 	return -1;
@@ -298,9 +300,12 @@ pid_t run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
 	return pid;
 }
 
-void update_status_code()
+void update_status_code(int code)
 {
-	set_var2(g_envp, "?", ft_itoa(WEXITSTATUS(g_status)), false);
+	if (code >= 0)
+		set_var2(g_envp, "?", ft_itoa(code), false);
+	else
+		set_var2(g_envp, "?", ft_itoa(WEXITSTATUS(g_status)), false);
 }
 
 void  run_cmds(t_vector *cmds)
@@ -326,7 +331,7 @@ void  run_cmds(t_vector *cmds)
 		if (pids[i] > 0)
 			waitpid(pids[i], &g_status, 0);
 	g_is_forked = false;
-	update_status_code();
+	update_status_code(-1);
 }
 
 t_redir *create_redir(t_type type, char *arg)
