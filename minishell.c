@@ -73,7 +73,7 @@ char	*get_line(void)
 	static char	*line_read;
 	const char	*prompt = "minishell-0.1$ ";
 
-	rl_on_new_line();
+	// rl_on_new_line();
 	line_read = readline (prompt);
 	if (line_read && *line_read)
 		add_history (line_read);
@@ -94,6 +94,12 @@ int	main(int ac, char **av, char **env)
 		line = get_line();
 		if (line && line[0] == '\0')
 			continue ;
+		if (!line)
+		{
+			write(2, "exit\n", 5);
+			exit (0);
+			//exit(0); // TODO: replace with value of $?
+		}
 		lexer = new_lexer(line, (int) ft_strlen(line));
 		parse_and_execute(lexer);
 		if (line)

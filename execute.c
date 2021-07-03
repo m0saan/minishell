@@ -374,19 +374,15 @@ void  run_cmds(t_vector *cmds)
 
 	i = -1;
 	cmd = (t_cmd *) at(cmds, 0);
-	if (cmds->size == 1 && is_builtin(cmd->argv[0]))
-	{
+	if (cmds->size == 1 && (cmd->count == 0 || is_builtin(cmd->argv[0])))
 		pids[0] = run_cmd_parent(cmd);
-	}
 	else
-	{
 		while (++i < cmds->size)
 		{
 			pipe(fd[i]);
-			t_cmd *cmd = (t_cmd *)at(cmds, i);
+			cmd = (t_cmd *)at(cmds, i);
 			pids[i] = run_cmd_child(cmd, fd, cmds->size, i);
 		}
-	}
 	i = -1;
 	while (++i < cmds->size)
 		if (pids[i] > 0)

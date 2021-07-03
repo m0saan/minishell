@@ -128,11 +128,12 @@ int			ft_find_and_exec(t_cmd *cmd, char **envp)
 		if (errno != 2)
 			break ;
 	}
+	delete(paths);
 	handle_errors(cmd, false, errno);
 	return (1);
 }
 
-int		ft_exec_path(t_cmd *cmd, char **envp)
+int			ft_exec_path(t_cmd *cmd, char **envp)
 {
 	execve(cmd->argv[0], cmd->argv, envp);
 	handle_errors(cmd, true, errno);
@@ -155,12 +156,12 @@ int		exec_cmd(t_cmd *cmd)
 	char	**env;
 
 	env = extract_envp(g_envp);
-	if (is_builtin(cmd->argv[0]))
+	if (cmd->count > 0 && is_builtin(cmd->argv[0]))
 		return (ft_exec_builtin(cmd, env));
-	else if (is_path(cmd->argv[0]))
-	{
+	else if (cmd->count > 0 && is_path(cmd->argv[0]))
 		return (ft_exec_path(cmd, env));
-	}
-	else
+	else if (cmd->count > 0)
 		return (ft_find_and_exec(cmd, env));
+	free(env);
+	return (0);
 }
