@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 17:13:38 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/03 21:58:16 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/03 21:59:39 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	**extract_envp(t_vector *g_env)
 	return (envp);
 }
 
-int	predicate(void *s1, void *s2)
+int		predicate(void *s1, void *s2)
 {
 	const t_var	*ss1 = (const t_var *)s1;
 	const t_var	*ss2 = (const t_var *)s2;
@@ -85,7 +85,7 @@ char	*ft_substr2(char *str, int from, int to)
 	return (sub);
 }
 
-int	index_of_c(char *str, char c)
+int		index_of_c(char *str, char c)
 {
 	int	i;
 
@@ -210,7 +210,7 @@ void	delete_var(t_var *var)
 	free(var);
 }
 
-int	update_var(t_vector *env, t_var *existing_var, t_var *new_var)
+int		update_var(t_vector *env, t_var *existing_var, t_var *new_var)
 {
 	if (existing_var->value != NULL)
 		free(existing_var->value);
@@ -223,7 +223,7 @@ int	update_var(t_vector *env, t_var *existing_var, t_var *new_var)
 	return (0);
 }
 
-int	set_var(t_vector *env, char *var_str)
+int		set_var(t_vector *env, char *var_str)
 {
 	t_var	*var;
 	t_var	*existing_var;
@@ -251,7 +251,7 @@ int	set_var(t_vector *env, char *var_str)
 	return (0);
 }
 
-int set_var2(t_vector *env, char *key, char *value, t_bool check)
+int		set_var2(t_vector *env, char *key, char *value, t_bool check)
 {
 	t_var	*var;
 	t_var	*existing_var;
@@ -272,7 +272,7 @@ int set_var2(t_vector *env, char *key, char *value, t_bool check)
 	return (0);
 }
 
-int	unset_var(t_vector *env, char *key)
+int		unset_var(t_vector *env, char *key)
 {
 	int		index;
 	t_var	*deleted_var;
@@ -307,7 +307,7 @@ t_var	*get_var_2(t_vector *env, char *key)
 	return (var);
 }
 
-int	list_vars(t_vector *env, t_bool sort_, int (*print)(t_var *))
+int		list_vars(t_vector *env, t_bool sort_, int (*print)(t_var *))
 {
 	t_vector	*temp_env;
 	t_var		*var;

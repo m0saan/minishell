@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_env.h                                           :+:      :+:    :+:   */
+/*   ft_variables.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 16:58:44 by ehakam            #+#    #+#             */
-/*   Updated: 2021/05/25 18:38:49 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/03 22:01:17 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ENV_H
-# define FT_ENV_H
+#ifndef FT_VARIABLES_H
+# define FT_VARIABLES_H
 
 # include <string.h>
 # include <stdlib.h>
