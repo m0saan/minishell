@@ -95,52 +95,80 @@ int		get_next_line(char **line)
 	return (ret);
 }
 
+int		handle_var(char **new_buf, char *buf, int idx, int start)
+{
+	char	*key;
+
+	if (is_num(buf[idx]))
+	{
+		if (buf[idx++] == '0')
+			*new_buf = strjoin_s(*new_buf, "minishell", true);
+		else
+			*new_buf = strjoin_s(*new_buf, "", true);
+	}
+	else if (is_alpha(buf[idx]) || buf[idx] == '_')
+	{
+		while (is_alpha(buf[idx]) || is_num(buf[idx]) || buf[idx] == '_')
+			++idx;
+		key = ft_substr2(buf, start, idx);
+		if (key)
+		{
+			if (get_var(g_envp, key))
+				*new_buf = strjoin_s(*new_buf, get_var(g_envp, key), true);
+			else
+				*new_buf = strjoin_s(*new_buf, "", true);
+			free(key);
+		}
+	}
+	return (idx);
+}
+
 char	*replace_var(char *buffer)
 {
 	t_bool	is_var;
-	int		i;
 	int		start;
 	int		end;
-	char	*new_buff = NULL;
+	char	*new_buff;
 	char	*key;
 
-	i = 0;
+	end = 0;
+	new_buff = NULL;
 	is_var = false;
-	while (buffer[i])
+	while (buffer[end])
 	{
-		if (buffer[i] == '$' && (is_alpha(buffer[i + 1]) || is_num(buffer[i + 1]) || buffer[i + 1] == '_'))
+		if (buffer[end] == '$' && (is_alpha(buffer[end + 1])
+			|| is_num(buffer[end + 1]) || buffer[end + 1] == '_'))
 			is_var = true;
-		if (!is_var && buffer[i] != '\0')
+		if (!is_var && buffer[end] != '\0')
 		{
-			new_buff = strjoin_c(new_buff, buffer[i++], true);
+			new_buff = strjoin_c(new_buff, buffer[end++], true);
 			continue ;
 		}
-		start = ++i;
-		if (is_num(buffer[i]))
-		{
-			if (buffer[i] == '0')
-				new_buff = strjoin_s(new_buff, "minishell", true);
-			else
-				new_buff = strjoin_s(new_buff, "", true);
-			++i;
-			is_var = false;
-		}
-		else if (is_alpha(buffer[i]) || buffer[i] == '_')
-		{
-			end = start;
-			while (is_alpha(buffer[end]) || is_num(buffer[end]) || buffer[end] == '_')
-				++end;
-			key = ft_substr2(buffer, start, end);
-			if (key)
-			{
-				if (get_var(g_envp, key))
-					new_buff = strjoin_s(new_buff, get_var(g_envp, key), true);
-				else
-					new_buff = strjoin_s(new_buff, "", true);
-			}
-			is_var = false;
-			i = end;
-		}
+		start = ++end;
+		end = handle_var(&new_buff, buffer, end, start);
+		is_var = false;
+		// if (is_num(buffer[end]))
+		// {
+		// 	if (buffer[end++] == '0')
+		// 		new_buff = strjoin_s(new_buff, "minishell", true);
+		// 	else
+		// 		new_buff = strjoin_s(new_buff, "", true);
+		// 	//is_var = false;
+		// }
+		// else if (is_alpha(buffer[end]) || buffer[end] == '_')
+		// {
+		// 	while (is_alpha(buffer[end]) || is_num(buffer[end]) || buffer[end] == '_')
+		// 		++end;
+		// 	key = ft_substr2(buffer, start, end);
+		// 	if (key)
+		// 	{
+		// 		if (get_var(g_envp, key))
+		// 			new_buff = strjoin_s(new_buff, get_var(g_envp, key), true);
+		// 		else
+		// 			new_buff = strjoin_s(new_buff, "", true);
+		// 	}
+		// 	//is_var = false;
+		// }
 	}
 	free(buffer);
 	return (new_buff);
