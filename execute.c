@@ -13,24 +13,62 @@
 #include "utility/ft_utility.h"
 #include "minishell.h"
 
-char	*strjoin(char *s, char c)
+t_bool	is_alpha(char c)
+{
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+}
+
+t_bool	is_num(char c)
+{
+	return (c >= '0' && c <= '9');
+}
+
+char	*strjoin_s(char *s, char *s2, t_bool free_)
+{
+	int		i;
+	int		j;
+	char	*str;
+
+	i = 0;
+	if (s)
+		i += ft_strlen(s);
+	if (s2)
+		i += ft_strlen(s2);
+	str = (char *)malloc(i + 1);
+	i = 0;
+	j = 0;
+	while (s && s[i])
+	{
+		str[i] = s[i];
+		++i;
+	}
+	while (s2 && s2[j])
+		str[i++] = s2[j++];
+	str[i] = '\0';
+	if (free_)
+		free(s);
+	return (str);
+}
+
+char	*strjoin_c(char *s, char c, t_bool free_)
 {
 	int		i;
 	char	*str;
 
 	i = 0;
-	while (s[i])
-		i++;
+	if (s)
+		i += ft_strlen(s);
 	str = (char *)malloc(i + 2);
 	i = 0;
-	while (s[i])
+	while (s && s[i])
 	{
 		str[i] = s[i];
-		i++;
+		++i;
 	}
 	str[i] = c;
-	str[i + 1] = '\0';
-	free(s);
+	str[++i] = '\0';
+	if (free_)
+		free(s);
 	return (str);
 }
 
@@ -50,7 +88,7 @@ int		get_next_line(char **line)
 		{
 			if (buffer[0] == '\n' || ret == EOF)
 				break ;
-			*line = strjoin(*line, buffer[0]);
+			*line = strjoin_c(*line, buffer[0], true);
 		}
 	}
 	free(buffer);
@@ -63,41 +101,45 @@ char	*replace_var(char *buffer)
 	int		i;
 	int		start;
 	int		end;
-	char	*new_buff;
+	char	*new_buff = NULL;
 	char	*key;
 
-	i = -1;
+	i = 0;
 	is_var = false;
-	while (buffer[++i])
+	while (buffer[i])
 	{
-		if (buffer[i] == '$' && buffer[i + 1] != ' ' && buffer[i + 1])
+		if (buffer[i] == '$' && (is_alpha(buffer[i + 1]) || is_num(buffer[i + 1]) || buffer[i + 1] == '_'))
 			is_var = true;
 		if (!is_var && buffer[i] != '\0')
 		{
-			new_buff = strjoin(new_buff, buffer[i]);
+			new_buff = strjoin_c(new_buff, buffer[i++], true);
 			continue ;
 		}
 		start = ++i;
-
-		if (buffer[i] >= '0' && buffer[i] <= '9')
+		if (is_num(buffer[i]))
 		{
 			if (buffer[i] == '0')
-				new_buff = strjoin(new_buff, '@');
+				new_buff = strjoin_s(new_buff, "minishell", true);
+			else
+				new_buff = strjoin_s(new_buff, "", true);
 			++i;
+			is_var = false;
 		}
-		else if ((buffer[i] >= 'a' && buffer[i] <= 'z')
-					|| (buffer[i] >= 'A' && buffer[i] <= 'Z'))
+		else if (is_alpha(buffer[i]) || buffer[i] == '_')
 		{
 			end = start;
-			while (buffer[end] && ((buffer[i] >= 'a' && buffer[i] <= 'z')
-					|| (buffer[i] >= 'A' && buffer[i] <= 'Z')
-					|| (buffer[i] >= '0' && buffer[i] <= '9')
-					|| buffer[end] == '_'))
+			while (is_alpha(buffer[end]) || is_num(buffer[end]) || buffer[end] == '_')
 				++end;
-			key = ft_substr2(&buffer[start], start, end);
+			key = ft_substr2(buffer, start, end);
 			if (key)
-				new_buff = strjoin(new_buff, '+');
-			i += end - start;
+			{
+				if (get_var(g_envp, key))
+					new_buff = strjoin_s(new_buff, get_var(g_envp, key), true);
+				else
+					new_buff = strjoin_s(new_buff, "", true);
+			}
+			is_var = false;
+			i = end;
 		}
 	}
 	free(buffer);
@@ -113,14 +155,12 @@ int 	open_heredoc(char *delim)
 	exit_by_delim = false;
 	fd = open("/tmp/.HEREDOC", O_CREAT | O_TRUNC | O_RDWR,
 			  S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-	//buffer = malloc(2 * sizeof(char));
-	// write(2, "> ", 2);
+	write(2, "> ", 2);
 	while(true)
 	{
-		buffer = readline(">");
-		if (!buffer)
-			break;
-		if (strcmp(delim, buffer) != 0)
+		if (get_next_line(&buffer) <= 0)
+			break ;
+		if (strcmp(delim, buffer) == 0)
 		{
 			exit_by_delim = true;
 			break ;
@@ -128,7 +168,7 @@ int 	open_heredoc(char *delim)
 		buffer = replace_var(buffer);
 		write(fd, buffer, strlen(buffer));
 		write(fd, "\n", 1);
-		// write(2, "> ", 2);
+		write(2, "> ", 2);
 	}
 	close(fd);
 	if (!exit_by_delim)
@@ -290,7 +330,7 @@ pid_t run_cmd_parent(t_cmd *cmd)
 	exec_cmd(cmd);
 	// Set $? Accordingly
 	restore_redirs(sout, sin);
-	unlink("/tmp/.HEREDOC");
+	// unlink("/tmp/.HEREDOC");
 	return -1;
 }
 
@@ -314,7 +354,7 @@ pid_t run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
 			setup_all_redirs(cmd->redirs, &sout, &sin);
 		exit(exec_cmd(cmd));
 	}
-	unlink("/tmp/.HEREDOC");
+	// unlink("/tmp/.HEREDOC");
 	close_pipes(fd, pos, index);
 	return pid;
 }
@@ -348,9 +388,6 @@ void  run_cmds(t_vector *cmds)
 	g_is_forked = false;
 }
 
-/*
-** HELPER FUNC
-*/
 t_redir *create_redir(t_type type, char *arg)
 {
 	t_redir *r = malloc(sizeof(t_redir));
