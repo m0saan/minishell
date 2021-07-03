@@ -6,13 +6,37 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 17:13:38 by ehakam            #+#    #+#             */
-/*   Updated: 2021/06/30 20:07:16 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/03 21:58:16 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_env.h"
 #include "ft_utility.h"
 #include "../errors/error.h"
+#include "../minishell.h"
+
+int		fill_envp(char **envp)
+{
+	int		i;
+	int		shlvl;
+	t_var	*shlvl_var;
+
+	i = -1;
+	if (!envp)
+		return (1);
+	g_envp = new_vector();
+	while (envp[++i] != NULL)
+		insert(g_envp, split_key_value_v(envp[i]));
+	insert(g_envp, new_var_kv("?", "0"));
+	shlvl_var = get_var_2(g_envp, "SHLVL");
+	shlvl = 0;
+	if (shlvl_var != NULL)
+		if (shlvl_var->value != NULL)
+			shlvl = ft_atoi(shlvl_var->value);
+	shlvl++;
+	set_var2(g_envp, "SHLVL", ft_itoa(shlvl), true);
+	return (0);
+}
 
 char	**extract_envp(t_vector *g_env)
 {
@@ -173,6 +197,19 @@ t_bool	check_key2(char *key)
 	return (true);
 }
 
+void	delete_var(t_var *var)
+{
+	if (!var)
+		return ;
+	if (var->key)
+		free(var->key);
+	if (var->raw)
+		free(var->raw);
+	if (var->value)
+		free(var->value);
+	free(var);
+}
+
 int	update_var(t_vector *env, t_var *existing_var, t_var *new_var)
 {
 	if (existing_var->value != NULL)
@@ -194,13 +231,11 @@ int	set_var(t_vector *env, char *var_str)
 	var = split_key_value_v(var_str);
 	if (!check_key(var))
 	{
-		// Replace with EXIT
-		write(2, "Error: Key Name is not Valid!", 30);
 		free(var->key);
 		free(var->raw);
 		if (var->value)
 			free(var->value);
-		return (1);
+		return (p_error("export", var_str, "not a valid identifier", 1));
 	}
 	existing_var = search(env, var->key, equals_key);
 	if (!existing_var)
@@ -224,13 +259,8 @@ int set_var2(t_vector *env, char *key, char *value, t_bool check)
 	var = new_var_kv(strdup(key), strdup(value));
 	if (check && !check_key(var))
 	{
-		// Replace with EXIT
-		write(2, "Error: Key Name is not Valid!", 30);
-		free(var->key);
-		free(var->raw);
-		if (var->value)
-			free(var->value);
-		return (1);
+		delete_var(var);
+		return (p_error("export", key, "not a valid identifier", 1));
 	}
 	existing_var = search(env, var->key, equals_key);
 	if (!existing_var)
@@ -238,11 +268,7 @@ int set_var2(t_vector *env, char *key, char *value, t_bool check)
 	else if (var->value)
 		update_var(env, existing_var, var);
 	else
-	{
-		free(var->key);
-		free(var->raw);
-		free(var);
-	}
+		delete_var(var);
 	return (0);
 }
 
@@ -258,12 +284,8 @@ int	unset_var(t_vector *env, char *key)
 	index = index_of(env, key, equals_key);
 	if (index == -1)
 		return (0);
-	deleted_var = (t_var *) remove_at(env, index);
-	free(deleted_var->key);
-	free(deleted_var->raw);
-	if (deleted_var->value)
-		free(deleted_var->value);
-	free(deleted_var);
+	deleted_var = (t_var *)remove_at(env, index);
+	delete_var(deleted_var);
 	return (0);
 }
 
@@ -285,7 +307,7 @@ t_var	*get_var_2(t_vector *env, char *key)
 	return (var);
 }
 
-int	list_vars(t_vector *env, t_bool sort_, int(*print)(t_var*))
+int	list_vars(t_vector *env, t_bool sort_, int (*print)(t_var *))
 {
 	t_vector	*temp_env;
 	t_var		*var;
@@ -299,7 +321,7 @@ int	list_vars(t_vector *env, t_bool sort_, int(*print)(t_var*))
 		sort(temp_env, predicate);
 	while (++i < (int)temp_env->size)
 	{
-		var = (t_var *) at(env, i);
+		var = (t_var *)at(env, i);
 		if (ft_strcmp(var->key, "?") != 0)
 			print(var);
 	}
