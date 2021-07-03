@@ -147,28 +147,6 @@ char	*replace_var(char *buffer)
 		start = ++end;
 		end = handle_var(&new_buff, buffer, end, start);
 		is_var = false;
-		// if (is_num(buffer[end]))
-		// {
-		// 	if (buffer[end++] == '0')
-		// 		new_buff = strjoin_s(new_buff, "minishell", true);
-		// 	else
-		// 		new_buff = strjoin_s(new_buff, "", true);
-		// 	//is_var = false;
-		// }
-		// else if (is_alpha(buffer[end]) || buffer[end] == '_')
-		// {
-		// 	while (is_alpha(buffer[end]) || is_num(buffer[end]) || buffer[end] == '_')
-		// 		++end;
-		// 	key = ft_substr2(buffer, start, end);
-		// 	if (key)
-		// 	{
-		// 		if (get_var(g_envp, key))
-		// 			new_buff = strjoin_s(new_buff, get_var(g_envp, key), true);
-		// 		else
-		// 			new_buff = strjoin_s(new_buff, "", true);
-		// 	}
-		// 	//is_var = false;
-		// }
 	}
 	free(buffer);
 	return (new_buff);
