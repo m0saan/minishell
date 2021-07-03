@@ -13,5 +13,6 @@ void	ft_bzero(void *s, size_t n);
 char	*ft_itoa(int n);
 char	**ft_split(const char *ss, char c);
 char	*ft_strdup(const char *s);
+int		ft_atoi(char *str);
 
 # endif

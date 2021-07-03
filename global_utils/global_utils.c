@@ -1,5 +1,25 @@
 #include "global_utils.h"
 
+int	ft_atoi(char *str)
+{
+	int		i;
+	int		n;
+	long	r;
+
+	i = 0;
+	r = 0;
+	n = 1;
+	while (str[i] > 0 && str[i] < 33 && str[i] != 27)
+		i++;
+	if (str[i] == '-' && ++i)
+		n = -1;
+	else if (str[i] == '+')
+		++i;
+	while (str[i] >= '0' && str[i] <= '9')
+		r = r * 10 + (str[i++] - '0');
+	return (r * n);
+}
+
 int	ft_strcmp(const char *s1, const char *s2)
 {
 	int	i;

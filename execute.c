@@ -125,11 +125,10 @@ int		handle_var(char **new_buf, char *buf, int idx, int start)
 
 char	*replace_var(char *buffer)
 {
+	char	*new_buff;
 	t_bool	is_var;
 	int		start;
 	int		end;
-	char	*new_buff;
-	char	*key;
 
 	end = 0;
 	new_buff = NULL;
@@ -200,25 +199,19 @@ int		fill_envp(char **envp)
 	shlvl = 0;
 	if (shlvl_var != NULL)
 		if (shlvl_var->value != NULL)
-			shlvl = atoi(shlvl_var->value); // TODO
+			shlvl = ft_atoi(shlvl_var->value);
 	shlvl++;
 	set_var2(g_envp, "SHLVL", ft_itoa(shlvl), true);
 	return (0);
 }
 
-char	*to_string(void *item)
-{
-	char *it = (char *)item;
-	return (strcat(it, "\n"));
-}
-
-int get_position(t_size size, int index)
+int		get_position(t_size size, int index)
 {
 	if (size == 1)
 		return (IS_FIRSTLAST);
 	if (index == 0)
 		return (IS_FIRST);
-	if (index == size - 1)
+	if (index == ((int)size - 1))
 		return (IS_LAST);
 	return (IS_MIDDLE);
 }
