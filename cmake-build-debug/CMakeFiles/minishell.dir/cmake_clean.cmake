@@ -11,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/MINISHELL.dir/execute.c.o"
   "CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.o"
   "CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.o"
+  "CMakeFiles/MINISHELL.dir/global_utils/ft_strdup.c.o"
   "CMakeFiles/MINISHELL.dir/global_utils/global_utils.c.o"
   "CMakeFiles/MINISHELL.dir/global_utils/global_utils2.c.o"
   "CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o"

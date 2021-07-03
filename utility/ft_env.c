@@ -12,6 +12,7 @@
 
 #include "ft_env.h"
 #include "ft_utility.h"
+#include "../errors/error.h"
 
 char	**extract_envp(t_vector *g_env)
 {
@@ -215,13 +216,13 @@ int	set_var(t_vector *env, char *var_str)
 	return (0);
 }
 
-int	set_var2(t_vector *env, char *key, char *value)
+int set_var2(t_vector *env, char *key, char *value, t_bool check)
 {
 	t_var	*var;
 	t_var	*existing_var;
 
 	var = new_var_kv(strdup(key), strdup(value));
-	if (!check_key(var))
+	if (check && !check_key(var))
 	{
 		// Replace with EXIT
 		write(2, "Error: Key Name is not Valid!", 30);
@@ -253,10 +254,7 @@ int	unset_var(t_vector *env, char *key)
 	if (!key)
 		return (1);
 	if (!check_key2(key))
-	{
-		write(1, "ERROR\n", 6);
-		return (1);
-	}
+		return (p_error("unset", key, "not a valid identifier", 1));
 	index = index_of(env, key, equals_key);
 	if (index == -1)
 		return (0);
@@ -284,8 +282,6 @@ t_var	*get_var_2(t_vector *env, char *key)
 	t_var	*var;
 
 	var = search(env, key, equals_key);
-	if (!var)
-		return (NULL);
 	return (var);
 }
 

@@ -97,8 +97,8 @@ int	main(int ac, char **av, char **env)
 		if (!line)
 		{
 			write(2, "exit\n", 5);
-			exit (0);
-			//exit(0); // TODO: replace with value of $?
+			break ;
+			// TODO: replace with value of $?
 		}
 		lexer = new_lexer(line, (int) ft_strlen(line));
 		parse_and_execute(lexer);
@@ -106,4 +106,5 @@ int	main(int ac, char **av, char **env)
 			free (line);
 		free(lexer);
 	}
+	return (atoi(get_var(g_envp, "?")));
 }

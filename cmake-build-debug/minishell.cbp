@@ -122,6 +122,9 @@
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_split.c">
 			<Option target="MINISHELL"/>
 		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_strdup.c">
+			<Option target="MINISHELL"/>
+		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/global_utils.c">
 			<Option target="MINISHELL"/>
 		</Unit>

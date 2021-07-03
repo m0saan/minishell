@@ -17,9 +17,8 @@
 # include <errno.h>
 # include <stdio.h>
 # include "ft_types.h"
+# include "../errors/error.h"
 # include "../global_utils/global_utils.h"
-
-# define ERR_MALLOC "Error\nCannot Allocate Memory!"
 
 typedef struct s_vector
 {
@@ -33,8 +32,6 @@ t_vector	*new_vector_s(t_size init_len);
 t_vector	*new_vector_from(t_vector *vector);
 void		insert(t_vector *vector, void *item);
 void		*remove_at(t_vector *vector, t_size pos);
-void		clear(t_vector *vector);
-void		clear_free(t_vector *this);
 void		delete (t_vector *vector);
 void		*at(t_vector *vector, t_size pos);
 t_bool		contains(t_vector *this, void *item, t_bool (*eql)(void *, void *));
@@ -45,6 +42,5 @@ void		*search(t_vector *vector, void *item,
 				t_bool (*eql)(void *, void *));
 int			is_empty(t_vector *vector);
 void		swap(t_vector *vector, t_size pos1, t_size pos2);
-void		ft_exit(char *msg, int code);
 
 #endif

@@ -14,8 +14,8 @@ int	ft_cd(int ac, char **av)
 		perror("Error Message");
 		return (ret);
 	}
-	set_var2(g_envp, "OLDPWD", get_var(g_envp, "PWD"));
+	set_var2(g_envp, "OLDPWD", get_var(g_envp, "PWD"), true);
 	getcwd(pwd, 1024);
-	set_var2(g_envp, "PWD", pwd);
+	set_var2(g_envp, "PWD", pwd, true);
 	return (ret);
 }

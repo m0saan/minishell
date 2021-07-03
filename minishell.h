@@ -44,6 +44,7 @@ typedef struct	s_cmd
 
 t_vector		*g_envp;
 t_bool			g_is_forked;
+int 			g_status;
 
 void			ft_exit(char *msg, int code);
 int				exec_cmd(t_cmd *cmd);

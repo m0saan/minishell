@@ -108,12 +108,16 @@ CMakeFiles/MINISHELL.dir/execute.c.o
  /Users/moboustt/Desktop/1337/minishell/parser/parser.h
  /Users/moboustt/Desktop/1337/minishell/utility/ft_env.h
  /Users/moboustt/Desktop/1337/minishell/utility/ft_types.h
+ /Users/moboustt/Desktop/1337/minishell/utility/ft_utility.h
  /Users/moboustt/Desktop/1337/minishell/utility/ft_vector.h
 CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.o
  /Users/moboustt/Desktop/1337/minishell/global_utils/ft_itoa.c
  /Users/moboustt/Desktop/1337/minishell/global_utils/global_utils.h
 CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.o
  /Users/moboustt/Desktop/1337/minishell/global_utils/ft_split.c
+ /Users/moboustt/Desktop/1337/minishell/global_utils/global_utils.h
+CMakeFiles/MINISHELL.dir/global_utils/ft_strdup.c.o
+ /Users/moboustt/Desktop/1337/minishell/global_utils/ft_strdup.c
  /Users/moboustt/Desktop/1337/minishell/global_utils/global_utils.h
 CMakeFiles/MINISHELL.dir/global_utils/global_utils.c.o
  /Users/moboustt/Desktop/1337/minishell/global_utils/global_utils.c
@@ -266,10 +270,12 @@ CMakeFiles/MINISHELL.dir/tokenizer/token.c.o
  /Users/moboustt/Desktop/1337/minishell/utility/ft_types.h
  /Users/moboustt/Desktop/1337/minishell/utility/ft_vector.h
 CMakeFiles/MINISHELL.dir/utility/ft_env.c.o
+ /Users/moboustt/Desktop/1337/minishell/errors/error.h
  /Users/moboustt/Desktop/1337/minishell/global_utils/global_utils.h
  /Users/moboustt/Desktop/1337/minishell/utility/ft_env.c
  /Users/moboustt/Desktop/1337/minishell/utility/ft_env.h
  /Users/moboustt/Desktop/1337/minishell/utility/ft_types.h
+ /Users/moboustt/Desktop/1337/minishell/utility/ft_utility.h
  /Users/moboustt/Desktop/1337/minishell/utility/ft_vector.h
 CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o
  /Users/moboustt/Desktop/1337/minishell/ast/node.h
@@ -282,20 +288,27 @@ CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o
  /Users/moboustt/Desktop/1337/minishell/utility/ft_env.h
  /Users/moboustt/Desktop/1337/minishell/utility/ft_execve.c
  /Users/moboustt/Desktop/1337/minishell/utility/ft_types.h
+ /Users/moboustt/Desktop/1337/minishell/utility/ft_utility.h
  /Users/moboustt/Desktop/1337/minishell/utility/ft_vector.h
 CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o
  /Users/moboustt/Desktop/1337/minishell/global_utils/global_utils.h
+ /Users/moboustt/Desktop/1337/minishell/utility/ft_env.h
  /Users/moboustt/Desktop/1337/minishell/utility/ft_types.h
+ /Users/moboustt/Desktop/1337/minishell/utility/ft_utility.h
  /Users/moboustt/Desktop/1337/minishell/utility/ft_vector.c
  /Users/moboustt/Desktop/1337/minishell/utility/ft_vector.h
 CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.o
  /Users/moboustt/Desktop/1337/minishell/global_utils/global_utils.h
+ /Users/moboustt/Desktop/1337/minishell/utility/ft_env.h
  /Users/moboustt/Desktop/1337/minishell/utility/ft_types.h
+ /Users/moboustt/Desktop/1337/minishell/utility/ft_utility.h
  /Users/moboustt/Desktop/1337/minishell/utility/ft_vector.h
  /Users/moboustt/Desktop/1337/minishell/utility/vector_functions_implemet.c
 CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.o
  /Users/moboustt/Desktop/1337/minishell/global_utils/global_utils.h
+ /Users/moboustt/Desktop/1337/minishell/utility/ft_env.h
  /Users/moboustt/Desktop/1337/minishell/utility/ft_types.h
+ /Users/moboustt/Desktop/1337/minishell/utility/ft_utility.h
  /Users/moboustt/Desktop/1337/minishell/utility/ft_vector.h
  /Users/moboustt/Desktop/1337/minishell/utility/vector_functions_implemt2.c
 CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.o

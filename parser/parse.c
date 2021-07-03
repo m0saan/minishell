@@ -4,7 +4,10 @@
 t_error	*catch_errors(t_parser *p, t_error *error)
 {
 	if (p->cur_token->type == ILLEGAL || p->peek_token->type == ILLEGAL)
+	{
 		set_error(error, "Illegal Syntax!");
+		exit(EXIT_FAILURE);
+	}
 	if (p->cur_token->type == RIGHT || p->cur_token->type == LEFT
 		|| p->cur_token->type == RIGHT_APPEND)
 	{

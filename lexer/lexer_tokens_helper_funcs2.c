@@ -30,7 +30,8 @@ t_bool	check_quotes_errors(const t_lexer *l, char ch)
 			++counter;
 	}
 	if (counter % 2 != 0)
-		ft_exit("ERROR: ILLEGAL syntax <quotes>\n", EXIT_FAILURE);
+		exit(p_error(NULL, NULL,
+					 "syntax error near unexpected token `''", EXIT_FAILURE));
 	return (false);
 }
 

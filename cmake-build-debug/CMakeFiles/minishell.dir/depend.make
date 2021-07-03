@@ -107,6 +107,7 @@ CMakeFiles/MINISHELL.dir/execute.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/execute.c.o: ../parser/parser.h
 CMakeFiles/MINISHELL.dir/execute.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/execute.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/execute.c.o: ../utility/ft_utility.h
 CMakeFiles/MINISHELL.dir/execute.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.o: ../global_utils/ft_itoa.c
@@ -114,6 +115,9 @@ CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.o: ../global_utils/global_utils.
 
 CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.o: ../global_utils/ft_split.c
 CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.o: ../global_utils/global_utils.h
+
+CMakeFiles/MINISHELL.dir/global_utils/ft_strdup.c.o: ../global_utils/ft_strdup.c
+CMakeFiles/MINISHELL.dir/global_utils/ft_strdup.c.o: ../global_utils/global_utils.h
 
 CMakeFiles/MINISHELL.dir/global_utils/global_utils.c.o: ../global_utils/global_utils.c
 CMakeFiles/MINISHELL.dir/global_utils/global_utils.c.o: ../global_utils/global_utils.h
@@ -265,10 +269,12 @@ CMakeFiles/MINISHELL.dir/tokenizer/token.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/tokenizer/token.c.o: ../utility/ft_types.h
 CMakeFiles/MINISHELL.dir/tokenizer/token.c.o: ../utility/ft_vector.h
 
+CMakeFiles/MINISHELL.dir/utility/ft_env.c.o: ../errors/error.h
 CMakeFiles/MINISHELL.dir/utility/ft_env.c.o: ../global_utils/global_utils.h
 CMakeFiles/MINISHELL.dir/utility/ft_env.c.o: ../utility/ft_env.c
 CMakeFiles/MINISHELL.dir/utility/ft_env.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/utility/ft_env.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/utility/ft_env.c.o: ../utility/ft_utility.h
 CMakeFiles/MINISHELL.dir/utility/ft_env.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../ast/node.h
@@ -281,20 +287,27 @@ CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../parser/parser.h
 CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../utility/ft_execve.c
 CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../utility/ft_utility.h
 CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o: ../global_utils/global_utils.h
+CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o: ../utility/ft_utility.h
 CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o: ../utility/ft_vector.c
 CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.o: ../global_utils/global_utils.h
+CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.o: ../utility/ft_utility.h
 CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.o: ../utility/ft_vector.h
 CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.o: ../utility/vector_functions_implemet.c
 
 CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.o: ../global_utils/global_utils.h
+CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.o: ../utility/ft_utility.h
 CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.o: ../utility/ft_vector.h
 CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.o: ../utility/vector_functions_implemt2.c
 

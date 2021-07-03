@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/moboustt/Desktop/1337/minishell/execute.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/execute.c.o"
   "/Users/moboustt/Desktop/1337/minishell/global_utils/ft_itoa.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.o"
   "/Users/moboustt/Desktop/1337/minishell/global_utils/ft_split.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.o"
+  "/Users/moboustt/Desktop/1337/minishell/global_utils/ft_strdup.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/global_utils/ft_strdup.c.o"
   "/Users/moboustt/Desktop/1337/minishell/global_utils/global_utils.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/global_utils/global_utils.c.o"
   "/Users/moboustt/Desktop/1337/minishell/global_utils/global_utils2.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/global_utils/global_utils2.c.o"
   "/Users/moboustt/Desktop/1337/minishell/lexer/env_vars_helper_funcs.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o"

@@ -186,7 +186,7 @@ int 	open_heredoc(char *delim)
 int		fill_envp(char **envp)
 {
 	int		i;
-	int		shlvlv;
+	int		shlvl;
 	t_var	*shlvl_var;
 
 	i = -1;
@@ -197,12 +197,12 @@ int		fill_envp(char **envp)
 		insert(g_envp, split_key_value_v(envp[i]));
 	insert(g_envp, new_var_kv("?", "0"));
 	shlvl_var = get_var_2(g_envp, "SHLVL");
-	if (shlvl_var != NULL && shlvl_var->value != NULL) {
-		shlvlv = atoi(shlvl_var->value);
-		shlvlv++;
-		// covert back to string and insert in shlvl_var
-		set_var2(g_envp, "SHLVL", ft_itoa(shlvlv));
-	}
+	shlvl = 0;
+	if (shlvl_var != NULL)
+		if (shlvl_var->value != NULL)
+			shlvl = atoi(shlvl_var->value); // TODO
+	shlvl++;
+	set_var2(g_envp, "SHLVL", ft_itoa(shlvl), true);
 	return (0);
 }
 
@@ -350,7 +350,7 @@ pid_t run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
 	sin = -1;
 	sout = -1;
 	if ((pid = fork()) < 0)
-		ft_exit("Error\nFORK FAILED!", -1);
+		exit(1);
 	g_is_forked = true;
 	pos = get_position(size, index);
 	if (pid == 0)
@@ -371,6 +371,7 @@ void  run_cmds(t_vector *cmds)
 	int fd[1024][2];
 	pid_t pids[1024];
 	t_cmd	*cmd;
+	t_var 	*var;
 
 	i = -1;
 	cmd = (t_cmd *) at(cmds, 0);
@@ -386,8 +387,9 @@ void  run_cmds(t_vector *cmds)
 	i = -1;
 	while (++i < cmds->size)
 		if (pids[i] > 0)
-			wait(&pids[i]);
+			waitpid(pids[i], &g_status, 0);
 	g_is_forked = false;
+	set_var2(g_envp, "?", ft_itoa(WEXITSTATUS(g_status)), false);
 }
 
 t_redir *create_redir(t_type type, char *arg)

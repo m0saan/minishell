@@ -466,6 +466,33 @@ global_utils/ft_split.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.s
 .PHONY : global_utils/ft_split.c.s
 
+global_utils/ft_strdup.o: global_utils/ft_strdup.c.o
+
+.PHONY : global_utils/ft_strdup.o
+
+# target to build an object file
+global_utils/ft_strdup.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_strdup.c.o
+.PHONY : global_utils/ft_strdup.c.o
+
+global_utils/ft_strdup.i: global_utils/ft_strdup.c.i
+
+.PHONY : global_utils/ft_strdup.i
+
+# target to preprocess a source file
+global_utils/ft_strdup.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_strdup.c.i
+.PHONY : global_utils/ft_strdup.c.i
+
+global_utils/ft_strdup.s: global_utils/ft_strdup.c.s
+
+.PHONY : global_utils/ft_strdup.s
+
+# target to generate assembly for a file
+global_utils/ft_strdup.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_strdup.c.s
+.PHONY : global_utils/ft_strdup.c.s
+
 global_utils/global_utils.o: global_utils/global_utils.c.o
 
 .PHONY : global_utils/global_utils.o
@@ -1105,6 +1132,9 @@ help:
 	@echo "... global_utils/ft_split.o"
 	@echo "... global_utils/ft_split.i"
 	@echo "... global_utils/ft_split.s"
+	@echo "... global_utils/ft_strdup.o"
+	@echo "... global_utils/ft_strdup.i"
+	@echo "... global_utils/ft_strdup.s"
 	@echo "... global_utils/global_utils.o"
 	@echo "... global_utils/global_utils.i"
 	@echo "... global_utils/global_utils.s"

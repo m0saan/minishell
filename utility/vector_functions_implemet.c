@@ -13,10 +13,10 @@
 #include "ft_utility.h"
 #include "ft_vector.h"
 
-int	is_empty(t_vector *this)
+int		is_empty(t_vector *this)
 {
 	if (this == NULL)
-		ft_exit("Error\nNULL Vector!", 1);
+		exit(1);
 	return (this->size == 0);
 }
 
@@ -27,13 +27,13 @@ void	insert(t_vector *this, void *item)
 	int		i;
 
 	if (this == NULL)
-		ft_exit("Error\nInserting in a NULL Vector!", 1);
+		exit(1);
 	if (this->size == this->capacity - 1)
 	{
 		i = -1;
 		new_capacity = this->capacity + this->capacity / 2;
 		old_data = (void **) malloc(sizeof(void *) * new_capacity);
-		while (++i < this->size)
+		while (++i < (int)this->size)
 			old_data[i] = this->data[i];
 		free(this->data);
 		this->data = old_data;
@@ -49,7 +49,7 @@ void	*remove_at(t_vector *this, t_size pos)
 	void	*item;
 
 	if (this == NULL)
-		ft_exit("Error\nNull Vector!", 1);
+		exit(EXIT_FAILURE);
 	if (is_empty(this))
 		return (NULL);
 	if (pos >= this->size)
@@ -67,10 +67,24 @@ void	*remove_at(t_vector *this, t_size pos)
 	return (item);
 }
 
+void 	delete_free(t_vector *this)
+{
+	if (!this)
+		return ;
+	if (this->data != NULL)
+	{
+		while(!is_empty(this))
+			free(remove_at(this, this->size - 1));
+		free(this->data);
+	}
+	free(this);
+}
+
 void	delete(t_vector *this)
 {
-	if (this == NULL || this->data == NULL)
-		ft_exit("Error\nNull Vector!", 1);
-	free(this->data);
+	if (this == NULL)
+		return ;
+	if (this->data != NULL)
+		free(this->data);
 	free(this);
 }
