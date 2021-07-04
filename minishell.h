@@ -45,6 +45,7 @@ typedef struct	s_cmd
 t_vector		*g_envp;
 t_bool			g_is_forked;
 int 			g_status;
+char 			*g_prompt;
 
 int				exec_cmd(t_cmd *cmd);
 t_bool			is_builtin(char *cmd);

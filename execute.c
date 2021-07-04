@@ -14,13 +14,7 @@
 #include "global_utils/global_utils.h"
 #include "minishell.h"
 
-t_redir *create_redir(t_type type, char *arg)
-{
-	t_redir *r = malloc(sizeof(t_redir));
-	r->arg = strdup(arg);
-	r->type = type;
-	return (r);
-}
+
 
 int		get_position(t_size size, int index)
 {

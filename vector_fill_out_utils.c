@@ -34,5 +34,8 @@ void	signal_handler_parent(int sig)
 	if (!(sig == SIGQUIT && !g_is_forked))
 		dprintf(1, "\n");
 	if (sig == SIGINT && !g_is_forked)
-		dprintf(1, "%s", prompt);
+	{
+		update_status_code(1);
+		dprintf(1, "%s", g_prompt);
+	}
 }

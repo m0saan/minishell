@@ -1,5 +1,13 @@
 #include "minishell.h"
 
+t_redir *create_redir(t_type type, char *arg)
+{
+	t_redir *r = malloc(sizeof(t_redir));
+	r->arg = strdup(arg);
+	r->type = type;
+	return (r);
+}
+
 t_cmd	*create_cmd(void)
 {
 	t_cmd	*command;
@@ -74,7 +82,7 @@ char	*get_line(void)
 	const char	*prompt = "minishell-0.1$ ";
 
 	// rl_on_new_line();
-	line_read = readline (prompt);
+	line_read = readline (g_prompt);
 	if (line_read && *line_read)
 		add_history (line_read);
 	return (line_read);
@@ -87,6 +95,7 @@ int	main(int ac, char **av, char **env)
 
 	g_is_forked = false;
 	fill_envp(env);
+	g_prompt = strjoin_s(get_var(g_envp, "PWD"), " _$ ", false);
 	signal(SIGQUIT, signal_handler_parent);
 	signal(SIGINT, signal_handler_parent);
 	while (true)
@@ -96,7 +105,8 @@ int	main(int ac, char **av, char **env)
 			continue ;
 		if (!line)
 		{
-			write(2, "exit\n", 5);
+			if (isatty(0))
+				write(2, "exit\n", 5);
 			break ;
 		}
 		lexer = new_lexer(line, (int) ft_strlen(line));

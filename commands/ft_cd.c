@@ -1,4 +1,5 @@
 #include "ft_builtin.h"
+#include "../minishell.h"
 
 int	ft_cd(int ac, char **av)
 {
@@ -14,5 +15,6 @@ int	ft_cd(int ac, char **av)
 	set_var2(g_envp, "OLDPWD", get_var(g_envp, "PWD"), true);
 	getcwd(pwd, 1024);
 	set_var2(g_envp, "PWD", pwd, true);
+	g_prompt = strjoin_s(pwd, " _$ ", false);
 	return (0);
 }
