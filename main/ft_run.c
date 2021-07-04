@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   run.c                                              :+:      :+:    :+:   */
+/*   ft_run.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 18:22:21 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/04 18:44:05 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/04 20:10:40 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int		run_cmd_parent(t_cmd *cmd)
 	if (code == 0)
 		code = exec_cmd(cmd);
 	restore_stdinout(sout, sin);
-	// unlink("/tmp/.HEREDOC");
 	return (code);
 }
 
@@ -64,7 +63,7 @@ void	run_single_builtin(t_vector *cmds)
 
 	cmd = (t_cmd *) at(cmds, 0);
 	update_status_code(run_cmd_parent(cmd));
-	// delete(cmds);
+	// TODO: delete(cmds);
 }
 
 void 	run_multiple_cmds(t_vector *cmds)
