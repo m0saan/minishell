@@ -36,12 +36,6 @@ stdlib.h
 ../utility/ft_types.h
 /Users/moboustt/Desktop/1337/MINI2/utility/ft_types.h
 
-/Users/moboustt/Desktop/1337/MINI2/lexer/envirement_vars_utils.c
-lexer.h
-/Users/moboustt/Desktop/1337/MINI2/lexer/lexer.h
-../minishell.h
-/Users/moboustt/Desktop/1337/MINI2/minishell.h
-
 /Users/moboustt/Desktop/1337/MINI2/lexer/lexer.h
 stdio.h
 -
@@ -69,12 +63,6 @@ string.h
 /Users/moboustt/Desktop/1337/MINI2/errors/error.h
 ../global_utils/global_utils.h
 /Users/moboustt/Desktop/1337/MINI2/global_utils/global_utils.h
-
-/Users/moboustt/Desktop/1337/MINI2/lexer/lexer_tokens_helper_funcs.c
-lexer.h
-/Users/moboustt/Desktop/1337/MINI2/lexer/lexer.h
-../minishell.h
-/Users/moboustt/Desktop/1337/MINI2/minishell.h
 
 /Users/moboustt/Desktop/1337/MINI2/minishell.h
 stdio.h
@@ -131,6 +119,10 @@ stdio.h
 /Users/moboustt/Desktop/1337/MINI2/errors/error.h
 ../lexer/lexer.h
 /Users/moboustt/Desktop/1337/MINI2/lexer/lexer.h
+
+/Users/moboustt/Desktop/1337/MINI2/redirs.c
+minishell.h
+/Users/moboustt/Desktop/1337/MINI2/minishell.h
 
 /Users/moboustt/Desktop/1337/MINI2/utility/ft_types.h
 
