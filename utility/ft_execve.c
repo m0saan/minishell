@@ -83,6 +83,7 @@ t_vector	*get_paths(char *path_str, char *cmd)
 
 int			ft_exec_builtin(t_cmd *cmd)
 {
+	//dprintf(2, "ft_exec_builtin\n");
 	if (ft_strcmp(cmd->argv[0], "cd") == 0)
 		return (ft_cd(cmd->count, cmd->argv));
 	else if (ft_strcmp(cmd->argv[0], "echo") == 0)
@@ -92,7 +93,7 @@ int			ft_exec_builtin(t_cmd *cmd)
 	else if (ft_strcmp(cmd->argv[0], "env") == 0)
 		return (ft_env(cmd->count, cmd->argv));
 	else if (ft_strcmp(cmd->argv[0], "exit") == 0)
-		return (ft_exits(cmd->count, cmd->argv));
+		return (ft_exit(cmd->count, cmd->argv));
 	else if (ft_strcmp(cmd->argv[0], "pwd") == 0)
 		return (ft_pwd(cmd->count, cmd->argv));
 	else if (ft_strcmp(cmd->argv[0], "unset") == 0)
@@ -155,6 +156,7 @@ t_bool	is_path(char *cmd)
 
 int		exec_cmd(t_cmd *cmd)
 {
+	//dprintf(2, "exec_cmd\n");
 	char	**env;
 
 	env = extract_envp(g_envp);

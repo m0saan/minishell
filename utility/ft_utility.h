@@ -14,7 +14,9 @@
 # define FT_UTILITY_H
 
 #include "ft_types.h"
-#include "ft_env.h"
+#include "ft_variables.h"
 #include "ft_vector.h"
+
+int	open_heredoc(char *delim);
 
 #endif

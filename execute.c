@@ -14,6 +14,14 @@
 #include "global_utils/global_utils.h"
 #include "minishell.h"
 
+t_redir *create_redir(t_type type, char *arg)
+{
+	t_redir *r = malloc(sizeof(t_redir));
+	r->arg = strdup(arg);
+	r->type = type;
+	return (r);
+}
+
 int		get_position(t_size size, int index)
 {
 	if (size == 1)
@@ -25,7 +33,7 @@ int		get_position(t_size size, int index)
 	return (IS_MIDDLE);
 }
 
-void setup_redirection(t_type type, char *arg, int *sout, int *sin)
+int		setup_redirection(t_type type, char *arg, int *sout, int *sin)
 {
 	int fd;
 
@@ -41,7 +49,7 @@ void setup_redirection(t_type type, char *arg, int *sout, int *sin)
 	else if (type == LEFT)
 		fd = open(arg, O_RDONLY);
 	if (fd < 0)
-		exit(p_error(arg, NULL, NULL, 1));
+		return (p_error(arg, NULL, NULL, 1));
 	if (type == RIGHT || type == RIGHT_APPEND)
 	{
 		*sout = dup(1);
@@ -54,9 +62,10 @@ void setup_redirection(t_type type, char *arg, int *sout, int *sin)
 		dup2(fd, 0);
 		close(fd);
 	}
+	return (0);
 }
 
-void restore_redirs(int sout, int sin)
+void	restore_redirs(int sout, int sin)
 {
 	if (sout != -1)
 	{
@@ -70,22 +79,26 @@ void restore_redirs(int sout, int sin)
 	}
 }
 
-void setup_all_redirs(t_vector *redirs, int *sout, int *sin)
+int		setup_all_redirs(t_vector *redirs, int *sout, int *sin)
 {
 	int i;
+	int code;
 	t_redir *redir;
 
 	i = -1;
+	code = 0;
 	while (++i < (int)redirs->size)
 	{
 		restore_redirs(*sout, *sin);
 		redir = (t_redir *) at(redirs, i);
-		setup_redirection(redir->type, redir->arg, sout, sin);
+		if (setup_redirection(redir->type, redir->arg, sout, sin) != 0)
+			code = 1;
 		free(redir->arg);
 	}
+	return (code);
 }
 
-void setup_pipes(int fd[][2], int position, int index)
+void	setup_pipes(int fd[][2], int position, int index)
 {
 	const int prev_idx = index - 1;
 
@@ -112,7 +125,7 @@ void setup_pipes(int fd[][2], int position, int index)
 	close(fd[index][0]);
 }
 
-void close_pipes(int fd[][2], int pos, int index)
+void	close_pipes(int fd[][2], int pos, int index)
 {
 	if (pos == IS_FIRST)
 		close(fd[index][1]);
@@ -125,24 +138,31 @@ void close_pipes(int fd[][2], int pos, int index)
 		close(fd[index - 1][0]);
 }
 
-pid_t run_cmd_parent(t_cmd *cmd)
+int		run_cmd_parent(t_cmd *cmd)
 {
+	//dprintf(2, "run_cmd_parent\n");
 	int	sout;
 	int sin;
 	int	code;
 
 	sout = -1;
 	sin = -1;
+	code = 0;
 	if (cmd->redirs != NULL && !is_empty(cmd->redirs))
-		setup_all_redirs(cmd->redirs, &sout, &sin);
-	code = exec_cmd(cmd);
-	update_status_code(code);
+		if (setup_all_redirs(cmd->redirs, &sout, &sin) != 0)
+			code = 1;
+	if (code == 0)
+	{
+		//dprintf(2, "run_cmd_parent -> exec_cmd\n");
+		code = exec_cmd(cmd);
+	}
+	// update_status_code(code);
 	restore_redirs(sout, sin);
 	// unlink("/tmp/.HEREDOC");
-	return -1;
+	return (code);
 }
 
-pid_t run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
+pid_t	run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
 {
 	pid_t pid;
 	int pos;
@@ -159,7 +179,8 @@ pid_t run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
 	{
 		setup_pipes(fd, pos, index);
 		if (cmd->redirs != NULL && !is_empty(cmd->redirs))
-			setup_all_redirs(cmd->redirs, &sout, &sin);
+			if (setup_all_redirs(cmd->redirs, &sout, &sin) != 0)
+				 exit(1);
 		exit(exec_cmd(cmd));
 	}
 	// unlink("/tmp/.HEREDOC");
@@ -167,7 +188,7 @@ pid_t run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
 	return pid;
 }
 
-void update_status_code(int code)
+void	update_status_code(int code)
 {
 	if (code >= 0)
 		set_var2(g_envp, "?", ft_itoa(code), false);
@@ -175,37 +196,52 @@ void update_status_code(int code)
 		set_var2(g_envp, "?", ft_itoa(WEXITSTATUS(g_status)), false);
 }
 
-void  run_cmds(t_vector *cmds)
+void	run_single_builtin(t_vector *cmds)
 {
-	int i;
-	int fd[1024][2];
-	pid_t pids[1024];
+	// dprintf(2, "run_single_builtin\n");
+	t_cmd	*cmd;
+
+	cmd = (t_cmd *) at(cmds, 0);
+	update_status_code(run_cmd_parent(cmd));
+	// delete(cmds);
+}
+
+void 	run_multiple_cmds(t_vector *cmds)
+{
+	int		i;
+	int		fd[1024][2];
+	pid_t	pids[1024];
 	t_cmd	*cmd;
 
 	i = -1;
-	cmd = (t_cmd *) at(cmds, 0);
-	if (cmds->size == 1 && (cmd->count == 0 || is_builtin(cmd->argv[0])))
-		pids[0] = run_cmd_parent(cmd);
-	else
-		while (++i < cmds->size)
-		{
-			pipe(fd[i]);
-			cmd = (t_cmd *)at(cmds, i);
-			pids[i] = run_cmd_child(cmd, fd, cmds->size, i);
-		}
+	while (++i < (int)cmds->size)
+	{
+		pipe(fd[i]);
+		cmd = (t_cmd *)at(cmds, i);
+		pids[i] = run_cmd_child(cmd, fd, cmds->size, i);
+	}
 	i = -1;
 	while (++i < cmds->size)
 		if (pids[i] > 0)
 			waitpid(pids[i], &g_status, 0);
-	g_is_forked = false;
 	update_status_code(-1);
 }
 
-t_redir *create_redir(t_type type, char *arg)
+void	run_cmds(t_vector *cmds)
 {
-	t_redir *r = malloc(sizeof(t_redir));
-	r->arg = strdup(arg);
-	r->type = type;
-	return (r);
+	// dprintf(2, "run_cmds\n");
+	t_cmd	*cmd;
+
+	cmd = (t_cmd *) at(cmds, 0);
+	if (cmds->size == 1 && (cmd->count == 0 || is_builtin(cmd->argv[0])))
+	{
+		// dprintf(2, "run_cmds -> run_single_builtin\n");
+		run_single_builtin(cmds);
+	}
+	else
+	{
+		run_multiple_cmds(cmds);
+	}
+	g_is_forked = false;
 }
 

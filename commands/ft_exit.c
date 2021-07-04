@@ -41,7 +41,7 @@ long long	ft_atol_err(char *str)
 	return (r * n);
 }
 
-int	ft_exits(int ac, char **av)
+int	ft_exit(int ac, char **av)
 {
 	const char		*err_msg = "too many arguments";
 	unsigned char	code;

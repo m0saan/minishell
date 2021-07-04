@@ -37,30 +37,55 @@ int	get_next_line(char **line)
 	return (ret);
 }
 
-int	handle_var(char **new_buf, char *buf, int idx, int start)
+int handle_digit(char **new_buf, char *buf, int idx, int start)
 {
-	char	*key;
+	start = 0;
+	if (buf[idx++] == '0')
+		*new_buf = strjoin_s(*new_buf, "minishell", true);
+	else
+		*new_buf = strjoin_s(*new_buf, "", true);
+	return (idx);
+}
 
-	if (ft_isdigit(buf[idx]))
+int handle_alpha(char **new_buf, char *buf, int idx, int start)
+{
+	char 	*key;
+
+	while (ft_isalnum(buf[idx]) || buf[idx] == '_')
+		++idx;
+	key = ft_substr2(buf, start, idx);
+	if (key)
 	{
-		if (buf[idx++] == '0')
-			*new_buf = strjoin_s(*new_buf, "minishell", true);
+		if (get_var(g_envp, key))
+			*new_buf = strjoin_s(*new_buf, get_var(g_envp, key), true);
 		else
 			*new_buf = strjoin_s(*new_buf, "", true);
+		free(key);
+	}
+	return (idx);
+}
+
+int handle_special(char **new_buf, char *buf, int idx, int start)
+{
+	start = 0;
+	buf = NULL;
+	*new_buf = strjoin_s(*new_buf, get_var(g_envp, "?"), true);
+	return (idx);
+}
+
+int	handle_var(char **new_buf, char *buf, int idx, int start)
+{
+	if (ft_isdigit(buf[idx]))
+	{
+		idx = handle_alpha(new_buf, buf, idx, start);
 	}
 	else if (ft_isalpha(buf[idx]) || buf[idx] == '_')
 	{
-		while (ft_isalnum(buf[idx]) || buf[idx] == '_')
-			++idx;
-		key = ft_substr2(buf, start, idx);
-		if (key)
-		{
-			if (get_var(g_envp, key))
-				*new_buf = strjoin_s(*new_buf, get_var(g_envp, key), true);
-			else
-				*new_buf = strjoin_s(*new_buf, "", true);
-			free(key);
-		}
+		idx = handle_alpha(new_buf, buf, idx, start);
+	}
+	else if (buf[idx] == '?')
+	{
+		idx = handle_special(new_buf, buf, idx, start);
 	}
 	return (idx);
 }
@@ -78,7 +103,7 @@ char	*replace_var(char *buffer)
 	while (buffer[end])
 	{
 		if (buffer[end] == '$' &&
-			(ft_isalnum(buffer[end + 1]) || buffer[end + 1] == '_'))
+			(ft_isalnum(buffer[end + 1]) || ft_isspecial(buffer[end + 1])))
 			is_var = true;
 		if (!is_var && buffer[end] != '\0')
 		{

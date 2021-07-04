@@ -21,7 +21,7 @@
 # include "errors/error.h"
 # include "utility/ft_vector.h"
 # include "utility/ft_types.h"
-# include "utility/ft_env.h"
+# include "utility/ft_variables.h"
 # include "commands/ft_builtin.h"
 
 # define IS_LAST 2
@@ -46,7 +46,6 @@ t_vector		*g_envp;
 t_bool			g_is_forked;
 int 			g_status;
 
-void			ft_exit(char *msg, int code);
 int				exec_cmd(t_cmd *cmd);
 t_bool			is_builtin(char *cmd);
 void			run_cmds(t_vector *cmds);

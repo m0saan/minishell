@@ -58,19 +58,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/moboustt/Desktop/1337/minishell
+CMAKE_SOURCE_DIR = /Users/moboustt/Desktop/1337/MINI2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/moboustt/Desktop/1337/minishell/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/moboustt/Desktop/1337/MINI2/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,7 +78,7 @@ CMAKE_BINARY_DIR = /Users/moboustt/Desktop/1337/minishell/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -89,7 +89,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles /Users/moboustt/Desktop/1337/minishell/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/CMakeFiles /Users/moboustt/Desktop/1337/MINI2/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -925,33 +925,6 @@ tokenizer/token.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/tokenizer/token.c.s
 .PHONY : tokenizer/token.c.s
 
-utility/ft_env.o: utility/ft_env.c.o
-
-.PHONY : utility/ft_env.o
-
-# target to build an object file
-utility/ft_env.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_env.c.o
-.PHONY : utility/ft_env.c.o
-
-utility/ft_env.i: utility/ft_env.c.i
-
-.PHONY : utility/ft_env.i
-
-# target to preprocess a source file
-utility/ft_env.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_env.c.i
-.PHONY : utility/ft_env.c.i
-
-utility/ft_env.s: utility/ft_env.c.s
-
-.PHONY : utility/ft_env.s
-
-# target to generate assembly for a file
-utility/ft_env.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_env.c.s
-.PHONY : utility/ft_env.c.s
-
 utility/ft_execve.o: utility/ft_execve.c.o
 
 .PHONY : utility/ft_execve.o
@@ -978,6 +951,60 @@ utility/ft_execve.s: utility/ft_execve.c.s
 utility/ft_execve.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_execve.c.s
 .PHONY : utility/ft_execve.c.s
+
+utility/ft_heredoc.o: utility/ft_heredoc.c.o
+
+.PHONY : utility/ft_heredoc.o
+
+# target to build an object file
+utility/ft_heredoc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_heredoc.c.o
+.PHONY : utility/ft_heredoc.c.o
+
+utility/ft_heredoc.i: utility/ft_heredoc.c.i
+
+.PHONY : utility/ft_heredoc.i
+
+# target to preprocess a source file
+utility/ft_heredoc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_heredoc.c.i
+.PHONY : utility/ft_heredoc.c.i
+
+utility/ft_heredoc.s: utility/ft_heredoc.c.s
+
+.PHONY : utility/ft_heredoc.s
+
+# target to generate assembly for a file
+utility/ft_heredoc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_heredoc.c.s
+.PHONY : utility/ft_heredoc.c.s
+
+utility/ft_variables.o: utility/ft_variables.c.o
+
+.PHONY : utility/ft_variables.o
+
+# target to build an object file
+utility/ft_variables.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_variables.c.o
+.PHONY : utility/ft_variables.c.o
+
+utility/ft_variables.i: utility/ft_variables.c.i
+
+.PHONY : utility/ft_variables.i
+
+# target to preprocess a source file
+utility/ft_variables.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_variables.c.i
+.PHONY : utility/ft_variables.c.i
+
+utility/ft_variables.s: utility/ft_variables.c.s
+
+.PHONY : utility/ft_variables.s
+
+# target to generate assembly for a file
+utility/ft_variables.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_variables.c.s
+.PHONY : utility/ft_variables.c.s
 
 utility/ft_vector.o: utility/ft_vector.c.o
 
@@ -1006,59 +1033,59 @@ utility/ft_vector.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_vector.c.s
 .PHONY : utility/ft_vector.c.s
 
-utility/vector_functions_implemet.o: utility/vector_functions_implemet.c.o
+utility/ft_vector_1.o: utility/ft_vector_1.c.o
 
-.PHONY : utility/vector_functions_implemet.o
-
-# target to build an object file
-utility/vector_functions_implemet.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.o
-.PHONY : utility/vector_functions_implemet.c.o
-
-utility/vector_functions_implemet.i: utility/vector_functions_implemet.c.i
-
-.PHONY : utility/vector_functions_implemet.i
-
-# target to preprocess a source file
-utility/vector_functions_implemet.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.i
-.PHONY : utility/vector_functions_implemet.c.i
-
-utility/vector_functions_implemet.s: utility/vector_functions_implemet.c.s
-
-.PHONY : utility/vector_functions_implemet.s
-
-# target to generate assembly for a file
-utility/vector_functions_implemet.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.s
-.PHONY : utility/vector_functions_implemet.c.s
-
-utility/vector_functions_implemt2.o: utility/vector_functions_implemt2.c.o
-
-.PHONY : utility/vector_functions_implemt2.o
+.PHONY : utility/ft_vector_1.o
 
 # target to build an object file
-utility/vector_functions_implemt2.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.o
-.PHONY : utility/vector_functions_implemt2.c.o
+utility/ft_vector_1.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_vector_1.c.o
+.PHONY : utility/ft_vector_1.c.o
 
-utility/vector_functions_implemt2.i: utility/vector_functions_implemt2.c.i
+utility/ft_vector_1.i: utility/ft_vector_1.c.i
 
-.PHONY : utility/vector_functions_implemt2.i
+.PHONY : utility/ft_vector_1.i
 
 # target to preprocess a source file
-utility/vector_functions_implemt2.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.i
-.PHONY : utility/vector_functions_implemt2.c.i
+utility/ft_vector_1.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_vector_1.c.i
+.PHONY : utility/ft_vector_1.c.i
 
-utility/vector_functions_implemt2.s: utility/vector_functions_implemt2.c.s
+utility/ft_vector_1.s: utility/ft_vector_1.c.s
 
-.PHONY : utility/vector_functions_implemt2.s
+.PHONY : utility/ft_vector_1.s
 
 # target to generate assembly for a file
-utility/vector_functions_implemt2.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.s
-.PHONY : utility/vector_functions_implemt2.c.s
+utility/ft_vector_1.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_vector_1.c.s
+.PHONY : utility/ft_vector_1.c.s
+
+utility/ft_vector_2.o: utility/ft_vector_2.c.o
+
+.PHONY : utility/ft_vector_2.o
+
+# target to build an object file
+utility/ft_vector_2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_vector_2.c.o
+.PHONY : utility/ft_vector_2.c.o
+
+utility/ft_vector_2.i: utility/ft_vector_2.c.i
+
+.PHONY : utility/ft_vector_2.i
+
+# target to preprocess a source file
+utility/ft_vector_2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_vector_2.c.i
+.PHONY : utility/ft_vector_2.c.i
+
+utility/ft_vector_2.s: utility/ft_vector_2.c.s
+
+.PHONY : utility/ft_vector_2.s
+
+# target to generate assembly for a file
+utility/ft_vector_2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/utility/ft_vector_2.c.s
+.PHONY : utility/ft_vector_2.c.s
 
 vector_fill_out_utils.o: vector_fill_out_utils.c.o
 
@@ -1183,21 +1210,24 @@ help:
 	@echo "... tokenizer/token.o"
 	@echo "... tokenizer/token.i"
 	@echo "... tokenizer/token.s"
-	@echo "... utility/ft_env.o"
-	@echo "... utility/ft_env.i"
-	@echo "... utility/ft_env.s"
 	@echo "... utility/ft_execve.o"
 	@echo "... utility/ft_execve.i"
 	@echo "... utility/ft_execve.s"
+	@echo "... utility/ft_heredoc.o"
+	@echo "... utility/ft_heredoc.i"
+	@echo "... utility/ft_heredoc.s"
+	@echo "... utility/ft_variables.o"
+	@echo "... utility/ft_variables.i"
+	@echo "... utility/ft_variables.s"
 	@echo "... utility/ft_vector.o"
 	@echo "... utility/ft_vector.i"
 	@echo "... utility/ft_vector.s"
-	@echo "... utility/vector_functions_implemet.o"
-	@echo "... utility/vector_functions_implemet.i"
-	@echo "... utility/vector_functions_implemet.s"
-	@echo "... utility/vector_functions_implemt2.o"
-	@echo "... utility/vector_functions_implemt2.i"
-	@echo "... utility/vector_functions_implemt2.s"
+	@echo "... utility/ft_vector_1.o"
+	@echo "... utility/ft_vector_1.i"
+	@echo "... utility/ft_vector_1.s"
+	@echo "... utility/ft_vector_2.o"
+	@echo "... utility/ft_vector_2.i"
+	@echo "... utility/ft_vector_2.s"
 	@echo "... vector_fill_out_utils.o"
 	@echo "... vector_fill_out_utils.i"
 	@echo "... vector_fill_out_utils.s"

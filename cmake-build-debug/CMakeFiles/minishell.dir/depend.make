@@ -16,8 +16,8 @@ CMakeFiles/MINISHELL.dir/commands/ft_cd.c.o: ../global_utils/global_utils.h
 CMakeFiles/MINISHELL.dir/commands/ft_cd.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/commands/ft_cd.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/commands/ft_cd.c.o: ../parser/parser.h
-CMakeFiles/MINISHELL.dir/commands/ft_cd.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/commands/ft_cd.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/commands/ft_cd.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/commands/ft_cd.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o: ../ast/node.h
@@ -28,8 +28,8 @@ CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o: ../global_utils/global_utils.h
 CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o: ../parser/parser.h
-CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/commands/ft_echo.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/commands/ft_env.c.o: ../ast/node.h
@@ -40,8 +40,8 @@ CMakeFiles/MINISHELL.dir/commands/ft_env.c.o: ../global_utils/global_utils.h
 CMakeFiles/MINISHELL.dir/commands/ft_env.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/commands/ft_env.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/commands/ft_env.c.o: ../parser/parser.h
-CMakeFiles/MINISHELL.dir/commands/ft_env.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/commands/ft_env.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/commands/ft_env.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/commands/ft_env.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o: ../ast/node.h
@@ -52,8 +52,8 @@ CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o: ../global_utils/global_utils.h
 CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o: ../parser/parser.h
-CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/commands/ft_exit.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/commands/ft_export.c.o: ../ast/node.h
@@ -64,8 +64,8 @@ CMakeFiles/MINISHELL.dir/commands/ft_export.c.o: ../global_utils/global_utils.h
 CMakeFiles/MINISHELL.dir/commands/ft_export.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/commands/ft_export.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/commands/ft_export.c.o: ../parser/parser.h
-CMakeFiles/MINISHELL.dir/commands/ft_export.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/commands/ft_export.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/commands/ft_export.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/commands/ft_export.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o: ../ast/node.h
@@ -76,8 +76,8 @@ CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o: ../global_utils/global_utils.h
 CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o: ../parser/parser.h
-CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/commands/ft_pwd.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o: ../ast/node.h
@@ -88,8 +88,8 @@ CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o: ../global_utils/global_utils.h
 CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o: ../parser/parser.h
-CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/commands/ft_unset.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/errors/error.c.o: ../errors/error.c
@@ -105,25 +105,30 @@ CMakeFiles/MINISHELL.dir/execute.c.o: ../global_utils/global_utils.h
 CMakeFiles/MINISHELL.dir/execute.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/execute.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/execute.c.o: ../parser/parser.h
-CMakeFiles/MINISHELL.dir/execute.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/execute.c.o: ../utility/ft_types.h
 CMakeFiles/MINISHELL.dir/execute.c.o: ../utility/ft_utility.h
+CMakeFiles/MINISHELL.dir/execute.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/execute.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.o: ../global_utils/ft_itoa.c
 CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.o: ../global_utils/global_utils.h
+CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.o: ../utility/ft_types.h
 
 CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.o: ../global_utils/ft_split.c
 CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.o: ../global_utils/global_utils.h
+CMakeFiles/MINISHELL.dir/global_utils/ft_split.c.o: ../utility/ft_types.h
 
 CMakeFiles/MINISHELL.dir/global_utils/ft_strdup.c.o: ../global_utils/ft_strdup.c
 CMakeFiles/MINISHELL.dir/global_utils/ft_strdup.c.o: ../global_utils/global_utils.h
+CMakeFiles/MINISHELL.dir/global_utils/ft_strdup.c.o: ../utility/ft_types.h
 
 CMakeFiles/MINISHELL.dir/global_utils/global_utils.c.o: ../global_utils/global_utils.c
 CMakeFiles/MINISHELL.dir/global_utils/global_utils.c.o: ../global_utils/global_utils.h
+CMakeFiles/MINISHELL.dir/global_utils/global_utils.c.o: ../utility/ft_types.h
 
 CMakeFiles/MINISHELL.dir/global_utils/global_utils2.c.o: ../global_utils/global_utils.h
 CMakeFiles/MINISHELL.dir/global_utils/global_utils2.c.o: ../global_utils/global_utils2.c
+CMakeFiles/MINISHELL.dir/global_utils/global_utils2.c.o: ../utility/ft_types.h
 
 CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o: ../ast/node.h
 CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o: ../commands/ft_builtin.h
@@ -133,8 +138,8 @@ CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o: ../lexer/env_vars_help
 CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o: ../parser/parser.h
-CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o: ../ast/node.h
@@ -145,8 +150,8 @@ CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o: ../lexer/envirement_va
 CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o: ../parser/parser.h
-CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/lexer/lexer.c.o: ../ast/node.h
@@ -157,8 +162,8 @@ CMakeFiles/MINISHELL.dir/lexer/lexer.c.o: ../lexer/lexer.c
 CMakeFiles/MINISHELL.dir/lexer/lexer.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/lexer/lexer.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/lexer/lexer.c.o: ../parser/parser.h
-CMakeFiles/MINISHELL.dir/lexer/lexer.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/lexer/lexer.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/lexer/lexer.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/lexer/lexer.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.o: ../errors/error.h
@@ -187,8 +192,8 @@ CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../lexer/lexer_tokens_helper_funcs.c
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../parser/parser.h
-CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../ast/node.h
@@ -199,8 +204,8 @@ CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../lexer/lexer_tokens_helper_funcs2.c
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../parser/parser.h
-CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.o: ../errors/error.h
@@ -217,8 +222,8 @@ CMakeFiles/MINISHELL.dir/minishell.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/minishell.c.o: ../minishell.c
 CMakeFiles/MINISHELL.dir/minishell.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/minishell.c.o: ../parser/parser.h
-CMakeFiles/MINISHELL.dir/minishell.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/minishell.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/minishell.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/minishell.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/parser/parse.c.o: ../ast/node.h
@@ -229,8 +234,8 @@ CMakeFiles/MINISHELL.dir/parser/parse.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/parser/parse.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/parser/parse.c.o: ../parser/parse.c
 CMakeFiles/MINISHELL.dir/parser/parse.c.o: ../parser/parser.h
-CMakeFiles/MINISHELL.dir/parser/parse.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/parser/parse.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/parser/parse.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/parser/parse.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../ast/node.h
@@ -241,8 +246,8 @@ CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../parser/parser.h
 CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../parser/parser_helper_functions.c
-CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/redirs.c.o: ../ast/node.h
@@ -253,8 +258,8 @@ CMakeFiles/MINISHELL.dir/redirs.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/redirs.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/redirs.c.o: ../parser/parser.h
 CMakeFiles/MINISHELL.dir/redirs.c.o: ../redirs.c
-CMakeFiles/MINISHELL.dir/redirs.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/redirs.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/redirs.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/redirs.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/tokenizer/token.c.o: ../ast/node.h
@@ -265,17 +270,9 @@ CMakeFiles/MINISHELL.dir/tokenizer/token.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/tokenizer/token.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/tokenizer/token.c.o: ../parser/parser.h
 CMakeFiles/MINISHELL.dir/tokenizer/token.c.o: ../tokenizer/token.c
-CMakeFiles/MINISHELL.dir/tokenizer/token.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/tokenizer/token.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/tokenizer/token.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/tokenizer/token.c.o: ../utility/ft_vector.h
-
-CMakeFiles/MINISHELL.dir/utility/ft_env.c.o: ../errors/error.h
-CMakeFiles/MINISHELL.dir/utility/ft_env.c.o: ../global_utils/global_utils.h
-CMakeFiles/MINISHELL.dir/utility/ft_env.c.o: ../utility/ft_env.c
-CMakeFiles/MINISHELL.dir/utility/ft_env.c.o: ../utility/ft_env.h
-CMakeFiles/MINISHELL.dir/utility/ft_env.c.o: ../utility/ft_types.h
-CMakeFiles/MINISHELL.dir/utility/ft_env.c.o: ../utility/ft_utility.h
-CMakeFiles/MINISHELL.dir/utility/ft_env.c.o: ../utility/ft_vector.h
 
 CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../ast/node.h
 CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../commands/ft_builtin.h
@@ -284,32 +281,61 @@ CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../global_utils/global_utils.h
 CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../parser/parser.h
-CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../utility/ft_execve.c
 CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../utility/ft_types.h
 CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../utility/ft_utility.h
+CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/utility/ft_execve.c.o: ../utility/ft_vector.h
 
+CMakeFiles/MINISHELL.dir/utility/ft_heredoc.c.o: ../ast/node.h
+CMakeFiles/MINISHELL.dir/utility/ft_heredoc.c.o: ../commands/ft_builtin.h
+CMakeFiles/MINISHELL.dir/utility/ft_heredoc.c.o: ../errors/error.h
+CMakeFiles/MINISHELL.dir/utility/ft_heredoc.c.o: ../global_utils/global_utils.h
+CMakeFiles/MINISHELL.dir/utility/ft_heredoc.c.o: ../lexer/lexer.h
+CMakeFiles/MINISHELL.dir/utility/ft_heredoc.c.o: ../minishell.h
+CMakeFiles/MINISHELL.dir/utility/ft_heredoc.c.o: ../parser/parser.h
+CMakeFiles/MINISHELL.dir/utility/ft_heredoc.c.o: ../utility/ft_heredoc.c
+CMakeFiles/MINISHELL.dir/utility/ft_heredoc.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/utility/ft_heredoc.c.o: ../utility/ft_utility.h
+CMakeFiles/MINISHELL.dir/utility/ft_heredoc.c.o: ../utility/ft_variables.h
+CMakeFiles/MINISHELL.dir/utility/ft_heredoc.c.o: ../utility/ft_vector.h
+
+CMakeFiles/MINISHELL.dir/utility/ft_variables.c.o: ../ast/node.h
+CMakeFiles/MINISHELL.dir/utility/ft_variables.c.o: ../commands/ft_builtin.h
+CMakeFiles/MINISHELL.dir/utility/ft_variables.c.o: ../errors/error.h
+CMakeFiles/MINISHELL.dir/utility/ft_variables.c.o: ../global_utils/global_utils.h
+CMakeFiles/MINISHELL.dir/utility/ft_variables.c.o: ../lexer/lexer.h
+CMakeFiles/MINISHELL.dir/utility/ft_variables.c.o: ../minishell.h
+CMakeFiles/MINISHELL.dir/utility/ft_variables.c.o: ../parser/parser.h
+CMakeFiles/MINISHELL.dir/utility/ft_variables.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/utility/ft_variables.c.o: ../utility/ft_utility.h
+CMakeFiles/MINISHELL.dir/utility/ft_variables.c.o: ../utility/ft_variables.c
+CMakeFiles/MINISHELL.dir/utility/ft_variables.c.o: ../utility/ft_variables.h
+CMakeFiles/MINISHELL.dir/utility/ft_variables.c.o: ../utility/ft_vector.h
+
+CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o: ../errors/error.h
 CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o: ../global_utils/global_utils.h
-CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o: ../utility/ft_types.h
 CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o: ../utility/ft_utility.h
+CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o: ../utility/ft_vector.c
 CMakeFiles/MINISHELL.dir/utility/ft_vector.c.o: ../utility/ft_vector.h
 
-CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.o: ../global_utils/global_utils.h
-CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.o: ../utility/ft_env.h
-CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.o: ../utility/ft_types.h
-CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.o: ../utility/ft_utility.h
-CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.o: ../utility/ft_vector.h
-CMakeFiles/MINISHELL.dir/utility/vector_functions_implemet.c.o: ../utility/vector_functions_implemet.c
+CMakeFiles/MINISHELL.dir/utility/ft_vector_1.c.o: ../errors/error.h
+CMakeFiles/MINISHELL.dir/utility/ft_vector_1.c.o: ../global_utils/global_utils.h
+CMakeFiles/MINISHELL.dir/utility/ft_vector_1.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/utility/ft_vector_1.c.o: ../utility/ft_utility.h
+CMakeFiles/MINISHELL.dir/utility/ft_vector_1.c.o: ../utility/ft_variables.h
+CMakeFiles/MINISHELL.dir/utility/ft_vector_1.c.o: ../utility/ft_vector.h
+CMakeFiles/MINISHELL.dir/utility/ft_vector_1.c.o: ../utility/ft_vector_1.c
 
-CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.o: ../global_utils/global_utils.h
-CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.o: ../utility/ft_env.h
-CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.o: ../utility/ft_types.h
-CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.o: ../utility/ft_utility.h
-CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.o: ../utility/ft_vector.h
-CMakeFiles/MINISHELL.dir/utility/vector_functions_implemt2.c.o: ../utility/vector_functions_implemt2.c
+CMakeFiles/MINISHELL.dir/utility/ft_vector_2.c.o: ../errors/error.h
+CMakeFiles/MINISHELL.dir/utility/ft_vector_2.c.o: ../global_utils/global_utils.h
+CMakeFiles/MINISHELL.dir/utility/ft_vector_2.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/utility/ft_vector_2.c.o: ../utility/ft_utility.h
+CMakeFiles/MINISHELL.dir/utility/ft_vector_2.c.o: ../utility/ft_variables.h
+CMakeFiles/MINISHELL.dir/utility/ft_vector_2.c.o: ../utility/ft_vector.h
+CMakeFiles/MINISHELL.dir/utility/ft_vector_2.c.o: ../utility/ft_vector_2.c
 
 CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.o: ../ast/node.h
 CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.o: ../commands/ft_builtin.h
@@ -318,8 +344,8 @@ CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.o: ../global_utils/global_utils
 CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.o: ../lexer/lexer.h
 CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.o: ../minishell.h
 CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.o: ../parser/parser.h
-CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.o: ../utility/ft_env.h
 CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.o: ../utility/ft_types.h
+CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.o: ../utility/ft_variables.h
 CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.o: ../utility/ft_vector.h
 CMakeFiles/MINISHELL.dir/vector_fill_out_utils.c.o: ../vector_fill_out_utils.c
 

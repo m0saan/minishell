@@ -25,11 +25,16 @@ int	print_var(t_var *var)
 int	add_vars(int ac, char **av)
 {
 	int	i;
+	int	code;
 
 	i = 0;
+	code = 0;
 	while (++i < ac)
-		set_var(g_envp, av[i]);
-	return (0);
+	{
+		if (set_var(g_envp, av[i]) != 0)
+			code = 1;
+	}
+	return (code);
 }
 
 int	ft_export(int ac, char **av)
@@ -38,7 +43,7 @@ int	ft_export(int ac, char **av)
 		list_vars(g_envp, false, print_var);
 	else if (ac > 1)
 	{
-		add_vars(ac, av);
+		return (add_vars(ac, av));
 	}
 	return (0);
 }

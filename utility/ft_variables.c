@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_env.h"
+#include "ft_variables.h"
 #include "ft_utility.h"
 #include "../errors/error.h"
 #include "../minishell.h"
@@ -27,7 +27,7 @@ int		fill_envp(char **envp)
 	g_envp = new_vector();
 	while (envp[++i] != NULL)
 		insert(g_envp, split_key_value_v(envp[i]));
-	insert(g_envp, new_var_kv("?", "0"));
+	insert(g_envp, new_var_kv(ft_strdup("?"), ft_strdup("0")));
 	shlvl_var = get_var_2(g_envp, "SHLVL");
 	shlvl = 0;
 	if (shlvl_var != NULL)
@@ -160,7 +160,7 @@ t_bool	check_key(t_var *var)
 	int		i;
 	char	c;
 
-	if (!var)
+	if (!var || !var->key)
 		return (false);
 	i = 0;
 	c = var->key[i];
@@ -185,13 +185,12 @@ t_bool	check_key2(char *key)
 		return (false);
 	i = 0;
 	c = key[i];
-	if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c == '_')))
+	if (!(ft_isalpha(c) || (c == '_')))
 		return (false);
 	while (key[++i])
 	{
 		c = key[i];
-		if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
-				|| (c >= '0' && c <= '9') || (c == '_')))
+		if (!(ft_isalnum(c) || (c == '_')))
 			return (false);
 	}
 	return (true);

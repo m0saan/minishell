@@ -2,6 +2,7 @@
 
 int	ft_echo(int ac, char **av)
 {
+	//dprintf(2, "ft_echo\n");
 	int		i;
 	int		j;
 	t_bool	new_line;

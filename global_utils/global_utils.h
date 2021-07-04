@@ -10,6 +10,7 @@ void	*ft_memset(void *b, int c, size_t len);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
+int		ft_isspecial(int c);
 void	ft_bzero(void *s, size_t n);
 char	*ft_itoa(int n);
 char	**ft_split(const char *ss, char c);

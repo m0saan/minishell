@@ -7,7 +7,7 @@ size_t	get_env_var_last_index(t_lexer *l)
 	int	counter;
 
 	counter = l->position;
-	while (ft_isalnum(l->ch))
+	while (ft_isalnum(l->ch) || ft_isspecial(l->ch))
 		next_char(l);
 	return (counter);
 }
