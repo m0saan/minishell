@@ -45,7 +45,7 @@ t_error	*check_first_token(t_parser *p)
 	{
 		if ((p->cur_token->type == types[i] && \
 		p->peek_token->type == END_O_F) || \
-		p->cur_token->type == END_O_F)
+		p->cur_token->type == END_O_F || p->peek_token->type == ILLEGAL)
 			set_error(error, ERR1);
 	}
 	return (error);
