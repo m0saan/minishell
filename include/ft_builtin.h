@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 20:23:55 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/04 18:38:15 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/04 19:22:35 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 # define FT_BUILTIN_H
 
 # include "minishell.h"
-
-# define MAXVAL 9223372036854775807
-# define MINVAL 9223372036854775808
+# include "global_utils.h"
 
 int		ft_cd(int ac, char **av);
 int		ft_echo(int ac, char **av);

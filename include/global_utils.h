@@ -1,8 +1,11 @@
 #ifndef GLOBAL_UTILS_H
 # define GLOBAL_UTILS_H
 
-#include <stdlib.h>
-#include "ft_types.h"
+# include <stdlib.h>
+# include "ft_types.h"
+
+# define MAXVAL 9223372036854775807
+# define MINVAL 9223372036854775808
 
 int		ft_strcmp(const char *s1, const char *s2);
 size_t	ft_strlen(const char *str);

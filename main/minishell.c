@@ -1,5 +1,13 @@
 #include "../include/minishell.h"
 
+void	update_status_code(int code)
+{
+	if (code >= 0)
+		set_var2(g_envp, "?", ft_itoa(code), false);
+	else
+		set_var2(g_envp, "?", ft_itoa(WEXITSTATUS(g_status)), false);
+}
+
 void	signal_handler_parent(int sig)
 {
 	const char	*prompt = "minishell-0.1$ ";
@@ -14,7 +22,6 @@ void	signal_handler_parent(int sig)
 		dprintf(1, "%s", g_prompt);
 	}
 }
-
 
 void	parse_and_execute(t_lexer *lexer)
 {
@@ -60,7 +67,7 @@ char	*get_line(void)
 	return (line_read);
 }
 
-int	main(int ac, char **av, char **env)
+int		main(int ac, char **av, char **env)
 {
 	char	*line;
 	t_lexer	*lexer;

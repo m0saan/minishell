@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 18:41:12 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/04 18:41:15 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/04 19:21:52 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	print_var(t_var *var)
 	return (0);
 }
 
-int	add_vars(int ac, char **av)
+int	export_vars(int ac, char **av)
 {
 	int	i;
 	int	code;
@@ -55,7 +55,7 @@ int	ft_export(int ac, char **av)
 		list_vars(g_envp, false, print_var);
 	else if (ac > 1)
 	{
-		return (add_vars(ac, av));
+		return (export_vars(ac, av));
 	}
 	return (0);
 }
