@@ -5,9 +5,22 @@
 # include <errno.h>
 # include <unistd.h>
 # include <string.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <sys/wait.h>
+# include <dirent.h>
+# include <errno.h>
+# include <sys/stat.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+# include <stdlib.h>
+# include <string.h>
+# include <fcntl.h>
+# include <sys/stat.h>
+# include <readline/readline.h>
+# include <readline/history.h>
 # include "ft_types.h"
-# include "global_utils.h"
-# include "minishell.h"
+# include "ft_globals.h"
 
 # define ERR1 "syntax error near unexpected token"
 
@@ -22,6 +35,5 @@ t_bool		check_entered_command(const char *line);
 t_error		*create_error(void);
 int			p_error(const char *arg, const char *arg2,
 				const char *message, int code);
-void		handle_errors(t_cmd *cmd, t_bool ispath, int errno_);
 
 #endif

@@ -12,6 +12,29 @@
 
 #include "../include/minishell.h"
 
+char		*append_cmd_to_path(char *path, char *cmd)
+{
+	int			i;
+	int			j;
+	char		*out;
+	const int	len = ft_strlen(path) + ft_strlen(cmd) + 2;
+
+	i = 0;
+	j = 0;
+	out = (char *)malloc(len * sizeof(char));
+	if (!out)
+		exit(1);
+	while (path[i])
+		out[j++] = path[i++];
+	out[j++] = '/';
+	i = 0;
+	while (cmd[i])
+		out[j++] = cmd[i++];
+	out[j] = '\0';
+	free(path);
+	return (out);
+}
+
 char		*get_path(char *path_str, char *cmd, int *start, int end)
 {
 	char	*path;
@@ -48,28 +71,6 @@ t_vector	*get_paths(char *path_str, char *cmd)
 	return (paths);
 }
 
-char		*append_cmd_to_path(char *path, char *cmd)
-{
-	int			i;
-	int			j;
-	char		*out;
-	const int	len = ft_strlen(path) + strlen(cmd) + 2;
-
-	i = 0;
-	j = 0;
-	out = (char *)malloc(len * sizeof(char));
-	if (!out)
-		exit(1);
-	while (path[i])
-		out[j++] = path[i++];
-	out[j++] = '/';
-	i = 0;
-	while (cmd[i])
-		out[j++] = cmd[i++];
-	out[j] = '\0';
-	free(path);
-	return (out);
-}
 
 t_bool		is_path(char *cmd)
 {

@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "../include/ft_builtin.h"
+#include "../include/error.h"
+#include "../include/minishell.h"
 
 int	ft_exit(int ac, char **av)
 {

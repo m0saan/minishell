@@ -13,6 +13,7 @@
 NAME		=	minishell
 CC			=	gcc
 CFLAG		=	-Wall -Wextra -Werror
+LIB			=	-l readline -L /Users/moboustt/.brew/opt/readline/lib/ -I /Users/moboustt/.brew/opt/readline/include/
 
 SRC_LEXER	=	lexer/envirement_vars_utils.c			\
 				lexer/lexer.c \
@@ -83,7 +84,7 @@ all: $(NAME)
 $(NAME): $(SRCS)
 	@echo "Building..."
 	@echo "TODO: DON'T FORGET TO ADD CFLAGS"
-	@gcc $(SRCS) -o $(NAME)
+	@gcc $(SRCS) $(LIB) -o $(NAME)
 
 clean:
 	@echo "Cleaning"

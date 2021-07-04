@@ -1,6 +1,20 @@
 #ifndef GLOBAL_UTILS_H
 # define GLOBAL_UTILS_H
 
+# include <stdio.h>
+# include <unistd.h>
+# include <sys/wait.h>
+# include <dirent.h>
+# include <errno.h>
+# include <sys/stat.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+# include <stdlib.h>
+# include <string.h>
+# include <fcntl.h>
+# include <sys/stat.h>
+# include <readline/readline.h>
+# include <readline/history.h>
 # include <stdlib.h>
 # include "ft_types.h"
 
@@ -28,5 +42,7 @@ int		handle_var(char **new_buf, char *buf, int idx, int start);
 char	*ft_substr(char *str, int from, int to);
 
 long long	ft_atol_err(char *str);
+int		index_of_c(char *str, char c);
+int	get_next_line(char **line);
 
 # endif

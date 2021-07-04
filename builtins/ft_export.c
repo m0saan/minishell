@@ -11,6 +11,9 @@
 /* ************************************************************************** */
 
 #include "../include/ft_builtin.h"
+#include "../include/ft_globals.h"
+#include "../include/ft_variables.h"
+#include "../include/minishell.h"
 
 static int	print_var(t_var *var)
 {

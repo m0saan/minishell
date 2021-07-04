@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_utility.h"
 #include "../include/ft_vector.h"
 
 int		is_empty(t_vector *this)

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/minishell.h"
+#include "../include/global_utils.h"
 
 int	get_next_line(char **line)
 {

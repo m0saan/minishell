@@ -13,7 +13,24 @@
 #ifndef FT_BUILTIN_H
 # define FT_BUILTIN_H
 
-# include "minishell.h"
+# include <stdlib.h>
+# include <errno.h>
+# include <unistd.h>
+# include <string.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <sys/wait.h>
+# include <dirent.h>
+# include <errno.h>
+# include <sys/stat.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+# include <stdlib.h>
+# include <string.h>
+# include <fcntl.h>
+# include <sys/stat.h>
+# include <readline/readline.h>
+# include <readline/history.h>
 # include "global_utils.h"
 
 int		ft_cd(int ac, char **av);

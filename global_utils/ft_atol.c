@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../include/global_utils.h"
+#include "../include/error.h"
 
 long long	ft_atol_err(char *str)
 {

@@ -41,6 +41,7 @@ int		unset_var(t_vector *env, char *key);
 char	*get_var(t_vector *env, char *key);
 t_var	*get_var2(t_vector *env, char *key);
 int		list_vars(t_vector *env, t_bool sort_, int(*print)(t_var*));
+void	delete_var(t_var *var);
 
 
 #endif

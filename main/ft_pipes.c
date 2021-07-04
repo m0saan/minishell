@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_utility.h"
 #include "../include/global_utils.h"
 #include "../include/minishell.h"
 

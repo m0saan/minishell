@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_utility.h"
 #include "../include/ft_vector.h"
 
 int	index_of(t_vector *this, void *item, t_bool (*eql)(void *, void *))

@@ -24,6 +24,7 @@
 # include "ft_variables.h"
 # include "ft_builtin.h"
 
+
 # define IS_LAST 2
 # define IS_FIRST 0
 # define IS_MIDDLE 1
@@ -55,12 +56,12 @@ t_redir			*create_redir(enum e_val_type type, char *arg);
 char			*to_string(void *item);
 void			signal_handler(int sig);
 
-// void			next_char(t_lexer *lexer);
-// char			peek_char(t_lexer *lexer);
-// void			skip_white_spaces(t_lexer *lexer);
-// t_token			*next_token(t_lexer *l);
-// t_lexer			*new_lexer(const char *line, int cmd_length);
-// t_token			*new_token(t_token_type token_type, char ch, t_token *token);
+ void			next_char(t_lexer *lexer);
+ char			peek_char(t_lexer *lexer);
+ void			skip_white_spaces(t_lexer *lexer);
+ t_token			*next_token(t_lexer *l);
+ t_lexer			*new_lexer(const char *line, int cmd_length);
+ t_token			*new_token(t_token_type token_type, char ch, t_token *token);
 t_token_type	lookup_type(char *ident);
 t_node			*parse_command(t_node *ast_node, t_parser *p);
 void			parse_and_execute(t_lexer *lexer);
@@ -70,8 +71,6 @@ void			slice_str(const char *str, char *buffer, size_t start, size_t end);
 const char		*getTypeName(enum e_val_type type);
 void			read_single_quoted(t_lexer *l, char quote, char *s, int *index);
 
-
-void			fill_out_env_command(t_cmd *tmp_cmd, const char *tmp);
 void			parse_env_vars_not_in_quotes(t_node *child, t_cmd *tmp_cmd);
 t_node			*init_and_fill_redirs(t_node *child, t_cmd *tmp_cmd, t_type type);
 t_bool			is_redir(const t_node *child);
@@ -79,10 +78,23 @@ t_node			*handle_all_redirs(t_node *child, t_cmd *tmp_cmd);
 void			signal_handler_parent(int sig);
 t_error			*check_first_token(t_parser *p);
 void			fill_out_env_command(t_cmd *tmp_cmd, const char *tmp);
+t_vector	*fill_out_vector_with_commands(t_node *ast_node);
 void			parse_env_vars_not_in_quotes(t_node *child, t_cmd *tmp_cmd);
+
+void		handle_errors(t_cmd *cmd, t_bool ispath, int errno_);
 
 void update_status_code();
 
 char	**extract_envp(t_vector *g_env);
+
+void	close_pipes(int fd[][2], int pos, int index);
+void	setup_pipes(int fd[][2], int position, int index);
+int		get_position(t_size size, int index);
+void	restore_stdinout(int sout, int sin);
+int		setup_all_redirs(t_vector *redirs, int *sout, int *sin);
+
+t_vector	*get_paths(char *path_str, char *cmd);
+t_bool		is_path(char *cmd);
+t_cmd	*create_cmd(void);
 
 #endif

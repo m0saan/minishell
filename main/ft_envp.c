@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../include/ft_variables.h"
-#include "../include/ft_utility.h"
 #include "../include/error.h"
 #include "../include/minishell.h"
 
