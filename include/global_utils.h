@@ -2,7 +2,7 @@
 # define GLOBAL_UTILS_H
 
 #include <stdlib.h>
-#include "../utility/ft_types.h"
+#include "ft_types.h"
 
 int		ft_strcmp(const char *s1, const char *s2);
 size_t	ft_strlen(const char *str);

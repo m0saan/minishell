@@ -1,4 +1,12 @@
-#include "minishell.h"
+#include "../include/minishell.h"
+
+t_redir *create_redir(t_type type, char *arg)
+{
+	t_redir *r = malloc(sizeof(t_redir));
+	r->arg = strdup(arg);
+	r->type = type;
+	return (r);
+}
 
 t_node	*handle_all_redirs(t_node *child, t_cmd *tmp_cmd)
 {

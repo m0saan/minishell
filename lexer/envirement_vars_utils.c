@@ -1,5 +1,5 @@
-#include "lexer.h"
-#include "../minishell.h"
+#include "../include/lexer.h"
+#include "../include/minishell.h"
 
 
 size_t	get_env_var_last_index(t_lexer *l)

@@ -15,14 +15,14 @@
 # include <sys/stat.h>
 #include <readline/readline.h>
 #include <readline/history.h>
-# include "ast/node.h"
-# include "lexer/lexer.h"
-# include "parser/parser.h"
-# include "errors/error.h"
-# include "utility/ft_vector.h"
-# include "utility/ft_types.h"
-# include "utility/ft_variables.h"
-# include "commands/ft_builtin.h"
+# include "node.h"
+# include "lexer.h"
+# include "parser.h"
+# include "error.h"
+# include "ft_vector.h"
+# include "ft_types.h"
+# include "ft_variables.h"
+# include "ft_builtin.h"
 
 # define IS_LAST 2
 # define IS_FIRST 0

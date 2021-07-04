@@ -1,4 +1,4 @@
-#include "lexer.h"
+#include "../include/lexer.h"
 
 enum e_bool	is_letter(char ch)
 {

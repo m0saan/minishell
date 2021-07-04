@@ -1,4 +1,4 @@
-#include "error.h"
+#include "../include/error.h"
 
 t_error	*create_error(void)
 {

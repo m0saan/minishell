@@ -1,5 +1,5 @@
-#include "lexer.h"
-#include "../minishell.h"
+#include "../include/lexer.h"
+#include "../include/minishell.h"
 
 void	parse_and_get_env_value(char *str, char *env_name,
 			int *i, char **env_value)

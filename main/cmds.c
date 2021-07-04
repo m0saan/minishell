@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pwd.c                                           :+:      :+:    :+:   */
+/*   cmds.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/04 18:41:18 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/04 18:41:22 by ehakam           ###   ########.fr       */
+/*   Created: 2021/07/04 18:21:11 by ehakam            #+#    #+#             */
+/*   Updated: 2021/07/04 18:43:09 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_builtin.h"
+#include "../include/minishell.h"
 
-int	ft_pwd(int ac, char **av)
+t_cmd	*create_cmd(void)
 {
-	char	pwd[1025];
+	t_cmd	*command;
 
-	getcwd(pwd, 1024);
-	printf("%s\n", pwd);
-	return (0);
+	command = malloc(sizeof(t_cmd));
+	ft_memset(command, 0, sizeof(t_cmd));
+	command->redirs = new_vector();
+	return (command);
 }

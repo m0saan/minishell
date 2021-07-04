@@ -1,4 +1,4 @@
-#include "global_utils.h"
+#include "../include/global_utils.h"
 
 int	ft_atoi(char *str)
 {

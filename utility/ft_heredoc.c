@@ -6,13 +6,13 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 21:44:58 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/03 21:47:19 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/04 18:46:10 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_utility.h"
-#include "../global_utils/global_utils.h"
-#include "../minishell.h"
+#include "../include/ft_utility.h"
+#include "../include/global_utils.h"
+#include "../include/minishell.h"
 
 int	get_next_line(char **line)
 {

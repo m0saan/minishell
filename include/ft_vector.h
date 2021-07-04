@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 18:05:53 by ehakam            #+#    #+#             */
-/*   Updated: 2021/04/27 17:21:39 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/04 18:38:55 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <errno.h>
 # include <stdio.h>
 # include "ft_types.h"
-# include "../errors/error.h"
-# include "../global_utils/global_utils.h"
+# include "error.h"
+# include "global_utils.h"
 
 typedef struct s_vector
 {

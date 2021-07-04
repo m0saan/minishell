@@ -1,5 +1,5 @@
-#include "../minishell.h"
-#include "parser.h"
+#include "../include/minishell.h"
+#include "../include/parser.h"
 
 t_error	*catch_errors(t_parser *p, t_error *error)
 {

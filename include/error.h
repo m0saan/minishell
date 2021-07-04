@@ -5,8 +5,8 @@
 # include <errno.h>
 # include <unistd.h>
 # include <string.h>
-# include "../utility/ft_types.h"
-# include "../global_utils/global_utils.h"
+# include "ft_types.h"
+# include "global_utils.h"
 
 # define ERR1 "syntax error near unexpected token"
 

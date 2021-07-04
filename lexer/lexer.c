@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   lexer.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 20:48:38 by moboustt          #+#    #+#             */
-/*   Updated: 2021/06/16 20:49:58 by moboustt         ###   ########.fr       */
+/*   Updated: 2021/07/04 18:42:51 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "../include/minishell.h"
 
 t_token	*next_token(t_lexer *l)
 {

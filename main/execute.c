@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pwd.c                                           :+:      :+:    :+:   */
+/*   execute.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/04 18:41:18 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/04 18:41:22 by ehakam           ###   ########.fr       */
+/*   Created: 2021/05/25 18:25:17 by ehakam            #+#    #+#             */
+/*   Updated: 2021/07/04 18:43:22 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_builtin.h"
+#include "../include/ft_utility.h"
+#include "../include/global_utils.h"
+#include "../include/minishell.h"
 
-int	ft_pwd(int ac, char **av)
+
+
+void	update_status_code(int code)
 {
-	char	pwd[1025];
-
-	getcwd(pwd, 1024);
-	printf("%s\n", pwd);
-	return (0);
+	if (code >= 0)
+		set_var2(g_envp, "?", ft_itoa(code), false);
+	else
+		set_var2(g_envp, "?", ft_itoa(WEXITSTATUS(g_status)), false);
 }
+
+

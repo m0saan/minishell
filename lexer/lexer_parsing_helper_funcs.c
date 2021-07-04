@@ -1,4 +1,4 @@
-#include "lexer.h"
+#include "../include/lexer.h"
 
 t_bool	is_quote(const t_lexer *l)
 {

@@ -6,11 +6,11 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 21:16:50 by ehakam            #+#    #+#             */
-/*   Updated: 2021/06/30 22:04:31 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/04 18:41:09 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_builtin.h"
+#include "../include/ft_builtin.h"
 
 long long	ft_atol_err(char *str)
 {

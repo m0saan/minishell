@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_functions_implemt2.c                        :+:      :+:    :+:   */
+/*   ft_vector_2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 20:08:08 by ehakam            #+#    #+#             */
-/*   Updated: 2021/06/30 20:08:12 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/04 18:46:28 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_utility.h"
-#include "ft_vector.h"
+#include "../include/ft_utility.h"
+#include "../include/ft_vector.h"
 
 int	index_of(t_vector *this, void *item, t_bool (*eql)(void *, void *))
 {

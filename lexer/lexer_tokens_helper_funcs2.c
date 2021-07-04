@@ -1,5 +1,5 @@
-#include "lexer.h"
-#include "../minishell.h"
+#include "../include/lexer.h"
+#include "../include/minishell.h"
 
 void	handle_double_quotes_identifier(t_lexer *l, t_token *tok)
 {

@@ -1,4 +1,4 @@
-#include "lexer.h"
+#include "../include/lexer.h"
 
 void	handle_double_quotes(t_lexer *l, char *s, int *i, int *s_index)
 {

@@ -6,13 +6,13 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 11:14:12 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/03 20:29:24 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/04 18:45:58 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_utility.h"
-#include "../minishell.h"
-#include "../global_utils/global_utils.h"
+#include "../include/ft_utility.h"
+#include "../include/minishell.h"
+#include "../include/global_utils.h"
 
 t_bool		is_builtin(char *cmd)
 {

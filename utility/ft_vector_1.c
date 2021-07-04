@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_functions_implemet.c                        :+:      :+:    :+:   */
+/*   ft_vector_1.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 20:07:58 by ehakam            #+#    #+#             */
-/*   Updated: 2021/06/30 20:08:03 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/04 18:46:24 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_utility.h"
-#include "ft_vector.h"
+#include "../include/ft_utility.h"
+#include "../include/ft_vector.h"
 
 int		is_empty(t_vector *this)
 {

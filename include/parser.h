@@ -2,8 +2,8 @@
 # define PARSER_H
 # include <stdlib.h>
 # include <stdio.h>
-# include "../errors/error.h"
-# include "../lexer/lexer.h"
+# include "error.h"
+# include "lexer.h"
 
 typedef struct s_parser
 {

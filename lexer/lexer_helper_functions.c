@@ -1,4 +1,4 @@
-#include "lexer.h"
+#include "../include/lexer.h"
 
 t_lexer	*new_lexer(const char *line, int cmd_length)
 {

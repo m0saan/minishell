@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/27 16:24:26 by moboustt          #+#    #+#             */
-/*   Updated: 2019/10/27 16:25:54 by moboustt         ###   ########.fr       */
+/*   Updated: 2021/07/04 18:41:46 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "global_utils.h"
+#include "../include/global_utils.h"
 
 static int	get_words(char *s, char c)
 {

@@ -1,5 +1,5 @@
-#include "lexer.h"
-#include "../minishell.h"
+#include "../include/lexer.h"
+#include "../include/minishell.h"
 
 t_token	*handle_escape_token(t_lexer *l, t_token *tok)
 {

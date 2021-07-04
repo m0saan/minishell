@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 16:58:44 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/03 22:01:17 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/04 18:38:46 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include "ft_types.h"
-# include "../global_utils/global_utils.h"
+# include "global_utils.h"
 # include "ft_vector.h"
 
 typedef struct s_var

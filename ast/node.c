@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   node.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 19:50:44 by moboustt          #+#    #+#             */
-/*   Updated: 2021/06/16 19:56:27 by moboustt         ###   ########.fr       */
+/*   Updated: 2021/07/04 18:40:16 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "node.h"
+#include "../include/node.h"
 
 t_node	*new_node(enum e_node_type type)
 {

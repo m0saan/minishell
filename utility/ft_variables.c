@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_env.c                                           :+:      :+:    :+:   */
+/*   ft_variables.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 17:13:38 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/03 21:59:39 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/04 18:46:19 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_variables.h"
-#include "ft_utility.h"
-#include "../errors/error.h"
-#include "../minishell.h"
+#include "../include/ft_variables.h"
+#include "../include/ft_utility.h"
+#include "../include/error.h"
+#include "../include/minishell.h"
 
 int		fill_envp(char **envp)
 {

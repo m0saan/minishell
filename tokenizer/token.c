@@ -1,4 +1,4 @@
-#include "../minishell.h"
+#include "../include/minishell.h"
 
 t_token_type	lookup_type(char *ident)
 {

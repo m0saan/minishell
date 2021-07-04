@@ -1,4 +1,4 @@
-#include "minishell.h"
+#include "../include/minishell.h"
 
 void	parse_env_vars_not_in_quotes(t_node *child, t_cmd *tmp_cmd)
 {
@@ -25,17 +25,28 @@ void	fill_out_env_command(t_cmd *tmp_cmd, const char *tmp)
 		tmp_cmd->argv[tmp_cmd->count++] = splited_env_value[i];
 }
 
-void	signal_handler_parent(int sig)
+t_vector	*fill_out_vector_with_commands(t_node *ast_node)
 {
-	const char	*prompt = "minishell-0.1$ ";
+	t_node		*child;
+	t_vector	*vector;
+	t_cmd		*tmp_cmd;
 
-	if (sig == SIGQUIT && g_is_forked)
-		dprintf(1, "Quit: 3");
-	if (!(sig == SIGQUIT && !g_is_forked))
-		dprintf(1, "\n");
-	if (sig == SIGINT && !g_is_forked)
+	vector = new_vector();
+	child = ast_node->first_child;
+	tmp_cmd = create_cmd();
+	while (child)
 	{
-		update_status_code(1);
-		dprintf(1, "%s", g_prompt);
+		if (is_redir(child))
+			child = handle_all_redirs(child, tmp_cmd);
+		else if (child->val_type == PIPE)
+		{
+			insert(vector, tmp_cmd);
+			tmp_cmd = create_cmd();
+		}
+		else
+			tmp_cmd->argv[tmp_cmd->count++] = child->val.str;
+		child = child->next_sibling;
 	}
+	insert(vector, tmp_cmd);
+	return (vector);
 }

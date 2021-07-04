@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 17:14:13 by moboustt          #+#    #+#             */
-/*   Updated: 2019/10/20 17:45:09 by moboustt         ###   ########.fr       */
+/*   Updated: 2021/07/04 18:41:43 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "global_utils.h"
+#include "../include/global_utils.h"
 
 static	int	ft_intlen(long x)
 {

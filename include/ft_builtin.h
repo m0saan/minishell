@@ -6,14 +6,14 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 20:23:55 by ehakam            #+#    #+#             */
-/*   Updated: 2021/06/30 21:42:53 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/04 18:38:15 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_BUILTIN_H
 # define FT_BUILTIN_H
 
-# include "../minishell.h"
+# include "minishell.h"
 
 # define MAXVAL 9223372036854775807
 # define MINVAL 9223372036854775808

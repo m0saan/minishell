@@ -1,5 +1,5 @@
-#include "parser.h"
-#include "../minishell.h"
+#include "../include/parser.h"
+#include "../include/minishell.h"
 
 void	next_token_p(t_parser *p)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   node.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 19:54:17 by moboustt          #+#    #+#             */
-/*   Updated: 2021/06/16 19:56:16 by moboustt         ###   ########.fr       */
+/*   Updated: 2021/07/04 18:39:15 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define NODE_H
 
 # include <stdlib.h>
-# include "../lexer/lexer.h"
+# include "lexer.h"
 
 enum e_node_type {
 	NODE_COMMAND,

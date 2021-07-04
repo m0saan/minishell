@@ -1,48 +1,20 @@
-#include "minishell.h"
+#include "../include/minishell.h"
 
-t_redir *create_redir(t_type type, char *arg)
+void	signal_handler_parent(int sig)
 {
-	t_redir *r = malloc(sizeof(t_redir));
-	r->arg = strdup(arg);
-	r->type = type;
-	return (r);
-}
+	const char	*prompt = "minishell-0.1$ ";
 
-t_cmd	*create_cmd(void)
-{
-	t_cmd	*command;
-
-	command = malloc(sizeof(t_cmd));
-	ft_memset(command, 0, sizeof(t_cmd));
-	command->redirs = new_vector();
-	return (command);
-}
-
-t_vector	*fill_out_vector_with_commands(t_node *ast_node)
-{
-	t_node		*child;
-	t_vector	*vector;
-	t_cmd		*tmp_cmd;
-
-	vector = new_vector();
-	child = ast_node->first_child;
-	tmp_cmd = create_cmd();
-	while (child)
+	if (sig == SIGQUIT && g_is_forked)
+		dprintf(1, "Quit: 3");
+	if (!(sig == SIGQUIT && !g_is_forked))
+		dprintf(1, "\n");
+	if (sig == SIGINT && !g_is_forked)
 	{
-		if (is_redir(child))
-			child = handle_all_redirs(child, tmp_cmd);
-		else if (child->val_type == PIPE)
-		{
-			insert(vector, tmp_cmd);
-			tmp_cmd = create_cmd();
-		}
-		else
-			tmp_cmd->argv[tmp_cmd->count++] = child->val.str;
-		child = child->next_sibling;
+		update_status_code(1);
+		dprintf(1, "%s", g_prompt);
 	}
-	insert(vector, tmp_cmd);
-	return (vector);
 }
+
 
 void	parse_and_execute(t_lexer *lexer)
 {

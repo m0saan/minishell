@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 20:33:21 by moboustt          #+#    #+#             */
-/*   Updated: 2021/06/16 20:33:23 by moboustt         ###   ########.fr       */
+/*   Updated: 2021/07/04 18:39:08 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
 # include <sys/types.h>
 # include <sys/uio.h>
 # include <string.h>
-# include "../utility/ft_types.h"
-# include "../errors/error.h"
-# include "../global_utils/global_utils.h"
+# include "ft_types.h"
+# include "error.h"
+# include "global_utils.h"
 
 typedef enum e_val_type
 {

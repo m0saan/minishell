@@ -6,11 +6,11 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 20:28:11 by ehakam            #+#    #+#             */
-/*   Updated: 2021/06/30 20:29:27 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/04 18:41:50 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "global_utils.h"
+#include "../include/global_utils.h"
 
 char	*ft_strdup(const char *s)
 {
