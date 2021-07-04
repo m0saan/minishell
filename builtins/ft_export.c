@@ -6,13 +6,13 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 18:41:12 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/04 19:21:52 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/04 20:33:13 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_builtin.h"
 
-int	print_var(t_var *var)
+static int	print_var(t_var *var)
 {
 	int	i;
 
@@ -34,7 +34,7 @@ int	print_var(t_var *var)
 	return (0);
 }
 
-int	export_vars(int ac, char **av)
+static int	export_vars(int ac, char **av)
 {
 	int	i;
 	int	code;

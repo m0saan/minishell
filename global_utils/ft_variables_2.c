@@ -6,12 +6,11 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 20:15:07 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/04 20:15:35 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/04 20:38:36 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_variables.h"
-#include "../include/ft_utility.h"
 #include "../include/error.h"
 #include "../include/minishell.h"
 

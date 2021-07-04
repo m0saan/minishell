@@ -23,4 +23,10 @@ int		ft_atoi(char *str);
 char	*strjoin_s(char *s, char *s2, t_bool free_);
 char	*strjoin_c(char *s, char c, t_bool free_);
 
+int		open_heredoc(char *delim);
+int		handle_var(char **new_buf, char *buf, int idx, int start);
+char	*ft_substr(char *str, int from, int to);
+
+long long	ft_atol_err(char *str);
+
 # endif

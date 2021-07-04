@@ -7,6 +7,7 @@
 # include <string.h>
 # include "ft_types.h"
 # include "global_utils.h"
+# include "minishell.h"
 
 # define ERR1 "syntax error near unexpected token"
 
@@ -21,5 +22,6 @@ t_bool		check_entered_command(const char *line);
 t_error		*create_error(void);
 int			p_error(const char *arg, const char *arg2,
 				const char *message, int code);
+void		handle_errors(t_cmd *cmd, t_bool ispath, int errno_);
 
 #endif

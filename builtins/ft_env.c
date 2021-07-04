@@ -6,13 +6,13 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 18:40:56 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/04 18:41:00 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/04 20:33:00 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_builtin.h"
 
-int	print_var2(t_var *var)
+static int	print_var2(t_var *var)
 {
 	if (var->value)
 	{

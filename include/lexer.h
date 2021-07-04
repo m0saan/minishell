@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 20:33:21 by moboustt          #+#    #+#             */
-/*   Updated: 2021/07/04 18:39:08 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/04 20:41:47 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,26 +26,6 @@
 # include "ft_types.h"
 # include "error.h"
 # include "global_utils.h"
-
-typedef enum e_val_type
-{
-	NONE = -2,
-	LEFT = 0,
-	RIGHT,
-	RIGHT_APPEND,
-	PIPE,
-	ENV_VAR,
-	COMMAND,
-	ARG,
-	ILLEGAL,
-	HEREDOC,
-	END_O_F,
-	SEMICOLON,
-	TILDE,
-	EXIT_STATUS
-}			t_type;
-
-typedef enum e_val_type	t_token_type;
 
 typedef struct s_lexer
 {
