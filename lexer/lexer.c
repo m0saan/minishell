@@ -41,9 +41,9 @@ t_token	*next_token(t_lexer *l)
 	return (tok);
 }
 
-void	read_and_parse_double_quoted(t_lexer *l, char *s, int *index)
+void	read_and_parse_double_quoted(t_lexer *l, char **s, int *index)
 {
-	char	*env_name;
+	char	*env_value;
 
 	next_char(l);
 	while (l->ch != '"')
@@ -56,14 +56,15 @@ void	read_and_parse_double_quoted(t_lexer *l, char *s, int *index)
 				next_char(l);
 				continue ;
 			}
-			env_name = get_env_value(l);
-			if (env_name == NULL)
+			env_value = get_env_value(l);
+			if (env_value == NULL)
 				continue ;
-			s = strcat(s, env_name);
-			(*index) += (int) ft_strlen(env_name);
+			*s = strjoin_s(*s, env_value, true);
+			(*index) += (int) ft_strlen(env_value);
+			free(env_value);
 			continue ;
 		}
-		s[(*index)++] = l->ch;
+		(*s)[(*index)++] = l->ch;
 		next_char(l);
 	}
 	next_char(l);

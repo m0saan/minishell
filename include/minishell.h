@@ -61,7 +61,7 @@ int			fill_envp(char **envp);
 t_redir		*create_redir(enum e_val_type type, char *arg);
 void		free_token(t_token *tok);
 void		slice_str(const char *str, char *buffer, size_t start, size_t end);
-void		read_single_quoted(t_lexer *l, char quote, char *s, int *index);
+void		read_single_quoted(t_lexer *l, char quote, char **s, int *index);
 t_node		*init_and_fill_redirs(t_node *child, t_cmd *tmp_cmd, t_type type);
 t_bool		is_redir(const t_node *child);
 t_node		*handle_all_redirs(t_node *child, t_cmd *tmp_cmd);

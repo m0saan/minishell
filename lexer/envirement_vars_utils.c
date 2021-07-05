@@ -18,11 +18,12 @@ char	*get_env_value(t_lexer *l)
 	char	*env_name;
 	size_t	start;
 
-	env_name = malloc(100);
-	ft_bzero(env_name, 100);
+	env_name = malloc(1024);
+	ft_bzero(env_name, 1024);
 	start = get_env_var_last_index(l);
 	slice_str(l->input, env_name, start, l->position);
 	env_value = get_var(g_config.envp, env_name);
+	free(env_name);
 	if (env_value == NULL)
 		return (NULL);
 	return (env_value);

@@ -59,11 +59,6 @@ int		parse_and_execute(t_lexer *lexer)
 	free_syntax_tree(ast_node);
 	free(p);
 
-	// for(int i = 0; i < g_config.x_malloc_vec->size; ++i) {
-	// 	if (at(g_config.x_malloc_vec, i)) {
-	// 		free(remove_at(g_config.x_malloc_vec, i));
-	// 	}
-	// }
 	return (0);
 }
 
@@ -75,10 +70,10 @@ void	free_syntax_tree(t_node *ast_node)
 	while(head)
 	{
 		to_be_freed = head;
-		free(head->val.str);
 		head = head->next_sibling;
 		free(to_be_freed);
 	}
+	free(ast_node);
 }
 
 char	*get_line(void)

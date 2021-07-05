@@ -21,14 +21,11 @@ enum e_node_type {
 	NODE_ARG,
 };
 
-union u_symval {
-	char	*str;
-};
 
 typedef struct s_node {
 	enum e_node_type	type;
 	enum e_val_type		val_type;
-	union u_symval		val;
+	char				*val;
 	int					children;
 	struct s_node		*first_child;
 	struct s_node		*next_sibling;

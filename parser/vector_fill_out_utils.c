@@ -4,14 +4,14 @@ void	parse_env_vars_not_in_quotes(t_node *child, t_cmd *tmp_cmd)
 {
 	char	*tmp;
 
-	if (child->val.str != NULL)
+	if (child->val != NULL)
 	{
-		tmp = handle_env_variables(child->val.str, -1, 0);
+		tmp = handle_env_variables(child->val, -1, 0);
 		if (tmp != NULL)
 			fill_out_env_command(tmp_cmd, tmp);
 	}
 	else
-		tmp_cmd->argv[tmp_cmd->count++] = child->val.str;
+		tmp_cmd->argv[tmp_cmd->count++] = child->val;
 }
 
 void	fill_out_env_command(t_cmd *tmp_cmd, const char *tmp)
@@ -44,7 +44,7 @@ t_vector	*fill_out_vector_with_commands(t_node *ast_node)
 			tmp_cmd = create_cmd();
 		}
 		else
-			tmp_cmd->argv[tmp_cmd->count++] = child->val.str;
+			tmp_cmd->argv[tmp_cmd->count++] = child->val;
 		child = child->next_sibling;
 	}
 	insert(vector, tmp_cmd);

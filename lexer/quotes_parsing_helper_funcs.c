@@ -1,6 +1,6 @@
 #include "../include/lexer.h"
 
-void	handle_double_quotes(t_lexer *l, char *s, int *i, int *s_index)
+void	handle_double_quotes(t_lexer *l, char **s, int *i, int *s_index)
 {
 	int	pos;
 
@@ -9,7 +9,7 @@ void	handle_double_quotes(t_lexer *l, char *s, int *i, int *s_index)
 	(*i) += (l->position - pos);
 }
 
-void	handle_single_quote(t_lexer *l, char *s, int *i, int *s_index)
+void	handle_single_quote(t_lexer *l, char **s, int *i, int *s_index)
 {
 	int	pos;
 
@@ -28,12 +28,15 @@ void	init_parse_quoted_vars(t_lexer *l, char quote, char **s, int **infos)
 
 void	handle_alphanum_identifier(t_lexer *l, char **s, int *i, int *s_index)
 {
-	int	pos;
+	int		pos;
+	char	*idt;
 
 	pos = l->position;
-	(*s) = strcat((*s), read_identifier(l, 0));
+	idt = read_identifier(l, 0);
+	(*s) = strjoin_s((*s), idt, true);
 	(*i) += (l->position - pos);
 	(*s_index) += (l->position - pos);
+	free(idt);
 }
 
 void	handle_evn_vars_with_no_quotes(t_lexer *l, char **s, int *i)

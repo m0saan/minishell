@@ -44,7 +44,8 @@ t_token	*handle_identifier_with_no_quotes(t_lexer *l, t_token *tok)
 			tok->type = ILLEGAL;
 			return (tok);
 		}
-		tok->literal = strcat(tok->literal, tmp);
+		tok->literal = strjoin_s(tok->literal, tmp, true);
+		free(tmp);
 	}
 	tok->type = lookup_type(tok->literal);
 	}

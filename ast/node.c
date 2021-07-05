@@ -30,9 +30,9 @@ void	set_node_val_str(t_node *node, char *val, t_token_type type)
 {
 	node->val_type = type;
 	if (!val)
-		node->val.str = NULL;
+		node->val = NULL;
 	else
-		node->val.str = val;
+		node->val = val;
 }
 
 void	add_child_node(t_node *parent, t_node *child)
