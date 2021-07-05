@@ -31,6 +31,6 @@ int	ft_cd(int ac, char **av)
 	set_var2(g_config.envp, "PWD", pwd, true);
 //	if (g_config.prompt)
 //		free(g_config.prompt);
-	g_config.prompt = strjoin_s(pwd, " _$ ", false);
+	//g_config.prompt = strjoin_s(pwd, " _$ ", false);
 	return (0);
 }

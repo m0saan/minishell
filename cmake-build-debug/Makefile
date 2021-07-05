@@ -58,19 +58,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/moboustt/Desktop/1337/MINI2
+CMAKE_SOURCE_DIR = /Users/moboustt/Desktop/1337/minishell
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/moboustt/Desktop/1337/MINI2/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/moboustt/Desktop/1337/minishell/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,7 +78,7 @@ CMAKE_BINARY_DIR = /Users/moboustt/Desktop/1337/MINI2/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -89,7 +89,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/goinfre/moboustt/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/CMakeFiles /Users/moboustt/Desktop/1337/MINI2/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles /Users/moboustt/Desktop/1337/minishell/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -384,6 +384,33 @@ errors/error.s: errors/error.c.s
 errors/error.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/errors/error.c.s
 .PHONY : errors/error.c.s
+
+global_utils/__X_malloc.o: global_utils/__X_malloc.c.o
+
+.PHONY : global_utils/__X_malloc.o
+
+# target to build an object file
+global_utils/__X_malloc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o
+.PHONY : global_utils/__X_malloc.c.o
+
+global_utils/__X_malloc.i: global_utils/__X_malloc.c.i
+
+.PHONY : global_utils/__X_malloc.i
+
+# target to preprocess a source file
+global_utils/__X_malloc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.i
+.PHONY : global_utils/__X_malloc.c.i
+
+global_utils/__X_malloc.s: global_utils/__X_malloc.c.s
+
+.PHONY : global_utils/__X_malloc.s
+
+# target to generate assembly for a file
+global_utils/__X_malloc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.s
+.PHONY : global_utils/__X_malloc.c.s
 
 global_utils/ft_atoi.o: global_utils/ft_atoi.c.o
 
@@ -1636,6 +1663,9 @@ help:
 	@echo "... errors/error.o"
 	@echo "... errors/error.i"
 	@echo "... errors/error.s"
+	@echo "... global_utils/__X_malloc.o"
+	@echo "... global_utils/__X_malloc.i"
+	@echo "... global_utils/__X_malloc.s"
 	@echo "... global_utils/ft_atoi.o"
 	@echo "... global_utils/ft_atoi.i"
 	@echo "... global_utils/ft_atoi.s"

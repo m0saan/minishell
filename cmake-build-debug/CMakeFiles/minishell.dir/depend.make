@@ -97,6 +97,19 @@ CMakeFiles/MINISHELL.dir/errors/error.c.o: ../include/minishell.h
 CMakeFiles/MINISHELL.dir/errors/error.c.o: ../include/node.h
 CMakeFiles/MINISHELL.dir/errors/error.c.o: ../include/parser.h
 
+CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o: ../global_utils/__X_malloc.c
+CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o: ../include/error.h
+CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o: ../include/ft_builtin.h
+CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o: ../include/ft_globals.h
+CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o: ../include/ft_types.h
+CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o: ../include/ft_variables.h
+CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o: ../include/ft_vector.h
+CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o: ../include/global_utils.h
+CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o: ../include/lexer.h
+CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o: ../include/minishell.h
+CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o: ../include/node.h
+CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o: ../include/parser.h
+
 CMakeFiles/MINISHELL.dir/global_utils/ft_atoi.c.o: ../global_utils/ft_atoi.c
 CMakeFiles/MINISHELL.dir/global_utils/ft_atoi.c.o: ../include/ft_types.h
 CMakeFiles/MINISHELL.dir/global_utils/ft_atoi.c.o: ../include/global_utils.h

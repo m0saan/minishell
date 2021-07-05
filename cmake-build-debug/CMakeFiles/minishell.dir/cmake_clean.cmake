@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/MINISHELL.dir/builtins/ft_pwd.c.o"
   "CMakeFiles/MINISHELL.dir/builtins/ft_unset.c.o"
   "CMakeFiles/MINISHELL.dir/errors/error.c.o"
+  "CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o"
   "CMakeFiles/MINISHELL.dir/global_utils/ft_atoi.c.o"
   "CMakeFiles/MINISHELL.dir/global_utils/ft_atol.c.o"
   "CMakeFiles/MINISHELL.dir/global_utils/ft_bzero.c.o"

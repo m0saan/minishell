@@ -6,7 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/Users/moboustt/Desktop/1337/MINI2/include/error.h
+/Users/moboustt/Desktop/1337/minishell/ast/node.c
+../include/node.h
+/Users/moboustt/Desktop/1337/minishell/include/node.h
+
+/Users/moboustt/Desktop/1337/minishell/errors/error.c
+../include/error.h
+/Users/moboustt/Desktop/1337/minishell/include/error.h
+../include/minishell.h
+/Users/moboustt/Desktop/1337/minishell/include/minishell.h
+
+/Users/moboustt/Desktop/1337/minishell/include/error.h
 stdlib.h
 -
 errno.h
@@ -44,11 +54,11 @@ readline/readline.h
 readline/history.h
 -
 ft_types.h
-/Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
+/Users/moboustt/Desktop/1337/minishell/include/ft_types.h
 ft_globals.h
-/Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
+/Users/moboustt/Desktop/1337/minishell/include/ft_globals.h
 
-/Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
+/Users/moboustt/Desktop/1337/minishell/include/ft_builtin.h
 stdlib.h
 -
 errno.h
@@ -86,13 +96,13 @@ readline/readline.h
 readline/history.h
 -
 global_utils.h
-/Users/moboustt/Desktop/1337/MINI2/include/global_utils.h
+/Users/moboustt/Desktop/1337/minishell/include/global_utils.h
 
-/Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
+/Users/moboustt/Desktop/1337/minishell/include/ft_globals.h
 
-/Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
+/Users/moboustt/Desktop/1337/minishell/include/ft_types.h
 
-/Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
+/Users/moboustt/Desktop/1337/minishell/include/ft_variables.h
 string.h
 -
 stdlib.h
@@ -102,13 +112,13 @@ unistd.h
 stdio.h
 -
 ft_types.h
-/Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
+/Users/moboustt/Desktop/1337/minishell/include/ft_types.h
 global_utils.h
-/Users/moboustt/Desktop/1337/MINI2/include/global_utils.h
+/Users/moboustt/Desktop/1337/minishell/include/global_utils.h
 ft_vector.h
-/Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
+/Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
 
-/Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
+/Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
 stdlib.h
 -
 errno.h
@@ -116,13 +126,13 @@ errno.h
 stdio.h
 -
 ft_types.h
-/Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
+/Users/moboustt/Desktop/1337/minishell/include/ft_types.h
 error.h
-/Users/moboustt/Desktop/1337/MINI2/include/error.h
+/Users/moboustt/Desktop/1337/minishell/include/error.h
 global_utils.h
-/Users/moboustt/Desktop/1337/MINI2/include/global_utils.h
+/Users/moboustt/Desktop/1337/minishell/include/global_utils.h
 
-/Users/moboustt/Desktop/1337/MINI2/include/global_utils.h
+/Users/moboustt/Desktop/1337/minishell/include/global_utils.h
 stdio.h
 -
 unistd.h
@@ -154,9 +164,9 @@ readline/history.h
 stdlib.h
 -
 ft_types.h
-/Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
+/Users/moboustt/Desktop/1337/minishell/include/ft_types.h
 
-/Users/moboustt/Desktop/1337/MINI2/include/lexer.h
+/Users/moboustt/Desktop/1337/minishell/include/lexer.h
 stdio.h
 -
 stdlib.h
@@ -178,13 +188,13 @@ sys/uio.h
 string.h
 -
 ft_types.h
-/Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
+/Users/moboustt/Desktop/1337/minishell/include/ft_types.h
 error.h
-/Users/moboustt/Desktop/1337/MINI2/include/error.h
+/Users/moboustt/Desktop/1337/minishell/include/error.h
 global_utils.h
-/Users/moboustt/Desktop/1337/MINI2/include/global_utils.h
+/Users/moboustt/Desktop/1337/minishell/include/global_utils.h
 
-/Users/moboustt/Desktop/1337/MINI2/include/minishell.h
+/Users/moboustt/Desktop/1337/minishell/include/minishell.h
 stdio.h
 -
 unistd.h
@@ -214,47 +224,57 @@ readline/readline.h
 readline/history.h
 -
 node.h
-/Users/moboustt/Desktop/1337/MINI2/include/node.h
+/Users/moboustt/Desktop/1337/minishell/include/node.h
 lexer.h
-/Users/moboustt/Desktop/1337/MINI2/include/lexer.h
+/Users/moboustt/Desktop/1337/minishell/include/lexer.h
 parser.h
-/Users/moboustt/Desktop/1337/MINI2/include/parser.h
+/Users/moboustt/Desktop/1337/minishell/include/parser.h
 error.h
-/Users/moboustt/Desktop/1337/MINI2/include/error.h
+/Users/moboustt/Desktop/1337/minishell/include/error.h
 ft_vector.h
-/Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
+/Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
 ft_types.h
-/Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
+/Users/moboustt/Desktop/1337/minishell/include/ft_types.h
 ft_variables.h
-/Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
+/Users/moboustt/Desktop/1337/minishell/include/ft_variables.h
 ft_builtin.h
-/Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
+/Users/moboustt/Desktop/1337/minishell/include/ft_builtin.h
 
-/Users/moboustt/Desktop/1337/MINI2/include/node.h
+/Users/moboustt/Desktop/1337/minishell/include/node.h
 stdlib.h
 -
 lexer.h
-/Users/moboustt/Desktop/1337/MINI2/include/lexer.h
+/Users/moboustt/Desktop/1337/minishell/include/lexer.h
 
-/Users/moboustt/Desktop/1337/MINI2/include/parser.h
+/Users/moboustt/Desktop/1337/minishell/include/parser.h
 stdlib.h
 -
 stdio.h
 -
 error.h
-/Users/moboustt/Desktop/1337/MINI2/include/error.h
+/Users/moboustt/Desktop/1337/minishell/include/error.h
 lexer.h
-/Users/moboustt/Desktop/1337/MINI2/include/lexer.h
+/Users/moboustt/Desktop/1337/minishell/include/lexer.h
 ../include/node.h
-/Users/moboustt/Desktop/1337/MINI2/include/node.h
+/Users/moboustt/Desktop/1337/minishell/include/node.h
 
-/Users/moboustt/Desktop/1337/MINI2/main/minishell.c
+/Users/moboustt/Desktop/1337/minishell/lexer/envirement_vars_utils.c
+../include/lexer.h
+/Users/moboustt/Desktop/1337/minishell/include/lexer.h
 ../include/minishell.h
-/Users/moboustt/Desktop/1337/MINI2/include/minishell.h
+/Users/moboustt/Desktop/1337/minishell/include/minishell.h
 
-/Users/moboustt/Desktop/1337/MINI2/parser/parse.c
+/Users/moboustt/Desktop/1337/minishell/lexer/lexer_parsing_helper_funcs.c
+../include/lexer.h
+/Users/moboustt/Desktop/1337/minishell/include/lexer.h
+
+/Users/moboustt/Desktop/1337/minishell/parser/parse.c
 ../include/minishell.h
-/Users/moboustt/Desktop/1337/MINI2/include/minishell.h
+/Users/moboustt/Desktop/1337/minishell/include/minishell.h
 ../include/parser.h
-/Users/moboustt/Desktop/1337/MINI2/include/parser.h
+/Users/moboustt/Desktop/1337/minishell/include/parser.h
+
+/Users/moboustt/Desktop/1337/minishell/parser/parse_redirs.c
+../include/minishell.h
+/Users/moboustt/Desktop/1337/minishell/include/minishell.h
 

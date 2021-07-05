@@ -21,6 +21,8 @@
 # define MAXVAL 9223372036854775807
 # define MINVAL 9223372036854775808
 
+//#define new(X) my_malloc( X, __FILE__, __LINE__, __FUNCTION__)
+
 int		ft_strcmp(const char *s1, const char *s2);
 size_t	ft_strlen(const char *str);
 void	*ft_memset(void *b, int c, size_t len);
@@ -44,5 +46,5 @@ char	*ft_substr(char *str, int from, int to);
 long long	ft_atol_err(char *str);
 int		index_of_c(char *str, char c);
 int	get_next_line(char **line);
-
+void	*my_malloc(size_t size, const char *file, int line, const char *func);
 # endif

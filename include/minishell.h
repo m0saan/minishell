@@ -49,6 +49,7 @@ typedef	struct s_minishell
 	t_bool			is_forked;
 	int 			status;
 	char 			*prompt;
+	t_vector		*x_malloc_vec;
 }				t_minishell;
 
 t_minishell g_config;

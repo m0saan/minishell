@@ -68,7 +68,10 @@ char	*parse_quoted(t_lexer *l, char quote, 	int	i, int s_index)
 		if (is_quote(l))
 			infos = has_next_quote(l, l->ch);
 		if (l->ch == ' ')
+		{
+			free(infos);
 			return (s);
+		}
 	}
 	free(infos);
 	return (s);

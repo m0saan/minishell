@@ -1,12 +1,6 @@
 #include "../include/lexer.h"
 #include "../include/minishell.h"
 
-t_token	*handle_escape_token(t_lexer *l, t_token *tok)
-{
-	tok->literal = read_identifier(l, 0);
-	return (tok);
-}
-
 t_token	*handle_illegal_token(const t_lexer *l, t_token *tok)
 {
 	tok = new_token(ILLEGAL, l->ch, tok);

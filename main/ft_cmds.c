@@ -29,8 +29,10 @@ void 	delete_cmd(void *cmd)
 	c = (t_cmd *)cmd;
 	if (!c)
 		return ;
-//	while(--c->count >= 0)
-//		if (c->argv[c->count])
-//			free(c->argv[c->count]);
+	dprintf(2, "count: %d\n", c->count);
+	while(--(c->count) >= 0) {
+		dprintf(2, "count: %d\n", c->count);
+		free(c->argv[c->count]);
+	}
 	delete_free(c->redirs, &delete_redir);
 }

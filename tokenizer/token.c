@@ -15,15 +15,10 @@ t_token_type	lookup_type(char *ident)
 	return (ARG);
 }
 
-t_token	*new_token(t_token_type token_type,
-				   char ch, t_token *token)
+t_token *new_token(t_token_type token_type, char ch, t_token *token)
 {
-	char	*tmp;
-
-	tmp = malloc(2);
 	token->type = token_type;
-	tmp[0] = ch;
-	tmp[1] = 0;
-	token->literal = tmp;
+	token->letter_literal = ch;
+	token->literal = NULL;
 	return (token);
 }
