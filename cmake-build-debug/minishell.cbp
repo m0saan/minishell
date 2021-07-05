@@ -87,55 +87,97 @@
 		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/ast/node.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/ast/node.h">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/builtins/ft_cd.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/commands/ft_cd.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/builtins/ft_echo.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/commands/ft_echo.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/builtins/ft_env.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/commands/ft_env.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/builtins/ft_exit.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/commands/ft_exit.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/builtins/ft_export.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/commands/ft_export.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/builtins/ft_pwd.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/commands/ft_pwd.c">
-			<Option target="MINISHELL"/>
-		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/commands/ft_unset.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/builtins/ft_unset.c">
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/errors/error.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/errors/error.h">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_atoi.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/execute.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_atol.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_bzero.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_heredoc.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_heredoc_handlers.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_index_of.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_is.c">
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_itoa.c">
 			<Option target="MINISHELL"/>
 		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_memset.c">
+			<Option target="MINISHELL"/>
+		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_split.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_strcmp.c">
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_strdup.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/global_utils.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_strjoin.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/global_utils.h">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_strlen.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/global_utils2.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_substr.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_variables.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_variables_2.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_variables_3.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_variables_4.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_vector.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_vector_1.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_vector_2.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/gnl.c">
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/lexer/env_vars_helper_funcs.c">
@@ -145,9 +187,6 @@
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/lexer/lexer.c">
-			<Option target="MINISHELL"/>
-		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/lexer/lexer.h">
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/lexer/lexer_helper_functions.c">
@@ -168,49 +207,43 @@
 		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/lexer/quotes_parsing_helper_funcs.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/minishell.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/main/ft_cmds.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/minishell.h">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/main/ft_envp.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/main/ft_execve.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/main/ft_paths.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/main/ft_pipes.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/main/ft_redirs.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/main/ft_run.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/main/minishell.c">
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/parser/parse.c">
 			<Option target="MINISHELL"/>
 		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/parser/parse_redirs.c">
+			<Option target="MINISHELL"/>
+		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/parser/parser_helper_functions.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/redirs.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/parser/vector_fill_out_utils.c">
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/tokenizer/token.c">
-			<Option target="MINISHELL"/>
-		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/utility/ft_execve.c">
-			<Option target="MINISHELL"/>
-		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/utility/ft_heredoc.c">
-			<Option target="MINISHELL"/>
-		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/utility/ft_variables.c">
-			<Option target="MINISHELL"/>
-		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/utility/ft_variables.h">
-			<Option target="MINISHELL"/>
-		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/utility/ft_vector.c">
-			<Option target="MINISHELL"/>
-		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/utility/ft_vector.h">
-			<Option target="MINISHELL"/>
-		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/utility/ft_vector_1.c">
-			<Option target="MINISHELL"/>
-		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/utility/ft_vector_2.c">
-			<Option target="MINISHELL"/>
-		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/vector_fill_out_utils.c">
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/CMakeLists.txt">
