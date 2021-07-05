@@ -42,7 +42,7 @@ pid_t	run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
 	sout = -1;
 	if ((pid = fork()) < 0)
 		exit(1);
-	g_is_forked = true;
+	g_config.is_forked = true;
 	pos = get_position(size, index);
 	if (pid == 0)
 	{
@@ -62,7 +62,6 @@ void	run_single_builtin(t_vector *cmds)
 
 	cmd = (t_cmd *) at(cmds, 0);
 	update_status_code(run_cmd_parent(cmd));
-	// TODO: delete(cmds);
 }
 
 void 	run_multiple_cmds(t_vector *cmds)
@@ -80,9 +79,9 @@ void 	run_multiple_cmds(t_vector *cmds)
 		pids[i] = run_cmd_child(cmd, fd, cmds->size, i);
 	}
 	i = -1;
-	while (++i < cmds->size)
+	while (++i < (int)cmds->size)
 		if (pids[i] > 0)
-			waitpid(pids[i], &g_status, 0);
+			waitpid(pids[i], &g_config.status, 0);
 	update_status_code(-1);
 }
 
@@ -91,9 +90,11 @@ void	run_cmds(t_vector *cmds)
 	t_cmd	*cmd;
 
 	cmd = (t_cmd *) at(cmds, 0);
-	if (cmds->size == 1 && (cmd->count == 0 || is_builtin(cmd->argv[0])))
+	if (cmds->size == 1 && (cmd->count == 0
+		|| is_builtin(cmd->argv[0])))
 		run_single_builtin(cmds);
 	else
 		run_multiple_cmds(cmds);
-	g_is_forked = false;
+	delete_free(cmds, &delete_cmd);
+	g_config.is_forked = false;
 }

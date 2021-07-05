@@ -3,49 +3,40 @@
 void	update_status_code(int code)
 {
 	if (code >= 0)
-		set_var2(g_envp, "?", ft_itoa(code), false);
+		set_var2(g_config.envp, "?", ft_itoa(code), false);
 	else
-		set_var2(g_envp, "?", ft_itoa(WEXITSTATUS(g_status)), false);
+		set_var2(g_config.envp, "?", ft_itoa(WEXITSTATUS(g_config.status)), false);
 }
 
 void	signal_handler_parent(int sig)
 {
-	const char	*prompt = "minishell-0.1$ ";
-
-	if (sig == SIGQUIT && g_is_forked)
+	if (sig == SIGQUIT && g_config.is_forked)
 		dprintf(1, "Quit: 3");
-	if (!(sig == SIGQUIT && !g_is_forked))
+	if (!(sig == SIGQUIT && !g_config.is_forked))
 		dprintf(1, "\n");
-	if (sig == SIGINT && !g_is_forked)
+	if (sig == SIGINT && !g_config.is_forked)
 	{
 		update_status_code(1);
-		dprintf(1, "%s", g_prompt);
+		dprintf(1, "%s", g_config.prompt);
 	}
 }
 
-void	parse_and_execute(t_lexer *lexer)
+int parse_and_execute(t_lexer *lexer)
 {
-	t_cmd		*cmd;
 	t_node		*ast_node;
-	t_parser	*p;
 	t_error		*err;
+	t_parser	*p;
 
-	cmd = malloc(sizeof(t_cmd));
+	ast_node = NULL;
 	p = new_parser(lexer);
-	ft_memset(cmd, 0, sizeof(t_cmd));
-	cmd->redirs = new_vector();
 	err = check_first_token(p);
 	if (err->is_error)
-	{
-		printf("%s '%s'\n", err->error_msg, p->peek_token->literal);
-		return ;
-	}
+		return (p_error("ZBBI 2", err->error_msg, p->peek_token->literal, 1));
 	ast_node = parse_command(ast_node, p);
 	if (ast_node == NULL)
-		return ;
+		return (1);
 	run_cmds((t_vector *) fill_out_vector_with_commands(ast_node));
 	t_node *head;
-
 	head = ast_node->first_child;
 	while(head)
 	{
@@ -53,15 +44,14 @@ void	parse_and_execute(t_lexer *lexer)
 		head = head->next_sibling;
 	}
 	free(p);
+	return (0);
 }
 
 char	*get_line(void)
 {
 	static char	*line_read;
-	const char	*prompt = "minishell-0.1$ ";
 
-	// rl_on_new_line();
-	line_read = readline (g_prompt);
+	line_read = readline (g_config.prompt);
 	if (line_read && *line_read)
 		add_history (line_read);
 	return (line_read);
@@ -71,10 +61,13 @@ int		main(int ac, char **av, char **env)
 {
 	char	*line;
 	t_lexer	*lexer;
+	int 	code;
 
-	g_is_forked = false;
+	ac = 0;
+	av = NULL;
+	g_config.is_forked = false;
 	fill_envp(env);
-	g_prompt = strjoin_s(get_var(g_envp, "PWD"), " _$ ", false);
+	g_config.prompt = strjoin_s(get_var(g_config.envp, "PWD"), " _$ ", false);
 	signal(SIGQUIT, signal_handler_parent);
 	signal(SIGINT, signal_handler_parent);
 	while (true)
@@ -94,5 +87,7 @@ int		main(int ac, char **av, char **env)
 			free (line);
 		free(lexer);
 	}
-	return (atoi(get_var(g_envp, "?")));
+	code = atoi(get_var(g_config.envp, "?"));
+	// TODO: free env
+	return (code);
 }

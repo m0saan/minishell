@@ -30,7 +30,7 @@ t_error	*catch_errors(t_parser *p, t_error *error)
 void	replace_token(t_parser *p)
 {
 	if (p->cur_token->type == TILDE)
-		p->cur_token->literal = get_var(g_envp, "HOME");
+		p->cur_token->literal = get_var(g_config.envp, "HOME");
 }
 
 t_node	*parse_command(t_node *ast_node, t_parser *p)
@@ -47,21 +47,15 @@ t_node	*parse_command(t_node *ast_node, t_parser *p)
 		catch_errors(p, error);
 		if (catch_errors(p, error)->is_error)
 		{
-			printf("%s \n", error->error_msg);
+			p_error("ZBBI", NULL, error->error_msg, 1);
 			return (NULL);
 		}
+
 		arg = new_node(NODE_ARG);
 		set_node_val_str(arg, p->cur_token->literal, p->cur_token->type);
 		add_child_node(ast_node, arg);
-		free_token(p->cur_token);
 		next_token_p(p);
 	}
 	return (ast_node);
 }
 
-void	free_token(t_token *tok)
-{
-	if (tok->literal)
-		free(tok->literal);
-	free(tok);
-}

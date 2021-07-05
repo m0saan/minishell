@@ -28,24 +28,11 @@ t_node	*new_node(enum e_node_type type)
 
 void	set_node_val_str(t_node *node, char *val, t_token_type type)
 {
-	size_t	l;
-	char	*tmp;
-
 	node->val_type = type;
 	if (!val)
 		node->val.str = NULL;
 	else
-	{
-		l = ft_strlen(val);
-		tmp = malloc(sizeof(char) * l + 1);
-		if (!tmp)
-			node->val.str = NULL;
-		else
-		{
-			strcpy(tmp, val);
-			node->val.str = tmp;
-		}
-	}
+		node->val.str = val;
 }
 
 void	add_child_node(t_node *parent, t_node *child)

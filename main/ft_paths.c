@@ -71,7 +71,6 @@ t_vector	*get_paths(char *path_str, char *cmd)
 	return (paths);
 }
 
-
 t_bool		is_path(char *cmd)
 {
 	int	i;

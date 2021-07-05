@@ -22,7 +22,7 @@ char	*get_env_value(t_lexer *l)
 	ft_bzero(env_name, 100);
 	start = get_env_var_last_index(l);
 	slice_str(l->input, env_name, start, l->position);
-	env_value = get_var(g_envp, env_name);
+	env_value = get_var(g_config.envp, env_name);
 	if (env_value == NULL)
 		return (NULL);
 	return (env_value);

@@ -48,7 +48,7 @@ t_vector	*new_vector_from(t_vector *other)
 	return (new_vector);
 }
 
-void	*at(t_vector *this, size_t pos)
+void	*at(t_vector *this, int pos)
 {
 	if (this == NULL)
 		exit(1);

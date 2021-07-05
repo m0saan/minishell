@@ -19,7 +19,7 @@ int	index_of(t_vector *this, void *item, t_bool (*eql)(void *, void *))
 	if (this == NULL)
 		exit(1);
 	i = -1;
-	while (++i < this->size)
+	while (++i < (int)this->size)
 	{
 		if (eql(this->data[i], item))
 			return (i);
@@ -49,7 +49,7 @@ t_size	capacity(t_vector *this)
 	return (this->capacity);
 }
 
-void	swap(t_vector *this, t_size pos1, t_size pos2)
+void	swap(t_vector *this, int pos1, int pos2)
 {
 	void	*item;
 

@@ -48,6 +48,7 @@ int		setup_redirection(t_type type, char *arg, int *sout, int *sin)
 {
 	int fd;
 
+	fd = -1;
 	if (type == RIGHT)
 		fd = open(arg, O_CREAT | O_TRUNC | O_WRONLY,
 				S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
@@ -79,7 +80,23 @@ int		setup_all_redirs(t_vector *redirs, int *sout, int *sin)
 		redir = (t_redir *) at(redirs, i);
 		if (setup_redirection(redir->type, redir->arg, sout, sin) != 0)
 			code = 1;
-		free(redir->arg);
 	}
 	return (code);
 }
+
+void	delete_redir(void *redir)
+{
+	t_redir *r;
+
+	r = (t_redir *)redir;
+	if (!r)
+		return ;
+	if (r->arg)
+	{
+		free(r->arg);
+		r->arg = NULL;
+	}
+	free(r);
+	r = NULL;
+}
+

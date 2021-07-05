@@ -49,7 +49,7 @@ void	handle_errors(t_cmd *cmd, t_bool ispath, int errno_)
 		exit(p_error(cmd->argv[0], NULL, NULL, 126));
 	else if (errno_ == 8)
 		exit(p_error(cmd->argv[0], NULL, NULL, 1));
-	else if (ispath || get_var(g_envp, "PATH") == NULL)
+	else if (ispath || get_var(g_config.envp, "PATH") == NULL)
 		exit(p_error(cmd->argv[0], NULL, NULL, 127));
 	else
 		exit(p_error(cmd->argv[0], NULL, "command not found", 127));

@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../include/ft_builtin.h"
-#include "../include/ft_globals.h"
 #include "../include/ft_variables.h"
 #include "../include/minishell.h"
 
@@ -25,7 +24,7 @@ int	ft_unset(int ac, char **av)
 	i = 0;
 	code = 0;
 	while (av[++i])
-		if (unset_var(g_envp, av[i]) != 0)
+		if (unset_var(g_config.envp, av[i]) != 0)
 			code = 1;
 	return (code);
 }

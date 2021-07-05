@@ -31,8 +31,8 @@ int handle_alpha(char **new_buf, char *buf, int idx, int start)
 	key = ft_substr(buf, start, idx);
 	if (key)
 	{
-		if (get_var(g_envp, key))
-			*new_buf = strjoin_s(*new_buf, get_var(g_envp, key), true);
+		if (get_var(g_config.envp, key))
+			*new_buf = strjoin_s(*new_buf, get_var(g_config.envp, key), true);
 		else
 			*new_buf = strjoin_s(*new_buf, "", true);
 		free(key);
@@ -44,7 +44,7 @@ int handle_special(char **new_buf, char *buf, int idx, int start)
 {
 	start = 0;
 	buf = NULL;
-	*new_buf = strjoin_s(*new_buf, get_var(g_envp, "?"), true);
+	*new_buf = strjoin_s(*new_buf, get_var(g_config.envp, "?"), true);
 	return (idx);
 }
 

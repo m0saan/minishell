@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../include/minishell.h"
-#include "../include/global_utils.h"
 
 t_bool		is_builtin(char *cmd)
 {
@@ -30,11 +29,11 @@ int			ft_exec_builtin(t_cmd *cmd)
 	else if (ft_strcmp(cmd->argv[0], "export") == 0)
 		return (ft_export(cmd->count, cmd->argv));
 	else if (ft_strcmp(cmd->argv[0], "env") == 0)
-		return (ft_env(cmd->count, cmd->argv));
+		return (ft_env());
 	else if (ft_strcmp(cmd->argv[0], "exit") == 0)
 		return (ft_exit(cmd->count, cmd->argv));
 	else if (ft_strcmp(cmd->argv[0], "pwd") == 0)
-		return (ft_pwd(cmd->count, cmd->argv));
+		return (ft_pwd());
 	else if (ft_strcmp(cmd->argv[0], "unset") == 0)
 		return (ft_unset(cmd->count, cmd->argv));
 	return (0);
@@ -46,14 +45,14 @@ int			ft_find_and_exec(t_cmd *cmd, char **envp)
 	int			i;
 
 	i = -1;
-	paths = get_paths(get_var(g_envp, "PATH"), cmd->argv[0]);
+	paths = get_paths(get_var(g_config.envp, "PATH"), cmd->argv[0]);
 	while (++i < (int)paths->size)
 	{
 		execve((char *)at(paths, i), cmd->argv, envp);
 		if (errno != 2)
 			break ;
 	}
-	delete(paths);
+	delete_free(paths, &free);
 	handle_errors(cmd, false, errno);
 	return (1);
 }
@@ -69,7 +68,7 @@ int			exec_cmd(t_cmd *cmd)
 {
 	char	**env;
 
-	env = extract_envp(g_envp);
+	env = extract_envp(g_config.envp);
 	if (cmd->count > 0 && is_builtin(cmd->argv[0]))
 		return (ft_exec_builtin(cmd));
 	else if (cmd->count > 0 && is_path(cmd->argv[0]))

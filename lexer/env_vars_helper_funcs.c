@@ -6,7 +6,7 @@ void	parse_and_get_env_value(char *str, char *env_name,
 {
 	size_t	end;
 
-	(*env_value) = get_var(g_envp, env_name);
+	(*env_value) = get_var(g_config.envp, env_name);
 	(*i)++;
 	end = get_env_var_end(&str[(*i)]) + (*i);
 	slice_str(str, env_name, (*i), end);

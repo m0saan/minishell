@@ -42,7 +42,7 @@ void	insert(t_vector *this, void *item)
 	this->data[this->size] = NULL;
 }
 
-void	*remove_at(t_vector *this, t_size pos)
+void	*remove_at(t_vector *this, int pos)
 {
 	int		i;
 	void	*item;
@@ -66,24 +66,28 @@ void	*remove_at(t_vector *this, t_size pos)
 	return (item);
 }
 
-void 	delete_free(t_vector *this)
-{
-	if (!this)
-		return ;
-	if (this->data != NULL)
-	{
-		while(!is_empty(this))
-			free(remove_at(this, this->size - 1));
-		free(this->data);
-	}
-	free(this);
-}
-
 void	delete(t_vector *this)
 {
 	if (this == NULL)
 		return ;
 	if (this->data != NULL)
 		free(this->data);
+	this->data = NULL;
 	free(this);
+	this = NULL;
+}
+
+void 	delete_free(t_vector *this, void (*f)(void *))
+{
+	if (!this)
+		return ;
+	if (this->data != NULL)
+	{
+		while(!is_empty(this))
+			f(remove_at(this, this->size - 1));
+		free(this->data);
+		this->data = NULL;
+	}
+	free(this);
+	this = NULL;
 }

@@ -12,7 +12,7 @@
 
 #include "../include/ft_builtin.h"
 
-int	ft_pwd(int ac, char **av)
+int ft_pwd(void)
 {
 	char	pwd[1025];
 

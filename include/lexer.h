@@ -79,5 +79,13 @@ t_token		*handle_eof_token(t_token *tok);
 t_token		*handle_illegal_token(const t_lexer *l, t_token *tok);
 t_bool		check_quotes_errors(const t_lexer *l, char ch);
 void		handle_evn_vars_with_no_quotes(t_lexer *l, char **s, int *i);
+void			next_char(t_lexer *lexer);
+char			peek_char(t_lexer *lexer);
+void			skip_white_spaces(t_lexer *lexer);
+t_token			*next_token(t_lexer *l);
+t_lexer			*new_lexer(const char *line, int cmd_length);
+t_token			*new_token(t_token_type token_type, char ch, t_token *token);
+t_token_type	lookup_type(char *ident);
+
 
 #endif

@@ -21,3 +21,16 @@ t_cmd	*create_cmd(void)
 	command->redirs = new_vector();
 	return (command);
 }
+
+void 	delete_cmd(void *cmd)
+{
+	t_cmd *c;
+
+	c = (t_cmd *)cmd;
+	if (!c)
+		return ;
+//	while(--c->count >= 0)
+//		if (c->argv[c->count])
+//			free(c->argv[c->count]);
+	delete_free(c->redirs, &delete_redir);
+}

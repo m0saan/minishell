@@ -23,17 +23,18 @@
 typedef struct s_vector
 {
 	void	**data;
-	t_size	capacity;
-	t_size	size;
+	int		capacity;
+	int		size;
 }			t_vector;
 
 t_vector	*new_vector(void);
 t_vector	*new_vector_s(t_size init_len);
 t_vector	*new_vector_from(t_vector *vector);
 void		insert(t_vector *vector, void *item);
-void		*remove_at(t_vector *vector, t_size pos);
+void		*remove_at(t_vector *this, int pos);
 void		delete (t_vector *vector);
-void		*at(t_vector *vector, t_size pos);
+void 		delete_free(t_vector *vector, void (*f)(void *));
+void		*at(t_vector *this, int pos);
 t_bool		contains(t_vector *this, void *item, t_bool (*eql)(void *, void *));
 void		sort(t_vector *this, int (*f)(void *, void *));
 int			index_of(t_vector *vector, void *item,
@@ -41,6 +42,6 @@ int			index_of(t_vector *vector, void *item,
 void		*search(t_vector *vector, void *item,
 				t_bool (*eql)(void *, void *));
 int			is_empty(t_vector *vector);
-void		swap(t_vector *vector, t_size pos1, t_size pos2);
+void		swap(t_vector *this, int pos1, int pos2);
 
 #endif

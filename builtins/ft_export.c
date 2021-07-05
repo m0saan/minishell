@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../include/ft_builtin.h"
-#include "../include/ft_globals.h"
 #include "../include/ft_variables.h"
 #include "../include/minishell.h"
 
@@ -46,7 +45,7 @@ static int	export_vars(int ac, char **av)
 	code = 0;
 	while (++i < ac)
 	{
-		if (set_var(g_envp, av[i]) != 0)
+		if (set_var(g_config.envp, av[i]) != 0)
 			code = 1;
 	}
 	return (code);
@@ -55,7 +54,7 @@ static int	export_vars(int ac, char **av)
 int	ft_export(int ac, char **av)
 {
 	if (ac == 1)
-		list_vars(g_envp, false, print_var);
+		list_vars(g_config.envp, false, print_var);
 	else if (ac > 1)
 	{
 		return (export_vars(ac, av));

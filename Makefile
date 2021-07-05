@@ -84,7 +84,7 @@ all: $(NAME)
 $(NAME): $(SRCS)
 	@echo "Building..."
 	@echo "TODO: DON'T FORGET TO ADD CFLAGS"
-	@gcc $(SRCS) $(LIB) -o $(NAME)
+	@gcc -Wall -Wextra -Werror $(LIB) $(SRCS) -o $(NAME) -g3 -fsanitize=address
 
 clean:
 	@echo "Cleaning"

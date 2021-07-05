@@ -44,8 +44,6 @@ int		list_vars(t_vector *env, t_bool sort_, int (*print)(t_var *))
 {
 	t_vector	*temp_env;
 	t_var		*var;
-	char		*var_name;
-	char		*var_value;
 	int			i;
 
 	i = -1;

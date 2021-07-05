@@ -17,23 +17,23 @@
 int		fill_envp(char **envp)
 {
 	int		i;
-	int		shlvl;
-	t_var	*shlvl_var;
+	int		value;
+	t_var	*var;
 
 	i = -1;
 	if (!envp)
 		return (1);
-	g_envp = new_vector();
+	g_config.envp = new_vector();
 	while (envp[++i] != NULL)
-		insert(g_envp, new_var_s(envp[i]));
-	insert(g_envp, new_var_kv(ft_strdup("?"), ft_strdup("0")));
-	shlvl_var = get_var2(g_envp, "SHLVL");
-	shlvl = 0;
-	if (shlvl_var != NULL)
-		if (shlvl_var->value != NULL)
-			shlvl = ft_atoi(shlvl_var->value);
-	shlvl++;
-	set_var2(g_envp, "SHLVL", ft_itoa(shlvl), true);
+		insert(g_config.envp, new_var_s(envp[i]));
+	insert(g_config.envp, new_var_kv(ft_strdup("?"), ft_strdup("0")));
+	var = get_var2(g_config.envp, "SHLVL");
+	value = 0;
+	if (var != NULL)
+		if (var->value != NULL)
+			value = ft_atoi(var->value);
+	value++;
+	set_var2(g_config.envp, "SHLVL", ft_itoa(value), true);
 	return (0);
 }
 
