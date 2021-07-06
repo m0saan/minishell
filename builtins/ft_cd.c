@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 18:40:36 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/04 18:40:38 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/06 21:21:52 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int	ft_cd(int ac, char **av)
 	set_var2(g_config.envp, "OLDPWD", get_var(g_config.envp, "PWD"), true);
 	getcwd(pwd, 1024);
 	set_var2(g_config.envp, "PWD", pwd, true);
-//	if (g_config.prompt)
-//		free(g_config.prompt);
-	//g_config.prompt = strjoin_s(pwd, " _$ ", false);
+	if (g_config.prompt)
+		free(g_config.prompt);
+	g_config.prompt = strjoin_s(pwd, " _$ ", false);
 	return (0);
 }

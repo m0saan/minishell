@@ -65,9 +65,7 @@ int		parse_and_execute(t_lexer *lexer)
 	ast_node = parse_command(ast_node, p);
 	if (ast_node == NULL)
 		return (1);
-	//t_vector *v = fill_out_vector_with_commands(ast_node);
 	run_cmds((t_vector *) fill_out_vector_with_commands(ast_node));
-	//(v, &delete_cmd);
 	free_syntax_tree(ast_node);
 	free(p);
 	return (0);
@@ -91,7 +89,7 @@ char	*get_line(void)
 {
 	char	*line_read;
 
-	line_read = readline ("g_config.prompt$ ");
+	line_read = readline (g_config.prompt);
 	if (line_read && *line_read)
 		add_history (line_read);
 	return (line_read);
@@ -108,12 +106,9 @@ int		main(int ac, char **av, char **env)
 	code = 0;
 	g_config.is_forked = false;
 	fill_envp(env);
-	//
-	//g_config.envp = new_vector();
-	// g_config.prompt = strjoin_s(get_var(g_config.envp, "PWD"), " _$ ", false);
+	g_config.prompt = strjoin_s(get_var(g_config.envp, "PWD"), " _$ ", false);
 	signal(SIGQUIT, signal_handler_parent);
 	signal(SIGINT, signal_handler_parent);
-	// g_config.x_malloc_vec = new_vector();
 	line = NULL;
 	while (true)
 	{
@@ -135,7 +130,7 @@ int		main(int ac, char **av, char **env)
 			free (line);
 		free(lexer);
 	}
-	//code = atoi(get_var(g_config.envp, "?"));
+	code = atoi(get_var(g_config.envp, "?"));
 	// TODO: free env
 	return (code);
 }
