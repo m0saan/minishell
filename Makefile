@@ -6,7 +6,7 @@
 #    By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/04 19:30:39 by ehakam            #+#    #+#              #
-#    Updated: 2021/07/06 20:35:03 by ehakam           ###   ########.fr        #
+#    Updated: 2021/07/06 20:59:28 by ehakam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,7 @@ CC			=	gcc
 CFLAG		=	-Wall -Wextra -Werror
 LIB			=	"-lreadline"
 LDFLAGS		=	"-L/goinfre/$(USER)/.brew/opt/readline/lib"
-CFLAGS		=	"-I/goinfre/$(USER)/.brew/opt/readline/include"
-# LDFLAGS		=	# /usr/local/opt/readline/lib
-# CPPFLAGS		=	# /usr/local/opt/readline/include/readline
+CPPFLAGS	=	"-I/goinfre/$(USER)/.brew/opt/readline/include"
 
 SRC_LEXER	=	lexer/envirement_vars_utils.c \
 				lexer/lexer.c \
