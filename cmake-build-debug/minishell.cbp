@@ -107,9 +107,6 @@
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/errors/error.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/__X_malloc.c">
-			<Option target="MINISHELL"/>
-		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_atoi.c">
 			<Option target="MINISHELL"/>
 		</Unit>
@@ -132,6 +129,9 @@
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_itoa.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_malloc.c">
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_memset.c">

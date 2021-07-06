@@ -97,19 +97,6 @@ CMakeFiles/MINISHELL.dir/errors/error.c.o
  /Users/moboustt/Desktop/1337/minishell/include/minishell.h
  /Users/moboustt/Desktop/1337/minishell/include/node.h
  /Users/moboustt/Desktop/1337/minishell/include/parser.h
-CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o
- /Users/moboustt/Desktop/1337/minishell/global_utils/__X_malloc.c
- /Users/moboustt/Desktop/1337/minishell/include/error.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_globals.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_variables.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
- /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
- /Users/moboustt/Desktop/1337/minishell/include/lexer.h
- /Users/moboustt/Desktop/1337/minishell/include/minishell.h
- /Users/moboustt/Desktop/1337/minishell/include/node.h
- /Users/moboustt/Desktop/1337/minishell/include/parser.h
 CMakeFiles/MINISHELL.dir/global_utils/ft_atoi.c.o
  /Users/moboustt/Desktop/1337/minishell/global_utils/ft_atoi.c
  /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
@@ -158,6 +145,10 @@ CMakeFiles/MINISHELL.dir/global_utils/ft_is.c.o
  /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
 CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.o
  /Users/moboustt/Desktop/1337/minishell/global_utils/ft_itoa.c
+ /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
+ /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
+CMakeFiles/MINISHELL.dir/global_utils/ft_malloc.c.o
+ /Users/moboustt/Desktop/1337/minishell/global_utils/ft_malloc.c
  /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
  /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
 CMakeFiles/MINISHELL.dir/global_utils/ft_memset.c.o

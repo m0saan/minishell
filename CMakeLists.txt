@@ -56,7 +56,7 @@ add_executable(MINISHELL ./lexer/env_vars_helper_funcs.c
         ./main/ft_paths.c
         ./main/ft_pipes.c
         ./main/minishell.c
-        global_utils/__X_malloc.c)
+        global_utils/ft_malloc.c)
 
 set(GCC_COVERAGE_COMPILE_FLAGS "-Wall -Wextra -O0 -fsanitize=address -g3 -l readline -L /Users/moboustt/.brew/opt/readline/lib/ -I /Users/moboustt/.brew/opt/readline/include/")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}")

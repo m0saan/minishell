@@ -385,33 +385,6 @@ errors/error.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/errors/error.c.s
 .PHONY : errors/error.c.s
 
-global_utils/__X_malloc.o: global_utils/__X_malloc.c.o
-
-.PHONY : global_utils/__X_malloc.o
-
-# target to build an object file
-global_utils/__X_malloc.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o
-.PHONY : global_utils/__X_malloc.c.o
-
-global_utils/__X_malloc.i: global_utils/__X_malloc.c.i
-
-.PHONY : global_utils/__X_malloc.i
-
-# target to preprocess a source file
-global_utils/__X_malloc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.i
-.PHONY : global_utils/__X_malloc.c.i
-
-global_utils/__X_malloc.s: global_utils/__X_malloc.c.s
-
-.PHONY : global_utils/__X_malloc.s
-
-# target to generate assembly for a file
-global_utils/__X_malloc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.s
-.PHONY : global_utils/__X_malloc.c.s
-
 global_utils/ft_atoi.o: global_utils/ft_atoi.c.o
 
 .PHONY : global_utils/ft_atoi.o
@@ -627,6 +600,33 @@ global_utils/ft_itoa.s: global_utils/ft_itoa.c.s
 global_utils/ft_itoa.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_itoa.c.s
 .PHONY : global_utils/ft_itoa.c.s
+
+global_utils/ft_malloc.o: global_utils/ft_malloc.c.o
+
+.PHONY : global_utils/ft_malloc.o
+
+# target to build an object file
+global_utils/ft_malloc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_malloc.c.o
+.PHONY : global_utils/ft_malloc.c.o
+
+global_utils/ft_malloc.i: global_utils/ft_malloc.c.i
+
+.PHONY : global_utils/ft_malloc.i
+
+# target to preprocess a source file
+global_utils/ft_malloc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_malloc.c.i
+.PHONY : global_utils/ft_malloc.c.i
+
+global_utils/ft_malloc.s: global_utils/ft_malloc.c.s
+
+.PHONY : global_utils/ft_malloc.s
+
+# target to generate assembly for a file
+global_utils/ft_malloc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_malloc.c.s
+.PHONY : global_utils/ft_malloc.c.s
 
 global_utils/ft_memset.o: global_utils/ft_memset.c.o
 
@@ -1663,9 +1663,6 @@ help:
 	@echo "... errors/error.o"
 	@echo "... errors/error.i"
 	@echo "... errors/error.s"
-	@echo "... global_utils/__X_malloc.o"
-	@echo "... global_utils/__X_malloc.i"
-	@echo "... global_utils/__X_malloc.s"
 	@echo "... global_utils/ft_atoi.o"
 	@echo "... global_utils/ft_atoi.i"
 	@echo "... global_utils/ft_atoi.s"
@@ -1690,6 +1687,9 @@ help:
 	@echo "... global_utils/ft_itoa.o"
 	@echo "... global_utils/ft_itoa.i"
 	@echo "... global_utils/ft_itoa.s"
+	@echo "... global_utils/ft_malloc.o"
+	@echo "... global_utils/ft_malloc.i"
+	@echo "... global_utils/ft_malloc.s"
 	@echo "... global_utils/ft_memset.o"
 	@echo "... global_utils/ft_memset.i"
 	@echo "... global_utils/ft_memset.s"

@@ -778,18 +778,18 @@ CMakeFiles/MINISHELL.dir/main/minishell.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/main/minishell.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/main/minishell.c -o CMakeFiles/MINISHELL.dir/main/minishell.c.s
 
-CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o: CMakeFiles/MINISHELL.dir/flags.make
-CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o: ../global_utils/__X_malloc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o -c /Users/moboustt/Desktop/1337/minishell/global_utils/__X_malloc.c
+CMakeFiles/MINISHELL.dir/global_utils/ft_malloc.c.o: CMakeFiles/MINISHELL.dir/flags.make
+CMakeFiles/MINISHELL.dir/global_utils/ft_malloc.c.o: ../global_utils/ft_malloc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/MINISHELL.dir/global_utils/ft_malloc.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MINISHELL.dir/global_utils/ft_malloc.c.o -c /Users/moboustt/Desktop/1337/minishell/global_utils/ft_malloc.c
 
-CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/global_utils/__X_malloc.c > CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.i
+CMakeFiles/MINISHELL.dir/global_utils/ft_malloc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MINISHELL.dir/global_utils/ft_malloc.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/moboustt/Desktop/1337/minishell/global_utils/ft_malloc.c > CMakeFiles/MINISHELL.dir/global_utils/ft_malloc.c.i
 
-CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/global_utils/__X_malloc.c -o CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.s
+CMakeFiles/MINISHELL.dir/global_utils/ft_malloc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MINISHELL.dir/global_utils/ft_malloc.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/moboustt/Desktop/1337/minishell/global_utils/ft_malloc.c -o CMakeFiles/MINISHELL.dir/global_utils/ft_malloc.c.s
 
 # Object files for target MINISHELL
 MINISHELL_OBJECTS = \
@@ -847,7 +847,7 @@ MINISHELL_OBJECTS = \
 "CMakeFiles/MINISHELL.dir/main/ft_paths.c.o" \
 "CMakeFiles/MINISHELL.dir/main/ft_pipes.c.o" \
 "CMakeFiles/MINISHELL.dir/main/minishell.c.o" \
-"CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o"
+"CMakeFiles/MINISHELL.dir/global_utils/ft_malloc.c.o"
 
 # External object files for target MINISHELL
 MINISHELL_EXTERNAL_OBJECTS =
@@ -906,7 +906,7 @@ MINISHELL: CMakeFiles/MINISHELL.dir/main/ft_execve.c.o
 MINISHELL: CMakeFiles/MINISHELL.dir/main/ft_paths.c.o
 MINISHELL: CMakeFiles/MINISHELL.dir/main/ft_pipes.c.o
 MINISHELL: CMakeFiles/MINISHELL.dir/main/minishell.c.o
-MINISHELL: CMakeFiles/MINISHELL.dir/global_utils/__X_malloc.c.o
+MINISHELL: CMakeFiles/MINISHELL.dir/global_utils/ft_malloc.c.o
 MINISHELL: CMakeFiles/MINISHELL.dir/build.make
 MINISHELL: CMakeFiles/MINISHELL.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Linking C executable MINISHELL"
