@@ -32,7 +32,9 @@ t_error	*catch_errors(t_parser *p, t_error *error)
 void	replace_token(t_parser *p)
 {
 	if (p->cur_token->type == TILDE) {
-		p->cur_token->literal = get_var(g_config.envp, "HOME");
+		char *tmp = get_var(g_config.envp, "HOME");
+		dprintf(2, "%s\n", tmp);
+		p->cur_token->literal = tmp;
 	}
 }
 
