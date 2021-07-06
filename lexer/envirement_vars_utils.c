@@ -1,6 +1,7 @@
 #include "../include/lexer.h"
 #include "../include/minishell.h"
 
+extern t_minishell g_config;
 
 size_t	get_env_var_last_index(t_lexer *l)
 {

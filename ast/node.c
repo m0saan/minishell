@@ -30,7 +30,10 @@ void	set_node_val_str(t_node *node, char *val, t_token_type type)
 {
 	node->val_type = type;
 	if (!val)
+	{
 		node->val = NULL;
+		free(val);
+	}
 	else
 		node->val = val;
 }

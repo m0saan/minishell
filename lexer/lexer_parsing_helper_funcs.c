@@ -45,13 +45,15 @@ void	read_single_quoted(t_lexer *l, char quote, char **s, int *index)
 	next_char(l);
 	while (l->ch != quote)
 	{
-		(*s)[(*index)++] = l->ch;
+		*index += 1;
+		*s = strjoin_c(*s, l->ch, true);
+		//(*s)[(*index)++] = l->ch;
 		next_char(l);
 	}
 	next_char(l);
 }
 
-char	*parse_quoted(t_lexer *l, char quote, 	int	i, int s_index)
+char	*parse_quoted(t_lexer *l, char quote, int i, int s_index)
 {
 	char	*s;
 	int		*infos;
@@ -63,7 +65,7 @@ char	*parse_quoted(t_lexer *l, char quote, 	int	i, int s_index)
 			handle_double_quotes(l, &s, &i, &s_index);
 		else if (l->ch == '\'')
 			handle_single_quote(l, &s, &i, &s_index);
-		else if (ft_isalnum(l->ch))
+		else if (ft_isalnum(l->ch) || has_char(l->ch))
 			handle_alphanum_identifier(l, &s, &i, &s_index);
 		if (is_quote(l))
 		{

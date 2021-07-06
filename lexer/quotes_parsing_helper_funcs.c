@@ -21,8 +21,8 @@ void	handle_single_quote(t_lexer *l, char **s, int *i, int *s_index)
 
 void	init_parse_quoted_vars(t_lexer *l, char quote, char **s, int **infos)
 {
-	(*s) = malloc(1024);
-	ft_bzero((*s), 1024);
+	(*s) = malloc(2024);
+	ft_bzero((*s), 2024);
 	(*infos) = has_next_quote(l, quote);
 }
 
@@ -41,16 +41,16 @@ void	handle_alphanum_identifier(t_lexer *l, char **s, int *i, int *s_index)
 
 void	handle_evn_vars_with_no_quotes(t_lexer *l, char **s, int *i)
 {
-	char	*env_name;
+	char	*env_value;
 
 	if (ft_isdigit(l->ch))
 	{
 		next_char(l);
 		return ;
 	}
-	env_name = get_env_value(l);
-	if (env_name == NULL)
+	env_value = get_env_value(l);
+	if (env_value == NULL)
 		return ;
-	(*s) = strcat((*s), env_name);
-	(*i) += (int) ft_strlen(env_name);
+	(*s) = strjoin_s(*s, env_value, true);
+	(*i) += (int) ft_strlen(env_value);
 }

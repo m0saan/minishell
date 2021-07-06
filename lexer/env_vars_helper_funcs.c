@@ -1,6 +1,8 @@
 #include "../include/lexer.h"
 #include "../include/minishell.h"
 
+extern t_minishell g_config;
+
 void	parse_and_get_env_value(char *str, char *env_name,
 			int *i, char **env_value)
 {

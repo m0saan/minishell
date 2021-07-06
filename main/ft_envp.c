@@ -14,11 +14,14 @@
 #include "../include/error.h"
 #include "../include/minishell.h"
 
+extern t_minishell g_config;
+
 int		fill_envp(char **envp)
 {
 	int		i;
 	int		value;
 	t_var	*var;
+	char 	*value_str;
 
 	i = -1;
 	if (!envp)
@@ -33,7 +36,9 @@ int		fill_envp(char **envp)
 		if (var->value != NULL)
 			value = ft_atoi(var->value);
 	value++;
-	set_var2(g_config.envp, "SHLVL", ft_itoa(value), true);
+	value_str = ft_itoa(value);
+	set_var2(g_config.envp, "SHLVL", value_str, true);
+	free(value_str);
 	return (0);
 }
 

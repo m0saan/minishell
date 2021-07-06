@@ -14,8 +14,10 @@ NAME		=	minishell
 CC			=	gcc
 CFLAG		=	"-Wall -Wextra -Werror"
 LIB			=	"-lreadline"
-LDFLAGS		=	"-L/goinfre/moboustt/.brew/opt/readline/lib"
-CFLAGS		=	"-I/goinfre/moboustt/.brew/opt/readline/include"
+#LDFLAGS		=	"-L/goinfre/moboustt/.brew/opt/readline/lib"
+#CFLAGS		=	"-I/goinfre/moboustt/.brew/opt/readline/include"
+LDFLAGS		=	# /usr/local/opt/readline/lib
+CFLAGS		=	# /usr/local/opt/readline/include/readline
 
 SRC_LEXER	=	lexer/envirement_vars_utils.c \
 				lexer/lexer.c \
@@ -87,7 +89,7 @@ all: $(NAME)
 $(NAME): $(SRCS)
 	@echo "Building..."
 	@echo "TODO: DON'T FORGET TO ADD CFLAGS"
-	@gcc $(LIB) $(LDFLAGS) $(CFLAGS) $(SRCS) -o $(NAME) -g3
+	@gcc $(LIB) $(LDFLAGS) $(CFLAGS) $(SRCS) -o $(NAME)
 
 clean:
 	@echo "Cleaning"

@@ -1,6 +1,8 @@
 #include "../include/minishell.h"
 #include "../include/parser.h"
 
+extern t_minishell g_config;
+
 t_error	*catch_errors(t_parser *p, t_error *error)
 {
 	if (p->cur_token->type == ILLEGAL || p->peek_token->type == ILLEGAL)
@@ -62,6 +64,7 @@ t_node	*parse_command(t_node *ast_node, t_parser *p)
 	free(error);
 	free(p->cur_token);
 	free(p->peek_token);
+
 	return (ast_node);
 }
 

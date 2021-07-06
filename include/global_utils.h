@@ -18,8 +18,8 @@
 # include <stdlib.h>
 # include "ft_types.h"
 
-# define MAXVAL 9223372036854775807
-# define MINVAL 9223372036854775808
+# define MAXVAL 9223372036854775807L
+# define MINVAL 9223372036854775807L
 
 //#define new(X) my_malloc( X, __FILE__, __LINE__, __FUNCTION__)
 

@@ -12,6 +12,8 @@
 
 #include "../include/minishell.h"
 
+extern t_minishell g_config;
+
 t_bool		is_builtin(char *cmd)
 {
 	return (ft_strcmp(cmd, "echo") == 0 || ft_strcmp(cmd, "export") == 0
@@ -39,12 +41,14 @@ int			ft_exec_builtin(t_cmd *cmd)
 	return (0);
 }
 
-int			ft_find_and_exec(t_cmd *cmd, char **envp)
+int ft_find_and_exec(t_cmd *cmd)
 {
 	t_vector	*paths;
+	char 		**envp;
 	int			i;
 
 	i = -1;
+	envp = extract_envp(g_config.envp);
 	paths = get_paths(get_var(g_config.envp, "PATH"), cmd->argv[0]);
 	while (++i < (int)paths->size)
 	{
@@ -54,27 +58,28 @@ int			ft_find_and_exec(t_cmd *cmd, char **envp)
 	}
 	delete_free(paths, &free);
 	handle_errors(cmd, false, errno);
+	free(envp);
 	return (1);
 }
 
-int			ft_exec_path(t_cmd *cmd, char **envp)
+int ft_exec_path(t_cmd *cmd)
 {
+	char 	**envp;
+
+	envp = extract_envp(g_config.envp);
 	execve(cmd->argv[0], cmd->argv, envp);
 	handle_errors(cmd, true, errno);
+	free(envp);
 	return (1);
 }
 
 int			exec_cmd(t_cmd *cmd)
 {
-	char	**env;
-
-	env = extract_envp(g_config.envp);
 	if (cmd->count > 0 && is_builtin(cmd->argv[0]))
 		return (ft_exec_builtin(cmd));
 	else if (cmd->count > 0 && is_path(cmd->argv[0]))
-		return (ft_exec_path(cmd, env));
+		return (ft_exec_path(cmd));
 	else if (cmd->count > 0)
-		return (ft_find_and_exec(cmd, env));
-	free(env);
+		return (ft_find_and_exec(cmd));
 	return (0);
 }

@@ -55,16 +55,20 @@ int	open_heredoc(char *delim)
 	{
 		if (get_next_line(&buffer) <= 0)
 			break ;
-		if (strcmp(delim, buffer) == 0)
+		if (ft_strcmp(delim, buffer) == 0)
 		{
 			exit_by_delim = true;
 			break ;
 		}
-		buffer = replace_var(buffer);
-		write(fd, buffer, strlen(buffer));
+		if (buffer && buffer[0] && index_of_c(buffer, '$') != -1)
+			buffer = replace_var(buffer);
+		write(fd, buffer, ft_strlen(buffer));
 		write(fd, "\n", 1);
 		write(2, "> ", 2);
+		free(buffer);
 	}
+	if (buffer)
+		free(buffer);
 	close(fd);
 	if (!exit_by_delim)
 		p_error("warning", "here-document delimited by end-of-file wanted",

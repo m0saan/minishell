@@ -35,7 +35,8 @@ typedef enum e_val_type
 	END_O_F,
 	SEMICOLON,
 	TILDE,
-	EXIT_STATUS
+	EXIT_STATUS,
+	NEW_LINE,
 }			t_type;
 typedef enum e_val_type	t_token_type;
 

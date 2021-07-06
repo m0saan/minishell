@@ -1,13 +1,25 @@
 #include "../include/minishell.h"
 
+ t_minishell g_config;
+
 void free_syntax_tree(t_node *ast_node);
 
 void	update_status_code(int code)
 {
+	char 	*code_str;
+
 	if (code >= 0)
-		set_var2(g_config.envp, "?", ft_itoa(code), false);
+	{
+		code_str = ft_itoa(code);
+		set_var2(g_config.envp, "?", code_str, false);
+	}
 	else
-		set_var2(g_config.envp, "?", ft_itoa(WEXITSTATUS(g_config.status)), false);
+	{
+		code_str = ft_itoa(WEXITSTATUS(g_config.status));
+		set_var2(g_config.envp, "?", code_str, false);
+	}
+	if (code_str)
+		free(code_str);
 }
 
 void	signal_handler_parent(int sig)
@@ -33,7 +45,7 @@ void	signal_handler_parent(int sig)
 		update_status_code(1);
 		write(1, "\n", 1);
 		rl_on_new_line();
-		rl_replace_line("", 1);
+		//rl_replace_line("", 1);
 		rl_redisplay();
 	}
 }
@@ -53,12 +65,11 @@ int		parse_and_execute(t_lexer *lexer)
 	ast_node = parse_command(ast_node, p);
 	if (ast_node == NULL)
 		return (1);
-	t_vector *v = fill_out_vector_with_commands(ast_node);
-	// run_cmds((t_vector *) fill_out_vector_with_commands(ast_node));
-	delete_free(v, &delete_cmd);
+	//t_vector *v = fill_out_vector_with_commands(ast_node);
+	run_cmds((t_vector *) fill_out_vector_with_commands(ast_node));
+	//(v, &delete_cmd);
 	free_syntax_tree(ast_node);
 	free(p);
-
 	return (0);
 }
 
@@ -94,10 +105,11 @@ int		main(int ac, char **av, char **env)
 
 	ac = 0;
 	av = NULL;
+	code = 0;
 	g_config.is_forked = false;
-	// fill_envp(env);
+	fill_envp(env);
 	//
-	g_config.envp = new_vector();
+	//g_config.envp = new_vector();
 	// g_config.prompt = strjoin_s(get_var(g_config.envp, "PWD"), " _$ ", false);
 	signal(SIGQUIT, signal_handler_parent);
 	signal(SIGINT, signal_handler_parent);
@@ -123,7 +135,7 @@ int		main(int ac, char **av, char **env)
 			free (line);
 		free(lexer);
 	}
-	code = atoi(get_var(g_config.envp, "?"));
+	//code = atoi(get_var(g_config.envp, "?"));
 	// TODO: free env
 	return (code);
 }

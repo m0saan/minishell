@@ -14,6 +14,8 @@
 #include "../include/ft_variables.h"
 #include "../include/minishell.h"
 
+extern t_minishell g_config;
+
 static int	print_var(t_var *var)
 {
 	int	i;

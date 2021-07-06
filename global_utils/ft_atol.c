@@ -32,7 +32,7 @@ long long	ft_atol_err(char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		r = r * 10 + (str[i++] - '0');
-		if ((n == 1 && r > MAXVAL) || (n == -1 && r > MAXVAL))
+		if ((n == 1 && r > MAXVAL) || (n == -1 && r > MINVAL))
 			exit(p_error("exit", str, err_msg, (unsigned char)(r * n)));
 	}
 	while (str[i] > 0 && str[i] < 33 && str[i] != 27)

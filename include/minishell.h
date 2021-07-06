@@ -52,7 +52,7 @@ typedef	struct s_minishell
 	t_vector		*x_malloc_vec;
 }				t_minishell;
 
-t_minishell g_config;
+extern t_minishell g_config;
 
 int			exec_cmd(t_cmd *cmd);
 t_bool		is_builtin(char *cmd);

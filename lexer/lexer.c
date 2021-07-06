@@ -61,10 +61,11 @@ void	read_and_parse_double_quoted(t_lexer *l, char **s, int *index)
 				continue ;
 			*s = strjoin_s(*s, env_value, true);
 			(*index) += (int) ft_strlen(env_value);
-			free(env_value);
 			continue ;
 		}
-		(*s)[(*index)++] = l->ch;
+		*index += 1;
+		*s = strjoin_c(*s, l->ch, true);
+		// (*s)[*index] = l->ch;
 		next_char(l);
 	}
 	next_char(l);

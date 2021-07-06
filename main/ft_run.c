@@ -13,6 +13,8 @@
 #include "../include/global_utils.h"
 #include "../include/minishell.h"
 
+extern t_minishell g_config;
+
 int		run_cmd_parent(t_cmd *cmd)
 {
 	int	sout;
