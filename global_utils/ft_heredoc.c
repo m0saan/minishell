@@ -13,7 +13,7 @@
 #include "../include/global_utils.h"
 #include "../include/minishell.h"
 
-char*replace_var(char *buffer)
+char	*replace_var(char *buffer)
 {
 	char	*new_buff;
 	t_bool	is_var;
@@ -41,15 +41,12 @@ char*replace_var(char *buffer)
 	return (new_buff);
 }
 
-int	open_heredoc(char *delim)
+t_bool	read_write(int fd, char *delim)
 {
-	int		fd;
-	char	*buffer;
+	char 	*buffer;
 	t_bool	exit_by_delim;
 
 	exit_by_delim = false;
-	fd = open("/tmp/.HEREDOC", O_CREAT | O_TRUNC | O_RDWR,
-				S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 	write(2, "> ", 2);
 	while (true)
 	{
@@ -69,6 +66,19 @@ int	open_heredoc(char *delim)
 	}
 	if (buffer)
 		free(buffer);
+	return (exit_by_delim);
+}
+
+int	open_heredoc(char *delim)
+{
+	int		fd;
+	t_bool	exit_by_delim;
+
+	fd = open("/tmp/.HEREDOC", O_CREAT | O_TRUNC | O_RDWR,
+				S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+	if (fd < 0)
+		exit(p_error("/tmp/.HEREDOC", NULL, NULL, 1));
+	exit_by_delim = read_write(fd, delim);
 	close(fd);
 	if (!exit_by_delim)
 		p_error("warning", "here-document delimited by end-of-file wanted",

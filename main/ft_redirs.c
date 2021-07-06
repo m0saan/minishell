@@ -96,7 +96,6 @@ void	delete_redir(void *redir)
 		free(r->arg);
 		r->arg = NULL;
 	}
-	dprintf(2, "FREED REDIR\n");
 	free(r);
 	r = NULL;
 }

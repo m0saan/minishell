@@ -45,14 +45,14 @@ int handle_special(char **new_buf, char *buf, int idx, int start)
 	start = 0;
 	buf = NULL;
 	*new_buf = strjoin_s(*new_buf, get_var(g_config.envp, "?"), true);
-	return (idx);
+	return (++idx);
 }
 
 int	handle_var(char **new_buf, char *buf, int idx, int start)
 {
 	if (ft_isdigit(buf[idx]))
 	{
-		idx = handle_alpha(new_buf, buf, idx, start);
+		idx = handle_digit(new_buf, buf, idx, start);
 	}
 	else if (ft_isalpha(buf[idx]) || buf[idx] == '_')
 	{
