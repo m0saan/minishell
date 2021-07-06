@@ -34,6 +34,7 @@ char	*read_identifier(t_lexer *l, int i)
 			handle_evn_vars_with_no_quotes(l, &s, &i);
 			continue ;
 		}
+		//s = strjoin_c(s, l->ch, true);
 		s[i++] = l->ch;
 		next_char(l);
 	}
