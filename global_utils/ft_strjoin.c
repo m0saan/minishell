@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 18:54:03 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/04 18:54:25 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/06 20:33:09 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*strjoin_s(char *s, char *s2, t_bool free_)
 		i += ft_strlen(s);
 	if (s2)
 		i += ft_strlen(s2);
-	str = (char *)malloc(i + 1);
+	str = (char *)ft_malloc(i + 1);
 	i = 0;
 	j = 0;
 	while (s && s[i])
@@ -47,7 +47,7 @@ char	*strjoin_c(char *s, char c, t_bool free_)
 	i = 0;
 	if (s)
 		i += ft_strlen(s);
-	str = (char *)malloc(i + 2);
+	str = (char *)ft_malloc(i + 2);
 	i = 0;
 	while (s && s[i])
 	{

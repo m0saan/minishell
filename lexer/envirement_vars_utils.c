@@ -19,7 +19,7 @@ char	*get_env_value(t_lexer *l)
 	char	*env_name;
 	size_t	start;
 
-	env_name = malloc(1024);
+	env_name = ft_malloc(1024);
 	ft_bzero(env_name, 1024);
 	start = get_env_var_last_index(l);
 	slice_str(l->input, env_name, start, l->position);
@@ -46,7 +46,7 @@ char	*handle_env_variables(t_string str, int i, int k)
 	char	*env_value;
 	char	env_name[100];
 
-	tmp = malloc(1204 * sizeof(char));
+	tmp = ft_malloc(1204 * sizeof(char));
 	ft_memset(tmp, 0, 256);
 	while (str[++i] != 0 && i < (int) ft_strlen(str))
 	{

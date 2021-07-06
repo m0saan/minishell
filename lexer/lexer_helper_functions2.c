@@ -15,7 +15,7 @@ int	*has_next_quote(t_lexer *l, char quote)
 
 	las_quote_index = 0;
 	n_of_quotes = 0;
-	res = malloc(2 * sizeof(int));
+	res = ft_malloc(2 * sizeof(int));
 	i = l->position;
 	while (i < l->len)
 	{

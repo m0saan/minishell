@@ -2,7 +2,7 @@
 
 t_redir *create_redir(t_type type, char *arg)
 {
-	t_redir *r = malloc(sizeof(t_redir));
+	t_redir *r = ft_malloc(sizeof(t_redir));
 	r->arg = arg;
 	r->type = type;
 	return (r);
@@ -46,7 +46,7 @@ t_error	*check_first_token(t_parser *p)
 	t_error			*error;
 	int				i;
 
-	error = malloc(sizeof(t_error));
+	error = ft_malloc(sizeof(t_error));
 	ft_memset(error, 0, sizeof(t_error));
 	i = -1;
 	while (++i < 7)

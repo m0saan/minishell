@@ -42,7 +42,7 @@ t_node	*parse_command(t_node *ast_node, t_parser *p)
 	t_node	*arg;
 
 	ast_node = new_node(NODE_COMMAND);
-	error = malloc(sizeof(t_error));
+	error = ft_malloc(sizeof(t_error));
 	ft_memset(error, 0, sizeof(t_error));
 	while (p->cur_token->type != END_O_F)
 	{

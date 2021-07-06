@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 17:13:38 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/04 20:39:53 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/06 20:33:22 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_var	*new_var_v(char *key, char *value, char *raw)
 {
 	t_var	*var;
 
-	var = (t_var *)malloc(sizeof(t_var));
+	var = (t_var *)ft_malloc(sizeof(t_var));
 	var->key = key;
 	var->value = value;
 	var->raw = raw;
@@ -31,8 +31,8 @@ t_var	*new_var_kv(char *key, char *value)
 	int		j;
 	t_var	*var;
 
-	var = (t_var *)malloc(sizeof(t_var));
-	var->raw = (char *)malloc((strlen(key) + strlen(value) + 2) * sizeof(char));
+	var = (t_var *)ft_malloc(sizeof(t_var));
+	var->raw = (char *)ft_malloc((strlen(key) + strlen(value) + 2) * sizeof(char));
 	bzero(var->raw, (strlen(key) + strlen(value) + 2));
 	var->key = key;
 	var->value = value;

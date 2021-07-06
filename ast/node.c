@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 19:50:44 by moboustt          #+#    #+#             */
-/*   Updated: 2021/07/04 18:40:16 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/06 20:32:11 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_node	*new_node(enum e_node_type type)
 {
 	t_node	*node;
 
-	node = malloc(sizeof(t_node));
+	node = ft_malloc(sizeof(t_node));
 	if (!node)
 		return (NULL);
 	ft_memset(node, 0, sizeof(t_node));

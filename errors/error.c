@@ -5,7 +5,7 @@ t_error	*create_error(void)
 {
 	t_error	*error;
 
-	error = malloc(sizeof(t_error));
+	error = ft_malloc(sizeof(t_error));
 	ft_memset(error, 0, sizeof(t_error));
 	return (error);
 }

@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 20:11:23 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/04 20:19:20 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/06 20:34:18 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	**extract_envp(t_vector *g_env)
 
 	i = -1;
 	j = 0;
-	envp = (char **)malloc((g_env->size + 1) * sizeof(char *));
+	envp = (char **)ft_malloc((g_env->size + 1) * sizeof(char *));
 	while (++i < (int) g_env->size)
 	{
 		var = (t_var *)at(g_env, i);
