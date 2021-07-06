@@ -6,18 +6,18 @@
 #    By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/04 19:30:39 by ehakam            #+#    #+#              #
-#    Updated: 2021/07/04 20:28:01 by ehakam           ###   ########.fr        #
+#    Updated: 2021/07/06 20:35:03 by ehakam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	minishell
 CC			=	gcc
-CFLAG		=	"-Wall -Wextra -Werror"
+CFLAG		=	-Wall -Wextra -Werror
 LIB			=	"-lreadline"
-#LDFLAGS		=	"-L/goinfre/moboustt/.brew/opt/readline/lib"
-#CFLAGS		=	"-I/goinfre/moboustt/.brew/opt/readline/include"
-LDFLAGS		=	# /usr/local/opt/readline/lib
-CFLAGS		=	# /usr/local/opt/readline/include/readline
+LDFLAGS		=	"-L/goinfre/$(USER)/.brew/opt/readline/lib"
+CFLAGS		=	"-I/goinfre/$(USER)/.brew/opt/readline/include"
+# LDFLAGS		=	# /usr/local/opt/readline/lib
+# CPPFLAGS		=	# /usr/local/opt/readline/include/readline
 
 SRC_LEXER	=	lexer/envirement_vars_utils.c \
 				lexer/lexer.c \
@@ -57,7 +57,7 @@ SRC_UTILS	=	global_utils/ft_atoi.c \
 				global_utils/ft_variables_3.c \
 				global_utils/ft_variables_4.c \
 				global_utils/gnl.c \
-				global_utils/__X_malloc.c
+				global_utils/ft_malloc.c
 
 SRC_BUILTINS=	builtins/ft_cd.c \
 				builtins/ft_echo.c \
@@ -89,7 +89,7 @@ all: $(NAME)
 $(NAME): $(SRCS)
 	@echo "Building..."
 	@echo "TODO: DON'T FORGET TO ADD CFLAGS"
-	@gcc $(LIB) $(LDFLAGS) $(CFLAGS) $(SRCS) -o $(NAME)
+	@gcc $(CFLAG) $(LIB) $(LDFLAGS) $(CPPFLAGS) $(SRCS) -o $(NAME)
 
 clean:
 	@echo "Cleaning"

@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_malloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/30 20:28:11 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/06 20:33:05 by ehakam           ###   ########.fr       */
+/*   Created: 2021/07/06 20:29:20 by ehakam            #+#    #+#             */
+/*   Updated: 2021/07/06 20:30:42 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/global_utils.h"
 
-char	*ft_strdup(const char *s)
+void	*ft_malloc(size_t size)
 {
-	int		i;
-	int		st;
-	char	*ss;
+	void	*alloc;
 
-	st = ft_strlen(s);
-	ss = (char *)ft_malloc(st + 1);
-	if (!ss)
+	alloc = malloc(size);
+	if (!alloc)
 		exit(1);
-	i = -1;
-	while (s[++i])
-		ss[i] = s[i];
-	ss[i] = '\0';
-	return (ss);
+	return (alloc);
 }
+// void *my_malloc(size_t size, const char *file, int line, const char *func)
+// {
+// 	void *p = malloc(size);
+// 	printf("Allocated = %s, %i, %s, %p[%li]\n", file, line, func, p, size);
+// 	insert(g_config.x_malloc_vec, p);
+// 	return p;
+// }

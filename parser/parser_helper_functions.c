@@ -11,7 +11,7 @@ t_parser	*new_parser(t_lexer *l)
 {
 	t_parser	*p;
 
-	p = malloc(sizeof(t_parser));
+	p = ft_malloc(sizeof(t_parser));
 	p->lexer = l;
 	next_token_p(p);
 	next_token_p(p);

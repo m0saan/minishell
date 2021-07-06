@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 20:07:58 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/04 20:08:28 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/06 20:33:39 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	get_next_line(char **line)
 	char	*buffer;
 	int		ret;
 
-	buffer = (char *)malloc(2);
-	*line = (char *)malloc(1);
+	buffer = (char *)ft_malloc(2);
+	*line = (char *)ft_malloc(1);
 	*line[0] = '\0';
 	ret = 1;
 	while (ret)

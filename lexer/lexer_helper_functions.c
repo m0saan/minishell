@@ -4,7 +4,7 @@ t_lexer	*new_lexer(const char *line, int cmd_length)
 {
 	t_lexer	*lexer;
 
-	lexer = malloc(sizeof(t_lexer));
+	lexer = ft_malloc(sizeof(t_lexer));
 	*lexer = (t_lexer){.input = (char *) line, .len = cmd_length,
 		.read_position = 0, .position = 0,
 		.ch = ' '};

@@ -21,7 +21,7 @@ void	handle_single_quote(t_lexer *l, char **s, int *i, int *s_index)
 
 void	init_parse_quoted_vars(t_lexer *l, char quote, char **s, int **infos)
 {
-	(*s) = malloc(2024);
+	(*s) = ft_malloc(2024);
 	ft_bzero((*s), 2024);
 	(*infos) = has_next_quote(l, quote);
 }

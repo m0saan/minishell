@@ -24,7 +24,7 @@ char	*read_identifier(t_lexer *l, int i)
 {
 	char	*s;
 
-	s = malloc(1024);
+	s = ft_malloc(1024);
 	ft_bzero(s, 1024);
 	while (is_letter(l->ch))
 	{
