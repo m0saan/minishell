@@ -16,12 +16,37 @@
 
 extern t_minishell g_config;
 
-int		fill_envp(char **envp)
+int 	update_shlvl()
 {
-	int		i;
 	int		value;
 	t_var	*var;
 	char 	*value_str;
+
+	var = get_var2(g_config.envp, "SHLVL");
+	value = 0;
+	if (var != NULL)
+		if (var->value != NULL)
+			value = ft_atoi(var->value);
+	value++;
+	if (value == 1000)
+		value_str = ft_strdup("");
+	else if (value > 1000 || value < 0)
+	{
+		if (value == 1001)
+			p_error("warning", NULL,
+					"shell level (1001) too high, resetting to 1", 1);
+		value_str = ft_itoa(1);
+	}
+	else
+		value_str = ft_itoa(value);
+	set_var2(g_config.envp, "SHLVL", value_str, true);
+	free(value_str);
+	return (0);
+}
+
+int		fill_envp(char **envp)
+{
+	int		i;
 
 	i = -1;
 	if (!envp)
@@ -29,16 +54,8 @@ int		fill_envp(char **envp)
 	g_config.envp = new_vector();
 	while (envp[++i] != NULL)
 		insert(g_config.envp, new_var_s(envp[i]));
-	insert(g_config.envp, new_var_kv(ft_strdup("?"), ft_strdup("0")));
-	var = get_var2(g_config.envp, "SHLVL");
-	value = 0;
-	if (var != NULL)
-		if (var->value != NULL)
-			value = ft_atoi(var->value);
-	value++;
-	value_str = ft_itoa(value);
-	set_var2(g_config.envp, "SHLVL", value_str, true);
-	free(value_str);
+	update_status_code(0);
+	update_shlvl();
 	return (0);
 }
 
