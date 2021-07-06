@@ -28,7 +28,8 @@ char	*read_identifier(t_lexer *l, int i)
 	ft_bzero(s, 1024);
 	while (is_letter(l->ch))
 	{
-		if (l->ch == '$' && (ft_isalnum(l->input[l->read_position]) || ft_isspecial(l->input[l->read_position])))
+		if (l->ch == '$' && (ft_isalnum(l->input[l->read_position])
+			|| ft_isspecial(l->input[l->read_position])))
 		{
 			next_char(l);
 			handle_evn_vars_with_no_quotes(l, &s, &i);
@@ -48,7 +49,6 @@ void	read_single_quoted(t_lexer *l, char quote, char **s, int *index)
 	{
 		*index += 1;
 		*s = strjoin_c(*s, l->ch, true);
-		//(*s)[(*index)++] = l->ch;
 		next_char(l);
 	}
 	next_char(l);

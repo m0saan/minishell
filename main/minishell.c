@@ -26,7 +26,6 @@ void	signal_handler_parent(int sig)
 {
 	if (sig == SIGQUIT && g_config.is_forked)
 	{
-		//update_status_code(131);
 		write(2, "Quit: 3\n", 8);
 		rl_on_new_line();
 	}
@@ -38,17 +37,16 @@ void	signal_handler_parent(int sig)
 	
 	if (sig == SIGINT && g_config.is_forked)
 	{
-		//update_status_code(130);
 		write(1, "\n", 1);
 		rl_on_new_line();
 	}
 	if (sig == SIGINT && !g_config.is_forked)
 	{
-		update_status_code(1);
 		write(1, "\n", 1);
-		rl_on_new_line();
 		rl_replace_line("", 1);
+		rl_on_new_line();
 		rl_redisplay();
+		update_status_code(1);
 	}
 }
 

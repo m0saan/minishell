@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 20:05:26 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/06 20:34:24 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/06 21:13:57 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ char		*append_cmd_to_path(char *path, char *cmd)
 	i = 0;
 	j = 0;
 	out = (char *)ft_malloc(len * sizeof(char));
-	if (!out)
-		exit(1);
 	while (path[i])
 		out[j++] = path[i++];
 	out[j++] = '/';

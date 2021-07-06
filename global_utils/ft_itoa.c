@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 17:14:13 by moboustt          #+#    #+#             */
-/*   Updated: 2021/07/06 20:32:53 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/06 21:08:23 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,7 @@ char *ft_itoa_neg(int n)
 	i = 0;
 	sign = -n;
 	n_len = ft_intlen(n);
-	if (!(alloced_mem = ft_malloc(n_len * sizeof(char) + 2)))
-		return (NULL);
+	alloced_mem = ft_malloc(n_len * sizeof(char) + 2);
 	alloced_mem[0] = '-';
 	while (n_len > i)
 	{
@@ -71,8 +70,7 @@ char		*ft_itoa(int n)
 		return (ft_itoa_neg(n));
 	n_len = ft_intlen(n);
 	if (n >= 0)
-		if (!(alloced_mem = ft_malloc(n_len * sizeof(char) + 1)))
-			return (NULL);
+		alloced_mem = ft_malloc(n_len * sizeof(char) + 1);
 	while (n_len > 0)
 	{
 		alloced_mem[n_len - 1] = n % 10 + '0';

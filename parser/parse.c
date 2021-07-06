@@ -64,7 +64,6 @@ t_node	*parse_command(t_node *ast_node, t_parser *p)
 	free(error);
 	free(p->cur_token);
 	free(p->peek_token);
-
 	return (ast_node);
 }
 

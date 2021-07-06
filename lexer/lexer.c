@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 20:48:38 by moboustt          #+#    #+#             */
-/*   Updated: 2021/07/06 20:34:06 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/06 21:13:35 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ void	read_and_parse_double_quoted(t_lexer *l, char **s, int *index)
 		}
 		*index += 1;
 		*s = strjoin_c(*s, l->ch, true);
-		// (*s)[*index] = l->ch;
 		next_char(l);
 	}
 	next_char(l);

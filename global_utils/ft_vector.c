@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:30:30 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/06 20:33:39 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/06 21:12:22 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,7 @@ t_vector	*new_vector_s(t_size init_len)
 	t_vector	*new_vector;
 
 	new_vector = (t_vector *)ft_malloc(sizeof(t_vector));
-	if (!new_vector)
-		exit(1);
 	new_vector->data = (void **)ft_malloc(sizeof(void *) * init_len);
-	if (!new_vector->data)
-		exit(1);
 	new_vector->capacity = init_len;
 	new_vector->size = 0;
 	return (new_vector);

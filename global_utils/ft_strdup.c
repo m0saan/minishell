@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 20:28:11 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/06 20:33:05 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/06 21:10:29 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ char	*ft_strdup(const char *s)
 
 	st = ft_strlen(s);
 	ss = (char *)ft_malloc(st + 1);
-	if (!ss)
-		exit(1);
 	i = -1;
 	while (s[++i])
 		ss[i] = s[i];

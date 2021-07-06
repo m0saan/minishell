@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 20:07:58 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/06 20:33:25 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/06 21:11:30 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	insert(t_vector *this, void *item)
 	{
 		i = -1;
 		new_capacity = this->capacity + this->capacity / 2;
-		old_data = (void **) ft_malloc(sizeof(void *) * new_capacity);
+		old_data = (void **)ft_malloc(sizeof(void *) * new_capacity);
 		while (++i < (int)this->size)
 			old_data[i] = this->data[i];
 		free(this->data);
