@@ -43,7 +43,7 @@ void	signal_handler_parent(int sig)
 	if (sig == SIGINT && !g_config.is_forked)
 	{
 		write(1, "\n", 1);
-		rl_replace_line("", 1);
+		// rl_replace_line("", 1);
 		rl_on_new_line();
 		rl_redisplay();
 		update_status_code(1);
@@ -56,12 +56,20 @@ int		parse_and_execute(t_lexer *lexer)
 	t_error		*err;
 	t_parser	*p;
 
-	ast_node = NULL;
 	p = new_parser(lexer);
 	err = check_first_token(p);
 	if (err->is_error)
+	{
+		if (p->cur_token->literal)
+			free(p->cur_token->literal);
+		if (p->peek_token->literal)
+			free(p->peek_token->literal);
+		free(p->cur_token);
+		free(p->peek_token);
+		free(err);
 		return (p_error(NULL, err->error_msg, p->peek_token->literal, 1));
-	free(err);
+
+	}
 	ast_node = parse_command(ast_node, p);
 	if (ast_node == NULL)
 		return (1);
