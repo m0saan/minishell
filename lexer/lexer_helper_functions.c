@@ -45,7 +45,7 @@ void	next_char(t_lexer *lexer)
 
 enum e_bool	has_char(char c)
 {
-	const char	*buff = "+/\\$!@#$%^&*_-=}{.?:;,";
+	const char	*buff = "+/\\$!@#$%^&*_-=}{.?:;,~";
 	int			i;
 
 	i = -1;

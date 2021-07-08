@@ -1,4 +1,6 @@
 #include "../include/lexer.h"
+#include "../include/ft_variables.h"
+#include "../include/minishell.h"
 
 void	handle_double_quotes(t_lexer *l, char **s, int *i, int *s_index)
 {
@@ -48,9 +50,14 @@ void	handle_evn_vars_with_no_quotes(t_lexer *l, char **s, int *i)
 		next_char(l);
 		return ;
 	}
-	env_value = get_env_value(l);
-	if (env_value == NULL)
-		return ;
+	if (l->ch == '~')
+		env_value = get_var(g_config.envp, "HOME");
+	else
+	{
+		env_value = get_env_value(l);
+		if(env_value == NULL)
+			return;
+	}
 	(*s) = strjoin_s(*s, env_value, true);
 	(*i) += (int) ft_strlen(env_value);
 }

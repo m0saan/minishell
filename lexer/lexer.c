@@ -19,7 +19,7 @@ t_token	*next_token(t_lexer *l)
 	tok = ft_malloc(sizeof(t_token));
 	tok->lexer = l;
 	skip_white_spaces(l);
-	if (l->ch == '~')
+	if (l->ch == '~' && (peek_char(l) == ' ' || peek_char(l) == '/' || peek_char(l) == 0))
 		tok = new_token(TILDE, l->ch, tok);
 	else if (l->ch == '<' || l->ch == '>')
 		tok = handle_right_redir(l, tok);
