@@ -33,8 +33,11 @@ void	replace_token(t_parser *p)
 {
 	if (p->cur_token->type == TILDE) {
 		char *tmp = get_var(g_config.envp, "HOME");
-		dprintf(2, "%s\n", tmp);
-		p->cur_token->literal = tmp;
+		if (p->cur_token->literal != NULL) {
+			p->cur_token->literal = strjoin_s(p->cur_token->literal, tmp,true);
+		}
+		else
+			p->cur_token->literal = ft_strdup(tmp);
 	}
 }
 
