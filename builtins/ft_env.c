@@ -14,7 +14,7 @@
 #include "../include/ft_variables.h"
 #include "../include/minishell.h"
 
-extern t_minishell g_config;
+extern t_minishell	g_config;
 
 static int	print_var2(t_var *var)
 {
@@ -26,7 +26,7 @@ static int	print_var2(t_var *var)
 	return (0);
 }
 
-int ft_env()
+int	ft_env(void)
 {
 	list_vars(g_config.envp, false, print_var2);
 	return (0);

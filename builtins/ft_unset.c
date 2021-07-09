@@ -14,7 +14,7 @@
 #include "../include/ft_variables.h"
 #include "../include/minishell.h"
 
-extern t_minishell g_config;
+extern t_minishell	g_config;
 
 int	ft_unset(int ac, char **av)
 {
