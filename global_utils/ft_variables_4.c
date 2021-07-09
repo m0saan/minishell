@@ -14,7 +14,7 @@
 #include "../include/error.h"
 #include "../include/minishell.h"
 
-int		predicate(void *s1, void *s2)
+int	predicate(void *s1, void *s2)
 {
 	const t_var	*ss1 = (const t_var *)s1;
 	const t_var	*ss2 = (const t_var *)s2;
@@ -40,7 +40,7 @@ t_var	*get_var2(t_vector *env, char *key)
 	return (var);
 }
 
-int		list_vars(t_vector *env, t_bool sort_, int (*print)(t_var *))
+int	list_vars(t_vector *env, t_bool sort_, int (*print)(t_var *))
 {
 	t_vector	*temp_env;
 	t_var		*var;

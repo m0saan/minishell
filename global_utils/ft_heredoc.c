@@ -25,8 +25,8 @@ char	*replace_var(char *buffer)
 	is_var = false;
 	while (buffer[end])
 	{
-		if (buffer[end] == '$' &&
-			(ft_isalnum(buffer[end + 1]) || ft_isspecial(buffer[end + 1])))
+		if (buffer[end] == '$'
+			&& (ft_isalnum(buffer[end + 1]) || ft_isspecial(buffer[end + 1])))
 			is_var = true;
 		if (!is_var && buffer[end] != '\0')
 		{
@@ -43,7 +43,7 @@ char	*replace_var(char *buffer)
 
 t_bool	read_write(int fd, char *delim)
 {
-	char 	*buffer;
+	char	*buffer;
 	t_bool	exit_by_delim;
 
 	exit_by_delim = false;
@@ -75,7 +75,7 @@ int	open_heredoc(char *delim)
 	t_bool	exit_by_delim;
 
 	fd = open("/tmp/.HEREDOC", O_CREAT | O_TRUNC | O_RDWR,
-				S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+			S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 	if (fd < 0)
 		exit(p_error("/tmp/.HEREDOC", NULL, NULL, 1));
 	exit_by_delim = read_write(fd, delim);

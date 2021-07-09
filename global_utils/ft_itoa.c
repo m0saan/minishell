@@ -12,7 +12,7 @@
 
 #include "../include/global_utils.h"
 
-static	int	ft_intlen(long x)
+static int	ft_intlen(long x)
 {
 	if (x < 0)
 		x = -x;
@@ -37,10 +37,10 @@ static	int	ft_intlen(long x)
 	return (1);
 }
 
-char *ft_itoa_neg(int n)
+char	*ft_itoa_neg(int n)
 {
 	int				i;
-	unsigned		sign;
+	unsigned int	sign;
 	int				n_len;
 	char			*alloced_mem;
 
@@ -59,7 +59,7 @@ char *ft_itoa_neg(int n)
 	return ((char *)alloced_mem);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int			i;
 	int			n_len;
@@ -79,5 +79,5 @@ char		*ft_itoa(int n)
 		i++;
 	}
 	alloced_mem[i] = '\0';
-	return (char *)(alloced_mem);
+	return ((char *)(alloced_mem));
 }

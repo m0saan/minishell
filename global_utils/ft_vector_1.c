@@ -12,7 +12,7 @@
 
 #include "../include/ft_vector.h"
 
-int		is_empty(t_vector *this)
+int	is_empty(t_vector *this)
 {
 	if (this == NULL)
 		exit(1);
@@ -77,13 +77,13 @@ void	delete(t_vector *this)
 	this = NULL;
 }
 
-void 	delete_free(t_vector *this, void (*f)(void *))
+void	delete_free(t_vector *this, void (*f)(void *))
 {
 	if (!this)
 		return ;
 	if (this->data != NULL)
 	{
-		while(!is_empty(this))
+		while (!is_empty(this))
 			f(remove_at(this, this->size - 1));
 		free(this->data);
 		this->data = NULL;

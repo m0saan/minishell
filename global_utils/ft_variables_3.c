@@ -14,7 +14,7 @@
 #include "../include/error.h"
 #include "../include/minishell.h"
 
-int		update_var(t_var *existing_var, t_var *new_var)
+int	update_var(t_var *existing_var, t_var *new_var)
 {
 	if (existing_var->value != NULL)
 		free(existing_var->value);
@@ -27,7 +27,7 @@ int		update_var(t_var *existing_var, t_var *new_var)
 	return (0);
 }
 
-int		set_var(t_vector *env, char *var_str)
+int	set_var(t_vector *env, char *var_str)
 {
 	t_var	*var;
 	t_var	*existing_var;
@@ -55,7 +55,7 @@ int		set_var(t_vector *env, char *var_str)
 	return (0);
 }
 
-int		set_var2(t_vector *env, char *key, char *value, t_bool check)
+int	set_var2(t_vector *env, char *key, char *value, t_bool check)
 {
 	t_var	*var;
 	t_var	*existing_var;
@@ -76,7 +76,7 @@ int		set_var2(t_vector *env, char *key, char *value, t_bool check)
 	return (0);
 }
 
-int		unset_var(t_vector *env, char *key)
+int	unset_var(t_vector *env, char *key)
 {
 	int		index;
 	t_var	*deleted_var;

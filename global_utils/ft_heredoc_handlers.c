@@ -12,7 +12,7 @@
 
 #include "../include/minishell.h"
 
-int handle_digit(char **new_buf, char *buf, int idx, int start)
+int	handle_digit(char **new_buf, char *buf, int idx, int start)
 {
 	start = 0;
 	if (buf[idx++] == '0')
@@ -22,9 +22,9 @@ int handle_digit(char **new_buf, char *buf, int idx, int start)
 	return (idx);
 }
 
-int handle_alpha(char **new_buf, char *buf, int idx, int start)
+int	handle_alpha(char **new_buf, char *buf, int idx, int start)
 {
-	char 	*key;
+	char	*key;
 
 	while (ft_isalnum(buf[idx]) || buf[idx] == '_')
 		++idx;
@@ -40,7 +40,7 @@ int handle_alpha(char **new_buf, char *buf, int idx, int start)
 	return (idx);
 }
 
-int handle_special(char **new_buf, char *buf, int idx, int start)
+int	handle_special(char **new_buf, char *buf, int idx, int start)
 {
 	start = 0;
 	buf = NULL;

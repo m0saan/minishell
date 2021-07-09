@@ -32,8 +32,8 @@ t_var	*new_var_kv(char *key, char *value)
 	t_var	*var;
 
 	var = (t_var *)ft_malloc(sizeof(t_var));
-	var->raw = (char *)ft_malloc((strlen(key)
-		+ strlen(value) + 2) * sizeof(char));
+	var->raw = (char *)ft_malloc((strlen(key) + strlen(value) + 2)
+			* sizeof(char));
 	bzero(var->raw, (strlen(key) + strlen(value) + 2));
 	var->key = key;
 	var->value = value;
@@ -76,7 +76,3 @@ void	delete_var(t_var *var)
 		free(var->value);
 	free(var);
 }
-
-
-
-

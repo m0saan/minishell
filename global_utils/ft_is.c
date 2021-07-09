@@ -27,7 +27,7 @@ int	ft_isalnum(int c)
 	return (ft_isalpha(c) || ft_isdigit(c));
 }
 
-int ft_isspecial(int c)
+int	ft_isspecial(int c)
 {
 	return (c == '_' || c == '?');
 }

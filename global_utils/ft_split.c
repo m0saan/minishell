@@ -62,7 +62,7 @@ static char	**fill_out(char *s, char **word, char c)
 	return (word);
 }
 
-char		**ft_split(const char *ss, char c)
+char	**ft_split(const char *ss, char c)
 {
 	char	**word;
 	char	*s;

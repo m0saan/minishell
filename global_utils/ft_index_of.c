@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		index_of_c(char *str, char c)
+int	index_of_c(char *str, char c)
 {
 	int	i;
 
