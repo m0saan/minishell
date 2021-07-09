@@ -56,6 +56,8 @@ int		parse_and_execute(t_lexer *lexer)
 	t_error		*err;
 	t_parser	*p;
 
+    ast_node = NULL;
+	// TODO: fix the following bug -> #echo helo"TTTT""#
 	p = new_parser(lexer);
 	err = check_first_token(p);
 	if (err->is_error)

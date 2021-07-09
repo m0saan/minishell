@@ -45,6 +45,7 @@ void	read_and_parse_double_quoted(t_lexer *l, char **s, int *index)
 {
 	char	*env_value;
 
+	check_quotes_errors(l, l->ch);
 	next_char(l);
 	while (l->ch != '"')
 	{
