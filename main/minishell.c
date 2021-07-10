@@ -2,7 +2,7 @@
 
  t_minishell g_config;
 
-void free_syntax_tree(t_node *ast_node);
+void	free_syntax_tree(t_node *ast_node);
 
 void	update_status_code(int code)
 {
