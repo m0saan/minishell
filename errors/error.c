@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   error.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/10 19:56:18 by ehakam            #+#    #+#             */
+/*   Updated: 2021/07/10 20:17:58 by ehakam           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/error.h"
 #include "../include/minishell.h"
 
@@ -16,8 +28,7 @@ void	set_error(t_error *error, char *msg)
 	error->error_msg = msg;
 }
 
-int		p_error(const char *arg, 
-		const char *arg2, const char *message, int code)
+int	p_error(const char *arg, const char *arg2, const char *message, int code)
 {
 	write(2, "minishell: ", 11);
 	if (arg)
@@ -40,7 +51,7 @@ int		p_error(const char *arg,
 
 void	handle_errors(t_cmd *cmd, t_bool ispath, int errno_)
 {
-	struct stat dir_stat;
+	struct stat	dir_stat;
 
 	if (ispath && stat(cmd->argv[0], &dir_stat) == 0
 		&& S_ISDIR(dir_stat.st_mode))

@@ -24,35 +24,34 @@
 # include "ft_variables.h"
 # include "ft_builtin.h"
 
-
 # define IS_LAST 2
 # define IS_FIRST 0
 # define IS_MIDDLE 1
 # define IS_FIRSTLAST 3
 
-typedef struct	s_redir
+typedef struct s_redir
 {
 	t_type		type;
 	char		*arg;
-}				t_redir;
+}					t_redir;
 
-typedef struct	s_cmd
+typedef struct s_cmd
 {
 	char		*argv[1024];
 	t_vector	*redirs;
 	int			count;
-}				t_cmd;
+}					t_cmd;
 
-typedef	struct s_minishell
+typedef struct s_minishell
 {
-	t_vector		*envp;
-	t_bool			is_forked;
-	int 			status;
-	char 			*prompt;
-	t_vector		*x_malloc_vec;
-}				t_minishell;
+	t_vector	*envp;
+	t_bool		is_forked;
+	int			status;
+	char		*prompt;
+	t_vector	*x_malloc_vec;
+}					t_minishell;
 
-extern t_minishell g_config;
+extern t_minishell	g_config;
 
 int			exec_cmd(t_cmd *cmd);
 t_bool		is_builtin(char *cmd);
@@ -71,7 +70,7 @@ void		fill_out_env_command(t_cmd *tmp_cmd, const char *tmp);
 t_vector	*fill_out_vector_with_commands(t_node *ast_node);
 void		parse_env_vars_not_in_quotes(t_node *child, t_cmd *tmp_cmd);
 void		handle_errors(t_cmd *cmd, t_bool ispath, int errno_);
-void 		update_status_code();
+void		update_status_code(int code);
 char		**extract_envp(t_vector *g_env);
 void		close_pipes(int fd[][2], int pos, int index);
 void		setup_pipes(int fd[][2], int position, int index);
@@ -82,6 +81,6 @@ t_vector	*get_paths(char *path_str, char *cmd);
 t_bool		is_path(char *cmd);
 t_cmd		*create_cmd(void);
 void		delete_redir(void *redir);
-void 		delete_cmd(void *cmd);
+void		delete_cmd(void *cmd);
 
 #endif

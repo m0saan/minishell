@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 18:05:53 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/04 18:38:55 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/10 20:18:53 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ t_vector	*new_vector_s(t_size init_len);
 t_vector	*new_vector_from(t_vector *vector);
 void		insert(t_vector *vector, void *item);
 void		*remove_at(t_vector *this, int pos);
-void		delete (t_vector *vector);
-void 		delete_free(t_vector *vector, void (*f)(void *));
+void		delete(t_vector *vector);
+void		delete_free(t_vector *vector, void (*f)(void *));
 void		*at(t_vector *this, int pos);
 t_bool		contains(t_vector *this, void *item, t_bool (*eql)(void *, void *));
 void		sort(t_vector *this, int (*f)(void *, void *));

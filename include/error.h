@@ -20,7 +20,6 @@
 # include <readline/readline.h>
 # include <readline/history.h>
 # include "ft_types.h"
-# include "ft_globals.h"
 
 # define ERR1 "syntax error near unexpected token"
 

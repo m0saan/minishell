@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 19:50:44 by moboustt          #+#    #+#             */
-/*   Updated: 2021/07/06 21:06:21 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/10 20:26:26 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_node	*new_node(enum e_node_type type)
 	return (node);
 }
 
-void	set_node_val_str(t_node *node, char *val, t_token_type type)
+void	set_node_val_str(t_node *node, char *val, t_token_t type)
 {
 	node->val_type = type;
 	if (!val)

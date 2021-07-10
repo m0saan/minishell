@@ -1,6 +1,6 @@
 #include "../include/minishell.h"
 
-t_token_type	lookup_type(char *ident)
+t_token_t	lookup_type(char *ident)
 {
 	const char	*commands[7] = {"echo", "cd", "pwd",
 								  "export", "unset", "env", "exit"};
@@ -15,7 +15,7 @@ t_token_type	lookup_type(char *ident)
 	return (ARG);
 }
 
-t_token *new_token(t_token_type token_type, char ch, t_token *token)
+t_token *new_token(t_token_t token_type, char ch, t_token *token)
 {
 	token->type = token_type;
 	token->letter_literal = ch;
