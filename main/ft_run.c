@@ -6,19 +6,19 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 18:22:21 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/10 21:44:39 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/10 21:57:10 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/global_utils.h"
 #include "../include/minishell.h"
 
-extern t_minishell g_config;
+extern t_minishell	g_config;
 
-int		run_cmd_parent(t_cmd *cmd)
+int	run_cmd_parent(t_cmd *cmd)
 {
 	int	sout;
-	int sin;
+	int	sin;
 	int	code;
 
 	sout = -1;
@@ -35,14 +35,15 @@ int		run_cmd_parent(t_cmd *cmd)
 
 pid_t	run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
 {
-	pid_t pid;
-	int pos;
-	int sout;
-	int sin;
+	pid_t	pid;
+	int		pos;
+	int		sout;
+	int		sin;
 
 	sin = -1;
 	sout = -1;
-	if ((pid = fork()) < 0)
+	pid = fork();
+	if (pid < 0)
 		exit(1);
 	g_config.is_forked = true;
 	pos = get_position(size, index);
@@ -56,7 +57,7 @@ pid_t	run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
 		exit(exec_cmd(cmd));
 	}
 	close_pipes(fd, pos, index);
-	return pid;
+	return (pid);
 }
 
 void	run_single_builtin(t_vector *cmds)
@@ -67,7 +68,7 @@ void	run_single_builtin(t_vector *cmds)
 	update_status_code(run_cmd_parent(cmd));
 }
 
-void 	run_multiple_cmds(t_vector *cmds)
+void	run_multiple_cmds(t_vector *cmds)
 {
 	int		i;
 	int		fd[1024][2];
@@ -93,8 +94,7 @@ void	run_cmds(t_vector *cmds)
 	t_cmd	*cmd;
 
 	cmd = (t_cmd *) at(cmds, 0);
-	if (cmds->size == 1 && (cmd->count == 0
-		|| is_builtin(cmd->argv[0])))
+	if (cmds->size == 1 && (cmd->count == 0 || is_builtin(cmd->argv[0])))
 		run_single_builtin(cmds);
 	else
 		run_multiple_cmds(cmds);
