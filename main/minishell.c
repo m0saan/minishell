@@ -75,8 +75,6 @@ int	parse_and_execute(t_lexer *lexer)
 	{
 		if (p->cur_token->literal)
 			free(p->cur_token->literal);
-		if (p->peek_token->literal)
-			free(p->peek_token->literal);
 		free(p->cur_token);
 		free(p->peek_token);
 		free(err);

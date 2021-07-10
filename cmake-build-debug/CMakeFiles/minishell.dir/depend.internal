@@ -4,7 +4,6 @@
 CMakeFiles/MINISHELL.dir/ast/node.c.o
  /Users/moboustt/Desktop/1337/MINI2/ast/node.c
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/global_utils.h
  /Users/moboustt/Desktop/1337/MINI2/include/lexer.h
@@ -13,7 +12,6 @@ CMakeFiles/MINISHELL.dir/builtins/ft_cd.c.o
  /Users/moboustt/Desktop/1337/MINI2/builtins/ft_cd.c
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -31,7 +29,6 @@ CMakeFiles/MINISHELL.dir/builtins/ft_env.c.o
  /Users/moboustt/Desktop/1337/MINI2/builtins/ft_env.c
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -44,7 +41,6 @@ CMakeFiles/MINISHELL.dir/builtins/ft_exit.c.o
  /Users/moboustt/Desktop/1337/MINI2/builtins/ft_exit.c
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -57,7 +53,6 @@ CMakeFiles/MINISHELL.dir/builtins/ft_export.c.o
  /Users/moboustt/Desktop/1337/MINI2/builtins/ft_export.c
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -75,7 +70,6 @@ CMakeFiles/MINISHELL.dir/builtins/ft_unset.c.o
  /Users/moboustt/Desktop/1337/MINI2/builtins/ft_unset.c
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -88,7 +82,6 @@ CMakeFiles/MINISHELL.dir/errors/error.c.o
  /Users/moboustt/Desktop/1337/MINI2/errors/error.c
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -104,7 +97,6 @@ CMakeFiles/MINISHELL.dir/global_utils/ft_atoi.c.o
 CMakeFiles/MINISHELL.dir/global_utils/ft_atol.c.o
  /Users/moboustt/Desktop/1337/MINI2/global_utils/ft_atol.c
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/global_utils.h
 CMakeFiles/MINISHELL.dir/global_utils/ft_bzero.c.o
@@ -115,7 +107,6 @@ CMakeFiles/MINISHELL.dir/global_utils/ft_heredoc.c.o
  /Users/moboustt/Desktop/1337/MINI2/global_utils/ft_heredoc.c
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -128,7 +119,6 @@ CMakeFiles/MINISHELL.dir/global_utils/ft_heredoc_handlers.c.o
  /Users/moboustt/Desktop/1337/MINI2/global_utils/ft_heredoc_handlers.c
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -183,7 +173,6 @@ CMakeFiles/MINISHELL.dir/global_utils/ft_variables.c.o
  /Users/moboustt/Desktop/1337/MINI2/global_utils/ft_variables.c
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -196,7 +185,6 @@ CMakeFiles/MINISHELL.dir/global_utils/ft_variables_2.c.o
  /Users/moboustt/Desktop/1337/MINI2/global_utils/ft_variables_2.c
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -209,7 +197,6 @@ CMakeFiles/MINISHELL.dir/global_utils/ft_variables_3.c.o
  /Users/moboustt/Desktop/1337/MINI2/global_utils/ft_variables_3.c
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -222,7 +209,6 @@ CMakeFiles/MINISHELL.dir/global_utils/ft_variables_4.c.o
  /Users/moboustt/Desktop/1337/MINI2/global_utils/ft_variables_4.c
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -234,21 +220,18 @@ CMakeFiles/MINISHELL.dir/global_utils/ft_variables_4.c.o
 CMakeFiles/MINISHELL.dir/global_utils/ft_vector.c.o
  /Users/moboustt/Desktop/1337/MINI2/global_utils/ft_vector.c
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
  /Users/moboustt/Desktop/1337/MINI2/include/global_utils.h
 CMakeFiles/MINISHELL.dir/global_utils/ft_vector_1.c.o
  /Users/moboustt/Desktop/1337/MINI2/global_utils/ft_vector_1.c
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
  /Users/moboustt/Desktop/1337/MINI2/include/global_utils.h
 CMakeFiles/MINISHELL.dir/global_utils/ft_vector_2.c.o
  /Users/moboustt/Desktop/1337/MINI2/global_utils/ft_vector_2.c
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
  /Users/moboustt/Desktop/1337/MINI2/include/global_utils.h
@@ -259,7 +242,6 @@ CMakeFiles/MINISHELL.dir/global_utils/gnl.c.o
 CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -272,7 +254,6 @@ CMakeFiles/MINISHELL.dir/lexer/env_vars_helper_funcs.c.o
 CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -285,7 +266,6 @@ CMakeFiles/MINISHELL.dir/lexer/envirement_vars_utils.c.o
 CMakeFiles/MINISHELL.dir/lexer/lexer.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -297,21 +277,18 @@ CMakeFiles/MINISHELL.dir/lexer/lexer.c.o
  /Users/moboustt/Desktop/1337/MINI2/lexer/lexer.c
 CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/global_utils.h
  /Users/moboustt/Desktop/1337/MINI2/include/lexer.h
  /Users/moboustt/Desktop/1337/MINI2/lexer/lexer_helper_functions.c
 CMakeFiles/MINISHELL.dir/lexer/lexer_helper_functions2.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/global_utils.h
  /Users/moboustt/Desktop/1337/MINI2/include/lexer.h
  /Users/moboustt/Desktop/1337/MINI2/lexer/lexer_helper_functions2.c
 CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/global_utils.h
  /Users/moboustt/Desktop/1337/MINI2/include/lexer.h
@@ -319,7 +296,6 @@ CMakeFiles/MINISHELL.dir/lexer/lexer_parsing_helper_funcs.c.o
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -332,7 +308,6 @@ CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -345,7 +320,6 @@ CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o
 CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -358,7 +332,6 @@ CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.o
 CMakeFiles/MINISHELL.dir/main/ft_cmds.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -371,7 +344,6 @@ CMakeFiles/MINISHELL.dir/main/ft_cmds.c.o
 CMakeFiles/MINISHELL.dir/main/ft_envp.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -384,7 +356,6 @@ CMakeFiles/MINISHELL.dir/main/ft_envp.c.o
 CMakeFiles/MINISHELL.dir/main/ft_execve.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -397,7 +368,6 @@ CMakeFiles/MINISHELL.dir/main/ft_execve.c.o
 CMakeFiles/MINISHELL.dir/main/ft_paths.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -410,7 +380,6 @@ CMakeFiles/MINISHELL.dir/main/ft_paths.c.o
 CMakeFiles/MINISHELL.dir/main/ft_pipes.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -423,7 +392,6 @@ CMakeFiles/MINISHELL.dir/main/ft_pipes.c.o
 CMakeFiles/MINISHELL.dir/main/ft_redirs.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -436,7 +404,6 @@ CMakeFiles/MINISHELL.dir/main/ft_redirs.c.o
 CMakeFiles/MINISHELL.dir/main/ft_run.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -449,7 +416,6 @@ CMakeFiles/MINISHELL.dir/main/ft_run.c.o
 CMakeFiles/MINISHELL.dir/main/minishell.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -462,7 +428,6 @@ CMakeFiles/MINISHELL.dir/main/minishell.c.o
 CMakeFiles/MINISHELL.dir/parser/parse.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -475,7 +440,6 @@ CMakeFiles/MINISHELL.dir/parser/parse.c.o
 CMakeFiles/MINISHELL.dir/parser/parse_redirs.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -488,7 +452,6 @@ CMakeFiles/MINISHELL.dir/parser/parse_redirs.c.o
 CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -501,7 +464,6 @@ CMakeFiles/MINISHELL.dir/parser/parser_helper_functions.c.o
 CMakeFiles/MINISHELL.dir/parser/vector_fill_out_utils.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h
@@ -514,7 +476,6 @@ CMakeFiles/MINISHELL.dir/parser/vector_fill_out_utils.c.o
 CMakeFiles/MINISHELL.dir/tokenizer/token.c.o
  /Users/moboustt/Desktop/1337/MINI2/include/error.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_variables.h
  /Users/moboustt/Desktop/1337/MINI2/include/ft_vector.h

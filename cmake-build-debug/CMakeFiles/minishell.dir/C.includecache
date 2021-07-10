@@ -45,8 +45,6 @@ readline/history.h
 -
 ft_types.h
 /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
-ft_globals.h
-/Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
 
 /Users/moboustt/Desktop/1337/MINI2/include/ft_builtin.h
 stdlib.h
@@ -87,8 +85,6 @@ readline/history.h
 -
 global_utils.h
 /Users/moboustt/Desktop/1337/MINI2/include/global_utils.h
-
-/Users/moboustt/Desktop/1337/MINI2/include/ft_globals.h
 
 /Users/moboustt/Desktop/1337/MINI2/include/ft_types.h
 
@@ -248,13 +244,7 @@ lexer.h
 ../include/node.h
 /Users/moboustt/Desktop/1337/MINI2/include/node.h
 
-/Users/moboustt/Desktop/1337/MINI2/lexer/lexer_helper_functions.c
-../include/lexer.h
-/Users/moboustt/Desktop/1337/MINI2/include/lexer.h
-
-/Users/moboustt/Desktop/1337/MINI2/parser/parse.c
+/Users/moboustt/Desktop/1337/MINI2/main/minishell.c
 ../include/minishell.h
 /Users/moboustt/Desktop/1337/MINI2/include/minishell.h
-../include/parser.h
-/Users/moboustt/Desktop/1337/MINI2/include/parser.h
 
