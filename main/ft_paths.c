@@ -6,13 +6,13 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 20:05:26 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/06 21:13:57 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/10 21:52:05 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/minishell.h"
 
-char		*append_cmd_to_path(char *path, char *cmd)
+char	*append_cmd_to_path(char *path, char *cmd)
 {
 	int			i;
 	int			j;
@@ -33,7 +33,7 @@ char		*append_cmd_to_path(char *path, char *cmd)
 	return (out);
 }
 
-char		*get_path(char *path_str, char *cmd, int *start, int end)
+char	*get_path(char *path_str, char *cmd, int *start, int end)
 {
 	char	*path;
 
@@ -69,7 +69,7 @@ t_vector	*get_paths(char *path_str, char *cmd)
 	return (paths);
 }
 
-t_bool		is_path(char *cmd)
+t_bool	is_path(char *cmd)
 {
 	int	i;
 

@@ -6,15 +6,15 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 11:14:12 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/04 20:06:41 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/10 21:51:39 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/minishell.h"
 
-extern t_minishell g_config;
+extern t_minishell	g_config;
 
-t_bool		is_builtin(char *cmd)
+t_bool	is_builtin(char *cmd)
 {
 	return (ft_strcmp(cmd, "echo") == 0 || ft_strcmp(cmd, "export") == 0
 		|| ft_strcmp(cmd, "env") == 0 || ft_strcmp(cmd, "exit") == 0
@@ -22,7 +22,7 @@ t_bool		is_builtin(char *cmd)
 		|| ft_strcmp(cmd, "cd") == 0);
 }
 
-int			ft_exec_builtin(t_cmd *cmd)
+int	ft_exec_builtin(t_cmd *cmd)
 {
 	if (ft_strcmp(cmd->argv[0], "cd") == 0)
 		return (ft_cd(cmd->count, cmd->argv));
@@ -41,10 +41,10 @@ int			ft_exec_builtin(t_cmd *cmd)
 	return (0);
 }
 
-int ft_find_and_exec(t_cmd *cmd)
+int	ft_find_and_exec(t_cmd *cmd)
 {
 	t_vector	*paths;
-	char 		**envp;
+	char		**envp;
 	int			i;
 
 	i = -1;
@@ -62,9 +62,9 @@ int ft_find_and_exec(t_cmd *cmd)
 	return (1);
 }
 
-int ft_exec_path(t_cmd *cmd)
+int	ft_exec_path(t_cmd *cmd)
 {
-	char 	**envp;
+	char	**envp;
 
 	envp = extract_envp(g_config.envp);
 	execve(cmd->argv[0], cmd->argv, envp);
@@ -73,7 +73,7 @@ int ft_exec_path(t_cmd *cmd)
 	return (1);
 }
 
-int			exec_cmd(t_cmd *cmd)
+int	exec_cmd(t_cmd *cmd)
 {
 	if (cmd->count > 0 && is_builtin(cmd->argv[0]))
 		return (ft_exec_builtin(cmd));
