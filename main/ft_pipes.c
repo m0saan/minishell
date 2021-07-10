@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipes.c                                            :+:      :+:    :+:   */
+/*   ft_pipes.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 18:27:51 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/04 18:43:39 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/10 21:52:57 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/global_utils.h"
 #include "../include/minishell.h"
 
-int		get_position(t_size size, int index)
+int	get_position(t_size size, int index)
 {
 	if (size == 1)
 		return (IS_FIRSTLAST);
@@ -26,7 +26,7 @@ int		get_position(t_size size, int index)
 
 void	setup_pipes(int fd[][2], int position, int index)
 {
-	const int prev_idx = index - 1;
+	const int	prev_idx = index - 1;
 
 	if (position == IS_FIRST)
 	{
