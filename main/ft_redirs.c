@@ -6,14 +6,14 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 18:29:22 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/10 21:45:19 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/10 21:55:04 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/global_utils.h"
 #include "../include/minishell.h"
 
-int		save_stdinout(int *sout, int *sin)
+int	save_stdinout(int *sout, int *sin)
 {
 	*sout = dup(1);
 	*sin = dup(0);
@@ -34,9 +34,9 @@ void	restore_stdinout(int sout, int sin)
 	}
 }
 
-int		setup_redirection(t_type type, char *arg, int *sout, int *sin)
+int	setup_redirection(t_type type, char *arg, int *sout, int *sin)
 {
-	int fd;
+	int	fd;
 
 	fd = -1;
 	if (type == RIGHT)
@@ -45,7 +45,8 @@ int		setup_redirection(t_type type, char *arg, int *sout, int *sin)
 	else if (type == RIGHT_APPEND)
 		fd = open(arg, O_CREAT | O_APPEND | O_RDWR,
 				S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-	else if (type == HEREDOC) {
+	else if (type == HEREDOC)
+	{
 		fd = open_heredoc(arg);
 	}
 	else if (type == LEFT)
@@ -66,11 +67,11 @@ int		setup_redirection(t_type type, char *arg, int *sout, int *sin)
 	return (0);
 }
 
-int		setup_all_redirs(t_vector *redirs, int *sout, int *sin)
+int	setup_all_redirs(t_vector *redirs, int *sout, int *sin)
 {
-	int i;
-	int code;
-	t_redir *redir;
+	int		i;
+	int		code;
+	t_redir	*redir;
 
 	i = -1;
 	code = 0;
@@ -86,7 +87,7 @@ int		setup_all_redirs(t_vector *redirs, int *sout, int *sin)
 
 void	delete_redir(void *redir)
 {
-	t_redir *r;
+	t_redir	*r;
 
 	r = (t_redir *)redir;
 	if (!r)
@@ -99,4 +100,3 @@ void	delete_redir(void *redir)
 	free(r);
 	r = NULL;
 }
-
