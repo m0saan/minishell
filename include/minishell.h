@@ -83,4 +83,6 @@ t_cmd		*create_cmd(void);
 void		delete_redir(void *redir);
 void		delete_cmd(void *cmd);
 
+int			save_stdinout(int *sout, int *sin);
+
 #endif

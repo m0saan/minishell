@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   redirs.c                                           :+:      :+:    :+:   */
+/*   ft_redirs.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 18:29:22 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/04 18:43:54 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/10 21:45:19 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/global_utils.h"
 #include "../include/minishell.h"
 
-int		save_stdinout(t_type type, int fd, int *sout, int *sin)
+int		save_stdinout(int *sout, int *sin)
 {
-	if (type == RIGHT || type == RIGHT_APPEND)
-	{
-		*sout = dup(1);
-		dup2(fd, 1);
-		close(fd);
-	}
-	else if (type == LEFT || type == HEREDOC)
-	{
-		*sin = dup(0);
-		dup2(fd, 0);
-		close(fd);
-	}
+	*sout = dup(1);
+	*sin = dup(0);
 	return (0);
 }
 
@@ -62,7 +52,17 @@ int		setup_redirection(t_type type, char *arg, int *sout, int *sin)
 		fd = open(arg, O_RDONLY);
 	if (fd < 0)
 		return (p_error(arg, NULL, NULL, 1));
-	save_stdinout(type, fd, sout, sin);
+	save_stdinout(sout, sin);
+	if (type == RIGHT || type == RIGHT_APPEND)
+	{
+		dup2(fd, 1);
+		close(fd);
+	}
+	else if (type == LEFT || type == HEREDOC)
+	{
+		dup2(fd, 0);
+		close(fd);
+	}
 	return (0);
 }
 

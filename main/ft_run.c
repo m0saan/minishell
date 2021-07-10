@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 18:22:21 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/06 20:43:04 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/10 21:44:39 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ pid_t	run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
 	pos = get_position(size, index);
 	if (pid == 0)
 	{
+		save_stdinout(&sout, &sin);
 		setup_pipes(fd, pos, index);
 		if (cmd->redirs != NULL && !is_empty(cmd->redirs))
 			if (setup_all_redirs(cmd->redirs, &sout, &sin) != 0)
