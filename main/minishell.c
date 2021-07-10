@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minishell.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/10 21:58:08 by ehakam            #+#    #+#             */
+/*   Updated: 2021/07/10 21:58:57 by ehakam           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/minishell.h"
 
- t_minishell g_config;
+t_minishell	g_config;
 
 void	free_syntax_tree(t_node *ast_node);
 
 void	update_status_code(int code)
 {
-	char 	*code_str;
+	char	*code_str;
 
 	if (code >= 0)
 	{
@@ -34,7 +46,6 @@ void	signal_handler_parent(int sig)
 		rl_on_new_line();
 		rl_redisplay();
 	}
-	
 	if (sig == SIGINT && g_config.is_forked)
 	{
 		write(1, "\n", 1);
@@ -50,13 +61,13 @@ void	signal_handler_parent(int sig)
 	}
 }
 
-int		parse_and_execute(t_lexer *lexer)
+int	parse_and_execute(t_lexer *lexer)
 {
 	t_node		*ast_node;
 	t_error		*err;
 	t_parser	*p;
 
-    ast_node = NULL;
+	ast_node = NULL;
 	// TODO: fix the following bug -> #echo helo"TTTT""#
 	p = new_parser(lexer);
 	err = check_first_token(p);
@@ -105,7 +116,7 @@ char	*get_line(void)
 	return (line_read);
 }
 
-int		main(int ac, char **av, char **env)
+int	main(int ac, char **av, char **env)
 {
 	char	*line;
 	t_lexer	*lexer;
