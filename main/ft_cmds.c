@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 18:21:11 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/06 20:34:15 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/10 21:48:52 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ t_cmd	*create_cmd(void)
 	return (command);
 }
 
-void 	delete_cmd(void *cmd)
+void	delete_cmd(void *cmd)
 {
-	t_cmd *c;
+	t_cmd	*c;
 
 	c = (t_cmd *)cmd;
 	if (!c)
 		return ;
-	while(--(c->count) >= 0)
+	while (--(c->count) >= 0)
 	{
 		free(c->argv[c->count]);
 	}

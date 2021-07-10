@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 20:11:23 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/06 20:34:18 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/10 21:50:13 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 #include "../include/error.h"
 #include "../include/minishell.h"
 
-extern t_minishell g_config;
+extern t_minishell	g_config;
 
-int 	update_shlvl()
+int	update_shlvl(void)
 {
 	int		value;
 	t_var	*var;
-	char 	*value_str;
+	char	*value_str;
 
 	var = get_var2(g_config.envp, "SHLVL");
 	value = 0;
@@ -34,7 +34,7 @@ int 	update_shlvl()
 	{
 		if (value == 1001)
 			p_error("warning", NULL,
-					"shell level (1001) too high, resetting to 1", 1);
+				"shell level (1001) too high, resetting to 1", 1);
 		value_str = ft_itoa(1);
 	}
 	else
@@ -44,7 +44,7 @@ int 	update_shlvl()
 	return (0);
 }
 
-int		fill_envp(char **envp)
+int	fill_envp(char **envp)
 {
 	int		i;
 
