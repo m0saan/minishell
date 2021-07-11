@@ -21,7 +21,8 @@ t_token	*new_token(t_token_t token_type, char ch, t_token *token)
 	if (token_type == TILDE && peek_char(token->lexer) != 0)
 	{
 		next_char(token->lexer);
-		token->literal = handle_identifier_with_no_quotes(token->lexer, token)->literal;
+		token->literal = handle_identifier_with_no_quotes(\
+			token->lexer, token)->literal;
 	}
 	else
 		token->literal = NULL;

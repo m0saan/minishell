@@ -42,7 +42,8 @@ void	replace_token(t_parser *p)
 		if (p->cur_token->literal != NULL)
 		{
 			literal = p->cur_token->literal;
-			p->cur_token->literal = strjoin_s(tmp, p->cur_token->literal, false);
+			p->cur_token->literal = strjoin_s(tmp, \
+				p->cur_token->literal, false);
 			free(literal);
 		}
 		else

@@ -23,7 +23,7 @@ t_token	*construct_token(t_lexer *l)
 
 t_token	*next_token(t_lexer *l)
 {
-	t_token *tok;
+	t_token	*tok;
 
 	tok = construct_token(l);
 	skip_white_spaces(l);
