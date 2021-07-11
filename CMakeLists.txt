@@ -59,5 +59,5 @@ add_executable(
         ./main/minishell.c
         global_utils/ft_malloc.c main/ft_signals.c)
 
-set(GCC_COVERAGE_COMPILE_FLAGS "-Wall -Wextra -O0 -fsanitize=address -g3 -l readline -L /Users/moboustt/.brew/opt/readline/lib/ -I /Users/moboustt/.brew/opt/readline/include/")
+set(GCC_COVERAGE_COMPILE_FLAGS "-Wall -Wextra -O0 -g3 -l readline -L /Users/moboustt/.brew/opt/readline/lib/ -I /Users/moboustt/.brew/opt/readline/include/")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}")
