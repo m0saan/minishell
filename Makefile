@@ -88,7 +88,7 @@ all: $(NAME)
 $(NAME): $(SRCS)
 	@echo "Building..."
 	@echo "TODO: DON'T FORGET TO ADD CFLAGS"
-	@gcc $(CFLAG) $(LIB) $(LDFLAGS) $(CPPFLAGS) $(SRCS) -o $(NAME)
+	@gcc $(CFLAG) $(LIB) $(LDFLAGS) $(CPPFLAGS) $(SRCS) -o $(NAME) -g3
 
 clean:
 	@echo "Cleaning"
