@@ -1,5 +1,4 @@
 #include "../include/lexer.h"
-#include "../include/minishell.h"
 
 void	handle_double_quotes_identifier(t_lexer *l, t_token *tok)
 {
@@ -31,7 +30,7 @@ t_bool	check_quotes_errors(const t_lexer *l, char ch)
 	}
 	if (counter % 2 != 0)
 		exit(p_error(NULL, NULL,
-					 "syntax error near unexpected token `''", EXIT_FAILURE));
+				"syntax error near unexpected token `''", EXIT_FAILURE));
 	return (false);
 }
 

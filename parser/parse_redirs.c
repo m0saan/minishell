@@ -1,8 +1,10 @@
 #include "../include/minishell.h"
 
-t_redir *create_redir(t_type type, char *arg)
+t_redir	*create_redir(t_type type, char *arg)
 {
-	t_redir *r = ft_malloc(sizeof(t_redir));
+	t_redir	*r;
+
+	r = ft_malloc(sizeof(t_redir));
 	r->arg = arg;
 	r->type = type;
 	return (r);
@@ -41,8 +43,9 @@ t_node	*init_and_fill_redirs(t_node *child, t_cmd *tmp_cmd, t_type type)
 
 t_error	*check_first_token(t_parser *p)
 {
-	const t_type	types[] = {ILLEGAL, END_O_F,
-							   	SEMICOLON, PIPE, RIGHT, LEFT, RIGHT_APPEND, HEREDOC};
+	const t_type	types[] = {ILLEGAL, END_O_F, \
+							   	SEMICOLON, PIPE, RIGHT, LEFT, \
+							   RIGHT_APPEND, HEREDOC};
 	t_error			*error;
 	int				i;
 
@@ -51,9 +54,9 @@ t_error	*check_first_token(t_parser *p)
 	i = -1;
 	while (++i < 8)
 	{
-		if ((p->cur_token->type == types[i] &&
-			p->peek_token->type == END_O_F) ||
-			p->cur_token->type == END_O_F ||
+		if ((p->cur_token->type == types[i] && \
+			p->peek_token->type == END_O_F) || \
+			p->cur_token->type == END_O_F || \
 			p->peek_token->type == ILLEGAL)
 			set_error(error, ERR1);
 	}

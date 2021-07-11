@@ -1,7 +1,9 @@
 #include "../include/minishell.h"
 #include "../include/parser.h"
 
-extern t_minishell g_config;
+extern t_minishell	g_config;
+
+void	free_tokens(t_parser *p, t_error *error);
 
 t_error	*catch_errors(t_parser *p, t_error *error)
 {
@@ -31,11 +33,13 @@ t_error	*catch_errors(t_parser *p, t_error *error)
 
 void	replace_token(t_parser *p)
 {
-	if (p->cur_token->type == TILDE) {
-		char *tmp = get_var(g_config.envp, "HOME");
-		if (p->cur_token->literal != NULL) {
-			p->cur_token->literal = strjoin_s(p->cur_token->literal, tmp,true);
-		}
+	char	*tmp;
+
+	if (p->cur_token->type == TILDE)
+	{
+		tmp = get_var(g_config.envp, "HOME");
+		if (p->cur_token->literal != NULL)
+			p->cur_token->literal = strjoin_s(p->cur_token->literal, tmp, true);
 		else
 			p->cur_token->literal = ft_strdup(tmp);
 	}
@@ -59,16 +63,19 @@ t_node	*parse_command(t_node *ast_node, t_parser *p)
 			free(error);
 			return (NULL);
 		}
-
 		arg = new_node(NODE_ARG);
 		set_node_val_str(arg, p->cur_token->literal, p->cur_token->type);
 		add_child_node(ast_node, arg);
 		free(p->cur_token);
 		next_token_p(p);
 	}
-	free(error);
-	free(p->cur_token);
-	free(p->peek_token);
+	free_tokens(p, error);
 	return (ast_node);
 }
 
+void	free_tokens(t_parser *p, t_error *error)
+{
+	free(error);
+	free(p->cur_token);
+	free(p->peek_token);
+}

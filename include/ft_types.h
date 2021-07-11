@@ -14,12 +14,15 @@
 # define FT_TYPES_H
 
 typedef char			*t_string;
-typedef unsigned long t_size;
+typedef uint32_t		t_size;
+typedef enum e_val_type	t_token_t;
+
 typedef enum e_bool
 {
 	false = 0,
 	true = 1
 }	t_bool;
+
 typedef enum e_val_type
 {
 	NONE = -2,
@@ -38,6 +41,5 @@ typedef enum e_val_type
 	EXIT_STATUS,
 	NEW_LINE,
 }						t_type;
-typedef enum e_val_type t_token_t;
 
 #endif

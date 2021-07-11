@@ -12,14 +12,23 @@
 
 #include "../include/minishell.h"
 
-t_token	*next_token(t_lexer *l)
+t_token	*construct_token(t_lexer *l)
 {
 	t_token	*tok;
 
 	tok = ft_malloc(sizeof(t_token));
 	tok->lexer = l;
+	return (tok);
+}
+
+t_token	*next_token(t_lexer *l)
+{
+	t_token *tok;
+
+	tok = construct_token(l);
 	skip_white_spaces(l);
-	if (l->ch == '~' && (peek_char(l) == ' ' || peek_char(l) == '/' || peek_char(l) == 0))
+	if (l->ch == '~' && (peek_char(l) == ' ' || \
+	peek_char(l) == '/' || peek_char(l) == 0))
 		tok = new_token(TILDE, l->ch, tok);
 	else if (l->ch == '<' || l->ch == '>')
 		tok = handle_right_redir(l, tok);
@@ -29,11 +38,9 @@ t_token	*next_token(t_lexer *l)
 		handle_single_quote_identifier(l, tok);
 	else if (l->ch == '"')
 		handle_double_quotes_identifier(l, tok);
-	else if (l->ch == '$')
-		return (handle_dollar_token(l, tok));
 	else if (l->ch == 0)
 		return (handle_eof_token(tok));
-	else if (is_letter(l->ch))
+	else if (is_letter(l->ch) || l->ch == '$')
 		return (handle_identifier_with_no_quotes(l, tok));
 	else
 		return (handle_illegal_token(l, tok));
@@ -43,8 +50,6 @@ t_token	*next_token(t_lexer *l)
 
 void	read_and_parse_double_quoted(t_lexer *l, char **s, int *index)
 {
-	char	*env_value;
-
 	check_quotes_errors(l, l->ch);
 	next_char(l);
 	while (l->ch != '"')
@@ -57,11 +62,10 @@ void	read_and_parse_double_quoted(t_lexer *l, char **s, int *index)
 				next_char(l);
 				continue ;
 			}
-			env_value = get_env_value(l);
-			if (env_value == NULL)
+			if (get_env_value(l) == NULL)
 				continue ;
-			*s = strjoin_s(*s, env_value, true);
-			(*index) += (int) ft_strlen(env_value);
+			*s = strjoin_s(*s, get_env_value(l), true);
+			(*index) += (int) ft_strlen(get_env_value(l));
 			continue ;
 		}
 		*index += 1;

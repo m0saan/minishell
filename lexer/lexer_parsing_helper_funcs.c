@@ -26,17 +26,10 @@ char	*read_identifier(t_lexer *l, int i)
 
 	s = ft_malloc(1024);
 	ft_bzero(s, 1024);
-	// if (l->ch == '~')
-	// {
-	// 	if (peek_char(l) == '/')
-	// 		next_char(l);
-	// 	else
-	// 		return NULL;
-	// }
 	while (is_letter(l->ch))
 	{
 		if (l->ch == '$' && (ft_isalnum(l->input[l->read_position])
-			|| ft_isspecial(l->input[l->read_position])))
+				|| ft_isspecial(l->input[l->read_position])))
 		{
 			next_char(l);
 			handle_evn_vars_with_no_quotes(l, &s, &i);

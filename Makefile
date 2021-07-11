@@ -73,6 +73,7 @@ SRC_EXEC	=	main/ft_cmds.c \
 				main/ft_redirs.c \
 				main/ft_run.c \
 				main/minishell.c \
+				main/ft_signals.c \
 				
 
 SRC_AST		=	ast/node.c

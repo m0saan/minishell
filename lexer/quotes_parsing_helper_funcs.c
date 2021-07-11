@@ -55,8 +55,8 @@ void	handle_evn_vars_with_no_quotes(t_lexer *l, char **s, int *i)
 	else
 	{
 		env_value = get_env_value(l);
-		if(env_value == NULL)
-			return;
+		if (env_value == NULL)
+			return ;
 	}
 	(*s) = strjoin_s(*s, env_value, true);
 	(*i) += (int) ft_strlen(env_value);
