@@ -39,7 +39,7 @@ int			ft_isspecial(int c);
 int			handle_var(char **new_buf, char *buf, int idx, int start);
 int			index_of_c(char *str, char c);
 int			get_next_line(char **line);
-int			open_heredoc(char *delim);
+int			open_heredoc(char *fname, char *delim);
 int			ft_atoi(char *str);
 long long	ft_atol_err(char *str);
 

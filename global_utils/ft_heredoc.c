@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 21:44:58 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/04 20:38:06 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/11 18:06:24 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,20 +69,27 @@ t_bool	read_write(int fd, char *delim)
 	return (exit_by_delim);
 }
 
-int	open_heredoc(char *delim)
+pid_t	open_heredoc(char *fname, char *delim)
 {
 	int		fd;
 	t_bool	exit_by_delim;
+	pid_t	pid;
 
-	fd = open("/tmp/.HEREDOC", O_CREAT | O_TRUNC | O_RDWR,
-			S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-	if (fd < 0)
-		exit(p_error("/tmp/.HEREDOC", NULL, NULL, 1));
-	exit_by_delim = read_write(fd, delim);
-	close(fd);
-	if (!exit_by_delim)
-		p_error("warning", "here-document delimited by end-of-file wanted",
-			delim, 0);
-	fd = open("/tmp/.HEREDOC", O_RDONLY);
-	return (fd);
+	pid = fork();
+	if (pid < 0)
+		exit(1);
+	if (pid == 0)
+	{
+		fd = open(fname, O_CREAT | O_TRUNC | O_RDWR, 0644);
+		if (fd < 0)
+			exit(p_error(fname, NULL, NULL, 1));
+		exit_by_delim = read_write(fd, delim);
+		close(fd);
+		if (!exit_by_delim)
+			p_error("warning", "here-document delimited by end-of-file wanted",
+				delim, 0);
+		
+		exit(0);
+	}
+	return (pid);
 }

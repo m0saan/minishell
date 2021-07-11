@@ -49,6 +49,8 @@ typedef struct s_minishell
 	int			status;
 	char		*prompt;
 	t_vector	*x_malloc_vec;
+	t_vector	*heredoc;
+	int			hereindex;
 }					t_minishell;
 
 extern t_minishell	g_config;
@@ -75,7 +77,7 @@ char		**extract_envp(t_vector *g_env);
 void		close_pipes(int fd[][2], int pos, int index);
 void		setup_pipes(int fd[][2], int position, int index);
 int			get_position(t_size size, int index);
-void		restore_stdinout(int sout, int sin);
+void		restore_stdinout(t_type type, int *sout, int *sin);
 int			setup_all_redirs(t_vector *redirs, int *sout, int *sin);
 t_vector	*get_paths(char *path_str, char *cmd);
 t_bool		is_path(char *cmd);
@@ -86,5 +88,6 @@ int			save_stdinout(int *sout, int *sin);
 void		free_syntax_tree(t_node *ast_node);
 void		ft_init(char **env, int ac, char **av);
 void		start(char *line);
+void		init_heredoc(t_vector *cmds);
 
 #endif

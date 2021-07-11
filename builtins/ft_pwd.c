@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 18:41:18 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/04 18:41:22 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/11 19:03:57 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,13 @@ int	ft_pwd(void)
 {
 	char	pwd[1025];
 
-	getcwd(pwd, 1024);
-	printf("%s\n", pwd);
+	// getcwd(pwd, 1024);
+	// printf("%s\n", pwd);
+	int r;
+	while ((r = read(0, pwd, 1024)) > 0)
+	{
+		pwd[r] = '\0';
+		printf("%s", pwd);
+	}
 	return (0);
 }

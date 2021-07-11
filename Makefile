@@ -6,13 +6,13 @@
 #    By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/04 19:30:39 by ehakam            #+#    #+#              #
-#    Updated: 2021/07/06 21:01:12 by ehakam           ###   ########.fr        #
+#    Updated: 2021/07/11 18:43:39 by ehakam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	minishell
 CC			=	gcc
-CFLAG		=	-Wall -Wextra -Werror
+CFLAG		=	#-Wall -Wextra -Werror
 LIB			=	"-lreadline"
 LDFLAGS		=	"-L/goinfre/$(USER)/.brew/opt/readline/lib"
 CPPFLAGS	=	"-I/goinfre/$(USER)/.brew/opt/readline/include"

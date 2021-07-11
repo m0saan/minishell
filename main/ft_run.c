@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 18:22:21 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/10 21:57:10 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/11 20:07:23 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@ int	run_cmd_parent(t_cmd *cmd)
 	sout = -1;
 	sin = -1;
 	code = 0;
+	save_stdinout(&sout, &sin);
 	if (cmd->redirs != NULL && !is_empty(cmd->redirs))
 		if (setup_all_redirs(cmd->redirs, &sout, &sin) != 0)
 			code = 1;
 	if (code == 0)
 		code = exec_cmd(cmd);
-	restore_stdinout(sout, sin);
+	restore_stdinout(NONE, &sout, &sin);
 	return (code);
 }
 
@@ -91,13 +92,54 @@ void	run_multiple_cmds(t_vector *cmds)
 
 void	run_cmds(t_vector *cmds)
 {
+	int		i;
 	t_cmd	*cmd;
 
+	init_heredoc(cmds);
 	cmd = (t_cmd *) at(cmds, 0);
 	if (cmds->size == 1 && (cmd->count == 0 || is_builtin(cmd->argv[0])))
 		run_single_builtin(cmds);
 	else
 		run_multiple_cmds(cmds);
 	delete_free(cmds, &delete_cmd);
+	i = -1;
+	if (g_config.heredoc )
+	while (++i < (int)g_config.heredoc->size)
+		unlink((char *)at(g_config.heredoc, i));
+	delete_free(g_config.heredoc, &free);
 	g_config.is_forked = false;
+}
+
+void	init_heredoc(t_vector *cmds)
+{
+	int		i;
+	int		j;
+	int		index;
+	char	*fname;
+	t_cmd	*cmd;
+	
+	i = -1;
+	index = 0;
+	g_config.hereindex = 0;
+	g_config.heredoc = new_vector_s(10);
+	while (cmds && ++i < (int)cmds->size)
+	{
+		cmd = (t_cmd *)at(cmds, i);
+		j = -1;
+		while (cmd && cmd->redirs && ++j < (int)cmd->redirs->size)
+		{
+			if (((t_redir *)at(cmd->redirs, j))->type == HEREDOC)
+			{
+				fname = strjoin_c("/tmp/.HEREDOC", index++ + 48, false); 
+				waitpid(open_heredoc(fname, ((t_redir *)at(cmd->redirs, j))->arg), NULL, 0);
+				insert(g_config.heredoc, fname);
+			}
+		}
+	}
+	i = -1;
+	while (++i < g_config.heredoc->size)
+	{
+		dprintf(2, "F: %s\n", (char *)at(g_config.heredoc, i));
+	}
+	
 }
