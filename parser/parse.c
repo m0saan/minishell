@@ -34,12 +34,17 @@ t_error	*catch_errors(t_parser *p, t_error *error)
 void	replace_token(t_parser *p)
 {
 	char	*tmp;
+	char	*literal;
 
 	if (p->cur_token->type == TILDE)
 	{
 		tmp = get_var(g_config.envp, "HOME");
 		if (p->cur_token->literal != NULL)
-			p->cur_token->literal = strjoin_s(p->cur_token->literal, tmp, true);
+		{
+			literal = p->cur_token->literal;
+			p->cur_token->literal = strjoin_s(tmp, p->cur_token->literal, false);
+			free(literal);
+		}
 		else
 			p->cur_token->literal = ft_strdup(tmp);
 	}

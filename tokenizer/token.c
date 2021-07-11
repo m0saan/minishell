@@ -17,14 +17,14 @@ t_token_t	lookup_type(char *ident)
 
 t_token	*new_token(t_token_t token_type, char ch, t_token *token)
 {
-	token->type = token_type;
 	token->letter_literal = ch;
-	if (token_type == TILDE)
+	if (token_type == TILDE && peek_char(token->lexer) != 0)
 	{
 		next_char(token->lexer);
-		token->literal = read_identifier(token->lexer, 0);
+		token->literal = handle_identifier_with_no_quotes(token->lexer, token)->literal;
 	}
 	else
 		token->literal = NULL;
+	token->type = token_type;
 	return (token);
 }
