@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.17)
 project(MINISHELL)
 
 
-add_executable(MINISHELL ./lexer/env_vars_helper_funcs.c
+add_executable(
+        MINISHELL ./lexer/env_vars_helper_funcs.c
         ./lexer/lexer_helper_functions.c
         ./lexer/lexer.c
         ./lexer/quotes_parsing_helper_funcs.c
@@ -56,7 +57,7 @@ add_executable(MINISHELL ./lexer/env_vars_helper_funcs.c
         ./main/ft_paths.c
         ./main/ft_pipes.c
         ./main/minishell.c
-        global_utils/ft_malloc.c)
+        global_utils/ft_malloc.c main/ft_signals.c)
 
 set(GCC_COVERAGE_COMPILE_FLAGS "-Wall -Wextra -O0 -fsanitize=address -g3 -l readline -L /Users/moboustt/.brew/opt/readline/lib/ -I /Users/moboustt/.brew/opt/readline/include/")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}")

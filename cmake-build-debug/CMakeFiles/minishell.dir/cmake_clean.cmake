@@ -48,6 +48,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/MINISHELL.dir/main/ft_pipes.c.o"
   "CMakeFiles/MINISHELL.dir/main/ft_redirs.c.o"
   "CMakeFiles/MINISHELL.dir/main/ft_run.c.o"
+  "CMakeFiles/MINISHELL.dir/main/ft_signals.c.o"
   "CMakeFiles/MINISHELL.dir/main/minishell.c.o"
   "CMakeFiles/MINISHELL.dir/parser/parse.c.o"
   "CMakeFiles/MINISHELL.dir/parser/parse_redirs.c.o"
