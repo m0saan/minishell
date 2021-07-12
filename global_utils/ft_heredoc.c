@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 21:44:58 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/12 18:57:53 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/12 20:44:54 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,16 @@ t_bool	read_write(int fd, char *delim)
 	return (exit_by_delim);
 }
 
+void	signal_handler_heredoc(int sig)
+{
+	if (sig == SIGINT)
+	{
+		//kill(0, SIGINT);
+		kill(SIGINT);
+		// exit(1);
+	}
+}
+
 pid_t	open_heredoc(char *fname, char *delim)
 {
 	int		fd;
@@ -83,7 +93,7 @@ pid_t	open_heredoc(char *fname, char *delim)
 		exit(1);
 	if (pid == 0)
 	{
-		signal(SIGINT, signal_handler_parent);
+		signal(SIGINT, signal_handler_heredoc);
 		fd = open(fname, O_CREAT | O_TRUNC | O_RDWR, 0644);
 		if (fd < 0)
 			exit(p_error(fname, NULL, NULL, 1));
