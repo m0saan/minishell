@@ -68,6 +68,7 @@ t_node		*init_and_fill_redirs(t_node *child, t_cmd *tmp_cmd, t_type type);
 t_bool		is_redir(const t_node *child);
 t_node		*handle_all_redirs(t_node *child, t_cmd *tmp_cmd);
 void		signal_handler_parent(int sig);
+void		signal_handler_heredoc(int sig);
 t_error		*check_first_token(t_parser *p);
 void		fill_out_env_command(t_cmd *tmp_cmd, const char *tmp);
 t_vector	*fill_out_vector_with_commands(t_node *ast_node);

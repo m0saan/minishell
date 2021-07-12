@@ -1,5 +1,11 @@
 #include "../include/minishell.h"
 
+void	signal_handler_heredoc(int sig)
+{
+	if (sig == SIGINT && g_config.is_forked)
+		exit(1);
+}
+
 void	signal_handler_parent(int sig)
 {
 	if (sig == SIGQUIT && g_config.is_forked)

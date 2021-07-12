@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 21:44:58 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/12 21:33:11 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/12 21:52:04 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,19 +72,12 @@ t_bool	read_write(int fd, char *delim)
 	return (exit_by_delim);
 }
 
-void	signal_handler_heredoc(int sig)
-{
-	if (sig == SIGINT && g_config.is_forked)
-		exit(1);
-}
-
 pid_t	open_heredoc(char *fname, char *delim)
 {
 	int		fd;
 	t_bool	exit_by_delim;
 	pid_t	pid;
 
-	signal(SIGINT, signal_handler_heredoc);
 	pid = fork();
 	if (pid < 0)
 		exit(1);
@@ -102,4 +95,48 @@ pid_t	open_heredoc(char *fname, char *delim)
 		exit(0);
 	}
 	return (pid);
+}
+
+int		handle_heredoc(t_redir *redir, int index)
+{
+	char	*fname;
+
+	fname = strjoin_c("/tmp/.HEREDOC", index++ + 48, false);
+	signal(SIGINT, signal_handler_heredoc);
+	waitpid(open_heredoc(fname, redir->arg), &g_config.status, 0);
+	g_config.is_forked = false;
+	signal(SIGINT, signal_handler_parent);
+	if (WEXITSTATUS(g_config.status) == 1)
+	{
+		update_status_code(1);
+		return (1);
+	}
+	free(redir->arg);
+	redir->arg = fname;
+	return (0);
+}
+
+int		init_heredoc(t_vector *cmds)
+{
+	int		i;
+	int		j;
+	int		index;
+	t_cmd	*cmd;
+	
+	i = -1;
+	index = 0;
+	while (cmds && ++i < (int)cmds->size)
+	{
+		cmd = (t_cmd *)at(cmds, i);
+		j = -1;
+		while (cmd && cmd->redirs && ++j < (int)cmd->redirs->size)
+		{
+			if (((t_redir *)at(cmd->redirs, j))->type == HEREDOC)
+			{
+				if (handle_heredoc((t_redir *)at(cmd->redirs, j), index++) == 1)
+					return (1);
+			}
+		}
+	}
+	return (0);
 }

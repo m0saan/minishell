@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 18:22:21 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/12 21:34:43 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/12 21:52:39 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,39 +109,4 @@ void	run_cmds(t_vector *cmds)
 	// 	unlink((char *)at(g_config.heredoc, i));
 	// delete_free(g_config.heredoc, &free);
 	g_config.is_forked = false;
-}
-
-int		init_heredoc(t_vector *cmds)
-{
-	int		i;
-	int		j;
-	int		index;
-	char	*fname;
-	t_cmd	*cmd;
-	
-	i = -1;
-	index = 0;
-	while (cmds && ++i < (int)cmds->size)
-	{
-		cmd = (t_cmd *)at(cmds, i);
-		j = -1;
-		while (cmd && cmd->redirs && ++j < (int)cmd->redirs->size)
-		{
-			if (((t_redir *)at(cmd->redirs, j))->type == HEREDOC)
-			{
-				fname = strjoin_c("/tmp/.HEREDOC", index++ + 48, false);
-				waitpid(open_heredoc(fname, ((t_redir *)at(cmd->redirs, j))->arg), &g_config.status, 0);
-				g_config.is_forked = false;
-				signal(SIGINT, signal_handler_parent);
-				if (WEXITSTATUS(g_config.status) == 1)
-				{
-					update_status_code(1);
-					return (1);
-				}
-				free(((t_redir *)at(cmd->redirs, j))->arg);
-				((t_redir *)at(cmd->redirs, j))->arg = fname;
-			}
-		}
-	}
-	return (0);
 }
