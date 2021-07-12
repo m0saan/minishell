@@ -65,7 +65,7 @@ t_node	*parse_command(t_node *ast_node, t_parser *p)
 		catch_errors(p, error);
 		if (catch_errors(p, error)->is_error)
 		{
-			p_error("ZBBI", NULL, error->error_msg, 1);
+			p_error(NULL, error->error_msg, "Bad Token", 1);
 			free(error);
 			return (NULL);
 		}
