@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 21:44:58 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/11 18:06:24 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/12 18:57:53 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,14 @@ t_bool	read_write(int fd, char *delim)
 	t_bool	exit_by_delim;
 
 	exit_by_delim = false;
-	write(2, "> ", 2);
+	// write(2, "> ", 2);
 	while (true)
 	{
-		if (get_next_line(&buffer) <= 0)
+		buffer = readline("> ");
+		if (buffer == NULL)
 			break ;
+		// if (get_next_line(&buffer) <= 0)
+		// 	break ;
 		if (ft_strcmp(delim, buffer) == 0)
 		{
 			exit_by_delim = true;
@@ -61,7 +64,7 @@ t_bool	read_write(int fd, char *delim)
 			buffer = replace_var(buffer);
 		write(fd, buffer, ft_strlen(buffer));
 		write(fd, "\n", 1);
-		write(2, "> ", 2);
+		// write(2, "> ", 2);
 		free(buffer);
 	}
 	if (buffer)
@@ -80,6 +83,7 @@ pid_t	open_heredoc(char *fname, char *delim)
 		exit(1);
 	if (pid == 0)
 	{
+		signal(SIGINT, signal_handler_parent);
 		fd = open(fname, O_CREAT | O_TRUNC | O_RDWR, 0644);
 		if (fd < 0)
 			exit(p_error(fname, NULL, NULL, 1));
@@ -88,7 +92,6 @@ pid_t	open_heredoc(char *fname, char *delim)
 		if (!exit_by_delim)
 			p_error("warning", "here-document delimited by end-of-file wanted",
 				delim, 0);
-		
 		exit(0);
 	}
 	return (pid);
