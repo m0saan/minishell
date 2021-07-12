@@ -88,6 +88,6 @@ int			save_stdinout(int *sout, int *sin);
 void		free_syntax_tree(t_node *ast_node);
 void		ft_init(char **env, int ac, char **av);
 void		start(char *line);
-void		init_heredoc(t_vector *cmds);
+int			init_heredoc(t_vector *cmds);
 
 #endif

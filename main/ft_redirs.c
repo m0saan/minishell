@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 18:29:22 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/11 20:04:34 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/12 18:15:40 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,15 @@ int	setup_redirection(t_type type, char *arg, int *sout, int *sin)
 				S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 	else if (type == HEREDOC)
 	{
-		int i = -1;
-		while (++i < g_config.heredoc->size)
-		{
-			dprintf(2, "FFFF: %s\n", (char *)at(g_config.heredoc, i));
-		}
-		dprintf(2, "----------\n");
+		// int i = -1;
+		// while (++i < g_config.heredoc->size)
+		// {
+		// 	dprintf(2, "FFFF: %s\n", (char *)at(g_config.heredoc, i));
+		// }
+		// dprintf(2, "----------\n");
 		//dprintf(2, "FNAME: %s - ARG: %s\n", (char *)at(g_config.heredoc, 0), arg);
-		fd = open((char *)at(g_config.heredoc, 0), O_RDONLY);
-		free(remove_at(g_config.heredoc, 0));
+		fd = open(arg, O_RDONLY);
+		// free(remove_at(g_config.heredoc, 0));
 	}
 	else if (type == LEFT)
 		fd = open(arg, O_RDONLY);

@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 18:22:21 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/11 20:07:23 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/12 18:45:17 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,25 +92,26 @@ void	run_multiple_cmds(t_vector *cmds)
 
 void	run_cmds(t_vector *cmds)
 {
-	int		i;
 	t_cmd	*cmd;
 
-	init_heredoc(cmds);
-	cmd = (t_cmd *) at(cmds, 0);
-	if (cmds->size == 1 && (cmd->count == 0 || is_builtin(cmd->argv[0])))
-		run_single_builtin(cmds);
-	else
-		run_multiple_cmds(cmds);
+	if (init_heredoc(cmds) == 0)
+	{
+		cmd = (t_cmd *) at(cmds, 0);
+		if (cmds->size == 1 && (cmd->count == 0 || is_builtin(cmd->argv[0])))
+			run_single_builtin(cmds);
+		else
+			run_multiple_cmds(cmds);
+	}
 	delete_free(cmds, &delete_cmd);
-	i = -1;
-	if (g_config.heredoc )
-	while (++i < (int)g_config.heredoc->size)
-		unlink((char *)at(g_config.heredoc, i));
-	delete_free(g_config.heredoc, &free);
+	// i = -1;
+	// if (g_config.heredoc)
+	// while (++i < (int)g_config.heredoc->size)
+	// 	unlink((char *)at(g_config.heredoc, i));
+	// delete_free(g_config.heredoc, &free);
 	g_config.is_forked = false;
 }
 
-void	init_heredoc(t_vector *cmds)
+int		init_heredoc(t_vector *cmds)
 {
 	int		i;
 	int		j;
@@ -120,8 +121,6 @@ void	init_heredoc(t_vector *cmds)
 	
 	i = -1;
 	index = 0;
-	g_config.hereindex = 0;
-	g_config.heredoc = new_vector_s(10);
 	while (cmds && ++i < (int)cmds->size)
 	{
 		cmd = (t_cmd *)at(cmds, i);
@@ -130,16 +129,23 @@ void	init_heredoc(t_vector *cmds)
 		{
 			if (((t_redir *)at(cmd->redirs, j))->type == HEREDOC)
 			{
-				fname = strjoin_c("/tmp/.HEREDOC", index++ + 48, false); 
-				waitpid(open_heredoc(fname, ((t_redir *)at(cmd->redirs, j))->arg), NULL, 0);
-				insert(g_config.heredoc, fname);
+				fname = strjoin_c("/tmp/.HEREDOC", index++ + 48, false);
+				waitpid(open_heredoc(fname, ((t_redir *)at(cmd->redirs, j))->arg), &g_config.status, 0);
+				dprintf(2, "WAITPID EXIT\n");
+				if (WIFSIGNALED(g_config.status))
+				{
+					dprintf(2, "WIFSIGNALED\n");
+					if (WTERMSIG(g_config.status) == SIGINT)
+					{
+						dprintf(2, "WTERMSIG = SIGINT\n");
+						update_status_code(1);
+						return (1);
+					}
+				}
+				free(((t_redir *)at(cmd->redirs, j))->arg);
+				((t_redir *)at(cmd->redirs, j))->arg = fname;
 			}
 		}
 	}
-	i = -1;
-	while (++i < g_config.heredoc->size)
-	{
-		dprintf(2, "F: %s\n", (char *)at(g_config.heredoc, i));
-	}
-	
+	return (0);
 }
