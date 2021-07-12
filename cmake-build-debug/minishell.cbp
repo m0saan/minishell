@@ -8,247 +8,251 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/moboustt/Desktop/1337/minishell/cmake-build-debug"/>
+				<Option working_dir="/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/moboustt/Desktop/1337/minishell/cmake-build-debug"/>
+				<Option working_dir="/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/moboustt/Desktop/1337/minishell/cmake-build-debug"/>
+				<Option working_dir="/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="MINISHELL">
-				<Option output="/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/MINISHELL" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/moboustt/Desktop/1337/minishell/cmake-build-debug"/>
+				<Option output="/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/MINISHELL" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 MINISHELL"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/Makefile&quot;  VERBOSE=1 MINISHELL"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="MINISHELL/fast">
-				<Option output="/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/MINISHELL" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/moboustt/Desktop/1337/minishell/cmake-build-debug"/>
+				<Option output="/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/MINISHELL" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 MINISHELL/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/Makefile&quot;  VERBOSE=1 MINISHELL/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/moboustt/Desktop/1337/MINI2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/ast/node.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/ast/node.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/builtins/ft_cd.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/builtins/ft_cd.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/builtins/ft_echo.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/builtins/ft_echo.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/builtins/ft_env.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/builtins/ft_env.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/builtins/ft_exit.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/builtins/ft_exit.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/builtins/ft_export.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/builtins/ft_export.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/builtins/ft_pwd.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/builtins/ft_pwd.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/builtins/ft_unset.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/builtins/ft_unset.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/errors/error.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/errors/error.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_atoi.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_atoi.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_atol.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_atol.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_bzero.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_bzero.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_heredoc.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_heredoc.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_heredoc_handlers.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_heredoc_handlers.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_index_of.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_index_of.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_is.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_is.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_itoa.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_itoa.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_malloc.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_malloc.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_memset.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_memset.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_split.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_split.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_strcmp.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_strcmp.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_strdup.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_strdup.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_strjoin.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_strjoin.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_strlen.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_strlen.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_substr.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_substr.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_variables.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_variables.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_variables_2.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_variables_2.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_variables_3.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_variables_3.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_variables_4.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_variables_4.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_vector.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_vector.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_vector_1.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_vector_1.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_vector_2.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/ft_vector_2.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/gnl.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/global_utils/gnl.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/lexer/env_vars_helper_funcs.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/lexer/env_vars_helper_funcs.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/lexer/envirement_vars_utils.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/lexer/envirement_vars_utils.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/lexer/lexer.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/lexer/lexer.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/lexer/lexer_helper_functions.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/lexer/lexer_helper_functions2.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/lexer/lexer_helper_functions2.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/lexer/lexer_parsing_helper_funcs.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/lexer/lexer_parsing_helper_funcs.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/lexer/lexer_tokens_helper_funcs.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs2.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/lexer/lexer_tokens_helper_funcs2.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/lexer/quotes_parsing_helper_funcs.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/lexer/quotes_parsing_helper_funcs.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_cmds.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/main/ft_cmds.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_envp.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/main/ft_envp.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_execve.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/main/ft_execve.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_paths.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/main/ft_paths.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_pipes.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/main/ft_pipes.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_redirs.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/main/ft_redirs.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_run.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/main/ft_run.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_signals.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/main/ft_signals.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/minishell.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/main/minishell.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/parser/parse.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/parser/parse.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/parser/parse_redirs.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/parser/parse_redirs.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/parser/parser_helper_functions.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/parser/parser_helper_functions.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/parser/vector_fill_out_utils.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/parser/vector_fill_out_utils.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/tokenizer/token.c">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/tokenizer/token.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/CMakeLists.txt">
+		<Unit filename="/Users/moboustt/Desktop/1337/MINI2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
