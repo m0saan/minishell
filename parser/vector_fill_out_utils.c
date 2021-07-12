@@ -36,6 +36,11 @@ t_vector	*fill_out_vector_with_commands(t_node *ast_node)
 	tmp_cmd = create_cmd();
 	while (child)
 	{
+		if (child->val == NULL)
+		{
+			child = child->next_sibling;
+			continue;
+		}
 		if (is_redir(child))
 			child = handle_all_redirs(child, tmp_cmd);
 		else if (child->val_type == PIPE)

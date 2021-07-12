@@ -32,7 +32,9 @@ char	*read_identifier(t_lexer *l, int i)
 				|| ft_isspecial(l->input[l->read_position])))
 		{
 			next_char(l);
-			handle_evn_vars_with_no_quotes(l, &s, &i);
+			if (handle_evn_vars_with_no_quotes(l, &s, &i) == false)
+				if (ft_strlen(s) == 0 && l->ch == ' ')
+					return (NULL);
 			continue ;
 		}
 		s[i++] = l->ch;

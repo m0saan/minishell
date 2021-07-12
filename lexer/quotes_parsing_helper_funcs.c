@@ -41,14 +41,14 @@ void	handle_alphanum_identifier(t_lexer *l, char **s, int *i, int *s_index)
 	free(idt);
 }
 
-void	handle_evn_vars_with_no_quotes(t_lexer *l, char **s, int *i)
+t_bool handle_evn_vars_with_no_quotes(t_lexer *l, char **s, int *i)
 {
 	char	*env_value;
 
 	if (ft_isdigit(l->ch))
 	{
 		next_char(l);
-		return ;
+		return (true);
 	}
 	if (l->ch == '~')
 		env_value = get_var(g_config.envp, "HOME");
@@ -56,8 +56,9 @@ void	handle_evn_vars_with_no_quotes(t_lexer *l, char **s, int *i)
 	{
 		env_value = get_env_value(l);
 		if (env_value == NULL)
-			return ;
+			return (false);
 	}
 	(*s) = strjoin_s(*s, env_value, true);
 	(*i) += (int) ft_strlen(env_value);
+	return (true);
 }

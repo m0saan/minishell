@@ -50,6 +50,7 @@ t_token	*next_token(t_lexer *l)
 
 void	read_and_parse_double_quoted(t_lexer *l, char **s, int *index)
 {
+	char	*env_value;
 	check_quotes_errors(l, l->ch);
 	next_char(l);
 	while (l->ch != '"')
@@ -62,10 +63,11 @@ void	read_and_parse_double_quoted(t_lexer *l, char **s, int *index)
 				next_char(l);
 				continue ;
 			}
-			if (get_env_value(l) == NULL)
+			env_value = get_env_value(l);
+			if (env_value == NULL)
 				continue ;
-			*s = strjoin_s(*s, get_env_value(l), true);
-			(*index) += (int) ft_strlen(get_env_value(l));
+			*s = strjoin_s(*s, env_value, true);
+			(*index) += (int) ft_strlen(env_value);
 			continue ;
 		}
 		*index += 1;

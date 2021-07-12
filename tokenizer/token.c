@@ -6,6 +6,8 @@ t_token_t	lookup_type(char *ident)
 								  "export", "unset", "env", "exit"};
 	int			i;
 
+	if (ident == NULL)
+		return (ARG);
 	i = -1;
 	while (++i < 7)
 	{
