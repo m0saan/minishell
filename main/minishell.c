@@ -74,6 +74,11 @@ int	main(int ac, char **av, char **env)
 
 	code = 0;
 	ft_init(env, ac, av);
+    if (ac == 3 && ft_strcmp(av[1], "-c") == 0){
+            line = av[2];
+            start(line);
+            return 0;
+    }
 	while (true)
 	{
 		line = get_line();
@@ -101,7 +106,7 @@ void	start(char *line)
 
 	lexer = new_lexer(line, (int) ft_strlen(line));
 	parse_and_execute(lexer);
-	if (line)
-		free (line);
+	//if (line)
+	//	free (line);
 	free(lexer);
 }

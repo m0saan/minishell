@@ -79,7 +79,7 @@ t_token		*handle_dollar_token(t_lexer *l, t_token *tok);
 t_token		*handle_eof_token(t_token *tok);
 t_token		*handle_illegal_token(const t_lexer *l, t_token *tok);
 t_bool		check_quotes_errors(const t_lexer *l, char ch);
-void		handle_evn_vars_with_no_quotes(t_lexer *l, char **s, int *i);
+t_bool handle_evn_vars_with_no_quotes(t_lexer *l, char **s, int *i);
 void		next_char(t_lexer *lexer);
 char		peek_char(t_lexer *lexer);
 void		skip_white_spaces(t_lexer *lexer);
