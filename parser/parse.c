@@ -34,12 +34,18 @@ t_error	*catch_errors(t_parser *p, t_error *error)
 void	replace_token(t_parser *p)
 {
 	char	*tmp;
+	char	*literal;
 
 	if (p->cur_token->type == TILDE)
 	{
 		tmp = get_var(g_config.envp, "HOME");
 		if (p->cur_token->literal != NULL)
-			p->cur_token->literal = strjoin_s(p->cur_token->literal, tmp, true);
+		{
+			literal = p->cur_token->literal;
+			p->cur_token->literal = strjoin_s(tmp, \
+				p->cur_token->literal, false);
+			free(literal);
+		}
 		else
 			p->cur_token->literal = ft_strdup(tmp);
 	}
@@ -59,7 +65,7 @@ t_node	*parse_command(t_node *ast_node, t_parser *p)
 		catch_errors(p, error);
 		if (catch_errors(p, error)->is_error)
 		{
-			p_error("ZBBI", NULL, error->error_msg, 1);
+			p_error(NULL, error->error_msg, "Bad Token", 1);
 			free(error);
 			return (NULL);
 		}

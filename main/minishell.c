@@ -32,6 +32,7 @@ int	parse_and_execute(t_lexer *lexer)
 		free(err);
 		return (p_error(NULL, err->error_msg, p->peek_token->literal, 1));
 	}
+	free(err);
 	ast_node = parse_command(ast_node, p);
 	if (ast_node == NULL)
 		return (1);

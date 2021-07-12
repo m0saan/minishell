@@ -20,7 +20,7 @@ void	signal_handler_parent(int sig)
 	if (sig == SIGINT && !g_config.is_forked)
 	{
 		write(1, "\n", 1);
-		rl_replace_line("", 1);
+		//rl_replace_line("", 1);
 		rl_on_new_line();
 		rl_redisplay();
 		update_status_code(1);
