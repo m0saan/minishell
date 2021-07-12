@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 18:22:21 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/12 18:45:17 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/12 21:34:43 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,16 +131,12 @@ int		init_heredoc(t_vector *cmds)
 			{
 				fname = strjoin_c("/tmp/.HEREDOC", index++ + 48, false);
 				waitpid(open_heredoc(fname, ((t_redir *)at(cmd->redirs, j))->arg), &g_config.status, 0);
-				dprintf(2, "WAITPID EXIT\n");
-				if (WIFSIGNALED(g_config.status))
+				g_config.is_forked = false;
+				signal(SIGINT, signal_handler_parent);
+				if (WEXITSTATUS(g_config.status) == 1)
 				{
-					dprintf(2, "WIFSIGNALED\n");
-					if (WTERMSIG(g_config.status) == SIGINT)
-					{
-						dprintf(2, "WTERMSIG = SIGINT\n");
-						update_status_code(1);
-						return (1);
-					}
+					update_status_code(1);
+					return (1);
 				}
 				free(((t_redir *)at(cmd->redirs, j))->arg);
 				((t_redir *)at(cmd->redirs, j))->arg = fname;
