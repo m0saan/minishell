@@ -55,7 +55,7 @@ void	read_and_parse_double_quoted(t_lexer *l, char **s, int *index)
 	next_char(l);
 	while (l->ch != '"')
 	{
-		if (l->ch == '$' && ft_isalnum(l->input[l->read_position]))
+		if (l->ch == '$' && (ft_isalnum(l->input[l->read_position]) || l->input[l->read_position] == '?'))
 		{
 			next_char(l);
 			if (ft_isdigit(l->ch))

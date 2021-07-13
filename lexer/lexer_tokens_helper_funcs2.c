@@ -21,7 +21,7 @@ t_bool	check_quotes_errors(const t_lexer *l, char ch)
 
 	i = l->position;
 	counter = 1;
-	while (++i < l->len && l->input[i] != ' ')
+	while (++i < l->len)
 	{
 		if (l->input[i] == '\\')
 			return (true);

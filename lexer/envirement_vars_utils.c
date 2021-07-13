@@ -19,6 +19,12 @@ char	*get_env_value(t_lexer *l)
 	char	*env_name;
 	size_t	start;
 
+	if (l->ch == '?')
+	{
+		env_name = "?";
+		next_char(l);
+		return get_var(g_config.envp, env_name);
+	}
 	env_name = ft_malloc(1024);
 	ft_bzero(env_name, 1024);
 	start = get_env_var_last_index(l);
