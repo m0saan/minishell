@@ -23,8 +23,15 @@ t_token	*new_token(t_token_t token_type, char ch, t_token *token)
 	if (token_type == TILDE && peek_char(token->lexer) != 0)
 	{
 		next_char(token->lexer);
-		token->literal = handle_identifier_with_no_quotes(\
-			token->lexer, token)->literal;
+		if (token->lexer->ch == '+') {
+			next_char(token->lexer);
+			token_type = ARG;
+			token->literal = strjoin_s(get_var(g_config.envp, "PWD"), handle_identifier_with_no_quotes(\
+            token->lexer, token)->literal, false);
+		}
+		else
+			token->literal = handle_identifier_with_no_quotes(\
+				token->lexer, token)->literal;
 	}
 	else
 		token->literal = NULL;

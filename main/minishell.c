@@ -25,12 +25,11 @@ int	parse_and_execute(t_lexer *lexer)
 	err = check_first_token(p);
 	if (err->is_error)
 	{
-		if (p->cur_token->literal)
-			free(p->cur_token->literal);
+		p_error(NULL, err->error_msg, p->peek_token->literal, 1);
 		free(p->cur_token);
 		free(p->peek_token);
 		free(err);
-		return (p_error(NULL, err->error_msg, p->peek_token->literal, 1));
+		return (EXIT_FAILURE);
 	}
 	free(err);
 	ast_node = parse_command(ast_node, p);
@@ -105,6 +104,14 @@ void	start(char *line)
 	t_lexer	*lexer;
 
 	lexer = new_lexer(line, (int) ft_strlen(line));
+	while (lexer->ch == ' ')
+		next_char(lexer);
+	if (lexer->ch == 0)
+	{
+		free(lexer);
+		free(line);
+		return;
+	}
 	parse_and_execute(lexer);
 	//if (line)
 	//	free (line);
