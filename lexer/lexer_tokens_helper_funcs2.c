@@ -21,7 +21,7 @@ t_bool	check_quotes_errors(const t_lexer *l, char ch)
 
 	i = l->position;
 	counter = 1;
-	while (++i < l->len)
+	while (++i < l->len && l->input[i] != ' ')
 	{
 		if (l->input[i] == '\\')
 			return (true);
@@ -30,15 +30,13 @@ t_bool	check_quotes_errors(const t_lexer *l, char ch)
 	}
 	if (counter % 2 != 0)
 		p_error(NULL, NULL,
-				"syntax error near unexpected token `''", EXIT_FAILURE);
+				"syntax error : unexpected token found", EXIT_FAILURE);
 	return (false);
 }
 
 void	handle_single_quote_identifier(t_lexer *l, t_token *tok)
 {
 	check_quotes_errors(l, l->ch);
-	if (tok->type == ILLEGAL)
-		return;
 	if (tok->type == ILLEGAL)
 		return;
 	tok->literal = parse_quoted(l, l->ch, 0, 0);
@@ -69,3 +67,6 @@ t_token	*handle_right_redir(t_lexer *l, t_token *tok)
 	}
 	return (tok);
 }
+
+
+// echo '''''''''''''''''''' bonjour

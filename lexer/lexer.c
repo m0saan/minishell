@@ -76,3 +76,6 @@ void	read_and_parse_double_quoted(t_lexer *l, char **s, int *index)
 	}
 	next_char(l);
 }
+
+
+// echo '''''''''''''''''''''''''''''''''''''''''''''''''''''''''' bonjour

@@ -61,7 +61,7 @@ char	*parse_quoted(t_lexer *l, char quote, int i, int s_index)
 	int		*infos;
 
 	init_parse_quoted_vars(l, quote, &s, &infos);
-	while (i++ < infos[1] && l->ch != 0)
+	while ((l->ch == '"' || l->ch == '\'' || ft_isalnum(l->ch) || has_char(l->ch))&& l->ch != 0)
 	{
 		if (l->ch == '"')
 			handle_double_quotes(l, &s, &i, &s_index);
@@ -69,11 +69,11 @@ char	*parse_quoted(t_lexer *l, char quote, int i, int s_index)
 			handle_single_quote(l, &s, &i, &s_index);
 		else if (ft_isalnum(l->ch) || has_char(l->ch))
 			handle_alphanum_identifier(l, &s, &i, &s_index);
-		if (is_quote(l))
-		{
-			free(infos);
-			infos = has_next_quote(l, l->ch);
-		}
+		// if (is_quote(l))
+		// {
+		// 	free(infos);
+		// 	infos = has_next_quote(l, l->ch);
+		// }
 		if (l->ch == ' ')
 		{
 			free(infos);
@@ -83,3 +83,5 @@ char	*parse_quoted(t_lexer *l, char quote, int i, int s_index)
 	free(infos);
 	return (s);
 }
+
+// echo * bonjour
