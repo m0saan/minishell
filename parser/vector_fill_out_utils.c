@@ -36,7 +36,7 @@ t_vector	*fill_out_vector_with_commands(t_node *ast_node)
 	tmp_cmd = create_cmd();
 	while (child)
 	{
-		if (child->val == NULL)
+		if (child->val == NULL && child->val_type != PIPE)
 		{
 			child = child->next_sibling;
 			continue;
