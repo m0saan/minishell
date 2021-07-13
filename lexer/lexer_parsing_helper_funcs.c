@@ -28,6 +28,12 @@ char	*read_identifier(t_lexer *l, int i)
 	ft_bzero(s, 1024);
 	while (is_letter(l->ch))
 	{
+		if (l->ch == '$' && (l->input[l->read_position] == '\'' || \
+			l->input[l->read_position] == '"'))
+		{
+			next_char(l);
+			continue;
+		}
 		if (l->ch == '$' && (ft_isalnum(l->input[l->read_position])
 				|| ft_isspecial(l->input[l->read_position])))
 		{
