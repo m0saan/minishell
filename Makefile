@@ -12,7 +12,7 @@
 
 NAME		=	minishell
 CC			=	gcc
-CFLAG		=	#-Wall -Wextra -Werror
+CFLAG		=	# -Wall -Wextra -Werror
 LIB			=	"-lreadline"
 LDFLAGS		=	"-L/goinfre/$(USER)/.brew/opt/readline/lib"
 CPPFLAGS	=	"-I/goinfre/$(USER)/.brew/opt/readline/include"
