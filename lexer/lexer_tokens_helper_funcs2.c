@@ -29,14 +29,18 @@ t_bool	check_quotes_errors(const t_lexer *l, char ch)
 			++counter;
 	}
 	if (counter % 2 != 0)
-		exit(p_error(NULL, NULL,
-				"syntax error near unexpected token `''", EXIT_FAILURE));
+		p_error(NULL, NULL,
+				"syntax error near unexpected token `''", EXIT_FAILURE);
 	return (false);
 }
 
 void	handle_single_quote_identifier(t_lexer *l, t_token *tok)
 {
 	check_quotes_errors(l, l->ch);
+	if (tok->type == ILLEGAL)
+		return;
+	if (tok->type == ILLEGAL)
+		return;
 	tok->literal = parse_quoted(l, l->ch, 0, 0);
 	if (!tok->literal)
 		tok->type = ILLEGAL;
