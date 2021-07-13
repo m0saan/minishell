@@ -15,18 +15,6 @@ t_token	*handle_eof_token(t_token *tok)
 	return (tok);
 }
 
-t_token	*handle_dollar_token(t_lexer *l, t_token *tok)
-{
-	tok->type = ENV_VAR;
-	if (l->input[l->read_position] == '?' && peek_char(l) == 0)
-	{
-		tok->literal = ft_strdup("?");
-		return (tok);
-	}
-	tok->literal = handle_identifier_with_no_quotes(l, 0)->literal;
-	return (tok);
-}
-
 t_token	*handle_identifier_with_no_quotes(t_lexer *l, t_token *tok)
 {
 	char	*tmp;

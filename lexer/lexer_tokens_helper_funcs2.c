@@ -23,8 +23,6 @@ t_bool	check_quotes_errors(const t_lexer *l, char ch)
 	counter = 1;
 	while (++i < l->len)
 	{
-		if (l->input[i] == '\\')
-			return (true);
 		if (l->input[i] == ch)
 			++counter;
 	}
