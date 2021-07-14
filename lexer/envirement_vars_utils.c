@@ -23,7 +23,7 @@ char	*get_env_value(t_lexer *l)
 	{
 		env_name = "?";
 		next_char(l);
-		return get_var(g_config.envp, env_name);
+		return (get_var(g_config.envp, env_name));
 	}
 	env_name = ft_malloc(1024);
 	ft_bzero(env_name, 1024);

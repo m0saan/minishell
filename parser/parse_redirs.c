@@ -52,7 +52,7 @@ t_error	*check_first_token(t_parser *p)
 	error = ft_malloc(sizeof(t_error));
 	ft_memset(error, 0, sizeof(t_error));
 	i = -1;
-	while (++i < 8)
+	while (++i < 7)
 	{
 		if ((p->cur_token->type == types[i] && \
 			p->peek_token->type == END_O_F) || \

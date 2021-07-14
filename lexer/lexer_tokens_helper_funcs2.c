@@ -33,9 +33,11 @@ t_bool	check_quotes_errors(const t_lexer *l, char ch)
 
 void	handle_single_quote_identifier(t_lexer *l, t_token *tok)
 {
-	check_quotes_errors(l, l->ch);
-	if (tok->type == ILLEGAL)
-		return;
+	if (check_quotes_errors(l, l->ch))
+	{
+		tok->type = ILLEGAL;
+		return ;
+	}
 	tok->literal = parse_quoted(l, l->ch, 0, 0);
 	if (!tok->literal)
 		tok->type = ILLEGAL;
@@ -64,6 +66,3 @@ t_token	*handle_right_redir(t_lexer *l, t_token *tok)
 	}
 	return (tok);
 }
-
-
-// echo '''''''''''''''''''' bonjour

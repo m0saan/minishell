@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdbool.h>
 #include "../include/minishell.h"
 
 t_token	*construct_token(t_lexer *l)
@@ -21,6 +22,12 @@ t_token	*construct_token(t_lexer *l)
 	return (tok);
 }
 
+bool	is_env_identifier(const t_lexer *l)
+{
+	return (l->ch == '$' && (ft_isalnum(l->input[l->read_position])
+			|| l->input[l->read_position] == '?'));
+}
+
 t_token	*next_token(t_lexer *l)
 {
 	t_token	*tok;
@@ -28,7 +35,7 @@ t_token	*next_token(t_lexer *l)
 	tok = construct_token(l);
 	skip_white_spaces(l);
 	if (l->ch == '~' && (peek_char(l) == ' ' || \
-	peek_char(l) == '/' || peek_char(l) == '+'  || peek_char(l) == 0))
+	peek_char(l) == '/' || peek_char(l) == '+' || peek_char(l) == 0))
 		tok = new_token(TILDE, l->ch, tok);
 	else if (l->ch == '<' || l->ch == '>')
 		tok = handle_right_redir(l, tok);
@@ -51,11 +58,12 @@ t_token	*next_token(t_lexer *l)
 void	read_and_parse_double_quoted(t_lexer *l, char **s, int *index)
 {
 	char	*env_value;
+
 	check_quotes_errors(l, l->ch);
 	next_char(l);
 	while (l->ch != '"')
 	{
-		if (l->ch == '$' && (ft_isalnum(l->input[l->read_position]) || l->input[l->read_position] == '?'))
+		if (is_env_identifier(l))
 		{
 			next_char(l);
 			if (ft_isdigit(l->ch))
@@ -76,6 +84,3 @@ void	read_and_parse_double_quoted(t_lexer *l, char **s, int *index)
 	}
 	next_char(l);
 }
-
-
-// echo '''''''''''''''''''''''''''''''''''''''''''''''''''''''''' bonjour

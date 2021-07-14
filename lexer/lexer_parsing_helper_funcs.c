@@ -32,7 +32,7 @@ char	*read_identifier(t_lexer *l, int i)
 			l->input[l->read_position] == '"'))
 		{
 			next_char(l);
-			continue;
+			continue ;
 		}
 		if (l->ch == '$' && (ft_isalnum(l->input[l->read_position])
 				|| ft_isspecial(l->input[l->read_position])))
@@ -67,7 +67,8 @@ char	*parse_quoted(t_lexer *l, char quote, int i, int s_index)
 	int		*infos;
 
 	init_parse_quoted_vars(l, quote, &s, &infos);
-	while ((l->ch == '"' || l->ch == '\'' || ft_isalnum(l->ch) || has_char(l->ch))&& l->ch != 0)
+	while ((l->ch == '"' || l->ch == '\''
+			|| ft_isalnum(l->ch) || has_char(l->ch)) && l->ch != 0)
 	{
 		if (l->ch == '"')
 			handle_double_quotes(l, &s, &i, &s_index);
@@ -75,11 +76,6 @@ char	*parse_quoted(t_lexer *l, char quote, int i, int s_index)
 			handle_single_quote(l, &s, &i, &s_index);
 		else if (ft_isalnum(l->ch) || has_char(l->ch))
 			handle_alphanum_identifier(l, &s, &i, &s_index);
-		// if (is_quote(l))
-		// {
-		// 	free(infos);
-		// 	infos = has_next_quote(l, l->ch);
-		// }
 		if (l->ch == ' ')
 		{
 			free(infos);

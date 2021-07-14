@@ -41,7 +41,7 @@ void	handle_alphanum_identifier(t_lexer *l, char **s, int *i, int *s_index)
 	free(idt);
 }
 
-t_bool handle_evn_vars_with_no_quotes(t_lexer *l, char **s, int *i)
+t_bool	handle_evn_vars_with_no_quotes(t_lexer *l, char **s, int *i)
 {
 	char	*env_value;
 
