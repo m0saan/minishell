@@ -27,8 +27,7 @@ t_bool	check_quotes_errors(const t_lexer *l, char ch)
 			++counter;
 	}
 	if (counter % 2 != 0)
-		p_error(NULL, NULL,
-				"syntax error : unexpected token found", EXIT_FAILURE);
+		return (true);
 	return (false);
 }
 

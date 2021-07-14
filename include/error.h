@@ -21,7 +21,7 @@
 # include <readline/history.h>
 # include "ft_types.h"
 
-# define ERR1 "syntax error near unexpected token"
+# define ERR1 "syntax error : bad token found."
 
 typedef struct s_error
 {
