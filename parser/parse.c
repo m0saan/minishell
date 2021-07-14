@@ -44,6 +44,8 @@ void	replace_token(t_parser *p)
 		else
 			p->cur_token->literal = ft_strdup(tmp);
 	}
+	else if (p->cur_token->type == EXIT_STATUS)
+		p->cur_token->literal = ft_strdup(get_var(g_config.envp, "?"));
 }
 
 t_node	*parse_command(t_node *ast_node, t_parser *p)

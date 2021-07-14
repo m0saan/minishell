@@ -30,9 +30,7 @@ void	delete_cmd(void *cmd)
 	if (!c)
 		return ;
 	while (--(c->count) >= 0)
-	{
 		free(c->argv[c->count]);
-	}
 	delete_free(c->redirs, &delete_redir);
 	free(c);
 	c = NULL;

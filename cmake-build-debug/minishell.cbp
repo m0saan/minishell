@@ -116,12 +116,6 @@
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_bzero.c">
 			<Option target="MINISHELL"/>
 		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_heredoc.c">
-			<Option target="MINISHELL"/>
-		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_heredoc_handlers.c">
-			<Option target="MINISHELL"/>
-		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_index_of.c">
 			<Option target="MINISHELL"/>
 		</Unit>
@@ -153,27 +147,6 @@
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_substr.c">
-			<Option target="MINISHELL"/>
-		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_variables.c">
-			<Option target="MINISHELL"/>
-		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_variables_2.c">
-			<Option target="MINISHELL"/>
-		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_variables_3.c">
-			<Option target="MINISHELL"/>
-		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_variables_4.c">
-			<Option target="MINISHELL"/>
-		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_vector.c">
-			<Option target="MINISHELL"/>
-		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_vector_1.c">
-			<Option target="MINISHELL"/>
-		</Unit>
-		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/ft_vector_2.c">
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/global_utils/gnl.c">
@@ -215,6 +188,12 @@
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_execve.c">
 			<Option target="MINISHELL"/>
 		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_heredoc.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_heredoc_handlers.c">
+			<Option target="MINISHELL"/>
+		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_paths.c">
 			<Option target="MINISHELL"/>
 		</Unit>
@@ -228,6 +207,27 @@
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_signals.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_variables.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_variables_2.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_variables_3.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_variables_4.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_vector.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_vector_1.c">
+			<Option target="MINISHELL"/>
+		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_vector_2.c">
 			<Option target="MINISHELL"/>
 		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/minishell.c">

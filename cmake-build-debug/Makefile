@@ -466,60 +466,6 @@ global_utils/ft_bzero.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_bzero.c.s
 .PHONY : global_utils/ft_bzero.c.s
 
-global_utils/ft_heredoc.o: global_utils/ft_heredoc.c.o
-
-.PHONY : global_utils/ft_heredoc.o
-
-# target to build an object file
-global_utils/ft_heredoc.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_heredoc.c.o
-.PHONY : global_utils/ft_heredoc.c.o
-
-global_utils/ft_heredoc.i: global_utils/ft_heredoc.c.i
-
-.PHONY : global_utils/ft_heredoc.i
-
-# target to preprocess a source file
-global_utils/ft_heredoc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_heredoc.c.i
-.PHONY : global_utils/ft_heredoc.c.i
-
-global_utils/ft_heredoc.s: global_utils/ft_heredoc.c.s
-
-.PHONY : global_utils/ft_heredoc.s
-
-# target to generate assembly for a file
-global_utils/ft_heredoc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_heredoc.c.s
-.PHONY : global_utils/ft_heredoc.c.s
-
-global_utils/ft_heredoc_handlers.o: global_utils/ft_heredoc_handlers.c.o
-
-.PHONY : global_utils/ft_heredoc_handlers.o
-
-# target to build an object file
-global_utils/ft_heredoc_handlers.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_heredoc_handlers.c.o
-.PHONY : global_utils/ft_heredoc_handlers.c.o
-
-global_utils/ft_heredoc_handlers.i: global_utils/ft_heredoc_handlers.c.i
-
-.PHONY : global_utils/ft_heredoc_handlers.i
-
-# target to preprocess a source file
-global_utils/ft_heredoc_handlers.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_heredoc_handlers.c.i
-.PHONY : global_utils/ft_heredoc_handlers.c.i
-
-global_utils/ft_heredoc_handlers.s: global_utils/ft_heredoc_handlers.c.s
-
-.PHONY : global_utils/ft_heredoc_handlers.s
-
-# target to generate assembly for a file
-global_utils/ft_heredoc_handlers.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_heredoc_handlers.c.s
-.PHONY : global_utils/ft_heredoc_handlers.c.s
-
 global_utils/ft_index_of.o: global_utils/ft_index_of.c.o
 
 .PHONY : global_utils/ft_index_of.o
@@ -816,195 +762,6 @@ global_utils/ft_substr.s: global_utils/ft_substr.c.s
 global_utils/ft_substr.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_substr.c.s
 .PHONY : global_utils/ft_substr.c.s
-
-global_utils/ft_variables.o: global_utils/ft_variables.c.o
-
-.PHONY : global_utils/ft_variables.o
-
-# target to build an object file
-global_utils/ft_variables.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_variables.c.o
-.PHONY : global_utils/ft_variables.c.o
-
-global_utils/ft_variables.i: global_utils/ft_variables.c.i
-
-.PHONY : global_utils/ft_variables.i
-
-# target to preprocess a source file
-global_utils/ft_variables.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_variables.c.i
-.PHONY : global_utils/ft_variables.c.i
-
-global_utils/ft_variables.s: global_utils/ft_variables.c.s
-
-.PHONY : global_utils/ft_variables.s
-
-# target to generate assembly for a file
-global_utils/ft_variables.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_variables.c.s
-.PHONY : global_utils/ft_variables.c.s
-
-global_utils/ft_variables_2.o: global_utils/ft_variables_2.c.o
-
-.PHONY : global_utils/ft_variables_2.o
-
-# target to build an object file
-global_utils/ft_variables_2.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_variables_2.c.o
-.PHONY : global_utils/ft_variables_2.c.o
-
-global_utils/ft_variables_2.i: global_utils/ft_variables_2.c.i
-
-.PHONY : global_utils/ft_variables_2.i
-
-# target to preprocess a source file
-global_utils/ft_variables_2.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_variables_2.c.i
-.PHONY : global_utils/ft_variables_2.c.i
-
-global_utils/ft_variables_2.s: global_utils/ft_variables_2.c.s
-
-.PHONY : global_utils/ft_variables_2.s
-
-# target to generate assembly for a file
-global_utils/ft_variables_2.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_variables_2.c.s
-.PHONY : global_utils/ft_variables_2.c.s
-
-global_utils/ft_variables_3.o: global_utils/ft_variables_3.c.o
-
-.PHONY : global_utils/ft_variables_3.o
-
-# target to build an object file
-global_utils/ft_variables_3.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_variables_3.c.o
-.PHONY : global_utils/ft_variables_3.c.o
-
-global_utils/ft_variables_3.i: global_utils/ft_variables_3.c.i
-
-.PHONY : global_utils/ft_variables_3.i
-
-# target to preprocess a source file
-global_utils/ft_variables_3.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_variables_3.c.i
-.PHONY : global_utils/ft_variables_3.c.i
-
-global_utils/ft_variables_3.s: global_utils/ft_variables_3.c.s
-
-.PHONY : global_utils/ft_variables_3.s
-
-# target to generate assembly for a file
-global_utils/ft_variables_3.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_variables_3.c.s
-.PHONY : global_utils/ft_variables_3.c.s
-
-global_utils/ft_variables_4.o: global_utils/ft_variables_4.c.o
-
-.PHONY : global_utils/ft_variables_4.o
-
-# target to build an object file
-global_utils/ft_variables_4.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_variables_4.c.o
-.PHONY : global_utils/ft_variables_4.c.o
-
-global_utils/ft_variables_4.i: global_utils/ft_variables_4.c.i
-
-.PHONY : global_utils/ft_variables_4.i
-
-# target to preprocess a source file
-global_utils/ft_variables_4.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_variables_4.c.i
-.PHONY : global_utils/ft_variables_4.c.i
-
-global_utils/ft_variables_4.s: global_utils/ft_variables_4.c.s
-
-.PHONY : global_utils/ft_variables_4.s
-
-# target to generate assembly for a file
-global_utils/ft_variables_4.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_variables_4.c.s
-.PHONY : global_utils/ft_variables_4.c.s
-
-global_utils/ft_vector.o: global_utils/ft_vector.c.o
-
-.PHONY : global_utils/ft_vector.o
-
-# target to build an object file
-global_utils/ft_vector.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_vector.c.o
-.PHONY : global_utils/ft_vector.c.o
-
-global_utils/ft_vector.i: global_utils/ft_vector.c.i
-
-.PHONY : global_utils/ft_vector.i
-
-# target to preprocess a source file
-global_utils/ft_vector.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_vector.c.i
-.PHONY : global_utils/ft_vector.c.i
-
-global_utils/ft_vector.s: global_utils/ft_vector.c.s
-
-.PHONY : global_utils/ft_vector.s
-
-# target to generate assembly for a file
-global_utils/ft_vector.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_vector.c.s
-.PHONY : global_utils/ft_vector.c.s
-
-global_utils/ft_vector_1.o: global_utils/ft_vector_1.c.o
-
-.PHONY : global_utils/ft_vector_1.o
-
-# target to build an object file
-global_utils/ft_vector_1.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_vector_1.c.o
-.PHONY : global_utils/ft_vector_1.c.o
-
-global_utils/ft_vector_1.i: global_utils/ft_vector_1.c.i
-
-.PHONY : global_utils/ft_vector_1.i
-
-# target to preprocess a source file
-global_utils/ft_vector_1.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_vector_1.c.i
-.PHONY : global_utils/ft_vector_1.c.i
-
-global_utils/ft_vector_1.s: global_utils/ft_vector_1.c.s
-
-.PHONY : global_utils/ft_vector_1.s
-
-# target to generate assembly for a file
-global_utils/ft_vector_1.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_vector_1.c.s
-.PHONY : global_utils/ft_vector_1.c.s
-
-global_utils/ft_vector_2.o: global_utils/ft_vector_2.c.o
-
-.PHONY : global_utils/ft_vector_2.o
-
-# target to build an object file
-global_utils/ft_vector_2.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_vector_2.c.o
-.PHONY : global_utils/ft_vector_2.c.o
-
-global_utils/ft_vector_2.i: global_utils/ft_vector_2.c.i
-
-.PHONY : global_utils/ft_vector_2.i
-
-# target to preprocess a source file
-global_utils/ft_vector_2.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_vector_2.c.i
-.PHONY : global_utils/ft_vector_2.c.i
-
-global_utils/ft_vector_2.s: global_utils/ft_vector_2.c.s
-
-.PHONY : global_utils/ft_vector_2.s
-
-# target to generate assembly for a file
-global_utils/ft_vector_2.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/global_utils/ft_vector_2.c.s
-.PHONY : global_utils/ft_vector_2.c.s
 
 global_utils/gnl.o: global_utils/gnl.c.o
 
@@ -1357,6 +1114,60 @@ main/ft_execve.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_execve.c.s
 .PHONY : main/ft_execve.c.s
 
+main/ft_heredoc.o: main/ft_heredoc.c.o
+
+.PHONY : main/ft_heredoc.o
+
+# target to build an object file
+main/ft_heredoc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_heredoc.c.o
+.PHONY : main/ft_heredoc.c.o
+
+main/ft_heredoc.i: main/ft_heredoc.c.i
+
+.PHONY : main/ft_heredoc.i
+
+# target to preprocess a source file
+main/ft_heredoc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_heredoc.c.i
+.PHONY : main/ft_heredoc.c.i
+
+main/ft_heredoc.s: main/ft_heredoc.c.s
+
+.PHONY : main/ft_heredoc.s
+
+# target to generate assembly for a file
+main/ft_heredoc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_heredoc.c.s
+.PHONY : main/ft_heredoc.c.s
+
+main/ft_heredoc_handlers.o: main/ft_heredoc_handlers.c.o
+
+.PHONY : main/ft_heredoc_handlers.o
+
+# target to build an object file
+main/ft_heredoc_handlers.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_heredoc_handlers.c.o
+.PHONY : main/ft_heredoc_handlers.c.o
+
+main/ft_heredoc_handlers.i: main/ft_heredoc_handlers.c.i
+
+.PHONY : main/ft_heredoc_handlers.i
+
+# target to preprocess a source file
+main/ft_heredoc_handlers.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_heredoc_handlers.c.i
+.PHONY : main/ft_heredoc_handlers.c.i
+
+main/ft_heredoc_handlers.s: main/ft_heredoc_handlers.c.s
+
+.PHONY : main/ft_heredoc_handlers.s
+
+# target to generate assembly for a file
+main/ft_heredoc_handlers.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_heredoc_handlers.c.s
+.PHONY : main/ft_heredoc_handlers.c.s
+
 main/ft_paths.o: main/ft_paths.c.o
 
 .PHONY : main/ft_paths.o
@@ -1491,6 +1302,195 @@ main/ft_signals.s: main/ft_signals.c.s
 main/ft_signals.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_signals.c.s
 .PHONY : main/ft_signals.c.s
+
+main/ft_variables.o: main/ft_variables.c.o
+
+.PHONY : main/ft_variables.o
+
+# target to build an object file
+main/ft_variables.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_variables.c.o
+.PHONY : main/ft_variables.c.o
+
+main/ft_variables.i: main/ft_variables.c.i
+
+.PHONY : main/ft_variables.i
+
+# target to preprocess a source file
+main/ft_variables.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_variables.c.i
+.PHONY : main/ft_variables.c.i
+
+main/ft_variables.s: main/ft_variables.c.s
+
+.PHONY : main/ft_variables.s
+
+# target to generate assembly for a file
+main/ft_variables.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_variables.c.s
+.PHONY : main/ft_variables.c.s
+
+main/ft_variables_2.o: main/ft_variables_2.c.o
+
+.PHONY : main/ft_variables_2.o
+
+# target to build an object file
+main/ft_variables_2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_variables_2.c.o
+.PHONY : main/ft_variables_2.c.o
+
+main/ft_variables_2.i: main/ft_variables_2.c.i
+
+.PHONY : main/ft_variables_2.i
+
+# target to preprocess a source file
+main/ft_variables_2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_variables_2.c.i
+.PHONY : main/ft_variables_2.c.i
+
+main/ft_variables_2.s: main/ft_variables_2.c.s
+
+.PHONY : main/ft_variables_2.s
+
+# target to generate assembly for a file
+main/ft_variables_2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_variables_2.c.s
+.PHONY : main/ft_variables_2.c.s
+
+main/ft_variables_3.o: main/ft_variables_3.c.o
+
+.PHONY : main/ft_variables_3.o
+
+# target to build an object file
+main/ft_variables_3.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_variables_3.c.o
+.PHONY : main/ft_variables_3.c.o
+
+main/ft_variables_3.i: main/ft_variables_3.c.i
+
+.PHONY : main/ft_variables_3.i
+
+# target to preprocess a source file
+main/ft_variables_3.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_variables_3.c.i
+.PHONY : main/ft_variables_3.c.i
+
+main/ft_variables_3.s: main/ft_variables_3.c.s
+
+.PHONY : main/ft_variables_3.s
+
+# target to generate assembly for a file
+main/ft_variables_3.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_variables_3.c.s
+.PHONY : main/ft_variables_3.c.s
+
+main/ft_variables_4.o: main/ft_variables_4.c.o
+
+.PHONY : main/ft_variables_4.o
+
+# target to build an object file
+main/ft_variables_4.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_variables_4.c.o
+.PHONY : main/ft_variables_4.c.o
+
+main/ft_variables_4.i: main/ft_variables_4.c.i
+
+.PHONY : main/ft_variables_4.i
+
+# target to preprocess a source file
+main/ft_variables_4.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_variables_4.c.i
+.PHONY : main/ft_variables_4.c.i
+
+main/ft_variables_4.s: main/ft_variables_4.c.s
+
+.PHONY : main/ft_variables_4.s
+
+# target to generate assembly for a file
+main/ft_variables_4.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_variables_4.c.s
+.PHONY : main/ft_variables_4.c.s
+
+main/ft_vector.o: main/ft_vector.c.o
+
+.PHONY : main/ft_vector.o
+
+# target to build an object file
+main/ft_vector.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_vector.c.o
+.PHONY : main/ft_vector.c.o
+
+main/ft_vector.i: main/ft_vector.c.i
+
+.PHONY : main/ft_vector.i
+
+# target to preprocess a source file
+main/ft_vector.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_vector.c.i
+.PHONY : main/ft_vector.c.i
+
+main/ft_vector.s: main/ft_vector.c.s
+
+.PHONY : main/ft_vector.s
+
+# target to generate assembly for a file
+main/ft_vector.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_vector.c.s
+.PHONY : main/ft_vector.c.s
+
+main/ft_vector_1.o: main/ft_vector_1.c.o
+
+.PHONY : main/ft_vector_1.o
+
+# target to build an object file
+main/ft_vector_1.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_vector_1.c.o
+.PHONY : main/ft_vector_1.c.o
+
+main/ft_vector_1.i: main/ft_vector_1.c.i
+
+.PHONY : main/ft_vector_1.i
+
+# target to preprocess a source file
+main/ft_vector_1.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_vector_1.c.i
+.PHONY : main/ft_vector_1.c.i
+
+main/ft_vector_1.s: main/ft_vector_1.c.s
+
+.PHONY : main/ft_vector_1.s
+
+# target to generate assembly for a file
+main/ft_vector_1.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_vector_1.c.s
+.PHONY : main/ft_vector_1.c.s
+
+main/ft_vector_2.o: main/ft_vector_2.c.o
+
+.PHONY : main/ft_vector_2.o
+
+# target to build an object file
+main/ft_vector_2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_vector_2.c.o
+.PHONY : main/ft_vector_2.c.o
+
+main/ft_vector_2.i: main/ft_vector_2.c.i
+
+.PHONY : main/ft_vector_2.i
+
+# target to preprocess a source file
+main/ft_vector_2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_vector_2.c.i
+.PHONY : main/ft_vector_2.c.i
+
+main/ft_vector_2.s: main/ft_vector_2.c.s
+
+.PHONY : main/ft_vector_2.s
+
+# target to generate assembly for a file
+main/ft_vector_2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_vector_2.c.s
+.PHONY : main/ft_vector_2.c.s
 
 main/minishell.o: main/minishell.c.o
 
@@ -1699,12 +1699,6 @@ help:
 	@echo "... global_utils/ft_bzero.o"
 	@echo "... global_utils/ft_bzero.i"
 	@echo "... global_utils/ft_bzero.s"
-	@echo "... global_utils/ft_heredoc.o"
-	@echo "... global_utils/ft_heredoc.i"
-	@echo "... global_utils/ft_heredoc.s"
-	@echo "... global_utils/ft_heredoc_handlers.o"
-	@echo "... global_utils/ft_heredoc_handlers.i"
-	@echo "... global_utils/ft_heredoc_handlers.s"
 	@echo "... global_utils/ft_index_of.o"
 	@echo "... global_utils/ft_index_of.i"
 	@echo "... global_utils/ft_index_of.s"
@@ -1738,27 +1732,6 @@ help:
 	@echo "... global_utils/ft_substr.o"
 	@echo "... global_utils/ft_substr.i"
 	@echo "... global_utils/ft_substr.s"
-	@echo "... global_utils/ft_variables.o"
-	@echo "... global_utils/ft_variables.i"
-	@echo "... global_utils/ft_variables.s"
-	@echo "... global_utils/ft_variables_2.o"
-	@echo "... global_utils/ft_variables_2.i"
-	@echo "... global_utils/ft_variables_2.s"
-	@echo "... global_utils/ft_variables_3.o"
-	@echo "... global_utils/ft_variables_3.i"
-	@echo "... global_utils/ft_variables_3.s"
-	@echo "... global_utils/ft_variables_4.o"
-	@echo "... global_utils/ft_variables_4.i"
-	@echo "... global_utils/ft_variables_4.s"
-	@echo "... global_utils/ft_vector.o"
-	@echo "... global_utils/ft_vector.i"
-	@echo "... global_utils/ft_vector.s"
-	@echo "... global_utils/ft_vector_1.o"
-	@echo "... global_utils/ft_vector_1.i"
-	@echo "... global_utils/ft_vector_1.s"
-	@echo "... global_utils/ft_vector_2.o"
-	@echo "... global_utils/ft_vector_2.i"
-	@echo "... global_utils/ft_vector_2.s"
 	@echo "... global_utils/gnl.o"
 	@echo "... global_utils/gnl.i"
 	@echo "... global_utils/gnl.s"
@@ -1798,6 +1771,12 @@ help:
 	@echo "... main/ft_execve.o"
 	@echo "... main/ft_execve.i"
 	@echo "... main/ft_execve.s"
+	@echo "... main/ft_heredoc.o"
+	@echo "... main/ft_heredoc.i"
+	@echo "... main/ft_heredoc.s"
+	@echo "... main/ft_heredoc_handlers.o"
+	@echo "... main/ft_heredoc_handlers.i"
+	@echo "... main/ft_heredoc_handlers.s"
 	@echo "... main/ft_paths.o"
 	@echo "... main/ft_paths.i"
 	@echo "... main/ft_paths.s"
@@ -1813,6 +1792,27 @@ help:
 	@echo "... main/ft_signals.o"
 	@echo "... main/ft_signals.i"
 	@echo "... main/ft_signals.s"
+	@echo "... main/ft_variables.o"
+	@echo "... main/ft_variables.i"
+	@echo "... main/ft_variables.s"
+	@echo "... main/ft_variables_2.o"
+	@echo "... main/ft_variables_2.i"
+	@echo "... main/ft_variables_2.s"
+	@echo "... main/ft_variables_3.o"
+	@echo "... main/ft_variables_3.i"
+	@echo "... main/ft_variables_3.s"
+	@echo "... main/ft_variables_4.o"
+	@echo "... main/ft_variables_4.i"
+	@echo "... main/ft_variables_4.s"
+	@echo "... main/ft_vector.o"
+	@echo "... main/ft_vector.i"
+	@echo "... main/ft_vector.s"
+	@echo "... main/ft_vector_1.o"
+	@echo "... main/ft_vector_1.i"
+	@echo "... main/ft_vector_1.s"
+	@echo "... main/ft_vector_2.o"
+	@echo "... main/ft_vector_2.i"
+	@echo "... main/ft_vector_2.s"
 	@echo "... main/minishell.o"
 	@echo "... main/minishell.i"
 	@echo "... main/minishell.s"

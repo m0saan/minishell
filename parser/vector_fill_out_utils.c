@@ -36,7 +36,8 @@ t_vector	*fill_out_vector_with_commands(t_node *ast_node)
 	tmp_cmd = create_cmd();
 	while (child)
 	{
-		if (child->val == NULL && child->val_type != PIPE && !is_redir(child))
+		if (child->val == NULL && child->val_type != PIPE && !is_redir(child)
+			&& child->val_type != EXIT_STATUS)
 		{
 			child = child->next_sibling;
 			continue;

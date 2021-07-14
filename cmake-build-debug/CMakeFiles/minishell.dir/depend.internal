@@ -103,30 +103,6 @@ CMakeFiles/MINISHELL.dir/global_utils/ft_bzero.c.o
  /Users/moboustt/Desktop/1337/minishell/global_utils/ft_bzero.c
  /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
  /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
-CMakeFiles/MINISHELL.dir/global_utils/ft_heredoc.c.o
- /Users/moboustt/Desktop/1337/minishell/global_utils/ft_heredoc.c
- /Users/moboustt/Desktop/1337/minishell/include/error.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_variables.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
- /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
- /Users/moboustt/Desktop/1337/minishell/include/lexer.h
- /Users/moboustt/Desktop/1337/minishell/include/minishell.h
- /Users/moboustt/Desktop/1337/minishell/include/node.h
- /Users/moboustt/Desktop/1337/minishell/include/parser.h
-CMakeFiles/MINISHELL.dir/global_utils/ft_heredoc_handlers.c.o
- /Users/moboustt/Desktop/1337/minishell/global_utils/ft_heredoc_handlers.c
- /Users/moboustt/Desktop/1337/minishell/include/error.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_variables.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
- /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
- /Users/moboustt/Desktop/1337/minishell/include/lexer.h
- /Users/moboustt/Desktop/1337/minishell/include/minishell.h
- /Users/moboustt/Desktop/1337/minishell/include/node.h
- /Users/moboustt/Desktop/1337/minishell/include/parser.h
 CMakeFiles/MINISHELL.dir/global_utils/ft_index_of.c.o
  /Users/moboustt/Desktop/1337/minishell/global_utils/ft_index_of.c
 CMakeFiles/MINISHELL.dir/global_utils/ft_is.c.o
@@ -168,72 +144,6 @@ CMakeFiles/MINISHELL.dir/global_utils/ft_strlen.c.o
 CMakeFiles/MINISHELL.dir/global_utils/ft_substr.c.o
  /Users/moboustt/Desktop/1337/minishell/global_utils/ft_substr.c
  /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
- /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
-CMakeFiles/MINISHELL.dir/global_utils/ft_variables.c.o
- /Users/moboustt/Desktop/1337/minishell/global_utils/ft_variables.c
- /Users/moboustt/Desktop/1337/minishell/include/error.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_variables.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
- /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
- /Users/moboustt/Desktop/1337/minishell/include/lexer.h
- /Users/moboustt/Desktop/1337/minishell/include/minishell.h
- /Users/moboustt/Desktop/1337/minishell/include/node.h
- /Users/moboustt/Desktop/1337/minishell/include/parser.h
-CMakeFiles/MINISHELL.dir/global_utils/ft_variables_2.c.o
- /Users/moboustt/Desktop/1337/minishell/global_utils/ft_variables_2.c
- /Users/moboustt/Desktop/1337/minishell/include/error.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_variables.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
- /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
- /Users/moboustt/Desktop/1337/minishell/include/lexer.h
- /Users/moboustt/Desktop/1337/minishell/include/minishell.h
- /Users/moboustt/Desktop/1337/minishell/include/node.h
- /Users/moboustt/Desktop/1337/minishell/include/parser.h
-CMakeFiles/MINISHELL.dir/global_utils/ft_variables_3.c.o
- /Users/moboustt/Desktop/1337/minishell/global_utils/ft_variables_3.c
- /Users/moboustt/Desktop/1337/minishell/include/error.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_variables.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
- /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
- /Users/moboustt/Desktop/1337/minishell/include/lexer.h
- /Users/moboustt/Desktop/1337/minishell/include/minishell.h
- /Users/moboustt/Desktop/1337/minishell/include/node.h
- /Users/moboustt/Desktop/1337/minishell/include/parser.h
-CMakeFiles/MINISHELL.dir/global_utils/ft_variables_4.c.o
- /Users/moboustt/Desktop/1337/minishell/global_utils/ft_variables_4.c
- /Users/moboustt/Desktop/1337/minishell/include/error.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_builtin.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_variables.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
- /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
- /Users/moboustt/Desktop/1337/minishell/include/lexer.h
- /Users/moboustt/Desktop/1337/minishell/include/minishell.h
- /Users/moboustt/Desktop/1337/minishell/include/node.h
- /Users/moboustt/Desktop/1337/minishell/include/parser.h
-CMakeFiles/MINISHELL.dir/global_utils/ft_vector.c.o
- /Users/moboustt/Desktop/1337/minishell/global_utils/ft_vector.c
- /Users/moboustt/Desktop/1337/minishell/include/error.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
- /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
-CMakeFiles/MINISHELL.dir/global_utils/ft_vector_1.c.o
- /Users/moboustt/Desktop/1337/minishell/global_utils/ft_vector_1.c
- /Users/moboustt/Desktop/1337/minishell/include/error.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
- /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
-CMakeFiles/MINISHELL.dir/global_utils/ft_vector_2.c.o
- /Users/moboustt/Desktop/1337/minishell/global_utils/ft_vector_2.c
- /Users/moboustt/Desktop/1337/minishell/include/error.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
- /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
  /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
 CMakeFiles/MINISHELL.dir/global_utils/gnl.c.o
  /Users/moboustt/Desktop/1337/minishell/global_utils/gnl.c
@@ -359,6 +269,30 @@ CMakeFiles/MINISHELL.dir/main/ft_execve.c.o
  /Users/moboustt/Desktop/1337/minishell/include/node.h
  /Users/moboustt/Desktop/1337/minishell/include/parser.h
  /Users/moboustt/Desktop/1337/minishell/main/ft_execve.c
+CMakeFiles/MINISHELL.dir/main/ft_heredoc.c.o
+ /Users/moboustt/Desktop/1337/minishell/include/error.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_builtin.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_variables.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
+ /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
+ /Users/moboustt/Desktop/1337/minishell/include/lexer.h
+ /Users/moboustt/Desktop/1337/minishell/include/minishell.h
+ /Users/moboustt/Desktop/1337/minishell/include/node.h
+ /Users/moboustt/Desktop/1337/minishell/include/parser.h
+ /Users/moboustt/Desktop/1337/minishell/main/ft_heredoc.c
+CMakeFiles/MINISHELL.dir/main/ft_heredoc_handlers.c.o
+ /Users/moboustt/Desktop/1337/minishell/include/error.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_builtin.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_variables.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
+ /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
+ /Users/moboustt/Desktop/1337/minishell/include/lexer.h
+ /Users/moboustt/Desktop/1337/minishell/include/minishell.h
+ /Users/moboustt/Desktop/1337/minishell/include/node.h
+ /Users/moboustt/Desktop/1337/minishell/include/parser.h
+ /Users/moboustt/Desktop/1337/minishell/main/ft_heredoc_handlers.c
 CMakeFiles/MINISHELL.dir/main/ft_paths.c.o
  /Users/moboustt/Desktop/1337/minishell/include/error.h
  /Users/moboustt/Desktop/1337/minishell/include/ft_builtin.h
@@ -419,6 +353,72 @@ CMakeFiles/MINISHELL.dir/main/ft_signals.c.o
  /Users/moboustt/Desktop/1337/minishell/include/node.h
  /Users/moboustt/Desktop/1337/minishell/include/parser.h
  /Users/moboustt/Desktop/1337/minishell/main/ft_signals.c
+CMakeFiles/MINISHELL.dir/main/ft_variables.c.o
+ /Users/moboustt/Desktop/1337/minishell/include/error.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_builtin.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_variables.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
+ /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
+ /Users/moboustt/Desktop/1337/minishell/include/lexer.h
+ /Users/moboustt/Desktop/1337/minishell/include/minishell.h
+ /Users/moboustt/Desktop/1337/minishell/include/node.h
+ /Users/moboustt/Desktop/1337/minishell/include/parser.h
+ /Users/moboustt/Desktop/1337/minishell/main/ft_variables.c
+CMakeFiles/MINISHELL.dir/main/ft_variables_2.c.o
+ /Users/moboustt/Desktop/1337/minishell/include/error.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_builtin.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_variables.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
+ /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
+ /Users/moboustt/Desktop/1337/minishell/include/lexer.h
+ /Users/moboustt/Desktop/1337/minishell/include/minishell.h
+ /Users/moboustt/Desktop/1337/minishell/include/node.h
+ /Users/moboustt/Desktop/1337/minishell/include/parser.h
+ /Users/moboustt/Desktop/1337/minishell/main/ft_variables_2.c
+CMakeFiles/MINISHELL.dir/main/ft_variables_3.c.o
+ /Users/moboustt/Desktop/1337/minishell/include/error.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_builtin.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_variables.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
+ /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
+ /Users/moboustt/Desktop/1337/minishell/include/lexer.h
+ /Users/moboustt/Desktop/1337/minishell/include/minishell.h
+ /Users/moboustt/Desktop/1337/minishell/include/node.h
+ /Users/moboustt/Desktop/1337/minishell/include/parser.h
+ /Users/moboustt/Desktop/1337/minishell/main/ft_variables_3.c
+CMakeFiles/MINISHELL.dir/main/ft_variables_4.c.o
+ /Users/moboustt/Desktop/1337/minishell/include/error.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_builtin.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_variables.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
+ /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
+ /Users/moboustt/Desktop/1337/minishell/include/lexer.h
+ /Users/moboustt/Desktop/1337/minishell/include/minishell.h
+ /Users/moboustt/Desktop/1337/minishell/include/node.h
+ /Users/moboustt/Desktop/1337/minishell/include/parser.h
+ /Users/moboustt/Desktop/1337/minishell/main/ft_variables_4.c
+CMakeFiles/MINISHELL.dir/main/ft_vector.c.o
+ /Users/moboustt/Desktop/1337/minishell/include/error.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
+ /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
+ /Users/moboustt/Desktop/1337/minishell/main/ft_vector.c
+CMakeFiles/MINISHELL.dir/main/ft_vector_1.c.o
+ /Users/moboustt/Desktop/1337/minishell/include/error.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
+ /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
+ /Users/moboustt/Desktop/1337/minishell/main/ft_vector_1.c
+CMakeFiles/MINISHELL.dir/main/ft_vector_2.c.o
+ /Users/moboustt/Desktop/1337/minishell/include/error.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
+ /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
+ /Users/moboustt/Desktop/1337/minishell/main/ft_vector_2.c
 CMakeFiles/MINISHELL.dir/main/minishell.c.o
  /Users/moboustt/Desktop/1337/minishell/include/error.h
  /Users/moboustt/Desktop/1337/minishell/include/ft_builtin.h
