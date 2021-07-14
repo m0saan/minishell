@@ -12,6 +12,25 @@
 
 #include "../include/minishell.h"
 
+int	handle_heredoc(t_redir *redir, int index)
+{
+	char	*fname;
+
+	fname = strjoin_c("/tmp/.HEREDOC", index++ + 48, false);
+	signal(SIGINT, signal_handler_heredoc);
+	waitpid(open_heredoc(fname, redir->arg), &g_config.status, 0);
+	g_config.is_forked = false;
+	signal(SIGINT, signal_handler_parent);
+	if (WEXITSTATUS(g_config.status) == 1)
+	{
+		update_status_code(1);
+		return (1);
+	}
+	free(redir->arg);
+	redir->arg = fname;
+	return (0);
+}
+
 int	handle_digit(char **new_buf, char *buf, int idx, int start)
 {
 	start = 0;

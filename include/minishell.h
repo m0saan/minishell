@@ -49,9 +49,6 @@ typedef struct s_minishell
 	t_bool		is_forked;
 	int			status;
 	char		*prompt;
-	t_vector	*x_malloc_vec;
-	t_vector	*heredoc;
-	int			hereindex;
 }					t_minishell;
 
 extern t_minishell	g_config;
@@ -90,6 +87,10 @@ int			save_stdinout(int *sout, int *sin);
 void		free_syntax_tree(t_node *ast_node);
 void		ft_init(char **env, int ac, char **av);
 void		start(char *line);
+int			handle_var(char **new_buf, char *buf, int idx, int start);
 int			init_heredoc(t_vector *cmds);
+int			open_heredoc(char *fname, char *delim);
+int			handle_heredoc(t_redir *redir, int index);
+void		unlink_heredoc(t_vector *cmds);
 
 #endif

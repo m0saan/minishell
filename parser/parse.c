@@ -15,12 +15,12 @@ t_error	*catch_errors(t_parser *p, t_error *error)
 	if (p->cur_token->type == RIGHT || p->cur_token->type == LEFT
 		|| p->cur_token->type == RIGHT_APPEND)
 	{
-		if (!expect_peek(p, *p->lexer, ARG))
+		if (!expect_peek(p, ARG))
 			set_error(error, ERR1);
 	}
 	else if (p->cur_token->type == PIPE)
 	{
-		if (expect_peek(p, *p->lexer, PIPE))
+		if (expect_peek(p, PIPE))
 			set_error(error, ERR1);
 	}
 	return (error);

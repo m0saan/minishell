@@ -6,14 +6,14 @@
 #    By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/04 19:30:39 by ehakam            #+#    #+#              #
-#    Updated: 2021/07/11 18:43:39 by ehakam           ###   ########.fr        #
+#    Updated: 2021/07/14 13:08:34 by ehakam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	minishell
 CC			=	gcc
-CFLAG		=	# -Wall -Wextra -Werror
-LIB			=	"-lreadline"
+CFLAG		=	-Wall -Wextra -Werror
+LRL			=	"-lreadline"
 LDFLAGS		=	"-L/goinfre/$(USER)/.brew/opt/readline/lib"
 CPPFLAGS	=	"-I/goinfre/$(USER)/.brew/opt/readline/include"
 
@@ -45,15 +45,6 @@ SRC_UTILS	=	global_utils/ft_atoi.c \
 				global_utils/ft_strlen.c \
 				global_utils/ft_substr.c \
 				global_utils/ft_index_of.c \
-				global_utils/ft_vector.c \
-				global_utils/ft_vector_1.c \
-				global_utils/ft_vector_2.c \
-				global_utils/ft_heredoc.c \
-				global_utils/ft_heredoc_handlers.c \
-				global_utils/ft_variables.c \
-				global_utils/ft_variables_2.c \
-				global_utils/ft_variables_3.c \
-				global_utils/ft_variables_4.c \
 				global_utils/gnl.c \
 				global_utils/ft_malloc.c
 
@@ -74,6 +65,15 @@ SRC_EXEC	=	main/ft_cmds.c \
 				main/ft_run.c \
 				main/minishell.c \
 				main/ft_signals.c \
+				main/ft_vector.c \
+				main/ft_vector_1.c \
+				main/ft_vector_2.c \
+				main/ft_heredoc.c \
+				main/ft_heredoc_handlers.c \
+				main/ft_variables.c \
+				main/ft_variables_2.c \
+				main/ft_variables_3.c \
+				main/ft_variables_4.c \
 				
 
 SRC_AST		=	ast/node.c
@@ -84,14 +84,12 @@ SRCS		=	$(SRC_LEXER) $(SRC_PARSER) $(SRC_UTILS) $(SRC_BUILTINS)	$(SRC_EXEC) $(SR
 
 all: $(NAME)
 
-# TODO: DON'T FORGET TO ADD CFLAGS
 $(NAME): $(SRCS)
 	@echo "Building..."
-	@echo "TODO: DON'T FORGET TO ADD CFLAGS"
-	@gcc $(CFLAG) $(LIB) $(LDFLAGS) $(CPPFLAGS) $(SRCS) -o $(NAME) -g3
-
+	@gcc $(CFLAG) $(LRL) $(LDFLAGS) $(CPPFLAGS) $(SRCS) -o $(NAME)
+	
 clean:
-	@echo "Cleaning"
+	@echo "Cleaning..."
 	@rm -rf *.o
 
 fclean: clean

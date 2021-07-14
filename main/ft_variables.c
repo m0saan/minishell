@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 17:13:38 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/06 21:11:15 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/14 12:55:15 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,15 +64,18 @@ t_var	*new_var_s(char *var_str)
 			strdup(var_str)));
 }
 
-void	delete_var(t_var *var)
+void	delete_var(void *var)
 {
-	if (!var)
+	t_var	*v;
+
+	v = (t_var *)var;
+	if (!v)
 		return ;
-	if (var->key)
-		free(var->key);
-	if (var->raw)
-		free(var->raw);
-	if (var->value)
-		free(var->value);
-	free(var);
+	if (v->key)
+		free(v->key);
+	if (v->raw)
+		free(v->raw);
+	if (v->value)
+		free(v->value);
+	free(v);
 }

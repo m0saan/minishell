@@ -1,1 +1,123 @@
-/* ************************************************************************** *//*                                                                            *//*                                                        :::      ::::::::   *//*   minishell.c                                        :+:      :+:    :+:   *//*                                                    +:+ +:+         +:+     *//*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        *//*                                                +#+#+#+#+#+   +#+           *//*   Created: 2021/07/10 21:58:08 by ehakam            #+#    #+#             *//*   Updated: 2021/07/10 21:58:57 by ehakam           ###   ########.fr       *//*                                                                            *//* ************************************************************************** */#include "../include/minishell.h"t_minishell	g_config;int	parse_and_execute(t_lexer *lexer){	t_node		*ast_node;	t_error		*err;	t_parser	*p;	ast_node = NULL;	p = new_parser(lexer);	err = check_first_token(p);	if (err->is_error)	{		p_error(NULL, NULL, err->error_msg, 1);        if (p->cur_token->literal)            free(p->cur_token->literal);		free(p->cur_token);		free(p->peek_token);		free(err);		free(p);		return (EXIT_FAILURE);	}	free(err);	ast_node = parse_command(ast_node, p);	if (ast_node == NULL)		return (1);	run_cmds((t_vector *) fill_out_vector_with_commands(ast_node));	free_syntax_tree(ast_node);	free(p);	return (0);}void	free_syntax_tree(t_node *ast_node){	t_node	*head;	t_node	*to_be_freed;	head = ast_node->first_child;	while (head)	{		to_be_freed = head;		head = head->next_sibling;		free(to_be_freed);	}	free(ast_node);}char	*get_line(void){	char	*line_read;	line_read = readline (g_config.prompt);	if (line_read && *line_read)		add_history (line_read);	return (line_read);}int	main(int ac, char **av, char **env){	char	*line;	int		code;	code = 0;	ft_init(env, ac, av);    if (ac == 3 && ft_strcmp(av[1], "-c") == 0){            line = av[2];            start(line);            return 0;    }	while (true)	{		line = get_line();		if (line && line[0] == '\0')		{			free(line);			continue ;		}		if (!line)		{			if (isatty(0))                write(2, "exit\n", 5);			break ;		}		start(line);	}	code = ft_atoi(get_var(g_config.envp, "?"));	// TODO: free env	return (code);}void	start(char *line){    t_lexer	*lexer;	lexer = new_lexer(line, (int) ft_strlen(line));	while (lexer->ch == ' ')		next_char(lexer);	if (lexer->ch == 0)	{		free(lexer);		free(line);        return;	}	parse_and_execute(lexer);	 if (line)	 	free (line);	free(lexer);}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minishell.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/10 21:58:08 by ehakam            #+#    #+#             */
+/*   Updated: 2021/07/10 21:58:57 by ehakam           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../include/minishell.h"
+
+t_minishell	g_config;
+
+int	parse_and_execute(t_lexer *lexer)
+{
+	t_node		*ast_node;
+	t_error		*err;
+	t_parser	*p;
+
+	ast_node = NULL;
+	p = new_parser(lexer);
+	err = check_first_token(p);
+	if (err->is_error)
+	{
+		p_error(NULL, NULL, err->error_msg, 1);
+		if (p->cur_token->literal)
+			free(p->cur_token->literal);
+		free(p->cur_token);
+		free(p->peek_token);
+		free(err);
+		free(p);
+		return (EXIT_FAILURE);
+	}
+	free(err);
+	ast_node = parse_command(ast_node, p);
+	if (ast_node == NULL)
+		return (1);
+	run_cmds((t_vector *) fill_out_vector_with_commands(ast_node));
+	free_syntax_tree(ast_node);
+	free(p);
+	return (0);
+}
+
+void	free_syntax_tree(t_node *ast_node)
+{
+	t_node	*head;
+	t_node	*to_be_freed;
+
+	head = ast_node->first_child;
+	while (head)
+	{
+		to_be_freed = head;
+		head = head->next_sibling;
+		free(to_be_freed);
+	}
+	free(ast_node);
+}
+
+char	*get_line(void)
+{
+	char	*line_read;
+
+	line_read = readline (g_config.prompt);
+	if (line_read && *line_read)
+		add_history (line_read);
+	return (line_read);
+}
+
+void	start(char *line)
+{
+	t_lexer	*lexer;
+
+	lexer = new_lexer(line, (int) ft_strlen(line));
+	while (lexer->ch == ' ')
+		next_char(lexer);
+	if (lexer->ch == 0)
+	{
+		free(lexer);
+		free(line);
+		return;
+	}
+	parse_and_execute(lexer);
+	// if (line)
+	// 	free (line);
+	free(lexer);
+}
+
+int	main(int ac, char **av, char **env)
+{
+	char	*line;
+	int		code;
+
+	code = 0;
+	ft_init(env, ac, av);
+	if (ac == 3 && ft_strcmp(av[1], "-c") == 0){
+		line = av[2];
+		start(line);
+		return 0;
+	}
+	while (true)
+	{
+		line = get_line();
+		if (line && line[0] == '\0')
+		{
+			free(line);
+			continue ;
+		}
+		if (!line)
+		{
+			if (isatty(0))
+				write(2, "exit\n", 5);
+			break ;
+		}
+		start(line);
+	}
+	code = ft_atoi(get_var(g_config.envp, "?"));
+	delete_free(g_config.envp, &delete_var);
+	free(g_config.prompt);
+	return (code);
+}
