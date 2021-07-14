@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 21:44:58 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/14 12:27:11 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/14 16:47:38 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,6 @@ pid_t	open_heredoc(char *fname, char *delim)
 	}
 	return (pid);
 }
-
-
 
 void	unlink_heredoc(t_vector *cmds)
 {

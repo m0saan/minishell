@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 18:29:22 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/14 12:58:50 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/14 16:47:23 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,10 @@ int	setup_redirection(t_type type, char *arg)
 	if (fd < 0)
 		return (p_error(arg, NULL, NULL, 1));
 	if (type == RIGHT || type == RIGHT_APPEND)
-	{
 		dup2(fd, 1);
-		close(fd);
-	}
 	else if (type == LEFT || type == HEREDOC)
-	{
 		dup2(fd, 0);
-		close(fd);
-	}
+	close(fd);
 	return (0);
 }
 
