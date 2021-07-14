@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 21:58:08 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/14 12:55:44 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/14 12:56:51 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,25 @@ char	*get_line(void)
 	return (line_read);
 }
 
+void	start(char *line)
+{
+	t_lexer	*lexer;
+
+	lexer = new_lexer(line, (int) ft_strlen(line));
+	while (lexer->ch == ' ')
+		next_char(lexer);
+	if (lexer->ch == 0)
+	{
+		free(lexer);
+		free(line);
+		return;
+	}
+	parse_and_execute(lexer);
+	// if (line)
+	// 	free (line);
+	free(lexer);
+}
+
 int	main(int ac, char **av, char **env)
 {
 	char	*line;
@@ -98,23 +117,4 @@ int	main(int ac, char **av, char **env)
 	delete_free(g_config.envp, &delete_var);
 	// TODO: free env
 	return (code);
-}
-
-void	start(char *line)
-{
-	t_lexer	*lexer;
-
-	lexer = new_lexer(line, (int) ft_strlen(line));
-	while (lexer->ch == ' ')
-		next_char(lexer);
-	if (lexer->ch == 0)
-	{
-		free(lexer);
-		free(line);
-		return;
-	}
-	parse_and_execute(lexer);
-	// if (line)
-	// 	free (line);
-	free(lexer);
 }
