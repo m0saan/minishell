@@ -1,9 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_signals.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/14 12:23:30 by ehakam            #+#    #+#             */
+/*   Updated: 2021/07/14 12:26:22 by ehakam           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/minishell.h"
 
 void	signal_handler_heredoc(int sig)
 {
 	if (sig == SIGINT && g_config.is_forked)
+	{
+		write(1, "\n", 1);
+		rl_on_new_line();
 		exit(1);
+	}
 }
 
 void	signal_handler_parent(int sig)
@@ -26,7 +42,7 @@ void	signal_handler_parent(int sig)
 	if (sig == SIGINT && !g_config.is_forked)
 	{
 		write(1, "\n", 1);
-		//rl_replace_line("", 1);
+		rl_replace_line("", 1);
 		rl_on_new_line();
 		rl_redisplay();
 		update_status_code(1);

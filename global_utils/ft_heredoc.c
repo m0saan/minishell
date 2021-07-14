@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 21:44:58 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/12 21:52:04 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/14 12:27:11 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,11 @@ t_bool	read_write(int fd, char *delim)
 	t_bool	exit_by_delim;
 
 	exit_by_delim = false;
-	// write(2, "> ", 2);
 	while (true)
 	{
 		buffer = readline("> ");
 		if (buffer == NULL)
 			break ;
-		// if (get_next_line(&buffer) <= 0)
-		// 	break ;
 		if (ft_strcmp(delim, buffer) == 0)
 		{
 			exit_by_delim = true;
@@ -64,7 +61,6 @@ t_bool	read_write(int fd, char *delim)
 			buffer = replace_var(buffer);
 		write(fd, buffer, ft_strlen(buffer));
 		write(fd, "\n", 1);
-		// write(2, "> ", 2);
 		free(buffer);
 	}
 	if (buffer)
@@ -97,7 +93,7 @@ pid_t	open_heredoc(char *fname, char *delim)
 	return (pid);
 }
 
-int		handle_heredoc(t_redir *redir, int index)
+int	handle_heredoc(t_redir *redir, int index)
 {
 	char	*fname;
 
@@ -116,13 +112,13 @@ int		handle_heredoc(t_redir *redir, int index)
 	return (0);
 }
 
-int		init_heredoc(t_vector *cmds)
+int	init_heredoc(t_vector *cmds)
 {
 	int		i;
 	int		j;
 	int		index;
 	t_cmd	*cmd;
-	
+
 	i = -1;
 	index = 0;
 	while (cmds && ++i < (int)cmds->size)
