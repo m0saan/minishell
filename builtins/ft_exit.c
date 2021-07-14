@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 21:16:50 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/04 19:21:17 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/14 13:02:19 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ int	ft_exit(int ac, char **av)
 	code = (unsigned char)ft_atol_err(av[1]);
 	if (ac > 2)
 		return (p_error("exit", NULL, err_msg, 1));
+	delete_free(g_config.envp, &delete_var);
+	free(g_config.prompt);
 	exit(code);
 }

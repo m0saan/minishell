@@ -6,14 +6,14 @@
 #    By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/04 19:30:39 by ehakam            #+#    #+#              #
-#    Updated: 2021/07/11 18:43:39 by ehakam           ###   ########.fr        #
+#    Updated: 2021/07/14 13:05:39 by ehakam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	minishell
 CC			=	gcc
-CFLAG		=	# -Wall -Wextra -Werror
-LIB			=	"-lreadline"
+CFLAG		=	-Wall -Wextra -Werror
+LRL			=	"-lreadline"
 LDFLAGS		=	"-L/goinfre/$(USER)/.brew/opt/readline/lib"
 CPPFLAGS	=	"-I/goinfre/$(USER)/.brew/opt/readline/include"
 
@@ -84,14 +84,12 @@ SRCS		=	$(SRC_LEXER) $(SRC_PARSER) $(SRC_UTILS) $(SRC_BUILTINS)	$(SRC_EXEC) $(SR
 
 all: $(NAME)
 
-# TODO: DON'T FORGET TO ADD CFLAGS
 $(NAME): $(SRCS)
 	@echo "Building..."
-	@echo "TODO: DON'T FORGET TO ADD CFLAGS"
-	@gcc $(CFLAG) $(LIB) $(LDFLAGS) $(CPPFLAGS) $(SRCS) -o $(NAME) -g3
-
+	@gcc $(CFLAG) $(LRL) $(LDFLAGS) $(CPPFLAGS) $(SRCS) -o $(NAME)
+	
 clean:
-	@echo "Cleaning"
+	@echo "Cleaning..."
 	@rm -rf *.o
 
 fclean: clean

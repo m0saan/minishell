@@ -14,7 +14,7 @@ typedef struct s_parser
 }			t_parser;
 
 t_bool		peek_token_is(t_parser *p, t_token_t t);
-t_bool		expect_peek(t_parser *p, t_lexer l, t_token_t t);
+t_bool		expect_peek(t_parser *p, t_token_t t);
 void		next_token_p(t_parser *p);
 t_parser	*new_parser(t_lexer *l);
 t_error		*catch_errors(t_parser *p, t_error *error);

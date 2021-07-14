@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 21:58:08 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/14 12:56:51 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/14 13:02:26 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,6 @@ int	main(int ac, char **av, char **env)
 	}
 	code = ft_atoi(get_var(g_config.envp, "?"));
 	delete_free(g_config.envp, &delete_var);
-	// TODO: free env
+	free(g_config.prompt);
 	return (code);
 }

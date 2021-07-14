@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 18:29:22 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/12 18:15:40 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/14 12:58:50 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	restore_stdinout(t_type type, int *sout, int *sin)
 	}
 }
 
-int	setup_redirection(t_type type, char *arg, int *sout, int *sin)
+int	setup_redirection(t_type type, char *arg)
 {
 	int	fd;
 
@@ -44,20 +44,9 @@ int	setup_redirection(t_type type, char *arg, int *sout, int *sin)
 		fd = open(arg, O_CREAT | O_APPEND | O_RDWR,
 				S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 	else if (type == HEREDOC)
-	{
-		// int i = -1;
-		// while (++i < g_config.heredoc->size)
-		// {
-		// 	dprintf(2, "FFFF: %s\n", (char *)at(g_config.heredoc, i));
-		// }
-		// dprintf(2, "----------\n");
-		//dprintf(2, "FNAME: %s - ARG: %s\n", (char *)at(g_config.heredoc, 0), arg);
 		fd = open(arg, O_RDONLY);
-		// free(remove_at(g_config.heredoc, 0));
-	}
 	else if (type == LEFT)
 		fd = open(arg, O_RDONLY);
-	
 	if (fd < 0)
 		return (p_error(arg, NULL, NULL, 1));
 	if (type == RIGHT || type == RIGHT_APPEND)
@@ -85,7 +74,7 @@ int	setup_all_redirs(t_vector *redirs, int *sout, int *sin)
 	{
 		redir = (t_redir *) at(redirs, i);
 		restore_stdinout(redir->type, sout, sin);
-		if (setup_redirection(redir->type, redir->arg, sout, sin) != 0)
+		if (setup_redirection(redir->type, redir->arg) != 0)
 			code = 1;
 	}
 	return (code);
