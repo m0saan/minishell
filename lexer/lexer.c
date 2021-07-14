@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdbool.h>
 #include "../include/minishell.h"
 
 t_token	*construct_token(t_lexer *l)
@@ -22,7 +21,7 @@ t_token	*construct_token(t_lexer *l)
 	return (tok);
 }
 
-bool	is_env_identifier(const t_lexer *l)
+t_bool	is_env_identifier(const t_lexer *l)
 {
 	return (l->ch == '$' && (ft_isalnum(l->input[l->read_position])
 			|| l->input[l->read_position] == '?'));
