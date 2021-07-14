@@ -36,7 +36,6 @@ typedef enum e_val_type
 	ILLEGAL,
 	HEREDOC,
 	END_O_F,
-	SEMICOLON,
 	TILDE,
 	EXIT_STATUS,
 	NEW_LINE,

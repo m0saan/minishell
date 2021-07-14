@@ -44,7 +44,7 @@ t_node	*init_and_fill_redirs(t_node *child, t_cmd *tmp_cmd, t_type type)
 t_error	*check_first_token(t_parser *p)
 {
 	const t_type	types[] = {ILLEGAL, END_O_F, \
-							   	SEMICOLON, PIPE, RIGHT, LEFT, \
+								PIPE, RIGHT, LEFT, \
 							   RIGHT_APPEND, HEREDOC};
 	t_error			*error;
 	int				i;

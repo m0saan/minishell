@@ -113,7 +113,7 @@ void	start(char *line)
 		return;
 	}
 	parse_and_execute(lexer);
-	//if (line)
-	//	free (line);
+	// if (line)
+	// 	free (line);
 	free(lexer);
 }

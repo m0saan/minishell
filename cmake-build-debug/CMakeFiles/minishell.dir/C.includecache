@@ -246,7 +246,9 @@ lexer.h
 ../include/node.h
 /Users/moboustt/Desktop/1337/minishell/include/node.h
 
-/Users/moboustt/Desktop/1337/minishell/tokenizer/token.c
+/Users/moboustt/Desktop/1337/minishell/parser/parser_helper_functions.c
+../include/parser.h
+/Users/moboustt/Desktop/1337/minishell/include/parser.h
 ../include/minishell.h
 /Users/moboustt/Desktop/1337/minishell/include/minishell.h
 

@@ -23,11 +23,6 @@ t_error	*catch_errors(t_parser *p, t_error *error)
 		if (expect_peek(p, *p->lexer, PIPE))
 			set_error(error, ERR1);
 	}
-	else if (p->cur_token->type == SEMICOLON)
-	{
-		if (expect_peek(p, *p->lexer, SEMICOLON))
-			set_error(error, ERR1);
-	}
 	return (error);
 }
 

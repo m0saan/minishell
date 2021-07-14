@@ -26,10 +26,7 @@ t_bool	peek_token_is(t_parser *p, t_token_t t)
 t_bool	expect_peek(t_parser *p, t_lexer l, t_token_t t)
 {
 	if (peek_token_is(p, t))
-	{
-		free(next_token(&l));
 		return (true);
-	}
 	else
 		return (false);
 }
