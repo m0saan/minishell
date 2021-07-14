@@ -102,11 +102,7 @@ void	run_cmds(t_vector *cmds)
 		else
 			run_multiple_cmds(cmds);
 	}
+	unlink_heredoc(cmds);
 	delete_free(cmds, &delete_cmd);
-	// i = -1;
-	// if (g_config.heredoc)
-	// while (++i < (int)g_config.heredoc->size)
-	// 	unlink((char *)at(g_config.heredoc, i));
-	// delete_free(g_config.heredoc, &free);
 	g_config.is_forked = false;
 }

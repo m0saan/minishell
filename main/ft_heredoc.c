@@ -93,23 +93,23 @@ pid_t	open_heredoc(char *fname, char *delim)
 	return (pid);
 }
 
-int	handle_heredoc(t_redir *redir, int index)
-{
-	char	*fname;
 
-	fname = strjoin_c("/tmp/.HEREDOC", index++ + 48, false);
-	signal(SIGINT, signal_handler_heredoc);
-	waitpid(open_heredoc(fname, redir->arg), &g_config.status, 0);
-	g_config.is_forked = false;
-	signal(SIGINT, signal_handler_parent);
-	if (WEXITSTATUS(g_config.status) == 1)
+
+void	unlink_heredoc(t_vector *cmds)
+{
+	int		i;
+	int		j;
+	t_cmd	*cmd;
+
+	i = -1;
+	while (cmds && ++i < (int)cmds->size)
 	{
-		update_status_code(1);
-		return (1);
+		cmd = (t_cmd *)at(cmds, i);
+		j = -1;
+		while (cmd && cmd->redirs && ++j < (int)cmd->redirs->size)
+			if (((t_redir *)at(cmd->redirs, j))->type == HEREDOC)
+				unlink(((t_redir *)at(cmd->redirs, j))->arg);
 	}
-	free(redir->arg);
-	redir->arg = fname;
-	return (0);
 }
 
 int	init_heredoc(t_vector *cmds)
