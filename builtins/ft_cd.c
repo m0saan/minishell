@@ -52,7 +52,7 @@ int	ft_cd(int ac, char **av)
 		if (cd_oldpwd() == 1)
 			return (1);
 	}
-	else if (ac >= 2)
+	else if (ac >= 2 && av[1][0])
 		ret = chdir(av[1]);
 	if (ret == -1)
 		return (p_error("cd", av[1], NULL, 1));

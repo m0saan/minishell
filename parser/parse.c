@@ -56,7 +56,6 @@ t_node	*parse_command(t_node *ast_node, t_parser *p)
 	while (p->cur_token->type != END_O_F)
 	{
 		replace_token(p);
-		catch_errors(p, error);
 		if (catch_errors(p, error)->is_error)
 		{
 			p_error(NULL, error->error_msg, "Bad Token", 1);

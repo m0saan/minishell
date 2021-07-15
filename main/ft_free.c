@@ -1,6 +1,6 @@
 #include "../include/minishell.h"
 
-t_bool is_valid_to_be_freed(t_type t)
+t_bool	is_valid_to_be_freed(t_type t)
 {
 	return (t != END_O_F && t != ILLEGAL);
 }
@@ -17,7 +17,7 @@ void	free_parser(t_error *err, t_parser *p)
 	free(p);
 }
 
-void free_syntax_tree(t_node *ast_node, t_bool _free)
+void	free_syntax_tree(t_node *ast_node, t_bool _free)
 {
 	t_node	*head;
 	t_node	*to_be_freed;
