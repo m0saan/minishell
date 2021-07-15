@@ -18,9 +18,6 @@
 # include <stdlib.h>
 # include "ft_types.h"
 
-# define MAXVAL 9223372036854775807L
-# define MINVAL 9223372036854775807L
-
 size_t		ft_strlen(const char *str);
 void		*ft_memset(void *b, int c, size_t len);
 void		ft_bzero(void *s, size_t n);
@@ -39,6 +36,6 @@ int			ft_isspecial(int c);
 int			index_of_c(char *str, char c);
 int			get_next_line(char **line);
 int			ft_atoi(char *str);
-long long	ft_atol_err(char *str);
+long long	ft_atol(char *str);
 
 #endif

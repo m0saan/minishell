@@ -6,14 +6,14 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 19:20:09 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/14 20:26:34 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/15 11:17:05 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/global_utils.h"
 #include "../include/error.h"
 
-long long	ft_atol_err(char *str)
+long long	ft_atol(char *str)
 {
 	int			i;
 	int			n;

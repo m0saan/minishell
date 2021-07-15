@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 20:23:55 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/10 20:00:01 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/15 10:51:32 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@
 # include <readline/readline.h>
 # include <readline/history.h>
 # include "global_utils.h"
+
+# define MINVAL "-9223372036854775808"
+# define MAXVAL "9223372036854775807"
 
 int	ft_cd(int ac, char **av);
 int	ft_echo(int ac, char **av);
