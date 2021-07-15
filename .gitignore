@@ -1,5 +1,10 @@
 a.out
+.idea/
 minishell
 .vscode/
 */a.out
 *.dSYM/
+cmake-build-debug/
+.DS_Store
+*/.DS_Store
+**/.DS_Store

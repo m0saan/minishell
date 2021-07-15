@@ -33,7 +33,6 @@ typedef enum e_val_type
 	HEREDOC,
 	END_O_F,
 	TILDE,
-	EXIT_STATUS,
 }					t_type;
 
 typedef char		*t_string;

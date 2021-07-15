@@ -27,8 +27,7 @@ void	fill_out_env_command(t_cmd *tmp_cmd, const char *tmp)
 
 t_bool	is_valid_value(const t_node *child)
 {
-	return (child->val == NULL && child->val_type != PIPE && !is_redir(child)
-		&& child->val_type != EXIT_STATUS);
+	return (child->val == NULL && child->val_type != PIPE && !is_redir(child));
 }
 
 void	init_fields(t_node *ast_node, t_node **child,
