@@ -40,6 +40,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/moboustt/Desktop/1337/minishell/main/ft_cmds.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/main/ft_cmds.c.o"
   "/Users/moboustt/Desktop/1337/minishell/main/ft_envp.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/main/ft_envp.c.o"
   "/Users/moboustt/Desktop/1337/minishell/main/ft_execve.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/main/ft_execve.c.o"
+  "/Users/moboustt/Desktop/1337/minishell/main/ft_free.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/main/ft_free.c.o"
   "/Users/moboustt/Desktop/1337/minishell/main/ft_heredoc.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/main/ft_heredoc.c.o"
   "/Users/moboustt/Desktop/1337/minishell/main/ft_heredoc_handlers.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/main/ft_heredoc_handlers.c.o"
   "/Users/moboustt/Desktop/1337/minishell/main/ft_paths.c" "/Users/moboustt/Desktop/1337/minishell/cmake-build-debug/CMakeFiles/MINISHELL.dir/main/ft_paths.c.o"

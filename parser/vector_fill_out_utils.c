@@ -25,22 +25,33 @@ void	fill_out_env_command(t_cmd *tmp_cmd, const char *tmp)
 		tmp_cmd->argv[tmp_cmd->count++] = splited_env_value[i];
 }
 
+t_bool	is_valid_value(const t_node *child)
+{
+	return (child->val == NULL && child->val_type != PIPE && !is_redir(child)
+		&& child->val_type != EXIT_STATUS);
+}
+
+void	init_fields(t_node *ast_node, t_node **child,
+				t_vector **vector, t_cmd **tmp_cmd)
+{
+	(*vector) = new_vector();
+	(*child) = ast_node->first_child;
+	(*tmp_cmd) = create_cmd();
+}
+
 t_vector	*fill_out_vector_with_commands(t_node *ast_node)
 {
 	t_node		*child;
 	t_vector	*vector;
 	t_cmd		*tmp_cmd;
 
-	vector = new_vector();
-	child = ast_node->first_child;
-	tmp_cmd = create_cmd();
+	init_fields(ast_node, &child, &vector, &tmp_cmd);
 	while (child)
 	{
-		if (child->val == NULL && child->val_type != PIPE && !is_redir(child)
-			&& child->val_type != EXIT_STATUS)
+		if (is_valid_value(child))
 		{
 			child = child->next_sibling;
-			continue;
+			continue ;
 		}
 		if (is_redir(child))
 			child = handle_all_redirs(child, tmp_cmd);

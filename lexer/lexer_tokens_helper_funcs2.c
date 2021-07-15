@@ -16,13 +16,21 @@ void	handle_double_quotes_identifier(t_lexer *l, t_token *tok)
 
 t_bool	check_quotes_errors(const t_lexer *l, char ch)
 {
-	int	i;
-	int	counter;
+	int		i;
+	int		counter;
+	char	other_quote;
 
 	i = l->position;
 	counter = 1;
+	if (ch == '"')
+		other_quote = '\'';
+	else
+		other_quote = '"';
 	while (++i < l->len)
 	{
+		if (l->input[i] == other_quote && (l->input[i - 1] == ' '
+				|| ((counter) % 2 == 0 && l->input[i] == other_quote)))
+			break ;
 		if (l->input[i] == ch)
 			++counter;
 	}

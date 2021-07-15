@@ -26,12 +26,7 @@ int	parse_and_execute(t_lexer *lexer)
 	if (err->is_error)
 	{
 		p_error(NULL, NULL, err->error_msg, 1);
-		if (p->cur_token->literal)
-			free(p->cur_token->literal);
-		free(p->cur_token);
-		free(p->peek_token);
-		free(err);
-		free(p);
+		free_parser(err, p);
 		return (EXIT_FAILURE);
 	}
 	free(err);
@@ -42,21 +37,6 @@ int	parse_and_execute(t_lexer *lexer)
 	free_syntax_tree(ast_node);
 	free(p);
 	return (0);
-}
-
-void	free_syntax_tree(t_node *ast_node)
-{
-	t_node	*head;
-	t_node	*to_be_freed;
-
-	head = ast_node->first_child;
-	while (head)
-	{
-		to_be_freed = head;
-		head = head->next_sibling;
-		free(to_be_freed);
-	}
-	free(ast_node);
 }
 
 char	*get_line(void)
@@ -80,11 +60,11 @@ void	start(char *line)
 	{
 		free(lexer);
 		free(line);
-		return;
+		return ;
 	}
 	parse_and_execute(lexer);
-	// if (line)
-	// 	free (line);
+	if (line)
+		free (line);
 	free(lexer);
 }
 
@@ -95,10 +75,11 @@ int	main(int ac, char **av, char **env)
 
 	code = 0;
 	ft_init(env, ac, av);
-	if (ac == 3 && ft_strcmp(av[1], "-c") == 0){
+	if (ac == 3 && ft_strcmp(av[1], "-c") == 0)
+	{
 		line = av[2];
 		start(line);
-		return 0;
+		return (0);
 	}
 	while (true)
 	{

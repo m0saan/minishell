@@ -38,7 +38,7 @@ typedef struct s_lexer
 
 typedef struct s_token
 {
-	t_token_t	type;
+	t_type	type;
 	char		*literal;
 	char		letter_literal;
 	t_lexer		*lexer;
@@ -79,13 +79,13 @@ t_token		*handle_dollar_token(t_lexer *l, t_token *tok);
 t_token		*handle_eof_token(t_token *tok);
 t_token		*handle_illegal_token(const t_lexer *l, t_token *tok);
 t_bool		check_quotes_errors(const t_lexer *l, char ch);
-t_bool handle_evn_vars_with_no_quotes(t_lexer *l, char **s, int *i);
+t_bool		handle_evn_vars_with_no_quotes(t_lexer *l, char **s, int *i);
 void		next_char(t_lexer *lexer);
 char		peek_char(t_lexer *lexer);
 void		skip_white_spaces(t_lexer *lexer);
 t_token		*next_token(t_lexer *l);
 t_lexer		*new_lexer(const char *line, int cmd_length);
-t_token		*new_token(t_token_t token_type, char ch, t_token *token);
-t_token_t	lookup_type(char *ident);
+t_token		*new_token(t_type token_type, char ch, t_token *token);
+t_type	lookup_type(char *ident);
 
 #endif

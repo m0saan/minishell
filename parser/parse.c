@@ -8,10 +8,7 @@ void	free_tokens(t_parser *p, t_error *error);
 t_error	*catch_errors(t_parser *p, t_error *error)
 {
 	if (p->cur_token->type == ILLEGAL || p->peek_token->type == ILLEGAL)
-	{
 		set_error(error, "Illegal Syntax!");
-		exit(EXIT_FAILURE);
-	}
 	if (p->cur_token->type == RIGHT || p->cur_token->type == LEFT
 		|| p->cur_token->type == RIGHT_APPEND)
 	{
@@ -23,6 +20,9 @@ t_error	*catch_errors(t_parser *p, t_error *error)
 		if (expect_peek(p, PIPE))
 			set_error(error, ERR1);
 	}
+	if (p->cur_token->type == HEREDOC && (p->peek_token->type == LEFT
+			|| p->peek_token->type == RIGHT))
+		set_error(error, ERR1);
 	return (error);
 }
 
