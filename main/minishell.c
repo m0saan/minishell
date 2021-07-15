@@ -63,8 +63,8 @@ void	start(char *line)
 		return ;
 	}
 	parse_and_execute(lexer);
-//	if (line)
-//		free (line);
+	if (line)
+		free (line);
 	free(lexer);
 }
 
@@ -75,12 +75,6 @@ int	main(int ac, char **av, char **env)
 
 	code = 0;
 	ft_init(env, ac, av);
-	if (ac == 3 && ft_strcmp(av[1], "-c") == 0)
-	{
-		line = av[2];
-		start(line);
-		return (0);
-	}
 	while (true)
 	{
 		line = get_line();
