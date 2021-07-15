@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 20:11:23 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/10 21:50:13 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/15 17:40:58 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int	fill_envp(char **envp)
 	g_config.envp = new_vector();
 	while (envp[++i] != NULL)
 		insert(g_config.envp, new_var_s(envp[i]));
+	unset_var(g_config.envp, "OLDPWD");
 	update_status_code(0);
 	update_shlvl();
 	return (0);
