@@ -87,5 +87,6 @@ t_token		*next_token(t_lexer *l);
 t_lexer		*new_lexer(const char *line, int cmd_length);
 t_token		*new_token(t_type token_type, char ch, t_token *token);
 t_type		lookup_type(char *ident);
+char		*replace_exit_status(t_lexer *l);
 
 #endif

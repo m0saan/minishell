@@ -1,4 +1,5 @@
 #include "../include/lexer.h"
+#include "../include/minishell.h"
 
 void	handle_double_quotes_identifier(t_lexer *l, t_token *tok)
 {
@@ -73,4 +74,13 @@ t_token	*handle_right_redir(t_lexer *l, t_token *tok)
 			tok = new_token(LEFT, l->ch, tok);
 	}
 	return (tok);
+}
+
+char	*replace_exit_status(t_lexer *l)
+{
+	char	*env_value;
+
+	env_value = get_var(g_config.envp, "?");
+	next_char(l);
+	return (env_value);
 }
