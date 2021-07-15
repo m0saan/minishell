@@ -217,9 +217,15 @@ CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs.c.o
  /Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs.c
 CMakeFiles/MINISHELL.dir/lexer/lexer_tokens_helper_funcs2.c.o
  /Users/moboustt/Desktop/1337/minishell/include/error.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_builtin.h
  /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_variables.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
  /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
  /Users/moboustt/Desktop/1337/minishell/include/lexer.h
+ /Users/moboustt/Desktop/1337/minishell/include/minishell.h
+ /Users/moboustt/Desktop/1337/minishell/include/node.h
+ /Users/moboustt/Desktop/1337/minishell/include/parser.h
  /Users/moboustt/Desktop/1337/minishell/lexer/lexer_tokens_helper_funcs2.c
 CMakeFiles/MINISHELL.dir/lexer/quotes_parsing_helper_funcs.c.o
  /Users/moboustt/Desktop/1337/minishell/include/error.h

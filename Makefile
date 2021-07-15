@@ -87,7 +87,7 @@ all: $(NAME)
 
 $(NAME): $(SRCS)
 	@echo "Building..."
-	@gcc $(CFLAG) $(LRL) $(LDFLAGS) $(CPPFLAGS) $(SRCS) -o $(NAME) -fsanitize=address -g3
+	@gcc $(CFLAG) $(LRL) $(LDFLAGS) $(CPPFLAGS) $(SRCS) -o $(NAME)
 	
 clean:
 	@echo "Cleaning..."

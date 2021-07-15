@@ -21,13 +21,13 @@ int	handle_heredoc(t_redir *redir, int index)
 	waitpid(open_heredoc(fname, redir->arg), &g_config.status, 0);
 	g_config.is_forked = false;
 	signal(SIGINT, signal_handler_parent);
+	free(redir->arg);
+	redir->arg = fname;
 	if (WEXITSTATUS(g_config.status) == 1)
 	{
 		update_status_code(1);
 		return (1);
 	}
-	free(redir->arg);
-	redir->arg = fname;
 	return (0);
 }
 
