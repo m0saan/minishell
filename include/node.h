@@ -32,7 +32,7 @@ typedef struct s_node {
 }				t_node;
 
 t_node	*new_node(enum e_node_type type);
-void	set_node_val_str(t_node *node, char *val, t_token_t type);
+void	set_node_val_str(t_node *node, char *val, t_type type);
 void	add_child_node(t_node *parent, t_node *child);
 
 #endif

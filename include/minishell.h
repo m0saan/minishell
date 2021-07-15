@@ -1,7 +1,7 @@
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
-#include <signal.h>
+# include <signal.h>
 # include <stdio.h>
 # include <unistd.h>
 # include <sys/wait.h>
@@ -92,5 +92,6 @@ int			init_heredoc(t_vector *cmds);
 int			open_heredoc(char *fname, char *delim);
 int			handle_heredoc(t_redir *redir, int index);
 void		unlink_heredoc(t_vector *cmds);
+void		free_parser(t_error *err, t_parser *p);
 
 #endif

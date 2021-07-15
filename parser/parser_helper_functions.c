@@ -18,12 +18,12 @@ t_parser	*new_parser(t_lexer *l)
 	return (p);
 }
 
-t_bool	peek_token_is(t_parser *p, t_token_t t)
+t_bool	peek_token_is(t_parser *p, t_type t)
 {
 	return (p->peek_token->type == t);
 }
 
-t_bool	expect_peek(t_parser *p, t_token_t t)
+t_bool	expect_peek(t_parser *p, t_type t)
 {
 	if (peek_token_is(p, t))
 		return (true);

@@ -1114,6 +1114,33 @@ main/ft_execve.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_execve.c.s
 .PHONY : main/ft_execve.c.s
 
+main/ft_free.o: main/ft_free.c.o
+
+.PHONY : main/ft_free.o
+
+# target to build an object file
+main/ft_free.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_free.c.o
+.PHONY : main/ft_free.c.o
+
+main/ft_free.i: main/ft_free.c.i
+
+.PHONY : main/ft_free.i
+
+# target to preprocess a source file
+main/ft_free.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_free.c.i
+.PHONY : main/ft_free.c.i
+
+main/ft_free.s: main/ft_free.c.s
+
+.PHONY : main/ft_free.s
+
+# target to generate assembly for a file
+main/ft_free.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINISHELL.dir/build.make CMakeFiles/MINISHELL.dir/main/ft_free.c.s
+.PHONY : main/ft_free.c.s
+
 main/ft_heredoc.o: main/ft_heredoc.c.o
 
 .PHONY : main/ft_heredoc.o
@@ -1771,6 +1798,9 @@ help:
 	@echo "... main/ft_execve.o"
 	@echo "... main/ft_execve.i"
 	@echo "... main/ft_execve.s"
+	@echo "... main/ft_free.o"
+	@echo "... main/ft_free.i"
+	@echo "... main/ft_free.s"
 	@echo "... main/ft_heredoc.o"
 	@echo "... main/ft_heredoc.i"
 	@echo "... main/ft_heredoc.s"

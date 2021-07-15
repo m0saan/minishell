@@ -24,7 +24,7 @@ t_node	*new_node(enum e_node_type type)
 	return (node);
 }
 
-void	set_node_val_str(t_node *node, char *val, t_token_t type)
+void	set_node_val_str(t_node *node, char *val, t_type type)
 {
 	node->val_type = type;
 	if (!val)

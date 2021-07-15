@@ -188,6 +188,9 @@
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_execve.c">
 			<Option target="MINISHELL"/>
 		</Unit>
+		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_free.c">
+			<Option target="MINISHELL"/>
+		</Unit>
 		<Unit filename="/Users/moboustt/Desktop/1337/minishell/main/ft_heredoc.c">
 			<Option target="MINISHELL"/>
 		</Unit>

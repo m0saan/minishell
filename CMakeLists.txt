@@ -58,7 +58,7 @@ add_executable(
         ./parser/parse_redirs.c
         ./parser/parser_helper_functions.c
         ./parser/vector_fill_out_utils.c
-        ./tokenizer/token.c)
+        ./tokenizer/token.c main/ft_free.c)
 
 set(GCC_COVERAGE_COMPILE_FLAGS "-Wall -Wextra -O0 -g3 -fsanitize=address -l readline -L /Users/moboustt/.brew/opt/readline/lib/ -I /Users/moboustt/.brew/opt/readline/include/")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}")

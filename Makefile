@@ -74,7 +74,8 @@ SRC_EXEC	=	main/ft_cmds.c \
 				main/ft_variables_2.c \
 				main/ft_variables_3.c \
 				main/ft_variables_4.c \
-				
+				main/ft_free.c \
+
 
 SRC_AST		=	ast/node.c
 SRC_ERRORS	=	errors/error.c

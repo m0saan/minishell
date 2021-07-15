@@ -35,6 +35,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/MINISHELL.dir/main/ft_cmds.c.o"
   "CMakeFiles/MINISHELL.dir/main/ft_envp.c.o"
   "CMakeFiles/MINISHELL.dir/main/ft_execve.c.o"
+  "CMakeFiles/MINISHELL.dir/main/ft_free.c.o"
   "CMakeFiles/MINISHELL.dir/main/ft_heredoc.c.o"
   "CMakeFiles/MINISHELL.dir/main/ft_heredoc_handlers.c.o"
   "CMakeFiles/MINISHELL.dir/main/ft_paths.c.o"
