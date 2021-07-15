@@ -20,8 +20,7 @@ t_error	*catch_errors(t_parser *p, t_error *error)
 		if (expect_peek(p, PIPE))
 			set_error(error, ERR1);
 	}
-	if (p->cur_token->type == HEREDOC && (p->peek_token->type == LEFT
-			|| p->peek_token->type == RIGHT))
+	if (p->cur_token->type == HEREDOC && p->peek_token->type != ARG)
 		set_error(error, ERR1);
 	return (error);
 }
@@ -61,7 +60,9 @@ t_node	*parse_command(t_node *ast_node, t_parser *p)
 		if (catch_errors(p, error)->is_error)
 		{
 			p_error(NULL, error->error_msg, "Bad Token", 1);
-			free(error);
+			free_tokens(p, error);
+			free_syntax_tree(ast_node, true);
+			free(p);
 			return (NULL);
 		}
 		arg = new_node(NODE_ARG);
@@ -76,7 +77,14 @@ t_node	*parse_command(t_node *ast_node, t_parser *p)
 
 void	free_tokens(t_parser *p, t_error *error)
 {
-	free(error);
-	free(p->cur_token);
-	free(p->peek_token);
+	if (error)
+		free(error);
+	if (p->cur_token->literal)
+		free(p->cur_token->literal);
+	if (p->peek_token->literal && p->peek_token->type != ILLEGAL)
+		free(p->peek_token->literal);
+	if (p->cur_token)
+		free(p->cur_token);
+	if (p->peek_token)
+		free(p->peek_token);
 }

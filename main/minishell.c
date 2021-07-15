@@ -23,9 +23,9 @@ int	parse_and_execute(t_lexer *lexer)
 	ast_node = NULL;
 	p = new_parser(lexer);
 	err = check_first_token(p);
-	if (err->is_error)
+	if (catch_errors(p, err)->is_error || err->is_error)
 	{
-		p_error(NULL, NULL, err->error_msg, 1);
+		p_error(NULL, err->error_msg, "Bad Token", 1);
 		free_parser(err, p);
 		return (EXIT_FAILURE);
 	}
@@ -34,7 +34,7 @@ int	parse_and_execute(t_lexer *lexer)
 	if (ast_node == NULL)
 		return (1);
 	run_cmds((t_vector *) fill_out_vector_with_commands(ast_node));
-	free_syntax_tree(ast_node);
+	free_syntax_tree(ast_node, false);
 	free(p);
 	return (0);
 }

@@ -10,7 +10,7 @@ t_token	*handle_illegal_token(const t_lexer *l, t_token *tok)
 
 t_token	*handle_eof_token(t_token *tok)
 {
-	tok->literal = "newline";
+	tok->literal = NULL;
 	tok->type = END_O_F;
 	return (tok);
 }
