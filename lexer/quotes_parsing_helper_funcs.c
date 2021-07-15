@@ -50,7 +50,12 @@ t_bool	handle_evn_vars_with_no_quotes(t_lexer *l, char **s, int *i)
 		next_char(l);
 		return (true);
 	}
-	if (l->ch == '~' && l->input[l->read_position] == '+')
+	if (l->ch == '?')
+	{
+		env_value = get_var(g_config.envp, "?");
+		next_char(l);
+	}
+	else if (l->ch == '~' && l->input[l->read_position] == '+')
 		env_value = strjoin_s(get_var(g_config.envp, "HOME"), \
 		get_var(g_config.envp, "PWD"), false);
 	else if (l->ch == '~')

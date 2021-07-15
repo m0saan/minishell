@@ -43,7 +43,7 @@ char	*read_identifier(t_lexer *l, int i)
 					return (NULL);
 			continue ;
 		}
-		s[i++] = l->ch;
+		s = strjoin_c(s, l->ch, true);
 		next_char(l);
 	}
 	return (s);

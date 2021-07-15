@@ -38,7 +38,7 @@ typedef struct s_lexer
 
 typedef struct s_token
 {
-	t_type	type;
+	t_type		type;
 	char		*literal;
 	char		letter_literal;
 	t_lexer		*lexer;
@@ -86,6 +86,6 @@ void		skip_white_spaces(t_lexer *lexer);
 t_token		*next_token(t_lexer *l);
 t_lexer		*new_lexer(const char *line, int cmd_length);
 t_token		*new_token(t_type token_type, char ch, t_token *token);
-t_type	lookup_type(char *ident);
+t_type		lookup_type(char *ident);
 
 #endif

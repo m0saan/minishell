@@ -13,7 +13,7 @@
 #include "../include/global_utils.h"
 #include "../include/minishell.h"
 
-int	get_position(t_size size, int index)
+int	get_position(size_t size, int index)
 {
 	if (size == 1)
 		return (IS_FIRSTLAST);

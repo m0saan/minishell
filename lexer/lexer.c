@@ -54,27 +54,32 @@ t_token	*next_token(t_lexer *l)
 	return (tok);
 }
 
-void	read_and_parse_double_quoted(t_lexer *l, char **s, int *index)
+void	replace_env(t_lexer *l, char **s, int *index)
 {
 	char	*env_value;
 
+	next_char(l);
+	if (ft_isdigit(l->ch))
+	{
+		next_char(l);
+		return ;
+	}
+	env_value = get_env_value(l);
+	if (env_value == NULL)
+		return ;
+	*s = strjoin_s(*s, env_value, true);
+	(*index) += (int) ft_strlen(env_value);
+}
+
+void	read_and_parse_double_quoted(t_lexer *l, char **s, int *index)
+{
 	check_quotes_errors(l, l->ch);
 	next_char(l);
 	while (l->ch != '"')
 	{
 		if (is_env_identifier(l))
 		{
-			next_char(l);
-			if (ft_isdigit(l->ch))
-			{
-				next_char(l);
-				continue ;
-			}
-			env_value = get_env_value(l);
-			if (env_value == NULL)
-				continue ;
-			*s = strjoin_s(*s, env_value, true);
-			(*index) += (int) ft_strlen(env_value);
+			replace_env(l, s, index);
 			continue ;
 		}
 		*index += 1;

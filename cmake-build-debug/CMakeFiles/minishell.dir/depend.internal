@@ -269,6 +269,18 @@ CMakeFiles/MINISHELL.dir/main/ft_execve.c.o
  /Users/moboustt/Desktop/1337/minishell/include/node.h
  /Users/moboustt/Desktop/1337/minishell/include/parser.h
  /Users/moboustt/Desktop/1337/minishell/main/ft_execve.c
+CMakeFiles/MINISHELL.dir/main/ft_free.c.o
+ /Users/moboustt/Desktop/1337/minishell/include/error.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_builtin.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_types.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_variables.h
+ /Users/moboustt/Desktop/1337/minishell/include/ft_vector.h
+ /Users/moboustt/Desktop/1337/minishell/include/global_utils.h
+ /Users/moboustt/Desktop/1337/minishell/include/lexer.h
+ /Users/moboustt/Desktop/1337/minishell/include/minishell.h
+ /Users/moboustt/Desktop/1337/minishell/include/node.h
+ /Users/moboustt/Desktop/1337/minishell/include/parser.h
+ /Users/moboustt/Desktop/1337/minishell/main/ft_free.c
 CMakeFiles/MINISHELL.dir/main/ft_heredoc.c.o
  /Users/moboustt/Desktop/1337/minishell/include/error.h
  /Users/moboustt/Desktop/1337/minishell/include/ft_builtin.h

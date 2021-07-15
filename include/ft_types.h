@@ -37,6 +37,5 @@ typedef enum e_val_type
 }					t_type;
 
 typedef char		*t_string;
-typedef uint32_t	t_size;
 
 #endif

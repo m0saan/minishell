@@ -19,14 +19,14 @@ t_token	*handle_identifier_with_no_quotes(t_lexer *l, t_token *tok)
 {
 	char	*tmp;
 
-	if (l->ch == '$' && l->input[l->read_position] == '?')
-	{
-		tok->type = EXIT_STATUS;
-		next_char(l);
-		next_char(l);
-	}
-	else
-	{
+//	if (l->ch == '$' && l->input[l->read_position] == '?')
+//	{
+//		tok->type = EXIT_STATUS;
+//		next_char(l);
+//		next_char(l);
+//	}
+//	else
+//	{
 		tok->literal = read_identifier(l, 0);
 		if (l->ch == '"' || l->ch == '\'')
 		{
@@ -40,6 +40,6 @@ t_token	*handle_identifier_with_no_quotes(t_lexer *l, t_token *tok)
 			free(tmp);
 		}
 		tok->type = lookup_type(tok->literal);
-	}
+//	}
 	return (tok);
 }

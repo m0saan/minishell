@@ -17,7 +17,7 @@ t_vector	*new_vector(void)
 	return (new_vector_s(10));
 }
 
-t_vector	*new_vector_s(t_size init_len)
+t_vector	*new_vector_s(size_t init_len)
 {
 	t_vector	*new_vector;
 
@@ -31,7 +31,7 @@ t_vector	*new_vector_s(t_size init_len)
 t_vector	*new_vector_from(t_vector *other)
 {
 	int			i;
-	t_size		length;
+	size_t		length;
 	t_vector	*new_vector;
 
 	if (other == NULL || is_empty(other))

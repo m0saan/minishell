@@ -269,6 +269,18 @@ CMakeFiles/MINISHELL.dir/main/ft_execve.c.o: ../include/node.h
 CMakeFiles/MINISHELL.dir/main/ft_execve.c.o: ../include/parser.h
 CMakeFiles/MINISHELL.dir/main/ft_execve.c.o: ../main/ft_execve.c
 
+CMakeFiles/MINISHELL.dir/main/ft_free.c.o: ../include/error.h
+CMakeFiles/MINISHELL.dir/main/ft_free.c.o: ../include/ft_builtin.h
+CMakeFiles/MINISHELL.dir/main/ft_free.c.o: ../include/ft_types.h
+CMakeFiles/MINISHELL.dir/main/ft_free.c.o: ../include/ft_variables.h
+CMakeFiles/MINISHELL.dir/main/ft_free.c.o: ../include/ft_vector.h
+CMakeFiles/MINISHELL.dir/main/ft_free.c.o: ../include/global_utils.h
+CMakeFiles/MINISHELL.dir/main/ft_free.c.o: ../include/lexer.h
+CMakeFiles/MINISHELL.dir/main/ft_free.c.o: ../include/minishell.h
+CMakeFiles/MINISHELL.dir/main/ft_free.c.o: ../include/node.h
+CMakeFiles/MINISHELL.dir/main/ft_free.c.o: ../include/parser.h
+CMakeFiles/MINISHELL.dir/main/ft_free.c.o: ../main/ft_free.c
+
 CMakeFiles/MINISHELL.dir/main/ft_heredoc.c.o: ../include/error.h
 CMakeFiles/MINISHELL.dir/main/ft_heredoc.c.o: ../include/ft_builtin.h
 CMakeFiles/MINISHELL.dir/main/ft_heredoc.c.o: ../include/ft_types.h

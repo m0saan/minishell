@@ -34,7 +34,7 @@ int	run_cmd_parent(t_cmd *cmd)
 	return (code);
 }
 
-pid_t	run_cmd_child(t_cmd *cmd, int fd[][2], t_size size, int index)
+pid_t	run_cmd_child(t_cmd *cmd, int fd[][2], size_t size, int index)
 {
 	pid_t	pid;
 	int		pos;

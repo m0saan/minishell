@@ -246,9 +246,11 @@ lexer.h
 ../include/node.h
 /Users/moboustt/Desktop/1337/minishell/include/node.h
 
-/Users/moboustt/Desktop/1337/minishell/parser/parse.c
+/Users/moboustt/Desktop/1337/minishell/lexer/quotes_parsing_helper_funcs.c
+../include/lexer.h
+/Users/moboustt/Desktop/1337/minishell/include/lexer.h
+../include/ft_variables.h
+/Users/moboustt/Desktop/1337/minishell/include/ft_variables.h
 ../include/minishell.h
 /Users/moboustt/Desktop/1337/minishell/include/minishell.h
-../include/parser.h
-/Users/moboustt/Desktop/1337/minishell/include/parser.h
 

@@ -28,7 +28,7 @@ typedef struct s_vector
 }			t_vector;
 
 t_vector	*new_vector(void);
-t_vector	*new_vector_s(t_size init_len);
+t_vector	*new_vector_s(size_t init_len);
 t_vector	*new_vector_from(t_vector *vector);
 void		insert(t_vector *vector, void *item);
 void		*remove_at(t_vector *this, int pos);

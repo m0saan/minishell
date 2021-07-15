@@ -75,7 +75,7 @@ void		update_status_code(int code);
 char		**extract_envp(t_vector *g_env);
 void		close_pipes(int fd[][2], int pos, int index);
 void		setup_pipes(int fd[][2], int position, int index);
-int			get_position(t_size size, int index);
+int			get_position(size_t size, int index);
 void		restore_stdinout(t_type type, int *sout, int *sin);
 int			setup_all_redirs(t_vector *redirs, int *sout, int *sin);
 t_vector	*get_paths(char *path_str, char *cmd);

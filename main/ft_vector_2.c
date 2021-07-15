@@ -42,7 +42,7 @@ void	*search(t_vector *this, void *item, t_bool (*eql)(void *, void *))
 	return (NULL);
 }
 
-t_size	capacity(t_vector *this)
+size_t	capacity(t_vector *this)
 {
 	if (this == NULL)
 		exit(1);
