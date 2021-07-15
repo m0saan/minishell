@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 21:16:50 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/15 11:18:49 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/15 11:39:36 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 void	free_all(char **all)
 {
 	int		i;
+
 	if (!all)
 		return ;
 	i = -1;
@@ -51,22 +52,20 @@ t_bool	check_value(char *val)
 		return (false);
 	vals = ft_split(val, ' ');
 	if (vals[1] != NULL || !ft_isdigits(vals[0]))
-		code = p_error("exit", NULL, "numeric argument required", false);
+		code = p_error("exit", val, "numeric argument required", false);
 	else if (vals[0][0] != '-' && ft_strlen(vals[0]) == 19)
 	{
 		if (ft_strcmp(vals[0], MAXVAL) > 0)
-			code = p_error("exit", NULL, "numeric argument required", false);
+			code = p_error("exit", val, "numeric argument required", false);
 	}
 	else if (vals[0][0] == '-' && ft_strlen(vals[0]) == 20)
 	{
 		if (ft_strcmp(vals[0], MINVAL) > 0)
-			code = p_error("exit", NULL, "numeric argument required", false);
+			code = p_error("exit", val, "numeric argument required", false);
 	}
 	else if ((vals[0][0] != '-' && ft_strlen(vals[0]) > 19)
 		|| (vals[0][0] == '-' && ft_strlen(vals[0]) > 20))
-			code = p_error("exit", NULL, "numeric argument required", false);
-	else
-		code = true;
+		code = p_error("exit", val, "numeric argument required", false);
 	free_all(vals);
 	return (code);
 }
